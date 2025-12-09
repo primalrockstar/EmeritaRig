@@ -1,0 +1,96 @@
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../auth/AuthContext';
+
+const DashboardScreen: React.FC = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const getRank = (rating: number) => {
+    if (rating < 800) return "Probie";
+    if (rating < 1000) return "Rookie";
+    if (rating < 1200) return "Paramedic";
+    if (rating < 1400) return "Lieutenant";
+    return "Captain";
+  };
+
+  const eloRating = user?.elo_rating || 1000;
+  const rank = getRank(eloRating);
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-white p-6">
+      {/* Header */}
+      <header className="mb-8">
+        <h1 className="text-3xl font-bold text-center mb-2">
+          Command Center
+        </h1>
+        <p className="text-gray-400 text-center">
+          Welcome back, {user?.name || 'Medic'}
+        </p>
+      </header>
+
+      {/* Stats Section */}
+      <div className="flex justify-center mb-8">
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center min-w-[200px]">
+          <div className="mb-4">
+            <div className="w-24 h-24 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span className="text-2xl font-bold">{eloRating}</span>
+            </div>
+            <div className="text-sm text-gray-400">ELO Rating</div>
+          </div>
+          <div className="text-lg font-semibold text-indigo-400">{rank}</div>
+        </div>
+      </div>
+
+      {/* Main Grid */}
+      <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {/* NREMT Simulator */}
+        <div className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/simulator')}>
+          <div className="text-center">
+            <div className="text-4xl mb-4">🎯</div>
+            <h3 className="text-xl font-bold mb-2">NREMT Simulator</h3>
+            <p className="text-gray-400 text-sm">Adaptive exam practice with live scoring</p>
+          </div>
+        </div>
+
+        {/* Daily Flashcards */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/flashcards')}>
+          <div className="text-center">
+            <div className="text-4xl mb-4">🃏</div>
+            <h3 className="text-lg font-bold mb-2">Daily Flashcards</h3>
+            <p className="text-gray-400 text-sm">Spaced repetition learning</p>
+          </div>
+        </div>
+
+        {/* Clinical Scenarios */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/scenarios')}>
+          <div className="text-center">
+            <div className="text-4xl mb-4">🏥</div>
+            <h3 className="text-lg font-bold mb-2">Clinical Scenarios</h3>
+            <p className="text-gray-400 text-sm">Interactive case studies</p>
+          </div>
+        </div>
+
+        {/* Reference Tools */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/meds')}>
+          <div className="text-center">
+            <div className="text-4xl mb-4">💊</div>
+            <h3 className="text-lg font-bold mb-2">Reference Tools</h3>
+            <p className="text-gray-400 text-sm">Medications & calculators</p>
+          </div>
+        </div>
+
+        {/* Tools/Calculators */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/calculators')}>
+          <div className="text-center">
+            <div className="text-4xl mb-4">🧮</div>
+            <h3 className="text-lg font-bold mb-2">Medical Calculators</h3>
+            <p className="text-gray-400 text-sm">Dosage & assessment tools</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DashboardScreen;

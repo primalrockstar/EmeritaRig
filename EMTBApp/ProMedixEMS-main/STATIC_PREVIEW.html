@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProMedix EMS - Ultra-Modern Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Glass Morphism Base Styles */
+        .glass-card {
+            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-strong {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Gradient Animations */
+        .gradient-medical {
+            background: linear-gradient(-45deg, #e3f2fd, #e0f2f1, #f1f8e9, #fff3e0);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Floating Animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Glow Effect */
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        
+        /* Text Gradients */
+        .text-gradient-medical {
+            background: linear-gradient(135deg, #2563eb, #059669, #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="gradient-medical min-h-screen">
+    <!-- Header Preview -->
+    <header class="glass-strong fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold">P</span>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">ProMedix EMS</div>
+                        <div class="text-xs text-gray-600">Ultra-Modern Training</div>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-1">
+                    <a href="#" class="px-4 py-2 rounded-xl glass-card hover:glow-blue transition-all duration-200">Dashboard</a>
+                    <a href="#" class="px-4 py-2 rounded-xl glass-card hover:glow-blue transition-all duration-200">Curriculum</a>
+                    <a href="#" class="px-4 py-2 rounded-xl glass-card hover:glow-blue transition-all duration-200">Calculators</a>
+                    <a href="#" class="px-4 py-2 rounded-xl glass-card hover:glow-blue transition-all duration-200">Scenarios</a>
+                </nav>
+                
+                <!-- Search -->
+                <div class="flex items-center space-x-3">
+                    <div class="glass-card rounded-full px-4 py-2">
+                        <input type="text" placeholder="Search..." class="bg-transparent border-none outline-none text-sm">
+                    </div>
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm">AJ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 px-6">
+        <!-- Hero Section -->
+        <section class="max-w-4xl mx-auto text-center mb-16">
+            <div class="glass-strong rounded-3xl p-12">
+                <h1 class="text-5xl font-bold text-gradient-medical mb-6">
+                    Next-Generation<br>EMS Education
+                </h1>
+                <p class="text-xl text-gray-700 mb-8">
+                    Revolutionary training platform combining interactive scenarios, 
+                    comprehensive curriculum, and cutting-edge tools.
+                </p>
+                <div class="flex gap-4 justify-center">
+                    <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-medium hover:scale-105 transition-transform duration-200">
+                        🎬 Start Learning Now
+                    </button>
+                    <button class="glass-card px-8 py-4 rounded-xl font-medium hover:glow-blue transition-all duration-200">
+                        📚 Explore Curriculum
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="glass-strong rounded-2xl p-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-blue-600 mb-2">2,500+</div>
+                        <div class="text-gray-600">Students Trained</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-emerald-600 mb-2">45</div>
+                        <div class="text-gray-600">Comprehensive Chapters</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-purple-600 mb-2">96%</div>
+                        <div class="text-gray-600">Pass Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="max-w-6xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-center text-gradient-medical mb-8">
+                Why Choose ProMedix EMS?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card rounded-2xl p-6 text-center hover:glow-blue transition-all duration-300 float">
+                    <div class="text-4xl mb-4">📖</div>
+                    <h3 class="font-bold mb-2">Comprehensive Curriculum</h3>
+                    <p class="text-sm text-gray-600">45 chapters covering complete EMT-B certification</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center hover:glow-blue transition-all duration-300 float" style="animation-delay: 0.5s;">
+                    <div class="text-4xl mb-4">🧮</div>
+                    <h3 class="font-bold mb-2">Advanced Tools</h3>
+                    <p class="text-sm text-gray-600">APGAR scoring, AVPU assessment, and calculators</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center hover:glow-blue transition-all duration-300 float" style="animation-delay: 1s;">
+                    <div class="text-4xl mb-4">❤️</div>
+                    <h3 class="font-bold mb-2">Interactive Scenarios</h3>
+                    <p class="text-sm text-gray-600">Real-world patient encounters and simulations</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center hover:glow-blue transition-all duration-300 float" style="animation-delay: 1.5s;">
+                    <div class="text-4xl mb-4">👥</div>
+                    <h3 class="font-bold mb-2">Expert-Designed</h3>
+                    <p class="text-sm text-gray-600">Content by experienced EMS professionals</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Preview -->
+        <footer class="glass-strong rounded-t-3xl mt-20">
+            <div class="max-w-6xl mx-auto px-6 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                                <span class="text-white font-bold">P</span>
+                            </div>
+                            <div>
+                                <div class="font-bold">ProMedix EMS</div>
+                                <div class="text-xs text-gray-600">Training Platform</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">Revolutionary EMT training platform combining comprehensive curriculum and cutting-edge tools.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold mb-4">Platform</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="hover:text-blue-600">Dashboard</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Curriculum</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Calculators</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold mb-4">Resources</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="#" class="hover:text-blue-600">Study Guides</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Help Center</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Support</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold mb-4">Contact</h3>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div>📧 support@promedixems.com</div>
+                            <div>📞 1-800-PROMEDIX</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-200/20 pt-8">
+                    <div class="flex flex-col md:flex-row items-center justify-between">
+                        <div class="text-sm text-gray-500">© 2025 ProMedix EMS. All rights reserved.</div>
+                        <div class="flex items-center space-x-3 glass-card px-4 py-2 rounded-full mt-4 md:mt-0">
+                            <span class="text-sm text-gray-600">Designed by</span>
+                            <div class="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded flex items-center justify-center">
+                                <span class="text-white text-xs font-bold">W3</span>
+                            </div>
+                            <a href="https://webconnect360.com" class="text-sm font-medium text-blue-600 hover:text-blue-700">
+                                WebConnect360.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

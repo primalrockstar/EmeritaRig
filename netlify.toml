@@ -1,0 +1,8 @@
+[build]
+  command = "cd EMTBApp/ProMedixEMS-main && npm run build"
+  publish = "EMTBApp/ProMedixEMS-main/dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

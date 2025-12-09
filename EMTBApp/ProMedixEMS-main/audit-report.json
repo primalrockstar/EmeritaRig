@@ -1,0 +1,4474 @@
+{
+  "timestamp": "2025-12-09T08:47:16.847Z",
+  "totalComponents": 337,
+  "breakdownByType": {
+    "component": 320,
+    "page": 8,
+    "util": 2,
+    "type": 1,
+    "hook": 6
+  },
+  "components": [
+    {
+      "name": "App",
+      "filePath": "src/App.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "./auth/LoginPage",
+        "./screens/ExamScreen",
+        "./app/components/dashboard/CompanionDashboard"
+      ],
+      "sizeKB": 1,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "ProtectedApp",
+      "filePath": "src/ProtectedApp.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "./auth/AuthContext",
+        "./auth/LoginPage",
+        "./auth/InstructorDashboard"
+      ],
+      "sizeKB": 42,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "SimpleTestHeader",
+      "filePath": "src/SimpleTestHeader.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "lucide-react"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "axios",
+      "filePath": "src/api/axios.js",
+      "type": "component",
+      "dependencies": [
+        "axios"
+      ],
+      "sizeKB": 1,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "exam",
+      "filePath": "src/api/exam.ts",
+      "type": "component",
+      "dependencies": [
+        "./axios"
+      ],
+      "sizeKB": 1,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "Question",
+        "ExamComplete",
+        "QuestionOrComplete",
+        "Feedback",
+        "startExam",
+        "submitAnswer",
+        "getNextQuestion"
+      ]
+    },
+    {
+      "name": "CompanionCard",
+      "filePath": "src/app/components/dashboard/CompanionCard.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../../components/ui/ModernGlassComponents"
+      ],
+      "sizeKB": 2,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "CompanionCardProps",
+        "CompanionCard"
+      ]
+    },
+    {
+      "name": "CompanionDashboard",
+      "filePath": "src/app/components/dashboard/CompanionDashboard.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../../hooks/useUserContext",
+        "./CompanionCard",
+        "../../../components/ui/ModernGlassComponents",
+        "../../../components/ui/ModernGlassComponents"
+      ],
+      "sizeKB": 11,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "AuthContext",
+      "filePath": "src/auth/AuthContext.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../api/axios"
+      ],
+      "sizeKB": 3,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "Role",
+        "AuthProvider",
+        "useAuth",
+        "RequireRole"
+      ]
+    },
+    {
+      "name": "InstructorDashboard",
+      "filePath": "src/auth/InstructorDashboard.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "./AuthContext",
+        "lucide-react",
+        "../components/curriculum/ModuleManagement"
+      ],
+      "sizeKB": 5,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "Login",
+      "filePath": "src/auth/Login.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "LoginPage",
+      "filePath": "src/auth/LoginPage.tsx",
+      "type": "page",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "./AuthContext"
+      ],
+      "sizeKB": 2,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "ARMedicationVisualization",
+      "filePath": "src/components/ARMedicationVisualization.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 29,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "ARMedicationVisualization"
+      ]
+    },
+    {
+      "name": "BalancedQuizSystem",
+      "filePath": "src/components/BalancedQuizSystem.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../data/practice-quizzes-new-balanced"
+      ],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "BalancedQuizSystem"
+      ]
+    },
+    {
+      "name": "BottomNavigation",
+      "filePath": "src/components/BottomNavigation.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "lucide-react"
+      ],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "ClinicalCalculatorsHub",
+      "filePath": "src/components/ClinicalCalculatorsHub.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "../data/clinical-calculators",
+        "./ui/ModernGlassComponents"
+      ],
+      "sizeKB": 11,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "ClinicalCalculatorsDirectory",
+        "ClinicalCalculatorDetail",
+        "CalculatorRunner"
+      ]
+    },
+    {
+      "name": "ClinicalReasoningFeedback",
+      "filePath": "src/components/ClinicalReasoningFeedback.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 13,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "ClinicalReasoningFeedback"
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "filePath": "src/components/Dashboard.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "DemoUpgradeBanner",
+      "filePath": "src/components/DemoUpgradeBanner.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../config/demoLimits"
+      ],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "DemoUpgradeBanner",
+        "DemoLimitModal"
+      ]
+    },
+    {
+      "name": "DisclaimerIntro",
+      "filePath": "src/components/DisclaimerIntro.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "sizeKB": 7,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "DisclaimerPage",
+      "filePath": "src/components/DisclaimerPage.tsx",
+      "type": "page",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "react-router-dom",
+        "./MedicalDisclaimer"
+      ],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "EMSChatbot",
+      "filePath": "src/components/EMSChatbot.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../data/drug-calculator",
+        "../data/ems-protocols",
+        "../data/flashcards"
+      ],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EMSChatbot"
+      ]
+    },
+    {
+      "name": "EMSIcon",
+      "filePath": "src/components/EMSIcon.tsx",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EMSIcon",
+        "EMSBadge"
+      ]
+    },
+    {
+      "name": "EnhancedPracticeQuizSystem",
+      "filePath": "src/components/EnhancedPracticeQuizSystem.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../data/scenario-questions",
+        "../hooks/usePerformanceTracker"
+      ],
+      "sizeKB": 37,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "EnhancedSearchBar",
+      "filePath": "src/components/EnhancedSearchBar.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../utils/search"
+      ],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "EnhancedSearchResultsPage",
+      "filePath": "src/components/EnhancedSearchResultsPage.tsx",
+      "type": "page",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../utils/optimized-search",
+        "./OptimizedSearchBar",
+        "./SearchPerformanceMonitor"
+      ],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "LegalSupportPages",
+      "filePath": "src/components/LegalSupportPages.tsx",
+      "type": "page",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "PrivacyPolicy",
+        "TermsOfService",
+        "MedicalDisclaimer",
+        "SupportCenter",
+        "ContactUs"
+      ]
+    },
+    {
+      "name": "MedicalDisclaimer",
+      "filePath": "src/components/MedicalDisclaimer.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "MinimalSearchBar",
+      "filePath": "src/components/MinimalSearchBar.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "MobileSearchBar",
+      "filePath": "src/components/MobileSearchBar.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "sizeKB": 12,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "MobileUtils",
+      "filePath": "src/components/MobileUtils.tsx",
+      "type": "util",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 8,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "useMobileDetection",
+        "useIOSDetection",
+        "MobileButton",
+        "MobileCard",
+        "MobileListItem",
+        "PullToRefresh",
+        "InstallPrompt"
+      ]
+    },
+    {
+      "name": "ModernDashboard",
+      "filePath": "src/components/ModernDashboard.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../hooks/usePerformanceTracker",
+        "../services/flashcardTracker",
+        "../services/pcrTracker",
+        "./ProMedixLogo"
+      ],
+      "sizeKB": 15,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "ModernFooter",
+      "filePath": "src/components/ModernFooter.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "./ProMedixLogo"
+      ],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "ModernHeader",
+      "filePath": "src/components/ModernHeader.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "./ProMedixLogo",
+        "./ui/ModernGlassComponents"
+      ],
+      "sizeKB": 13,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "ModernLandingPage",
+      "filePath": "src/components/ModernLandingPage.tsx",
+      "type": "page",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "./ProMedixLogo",
+        "./ModernFooter"
+      ],
+      "sizeKB": 14,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "NationalProtocolFoundationManager",
+      "filePath": "src/components/NationalProtocolFoundationManager.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../data/national-protocols"
+      ],
+      "sizeKB": 24,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "OptimizedEMSChatbot",
+      "filePath": "src/components/OptimizedEMSChatbot.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../data/emtb-flashcards",
+        "../data/drug-calculator",
+        "../data/ems-protocols"
+      ],
+      "sizeKB": 30,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "OptimizedEMSChatbot"
+      ]
+    },
+    {
+      "name": "OptimizedSearchBar",
+      "filePath": "src/components/OptimizedSearchBar.tsx",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 24,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "OptimizedSearchBarProps"
+      ]
+    },
+    {
+      "name": "PracticeQuizSystem",
+      "filePath": "src/components/PracticeQuizSystem.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../data/practice-quizzes",
+        "../data/practice-quizzes-additional",
+        "../data/practice-quizzes-final",
+        "../data/practice-quizzes-complete"
+      ],
+      "sizeKB": 22,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "ProMedixLogo",
+      "filePath": "src/components/ProMedixLogo.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "ProMedixLogoProps"
+      ]
+    },
+    {
+      "name": "ProgressDashboard",
+      "filePath": "src/components/ProgressDashboard.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "sizeKB": 15,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "QuizSystemSelector",
+      "filePath": "src/components/QuizSystemSelector.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "./PracticeQuizSystem",
+        "./BalancedQuizSystem"
+      ],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "QuizSystemSelector"
+      ]
+    },
+    {
+      "name": "SearchPerformanceMonitor",
+      "filePath": "src/components/SearchPerformanceMonitor.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "sizeKB": 10,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "SimpleSearchBar",
+      "filePath": "src/components/SimpleSearchBar.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "sizeKB": 1,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "SimpleTestHeader",
+      "filePath": "src/components/SimpleTestHeader.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "lucide-react"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "SmartStudyCompanion",
+      "filePath": "src/components/SmartStudyCompanion.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../data/enhanced-ai-recommendations",
+        "../data/emtb-flashcards"
+      ],
+      "sizeKB": 22,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "SmartStudyCompanion"
+      ]
+    },
+    {
+      "name": "StudyNotesNavigator",
+      "filePath": "src/components/StudyNotesNavigator.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "./ProMedixLogo",
+        "./ui/ModernGlassComponents"
+      ],
+      "sizeKB": 17,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "StudyNotesOverview",
+        "StudyNotesChapterView"
+      ]
+    },
+    {
+      "name": "UpdatedHeader",
+      "filePath": "src/components/UpdatedHeader.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "../auth/AuthContext",
+        "lucide-react"
+      ],
+      "sizeKB": 10,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "VoiceControl",
+      "filePath": "src/components/VoiceControl.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 29,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "VoiceControl"
+      ]
+    },
+    {
+      "name": "VoiceControlFixed",
+      "filePath": "src/components/VoiceControlFixed.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 14,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "VoiceControl"
+      ]
+    },
+    {
+      "name": "VoiceControlTest",
+      "filePath": "src/components/VoiceControlTest.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "VoiceControlTest"
+      ]
+    },
+    {
+      "name": "VoiceNoteTranscriber",
+      "filePath": "src/components/VoiceNoteTranscriber.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../data/national-protocols"
+      ],
+      "sizeKB": 31,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "WelcomePage",
+      "filePath": "src/components/WelcomePage.tsx",
+      "type": "page",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "FlashcardAnalytics",
+      "filePath": "src/components/analytics/FlashcardAnalytics.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../hooks/usePerformanceTracker",
+        "../ui/GlassCard"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "ModuleManagement",
+      "filePath": "src/components/curriculum/ModuleManagement.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../../auth/AuthContext"
+      ],
+      "sizeKB": 8,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "ProfessionalCurriculumHub",
+      "filePath": "src/components/curriculum/ProfessionalCurriculumHub.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom"
+      ],
+      "sizeKB": 16,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "CompanionCard",
+      "filePath": "src/components/dashboard/CompanionCard.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../ui/ModernGlassComponents"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "CompanionCardProps"
+      ]
+    },
+    {
+      "name": "CompanionDashboard",
+      "filePath": "src/components/dashboard/CompanionDashboard.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "../../hooks/useUserContext",
+        "../../hooks/usePerformanceTracker",
+        "./CompanionCard"
+      ],
+      "sizeKB": 10,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "CompanionDrillTab",
+      "filePath": "src/components/dashboard/CompanionDrillTab.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../hooks/useUserContext",
+        "../ui/GlassCard",
+        "../ui/ModernGlassComponents",
+        "react-router-dom"
+      ],
+      "sizeKB": 16,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "CompanionLearnTab",
+      "filePath": "src/components/dashboard/CompanionLearnTab.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 0,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "CompanionProgressTab",
+      "filePath": "src/components/dashboard/CompanionProgressTab.tsx",
+      "type": "component",
+      "dependencies": [
+        "../../hooks/useUserContext",
+        "../ui/GlassCard",
+        "../ui/ModernGlassComponents",
+        "react-router-dom"
+      ],
+      "sizeKB": 14,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "CompanionReferenceTab",
+      "filePath": "src/components/dashboard/CompanionReferenceTab.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 1,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "EnhancedInstructorDashboard",
+      "filePath": "src/components/dashboards/EnhancedInstructorDashboard.tsx",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "StudentDashboard",
+      "filePath": "src/components/dashboards/StudentDashboard.tsx",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "InstrumentationTests",
+      "filePath": "src/components/debug/InstrumentationTests.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../hooks/usePerformanceTracker"
+      ],
+      "sizeKB": 8,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "InstrumentationValidator",
+      "filePath": "src/components/debug/InstrumentationValidator.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../hooks/usePerformanceTracker"
+      ],
+      "sizeKB": 6,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "PerformanceMonitor",
+      "filePath": "src/components/debug/PerformanceMonitor.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../hooks/usePerformanceTracker"
+      ],
+      "sizeKB": 5,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "EMTBFlashcards",
+      "filePath": "src/components/emtb/EMTBFlashcards.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../hooks/usePerformanceTracker",
+        "../../services/flashcardTracker"
+      ],
+      "sizeKB": 13,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "EMTBPcrTrainer",
+      "filePath": "src/components/emtb/EMTBPcrTrainer.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../hooks/usePerformanceTracker",
+        "../../services/pcrTracker"
+      ],
+      "sizeKB": 37,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "EMTBStudyNotesEnhanced",
+      "filePath": "src/components/emtb/EMTBStudyNotesEnhanced.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../MedicalDisclaimer",
+        "../../data/medications",
+        "../../data/ems-protocols"
+      ],
+      "sizeKB": 576,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "EnhancementIndex",
+      "filePath": "src/components/enhancements/EnhancementIndex.tsx",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "StudyAnalyticsDashboard",
+      "filePath": "src/components/enhancements/analytics/StudyAnalyticsDashboard.tsx",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "EnhancedStudyChapter",
+      "filePath": "src/components/enhancements/study/EnhancedStudyChapter.tsx",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "EnhancedStudyChapter2",
+      "filePath": "src/components/enhancements/study/EnhancedStudyChapter2.tsx",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "EnhancedFlashcards",
+      "filePath": "src/components/enhancements/training/EnhancedFlashcards.tsx",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "UWorldLayout",
+      "filePath": "src/components/layout/UWorldLayout.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "./UWorldSidebar",
+        "lucide-react"
+      ],
+      "sizeKB": 2,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "UWorldSidebar",
+      "filePath": "src/components/layout/UWorldSidebar.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom"
+      ],
+      "sizeKB": 7,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "CompanionLearnTab",
+      "filePath": "src/components/learn/CompanionLearnTab.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../hooks/useUserContext",
+        "../ui/ModernGlassComponents",
+        "react-router-dom",
+        "../StudyNotesNavigator"
+      ],
+      "sizeKB": 5,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "EnhancedLMSNavigation",
+      "filePath": "src/components/navigation/EnhancedLMSNavigation.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom"
+      ],
+      "sizeKB": 11,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "StudentProgress",
+      "filePath": "src/components/student/StudentProgress.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "../../auth/AuthContext"
+      ],
+      "sizeKB": 11,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "InstrumentationTests",
+      "filePath": "src/components/tests/InstrumentationTests.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../hooks/usePerformanceTracker",
+        "../ui/ModernGlassComponents"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "AssessmentInteractiveTools",
+      "filePath": "src/components/tools/AssessmentInteractiveTools.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "@dnd-kit/utilities",
+        "lucide-react",
+        "../ui/ModernGlassComponents"
+      ],
+      "sizeKB": 26,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "PrimaryAssessmentSorter",
+        "HistoryTakingSorter",
+        "CriticalActionMixMatch",
+        "PrimaryAssessmentMixMatch",
+        "HistoryTakingFillBlanks",
+        "ReassessmentChecklist"
+      ]
+    },
+    {
+      "name": "ClinicalCalculatorsHub",
+      "filePath": "src/components/tools/ClinicalCalculatorsHub.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../data/pharmacology"
+      ],
+      "sizeKB": 21,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "PatientAssessmentPractice",
+      "filePath": "src/components/tools/PatientAssessmentPractice.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../ui/ModernGlassComponents",
+        "../../hooks/usePerformanceTracker",
+        "./SceneSizeUpDraggable"
+      ],
+      "sizeKB": 17,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "SceneSizeUpDraggable",
+      "filePath": "src/components/tools/SceneSizeUpDraggable.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "@dnd-kit/utilities",
+        "lucide-react",
+        "../ui/ModernGlassComponents"
+      ],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "Badge",
+      "filePath": "src/components/ui/Badge.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 1,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "FTOToast",
+      "filePath": "src/components/ui/FTOToast.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 2,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "FTOToastProps",
+        "FTOToast"
+      ]
+    },
+    {
+      "name": "GlassCard",
+      "filePath": "src/components/ui/GlassCard.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 1,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "GlassContainer",
+      "filePath": "src/components/ui/GlassContainer.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 0,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "ModernGlassComponents",
+      "filePath": "src/components/ui/ModernGlassComponents.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 2,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "GlassCard",
+        "ModernButton"
+      ]
+    },
+    {
+      "name": "demoLimits",
+      "filePath": "src/config/demoLimits.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 1,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "DEMO_LIMITS",
+        "DEMO_MESSAGES",
+        "UPGRADE_URL",
+        "isDemoVersion"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch10",
+      "filePath": "src/data/additional-scenarios-batch10.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalPharmacologyScenarios",
+        "additionalMCIScenarios",
+        "additionalVehicleOperationsScenarios",
+        "additionalLegalEthicalScenarios"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch11",
+      "filePath": "src/data/additional-scenarios-batch11.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalIntegratedScenariosSet1"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch12",
+      "filePath": "src/data/additional-scenarios-batch12.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 53,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalFinalScenarios"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch2",
+      "filePath": "src/data/additional-scenarios-batch2.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 27,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalCardiacScenarios",
+        "additionalRespiratoryScenarios2",
+        "additionalTraumaScenarios2",
+        "additionalAlertedMentalStatus",
+        "additionalAnaphylaxisScenarios",
+        "additionalDiabeticEmergencies",
+        "additionalPoisoningScenarios"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch3",
+      "filePath": "src/data/additional-scenarios-batch3.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalOperationsScenarios",
+        "additionalMedicationScenarios",
+        "additionalAirwayScenarios",
+        "additionalShockScenarios",
+        "additionalBehavioralScenarios"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch4",
+      "filePath": "src/data/additional-scenarios-batch4.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 22,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalTraumaScenarios3",
+        "additionalCardiacScenarios2",
+        "additionalPediatricScenarios2",
+        "additionalEnvironmentalScenarios2"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch5",
+      "filePath": "src/data/additional-scenarios-batch5.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 21,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalObstetricScenarios2",
+        "additionalGeriatricScenarios2",
+        "additionalToxicologyScenarios2",
+        "additionalRespiratoryScenarios3"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch6",
+      "filePath": "src/data/additional-scenarios-batch6.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 22,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalNeurologicalScenarios2",
+        "additionalMedicationScenarios2",
+        "additionalOperationsScenarios2",
+        "additionalSpecialPopulationScenarios"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch7",
+      "filePath": "src/data/additional-scenarios-batch7.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalCardiacScenarios3",
+        "additionalTraumaScenarios4",
+        "additionalMedicalEmergencyScenarios"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch8",
+      "filePath": "src/data/additional-scenarios-batch8.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalPediatricScenarios3",
+        "additionalEnvironmentalScenarios3",
+        "additionalBehavioralScenarios2",
+        "additionalAirwayScenarios2"
+      ]
+    },
+    {
+      "name": "additional-scenarios-batch9",
+      "filePath": "src/data/additional-scenarios-batch9.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalBleedingScenarios",
+        "additionalCommunicationScenarios",
+        "additionalAssessmentScenarios",
+        "additionalDocumentationScenarios"
+      ]
+    },
+    {
+      "name": "additional-scenarios",
+      "filePath": "src/data/additional-scenarios.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 31,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "additionalRespiratoryScenarios",
+        "additionalTraumaScenarios",
+        "additionalPediatricScenarios",
+        "additionalObstetricScenarios",
+        "additionalGeriatricScenarios",
+        "additionalNeurologicalScenarios",
+        "additionalEnvironmentalScenarios",
+        "additionalToxicologyScenarios"
+      ]
+    },
+    {
+      "name": "ai-medication-recommendations",
+      "filePath": "src/data/ai-medication-recommendations.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 37,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "PatientPresentation",
+        "MedicationRecommendation",
+        "ClinicalDecisionTree",
+        "AIRecommendationEngine",
+        "aiRecommendationEngine",
+        "testScenarios"
+      ]
+    },
+    {
+      "name": "assessment-tools-enhanced",
+      "filePath": "src/data/assessment-tools-enhanced.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 12,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "AssessmentTool",
+        "AssessmentStep",
+        "dcapBtlsAssessment",
+        "fastStrokeAssessment",
+        "beFastStrokeAssessment",
+        "cincinnatiStrokeScale",
+        "glasgowComaScale",
+        "enhancedAssessmentTools"
+      ]
+    },
+    {
+      "name": "certification-procedures",
+      "filePath": "src/data/certification-procedures.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 50,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Procedure",
+        "ProcedureStep",
+        "certificationProcedures",
+        "proceduresByLevel",
+        "proceduresByCategory"
+      ]
+    },
+    {
+      "name": "clinical-calculators",
+      "filePath": "src/data/clinical-calculators.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 21,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Calculator",
+        "CalculatorInput",
+        "CalculatorResult",
+        "glasgowComaCalculator",
+        "heartScoreCalculator",
+        "burnBSACalculator",
+        "apgarScoreCalculator",
+        "avpuScaleCalculator",
+        "pediatricDosageCalculator",
+        "clinicalCalculators"
+      ]
+    },
+    {
+      "name": "common-emergency-calls",
+      "filePath": "src/data/common-emergency-calls.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EmergencyCall",
+        "commonEmergencyCalls"
+      ]
+    },
+    {
+      "name": "curriculum",
+      "filePath": "src/data/curriculum.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "StudyModule",
+        "Chapter",
+        "studyModules",
+        "chapters",
+        "getChaptersByModule",
+        "getModuleById",
+        "getChapterById",
+        "getTotalChapters",
+        "getBonusModules",
+        "getCoreModules"
+      ]
+    },
+    {
+      "name": "drug-calculator",
+      "filePath": "src/data/drug-calculator.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "DrugDosage",
+        "emsFormulary",
+        "DrugCalculation",
+        "calculatePediatricDose"
+      ]
+    },
+    {
+      "name": "ecg-reference",
+      "filePath": "src/data/ecg-reference.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "ECGRhythm",
+        "ecgRhythms",
+        "TwelveLeadFinding",
+        "twelveLeadFindings"
+      ]
+    },
+    {
+      "name": "emergency-scenarios",
+      "filePath": "src/data/emergency-scenarios.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 17,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EmergencyScenario",
+        "emergencyScenarios"
+      ]
+    },
+    {
+      "name": "ems-protocols",
+      "filePath": "src/data/ems-protocols.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 35,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EMSProtocol",
+        "emsProtocols"
+      ]
+    },
+    {
+      "name": "all-generated-flashcards",
+      "filePath": "src/data/emtb/all-generated-flashcards.ts",
+      "type": "component",
+      "dependencies": [
+        "./chapter1-flashcards",
+        "./chapter2-flashcards"
+      ],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "GeneratedFlashcard",
+        "allGeneratedFlashcards",
+        "generatedFlashcardsByCategory",
+        "generatedFlashcardsByChapter",
+        "generatedFlashcardsStats"
+      ]
+    },
+    {
+      "name": "chapter1-flashcards",
+      "filePath": "src/data/emtb/chapter1-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter1Flashcards"
+      ]
+    },
+    {
+      "name": "chapter1-study-notes",
+      "filePath": "src/data/emtb/chapter1-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 14,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter1StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter10-flashcards",
+      "filePath": "src/data/emtb/chapter10-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter10Flashcards"
+      ]
+    },
+    {
+      "name": "chapter10-study-notes",
+      "filePath": "src/data/emtb/chapter10-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 12,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter10StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter11-flashcards",
+      "filePath": "src/data/emtb/chapter11-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter11Flashcards"
+      ]
+    },
+    {
+      "name": "chapter11-study-notes",
+      "filePath": "src/data/emtb/chapter11-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter11StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter12-flashcards",
+      "filePath": "src/data/emtb/chapter12-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter12Flashcards"
+      ]
+    },
+    {
+      "name": "chapter12-study-notes",
+      "filePath": "src/data/emtb/chapter12-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter12StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter13-flashcards",
+      "filePath": "src/data/emtb/chapter13-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter13Flashcards"
+      ]
+    },
+    {
+      "name": "chapter13-study-notes",
+      "filePath": "src/data/emtb/chapter13-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter13StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter14-flashcards",
+      "filePath": "src/data/emtb/chapter14-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter14Flashcards"
+      ]
+    },
+    {
+      "name": "chapter14-study-notes",
+      "filePath": "src/data/emtb/chapter14-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 17,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter14StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter15-flashcards",
+      "filePath": "src/data/emtb/chapter15-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter15Flashcards"
+      ]
+    },
+    {
+      "name": "chapter15-study-notes",
+      "filePath": "src/data/emtb/chapter15-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 17,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter15StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter16-flashcards",
+      "filePath": "src/data/emtb/chapter16-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter16Flashcards"
+      ]
+    },
+    {
+      "name": "chapter16-study-notes",
+      "filePath": "src/data/emtb/chapter16-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 20,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter16StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter17-flashcards",
+      "filePath": "src/data/emtb/chapter17-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter17Flashcards"
+      ]
+    },
+    {
+      "name": "chapter17-study-notes",
+      "filePath": "src/data/emtb/chapter17-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter17StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter18-flashcards",
+      "filePath": "src/data/emtb/chapter18-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter18Flashcards"
+      ]
+    },
+    {
+      "name": "chapter18-study-notes",
+      "filePath": "src/data/emtb/chapter18-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter18StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter19-flashcards",
+      "filePath": "src/data/emtb/chapter19-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter19Flashcards"
+      ]
+    },
+    {
+      "name": "chapter19-study-notes",
+      "filePath": "src/data/emtb/chapter19-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter19StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter2-flashcards",
+      "filePath": "src/data/emtb/chapter2-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter2Flashcards"
+      ]
+    },
+    {
+      "name": "chapter2-study-notes",
+      "filePath": "src/data/emtb/chapter2-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 14,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "StudySection",
+        "StudyChapter",
+        "chapter2StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter20-flashcards",
+      "filePath": "src/data/emtb/chapter20-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter20Flashcards"
+      ]
+    },
+    {
+      "name": "chapter20-study-notes",
+      "filePath": "src/data/emtb/chapter20-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter20StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter21-flashcards",
+      "filePath": "src/data/emtb/chapter21-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter21Flashcards"
+      ]
+    },
+    {
+      "name": "chapter21-study-notes",
+      "filePath": "src/data/emtb/chapter21-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter21StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter22-flashcards",
+      "filePath": "src/data/emtb/chapter22-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter22Flashcards"
+      ]
+    },
+    {
+      "name": "chapter22-study-notes",
+      "filePath": "src/data/emtb/chapter22-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 21,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter22StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter23-flashcards",
+      "filePath": "src/data/emtb/chapter23-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter23Flashcards"
+      ]
+    },
+    {
+      "name": "chapter23-study-notes",
+      "filePath": "src/data/emtb/chapter23-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 21,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter23StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter24-flashcards",
+      "filePath": "src/data/emtb/chapter24-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter24Flashcards"
+      ]
+    },
+    {
+      "name": "chapter24-study-notes",
+      "filePath": "src/data/emtb/chapter24-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 20,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter24StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter25-flashcards",
+      "filePath": "src/data/emtb/chapter25-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter25Flashcards"
+      ]
+    },
+    {
+      "name": "chapter25-study-notes",
+      "filePath": "src/data/emtb/chapter25-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter25StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter26-flashcards",
+      "filePath": "src/data/emtb/chapter26-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter26Flashcards"
+      ]
+    },
+    {
+      "name": "chapter26-study-notes",
+      "filePath": "src/data/emtb/chapter26-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter26StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter27-flashcards",
+      "filePath": "src/data/emtb/chapter27-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter27Flashcards"
+      ]
+    },
+    {
+      "name": "chapter27-study-notes",
+      "filePath": "src/data/emtb/chapter27-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter27StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter28-flashcards",
+      "filePath": "src/data/emtb/chapter28-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter28Flashcards"
+      ]
+    },
+    {
+      "name": "chapter28-study-notes",
+      "filePath": "src/data/emtb/chapter28-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter28StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter29-flashcards",
+      "filePath": "src/data/emtb/chapter29-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter29Flashcards"
+      ]
+    },
+    {
+      "name": "chapter29-study-notes",
+      "filePath": "src/data/emtb/chapter29-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter29StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter3-flashcards",
+      "filePath": "src/data/emtb/chapter3-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 11,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter3Flashcards"
+      ]
+    },
+    {
+      "name": "chapter3-study-notes",
+      "filePath": "src/data/emtb/chapter3-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 7,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter3StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter30-flashcards",
+      "filePath": "src/data/emtb/chapter30-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter30Flashcards"
+      ]
+    },
+    {
+      "name": "chapter30-study-notes",
+      "filePath": "src/data/emtb/chapter30-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter30StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter31-flashcards",
+      "filePath": "src/data/emtb/chapter31-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter31Flashcards"
+      ]
+    },
+    {
+      "name": "chapter31-study-notes",
+      "filePath": "src/data/emtb/chapter31-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter31StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter32-flashcards",
+      "filePath": "src/data/emtb/chapter32-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter32Flashcards"
+      ]
+    },
+    {
+      "name": "chapter32-study-notes",
+      "filePath": "src/data/emtb/chapter32-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter32StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter33-flashcards",
+      "filePath": "src/data/emtb/chapter33-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter33Flashcards"
+      ]
+    },
+    {
+      "name": "chapter33-study-notes",
+      "filePath": "src/data/emtb/chapter33-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter33StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter34-flashcards",
+      "filePath": "src/data/emtb/chapter34-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter34Flashcards"
+      ]
+    },
+    {
+      "name": "chapter34-study-notes",
+      "filePath": "src/data/emtb/chapter34-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter34StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter35-flashcards",
+      "filePath": "src/data/emtb/chapter35-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter35Flashcards"
+      ]
+    },
+    {
+      "name": "chapter35-study-notes",
+      "filePath": "src/data/emtb/chapter35-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter35StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter36-flashcards",
+      "filePath": "src/data/emtb/chapter36-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter36Flashcards"
+      ]
+    },
+    {
+      "name": "chapter36-study-notes",
+      "filePath": "src/data/emtb/chapter36-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 18,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter36StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter37-flashcards",
+      "filePath": "src/data/emtb/chapter37-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter37Flashcards"
+      ]
+    },
+    {
+      "name": "chapter37-study-notes",
+      "filePath": "src/data/emtb/chapter37-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter37StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter38-flashcards",
+      "filePath": "src/data/emtb/chapter38-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter38Flashcards"
+      ]
+    },
+    {
+      "name": "chapter38-study-notes",
+      "filePath": "src/data/emtb/chapter38-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 17,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter38StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter39-flashcards",
+      "filePath": "src/data/emtb/chapter39-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter39Flashcards"
+      ]
+    },
+    {
+      "name": "chapter39-study-notes",
+      "filePath": "src/data/emtb/chapter39-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 17,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter39StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter4-flashcards",
+      "filePath": "src/data/emtb/chapter4-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter4Flashcards"
+      ]
+    },
+    {
+      "name": "chapter4-study-notes",
+      "filePath": "src/data/emtb/chapter4-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter4StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter40-flashcards",
+      "filePath": "src/data/emtb/chapter40-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter40Flashcards"
+      ]
+    },
+    {
+      "name": "chapter40-study-notes",
+      "filePath": "src/data/emtb/chapter40-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 17,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter40StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter41-flashcards",
+      "filePath": "src/data/emtb/chapter41-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter41Flashcards"
+      ]
+    },
+    {
+      "name": "chapter41-study-notes",
+      "filePath": "src/data/emtb/chapter41-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 19,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter41StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter42-flashcards",
+      "filePath": "src/data/emtb/chapter42-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter42Flashcards"
+      ]
+    },
+    {
+      "name": "chapter42-study-notes",
+      "filePath": "src/data/emtb/chapter42-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 11,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter42StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter43-flashcards",
+      "filePath": "src/data/emtb/chapter43-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter43Flashcards"
+      ]
+    },
+    {
+      "name": "chapter43-study-notes",
+      "filePath": "src/data/emtb/chapter43-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 10,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter43StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter44-flashcards",
+      "filePath": "src/data/emtb/chapter44-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter44Flashcards"
+      ]
+    },
+    {
+      "name": "chapter44-study-notes",
+      "filePath": "src/data/emtb/chapter44-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 12,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter44StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter45-flashcards",
+      "filePath": "src/data/emtb/chapter45-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter45Flashcards"
+      ]
+    },
+    {
+      "name": "chapter45-study-notes",
+      "filePath": "src/data/emtb/chapter45-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 11,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter45StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter5-flashcards",
+      "filePath": "src/data/emtb/chapter5-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter5Flashcards"
+      ]
+    },
+    {
+      "name": "chapter5-study-notes",
+      "filePath": "src/data/emtb/chapter5-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter5StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter6-flashcards",
+      "filePath": "src/data/emtb/chapter6-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter6Flashcards"
+      ]
+    },
+    {
+      "name": "chapter6-study-notes",
+      "filePath": "src/data/emtb/chapter6-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter6StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter7-flashcards",
+      "filePath": "src/data/emtb/chapter7-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter7Flashcards"
+      ]
+    },
+    {
+      "name": "chapter7-study-notes",
+      "filePath": "src/data/emtb/chapter7-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 10,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter7StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter8-flashcards",
+      "filePath": "src/data/emtb/chapter8-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter8Flashcards"
+      ]
+    },
+    {
+      "name": "chapter8-study-notes",
+      "filePath": "src/data/emtb/chapter8-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 10,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter8StudyNotes"
+      ]
+    },
+    {
+      "name": "chapter9-flashcards",
+      "filePath": "src/data/emtb/chapter9-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "chapter9Flashcards"
+      ]
+    },
+    {
+      "name": "chapter9-study-notes",
+      "filePath": "src/data/emtb/chapter9-study-notes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 11,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter9StudyNotes"
+      ]
+    },
+    {
+      "name": "emt-scope-medications",
+      "filePath": "src/data/emtb/emt-scope-medications.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EMTMedication",
+        "EMT_SCOPE_MEDICATIONS"
+      ]
+    },
+    {
+      "name": "emtb-medications",
+      "filePath": "src/data/emtb/emtb-medications.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 1,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EMTBMedication",
+        "emtbMedicationsData"
+      ]
+    },
+    {
+      "name": "emtb-protocols",
+      "filePath": "src/data/emtb/emtb-protocols.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 1,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EMTBProtocol",
+        "emtbProtocolsData"
+      ]
+    },
+    {
+      "name": "chapter-1-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-1-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter1Flashcards",
+        "chapter1FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-10-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-10-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter10Flashcards",
+        "chapter10FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-11-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-11-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter11Flashcards",
+        "chapter11FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-12-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-12-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter12Flashcards",
+        "chapter12FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-13-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-13-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter13Flashcards",
+        "chapter13FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-14-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-14-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter14Flashcards",
+        "chapter14FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-15-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-15-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter15Flashcards",
+        "chapter15FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-16-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-16-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter16Flashcards",
+        "chapter16FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-17-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-17-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter17Flashcards",
+        "chapter17FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-18-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-18-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter18Flashcards",
+        "chapter18FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-19-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-19-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter19Flashcards",
+        "chapter19FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-2-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-2-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter2Flashcards",
+        "chapter2FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-20-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-20-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter20Flashcards",
+        "chapter20FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-21-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-21-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter21Flashcards",
+        "chapter21FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-22-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-22-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter22Flashcards",
+        "chapter22FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-23-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-23-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter23Flashcards",
+        "chapter23FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-24-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-24-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter24Flashcards",
+        "chapter24FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-25-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-25-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter25Flashcards",
+        "chapter25FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-26-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-26-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter26Flashcards",
+        "chapter26FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-27-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-27-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter27Flashcards",
+        "chapter27FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-28-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-28-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter28Flashcards",
+        "chapter28FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-29-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-29-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter29Flashcards",
+        "chapter29FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-3-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-3-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter3Flashcards",
+        "chapter3FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-30-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-30-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter30Flashcards",
+        "chapter30FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-31-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-31-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter31Flashcards",
+        "chapter31FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-32-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-32-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter32Flashcards",
+        "chapter32FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-33-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-33-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter33Flashcards",
+        "chapter33FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-34-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-34-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter34Flashcards",
+        "chapter34FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-35-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-35-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter35Flashcards",
+        "chapter35FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-36-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-36-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter36Flashcards",
+        "chapter36FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-37-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-37-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter37Flashcards",
+        "chapter37FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-38-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-38-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter38Flashcards",
+        "chapter38FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-39-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-39-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter39Flashcards",
+        "chapter39FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-4-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-4-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter4Flashcards",
+        "chapter4FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-40-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-40-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter40Flashcards",
+        "chapter40FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-41-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-41-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter41Flashcards",
+        "chapter41FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-42-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-42-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter42Flashcards",
+        "chapter42FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-43-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-43-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter43Flashcards",
+        "chapter43FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-44-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-44-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter44Flashcards",
+        "chapter44FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-45-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-45-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter45Flashcards",
+        "chapter45FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-5-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-5-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter5Flashcards",
+        "chapter5FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-6-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-6-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter6Flashcards",
+        "chapter6FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-7-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-7-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter7Flashcards",
+        "chapter7FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-8-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-8-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter8Flashcards",
+        "chapter8FlashcardMeta"
+      ]
+    },
+    {
+      "name": "chapter-9-flashcards",
+      "filePath": "src/data/emtb/flashcards/chapter-9-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 3,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "chapter9Flashcards",
+        "chapter9FlashcardMeta"
+      ]
+    },
+    {
+      "name": "Chapter1-EMS-Ecosystem-Essentials-flashcards",
+      "filePath": "src/data/emtb/generated-flashcards/Chapter1-EMS-Ecosystem-Essentials-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "GeneratedFlashcard",
+        "Chapter1EMSEcosystemEssentialsFlashcards",
+        "Chapter1EMSEcosystemEssentialsStats"
+      ]
+    },
+    {
+      "name": "Chapter12-Medication-Administration-Essentials-flashcards",
+      "filePath": "src/data/emtb/generated-flashcards/Chapter12-Medication-Administration-Essentials-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 9,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "GeneratedFlashcard",
+        "Chapter12MedicationAdministrationEssentialsFlashcards",
+        "Chapter12MedicationAdministrationEssentialsStats"
+      ]
+    },
+    {
+      "name": "skills-practice",
+      "filePath": "src/data/emtb/skills-practice.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 42,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "SkillFlowChoice",
+        "SkillFlowQuestion",
+        "SkillFlowModule",
+        "EMT_SKILL_FLOWS",
+        "SkillScenario",
+        "EMT_SKILL_SCENARIOS"
+      ]
+    },
+    {
+      "name": "emtb-flashcards",
+      "filePath": "src/data/emtb-flashcards.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 8,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "emtbChapterFlashcards",
+        "EMTBFlashcard",
+        "getFlashcardsByChapter"
+      ]
+    },
+    {
+      "name": "enhanced-ai-recommendations",
+      "filePath": "src/data/enhanced-ai-recommendations.ts",
+      "type": "component",
+      "dependencies": [
+        "./emtb-flashcards",
+        "./drug-calculator",
+        "./ems-protocols"
+      ],
+      "sizeKB": 26,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "enhancedAIEngine"
+      ]
+    },
+    {
+      "name": "enhanced-flashcard-system",
+      "filePath": "src/data/enhanced-flashcard-system.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 16,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EnhancedFlashcard",
+        "EnhancedFlashcardDeck",
+        "chapter1Flashcards",
+        "chapter1FlashcardDeck",
+        "ENHANCED_FLASHCARD_STATS",
+        "allEnhancedFlashcardDecks"
+      ]
+    },
+    {
+      "name": "enhanced-patient-assessment",
+      "filePath": "src/data/enhanced-patient-assessment.ts",
+      "type": "component",
+      "dependencies": [
+        "./national-protocols"
+      ],
+      "sizeKB": 82,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "AssessmentScenario",
+        "AssessmentFinding",
+        "SAMPLEHistory",
+        "OPQRSTAssessment",
+        "ScenarioComplication",
+        "InterventionResponse",
+        "AssessmentStepTemplate",
+        "AssessmentAction",
+        "enhancedAssessmentScenarios",
+        "assessmentStepTemplates",
+        "AssessmentPerformance",
+        "AdaptiveLearningProfile"
+      ]
+    },
+    {
+      "name": "enhanced-pcr-practice",
+      "filePath": "src/data/enhanced-pcr-practice.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 77,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "PCRScenario",
+        "CrewMember",
+        "PatientDemographics",
+        "InitialPresentation",
+        "ComprehensiveAssessment",
+        "VitalSignRecord",
+        "InterventionRecord",
+        "TransportInformation",
+        "PatientDisposition",
+        "DocumentationChallenge",
+        "AssessmentCriterion",
+        "DocumentationTemplate",
+        "DocumentationSection",
+        "enhancedPCRScenarios",
+        "documentationTemplates",
+        "ValidationRule",
+        "validationRules"
+      ]
+    },
+    {
+      "name": "enhanced-quiz-system",
+      "filePath": "src/data/enhanced-quiz-system.ts",
+      "type": "component",
+      "dependencies": [
+        "./practice-quizzes-new-balanced"
+      ],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EnhancedQuizQuestion",
+        "EnhancedQuizModule",
+        "EnhancedQuizChapter",
+        "enhancedQuizModules",
+        "ENHANCED_QUIZ_STATS",
+        "EnhancedChapterOption",
+        "ENHANCED_CHAPTER_OPTIONS"
+      ]
+    },
+    {
+      "name": "equipment-checklists",
+      "filePath": "src/data/equipment-checklists.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 12,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "EquipmentItem",
+        "ChecklistTemplate",
+        "blsEquipmentChecklist",
+        "alsEquipmentChecklist",
+        "weeklyMaintenanceChecklist"
+      ]
+    },
+    {
+      "name": "flashcards-optimized",
+      "filePath": "src/data/flashcards-optimized.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 11,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Flashcard",
+        "FlashcardCategory",
+        "emtbChapterFlashcards",
+        "getFlashcardsByChapter",
+        "getFlashcardsByModule",
+        "getFlashcardsByDifficulty",
+        "getRandomFlashcards",
+        "chapterTitles",
+        "moduleOrganization",
+        "flashcardCategories",
+        "flashcards"
+      ]
+    },
+    {
+      "name": "flashcards",
+      "filePath": "src/data/flashcards.ts",
+      "type": "component",
+      "dependencies": [
+        "./emtb/chapter1-flashcards",
+        "./emtb/chapter2-flashcards",
+        "./emtb/chapter3-flashcards",
+        "./emtb/chapter4-flashcards",
+        "./emtb/chapter5-flashcards"
+      ],
+      "sizeKB": 6,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "Flashcard",
+        "FlashcardDeck",
+        "allFlashcards",
+        "getTotalFlashcards"
+      ]
+    },
+    {
+      "name": "medication-simulations-emtb",
+      "filePath": "src/data/medication-simulations-emtb.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "medication-simulations",
+      "filePath": "src/data/medication-simulations.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 138,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "MedicationSimulation",
+        "SimulationStep",
+        "SimulationProgress",
+        "SimulationResult",
+        "medicationSimulations"
+      ]
+    },
+    {
+      "name": "medications",
+      "filePath": "src/data/medications.ts",
+      "type": "component",
+      "dependencies": [
+        "@shared/schema"
+      ],
+      "sizeKB": 12,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "medicationsData"
+      ]
+    },
+    {
+      "name": "national-protocols",
+      "filePath": "src/data/national-protocols.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 27,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "NationalProtocol",
+        "NATIONAL_PROTOCOL_FOUNDATION"
+      ]
+    },
+    {
+      "name": "ob-gyn-guide",
+      "filePath": "src/data/ob-gyn-guide.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "DeliveryStage",
+        "laborStages",
+        "ApgarScore",
+        "apgarScoring",
+        "NeonatalResuscitation",
+        "nrpSteps",
+        "OBEmergency",
+        "obEmergencies"
+      ]
+    },
+    {
+      "name": "patient-assessment-guide",
+      "filePath": "src/data/patient-assessment-guide.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 13,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "AssessmentPhase",
+        "Mnemonic",
+        "MnemonicItem",
+        "penmanMnemonic",
+        "avpuMnemonic",
+        "copsMnemonic",
+        "sampleMnemonic",
+        "opqrstMnemonic",
+        "bellsRpMnemonic",
+        "assessmentPhases",
+        "highPriorityConditions",
+        "goldenHourPhases",
+        "patientAssessmentGuide"
+      ]
+    },
+    {
+      "name": "patient-assessment",
+      "filePath": "src/data/patient-assessment.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 8,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "AssessmentStep",
+        "AssessmentItem",
+        "patientAssessmentSteps",
+        "highPriorityConditions",
+        "hazardTypes",
+        "goldenHourPhases"
+      ]
+    },
+    {
+      "name": "patient-medications",
+      "filePath": "src/data/patient-medications.ts",
+      "type": "component",
+      "dependencies": [
+        "@shared/schema"
+      ],
+      "sizeKB": 14,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "patientMedicationsData"
+      ]
+    },
+    {
+      "name": "pediatric-reference",
+      "filePath": "src/data/pediatric-reference.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "PediatricVitals",
+        "pediatricVitals",
+        "PediatricDosing",
+        "pediatricDosing",
+        "PediatricEmergency",
+        "pediatricEmergencies"
+      ]
+    },
+    {
+      "name": "pharmacology",
+      "filePath": "src/data/pharmacology.ts",
+      "type": "component",
+      "dependencies": [
+        "./medications"
+      ],
+      "sizeKB": 2,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "Medication",
+        "drugFormulary",
+        "getMedicationsByCategory",
+        "getMedicationsByCertificationLevel",
+        "searchMedications",
+        "getAllCategories",
+        "getEMTBasicMedications",
+        "getAEMTMedications",
+        "getParamedicMedications"
+      ]
+    },
+    {
+      "name": "practice-quizzes-additional",
+      "filePath": "src/data/practice-quizzes-additional.ts",
+      "type": "component",
+      "dependencies": [
+        "./practice-quizzes"
+      ],
+      "sizeKB": 25,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "module3Questions",
+        "module4Questions",
+        "module5Questions",
+        "additionalQuizModules"
+      ]
+    },
+    {
+      "name": "practice-quizzes-balanced-system",
+      "filePath": "src/data/practice-quizzes-balanced-system.ts",
+      "type": "component",
+      "dependencies": [
+        "./practice-quizzes-new-balanced"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "QuizQuestion",
+        "QuizModule",
+        "QuizChapter",
+        "balancedQuizConfig",
+        "generateChapterQuestions"
+      ]
+    },
+    {
+      "name": "practice-quizzes-balanced",
+      "filePath": "src/data/practice-quizzes-balanced.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 35,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "QuizQuestion",
+        "QuizModule",
+        "QuizChapter",
+        "chapter1Questions",
+        "chapter2Questions",
+        "chapter3Questions",
+        "quizModules"
+      ]
+    },
+    {
+      "name": "practice-quizzes-complete-structure",
+      "filePath": "src/data/practice-quizzes-complete-structure.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 25,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "QuizQuestion",
+        "QuizChapter",
+        "QuizModule",
+        "chapter4Questions",
+        "chapter5Questions",
+        "allChapters",
+        "balancedQuizSystem"
+      ]
+    },
+    {
+      "name": "practice-quizzes-complete",
+      "filePath": "src/data/practice-quizzes-complete.ts",
+      "type": "component",
+      "dependencies": [
+        "./practice-quizzes"
+      ],
+      "sizeKB": 13,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "module11Questions",
+        "module12Questions",
+        "module13Questions",
+        "module14Questions",
+        "completeQuizModules"
+      ]
+    },
+    {
+      "name": "practice-quizzes-final",
+      "filePath": "src/data/practice-quizzes-final.ts",
+      "type": "component",
+      "dependencies": [
+        "./practice-quizzes"
+      ],
+      "sizeKB": 10,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "module6Questions",
+        "module7Questions",
+        "module8Questions",
+        "module9Questions",
+        "module10Questions",
+        "finalQuizModules"
+      ]
+    },
+    {
+      "name": "practice-quizzes-new-balanced",
+      "filePath": "src/data/practice-quizzes-new-balanced.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 34,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "QuizQuestion",
+        "QuizModule",
+        "chapterQuestionBank",
+        "chapterTitles",
+        "balancedModuleDefinitions",
+        "chapter1Questions",
+        "chapter2Questions",
+        "chapter3Questions",
+        "chapter4Questions",
+        "balancedQuizConfig",
+        "quizModules"
+      ]
+    },
+    {
+      "name": "practice-quizzes",
+      "filePath": "src/data/practice-quizzes.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 40,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "QuizQuestion",
+        "QuizModule",
+        "module1Questions",
+        "module2Questions",
+        "quizModules"
+      ]
+    },
+    {
+      "name": "procedures-guide",
+      "filePath": "src/data/procedures-guide.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "Procedure",
+        "ProcedureStep",
+        "procedures"
+      ]
+    },
+    {
+      "name": "protocols",
+      "filePath": "src/data/protocols.ts",
+      "type": "component",
+      "dependencies": [
+        "@shared/schema"
+      ],
+      "sizeKB": 8,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "protocolsData"
+      ]
+    },
+    {
+      "name": "scenario-questions",
+      "filePath": "src/data/scenario-questions.ts",
+      "type": "component",
+      "dependencies": [
+        "./enhanced-quiz-system"
+      ],
+      "sizeKB": 36,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "ScenarioTemplate",
+        "medicalEmergencyScenarios",
+        "traumaEmergencyScenarios",
+        "pediatricEmergencyScenarios",
+        "geriatricEmergencyScenarios",
+        "specialSituationScenarios",
+        "allScenarioQuestions",
+        "SCENARIO_QUESTION_STATS"
+      ]
+    },
+    {
+      "name": "simulations",
+      "filePath": "src/data/simulations.ts",
+      "type": "component",
+      "dependencies": [
+        "@shared/schema"
+      ],
+      "sizeKB": 8,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "simulationsData"
+      ]
+    },
+    {
+      "name": "symptom-checklists",
+      "filePath": "src/data/symptom-checklists.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "SymptomChecklist",
+        "symptomChecklists",
+        "dcapBtlsAssessment"
+      ]
+    },
+    {
+      "name": "pcr-documentation",
+      "filePath": "src/data/tools/pcr-documentation.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 56,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "PCRTemplateKey",
+        "PCRDocumentationTemplates",
+        "PCRDocumentationScenario",
+        "PCR_DOCUMENTATION_TEMPLATES",
+        "PCR_DOCUMENTATION_SCENARIOS"
+      ]
+    },
+    {
+      "name": "training-scenarios",
+      "filePath": "src/data/training-scenarios.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 116,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "TrainingScenario",
+        "trainingScenarios"
+      ]
+    },
+    {
+      "name": "trauma-guide",
+      "filePath": "src/data/trauma-guide.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "TraumaProtocol",
+        "traumaProtocols",
+        "BurnAssessment",
+        "burnClassification",
+        "TourniquetApplication",
+        "tourniquetGuide"
+      ]
+    },
+    {
+      "name": "unfoldingCases",
+      "filePath": "src/data/unfoldingCases.ts",
+      "type": "component",
+      "dependencies": [
+        "../types/ClinicalReasoning"
+      ],
+      "sizeKB": 42,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "cardiacArrestROSC",
+        "multiSystemTrauma",
+        "pediatricRespiratory",
+        "diabeticEmergency",
+        "behavioralMedical",
+        "UNFOLDING_CASES"
+      ]
+    },
+    {
+      "name": "vital-signs-reference",
+      "filePath": "src/data/vital-signs-reference.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 13,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "VitalSignsRange",
+        "vitalSignsReference",
+        "CommonFieldCall",
+        "commonFieldCalls"
+      ]
+    },
+    {
+      "name": "vital-signs",
+      "filePath": "src/data/vital-signs.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 4,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "VitalSigns",
+        "vitalSignsByAge"
+      ]
+    },
+    {
+      "name": "CATEngine",
+      "filePath": "src/features/nremt-simulator/CATEngine.ts",
+      "type": "component",
+      "dependencies": [
+        "./questionTypes",
+        "./chapterMapping"
+      ],
+      "sizeKB": 11,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "CATEngine"
+      ]
+    },
+    {
+      "name": "NREMTSimulator",
+      "filePath": "src/features/nremt-simulator/NREMTSimulator.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "./CATEngine",
+        "./questionGenerator",
+        "./questionTypes",
+        "../../data/practice-quizzes"
+      ],
+      "sizeKB": 19,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "chapterMapping",
+      "filePath": "src/features/nremt-simulator/chapterMapping.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "NREMT_CONTENT_DISTRIBUTION",
+        "chapterToContentDomain",
+        "getDomainQuestionCount",
+        "getChaptersForDomain",
+        "calculateActualDistribution"
+      ]
+    },
+    {
+      "name": "BuildListQuestion",
+      "filePath": "src/features/nremt-simulator/components/BuildListQuestion.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 6,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "DragDropQuestion",
+      "filePath": "src/features/nremt-simulator/components/DragDropQuestion.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 9,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "EnhancedMultipleResponse",
+      "filePath": "src/features/nremt-simulator/components/EnhancedMultipleResponse.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 6,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "OptionsTableQuestion",
+      "filePath": "src/features/nremt-simulator/components/OptionsTableQuestion.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 9,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "questionConverter",
+      "filePath": "src/features/nremt-simulator/questionConverter.ts",
+      "type": "component",
+      "dependencies": [
+        "./questionTypes",
+        "./chapterMapping"
+      ],
+      "sizeKB": 15,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "QuestionConverter"
+      ]
+    },
+    {
+      "name": "questionGenerator",
+      "filePath": "src/features/nremt-simulator/questionGenerator.ts",
+      "type": "component",
+      "dependencies": [
+        "./questionTypes",
+        "./chapterMapping"
+      ],
+      "sizeKB": 18,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "NREMTQuestionGenerator"
+      ]
+    },
+    {
+      "name": "questionTypes",
+      "filePath": "src/features/nremt-simulator/questionTypes.ts",
+      "type": "type",
+      "dependencies": [],
+      "sizeKB": 5,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "QuestionType",
+        "BaseQuestion",
+        "MultipleChoiceQuestion",
+        "MultipleResponseQuestion",
+        "OptionsTableQuestion",
+        "BuildListQuestion",
+        "DragDropQuestion",
+        "NREMTQuestion",
+        "QuestionGenerationParams",
+        "QuestionResponse",
+        "QUESTION_TYPE_WEIGHTS",
+        "QUESTION_TYPE_DISTRIBUTION",
+        "getQuestionTypeCount",
+        "validateResponse",
+        "getQuestionDifficulty"
+      ]
+    },
+    {
+      "name": "EMTBFlashcards",
+      "filePath": "src/features/quiz/EMTBFlashcards.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../../components/MedicalDisclaimer",
+        "../../auth/AuthContext",
+        "../../api/axios"
+      ],
+      "sizeKB": 46,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "EnhancedPracticeQuizSystem",
+      "filePath": "src/features/quiz/EnhancedPracticeQuizSystem.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../components/ui/ModernGlassComponents",
+        "../data/scenario-questions"
+      ],
+      "sizeKB": 34,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "ComprehensiveEMTBStudyNotes",
+      "filePath": "src/features/study/ComprehensiveEMTBStudyNotes.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../../../components/MedicalDisclaimer",
+        "../../components/ui/GlassCard",
+        "../../components/ui/GlassContainer"
+      ],
+      "sizeKB": 29,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "EMTBNavigation",
+      "filePath": "src/features/study/EMTBNavigation.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "../../components/ProMedixLogo"
+      ],
+      "sizeKB": 6,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "EMTBStudyNotes",
+      "filePath": "src/features/study/EMTBStudyNotes.tsx",
+      "type": "component",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "LectureCompanion",
+      "filePath": "src/features/study/LectureCompanion.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "../../components/ui/GlassCard",
+        "../../components/ui/GlassContainer",
+        "../../hooks/useLectureRecorder"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "SkillsPracticeModule",
+      "filePath": "src/features/study/SkillsPracticeModule.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "../../components/ui/ModernGlassComponents"
+      ],
+      "sizeKB": 14,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "SmartTranscript",
+      "filePath": "src/features/study/components/SmartTranscript.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../../utils/textAnalysis",
+        "../../../data/curriculum",
+        "../../../data/pharmacology",
+        "../../../hooks/useDebounce"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "EMTScopeMedications",
+      "filePath": "src/features/tools/EMTScopeMedications.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../../data/emtb/emt-scope-medications",
+        "../../components/ui/ModernGlassComponents"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "useDebounce",
+      "filePath": "src/hooks/useDebounce.ts",
+      "type": "hook",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 0,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "useDebounce"
+      ]
+    },
+    {
+      "name": "useFTOCoach",
+      "filePath": "src/hooks/useFTOCoach.ts",
+      "type": "hook",
+      "dependencies": [
+        "react",
+        "../components/ui/FTOToast"
+      ],
+      "sizeKB": 1,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "useFTOCoach"
+      ]
+    },
+    {
+      "name": "useLectureRecorder",
+      "filePath": "src/hooks/useLectureRecorder.ts",
+      "type": "hook",
+      "dependencies": [
+        "react",
+        "react-speech-recognition"
+      ],
+      "sizeKB": 2,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "MediaDeviceInfo",
+        "useLectureRecorder"
+      ]
+    },
+    {
+      "name": "useOptimizedSearch",
+      "filePath": "src/hooks/useOptimizedSearch.ts",
+      "type": "hook",
+      "dependencies": [
+        "react"
+      ],
+      "sizeKB": 6,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "UseOptimizedSearchOptions",
+        "UseOptimizedSearchReturn",
+        "useOptimizedSearch"
+      ]
+    },
+    {
+      "name": "usePerformanceTracker",
+      "filePath": "src/hooks/usePerformanceTracker.ts",
+      "type": "hook",
+      "dependencies": [
+        "react",
+        "../services/performanceTracker",
+        "../services/flashcardTracker",
+        "../services/pcrTracker"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "usePerformanceTracker"
+      ]
+    },
+    {
+      "name": "useUserContext",
+      "filePath": "src/hooks/useUserContext.ts",
+      "type": "hook",
+      "dependencies": [
+        "react",
+        "./usePerformanceTracker"
+      ],
+      "sizeKB": 5,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "useUserContext"
+      ]
+    },
+    {
+      "name": "queryClient",
+      "filePath": "src/lib/queryClient.ts",
+      "type": "component",
+      "dependencies": [
+        "@tanstack/react-query"
+      ],
+      "sizeKB": 1,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "getQueryFn",
+        "queryClient"
+      ]
+    },
+    {
+      "name": "utils",
+      "filePath": "src/lib/utils.ts",
+      "type": "util",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "cn"
+      ]
+    },
+    {
+      "name": "LiveHostPage",
+      "filePath": "src/live/LiveHostPage.tsx",
+      "type": "page",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "LiveJoinPage",
+      "filePath": "src/live/LiveJoinPage.tsx",
+      "type": "page",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "main",
+      "filePath": "src/main.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-dom/client",
+        "@sentry/react",
+        "analytics",
+        "@analytics/google-analytics"
+      ],
+      "sizeKB": 1,
+      "lastModified": "2025-12-09",
+      "exports": []
+    },
+    {
+      "name": "react-speech-recognition.d",
+      "filePath": "src/react-speech-recognition.d.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "useSpeechRecognition"
+      ]
+    },
+    {
+      "name": "DashboardScreen",
+      "filePath": "src/screens/DashboardScreen.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "react-router-dom",
+        "../auth/AuthContext"
+      ],
+      "sizeKB": 4,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "ExamScreen",
+      "filePath": "src/screens/ExamScreen.tsx",
+      "type": "component",
+      "dependencies": [
+        "react",
+        "../api/exam"
+      ],
+      "sizeKB": 6,
+      "lastModified": "2025-12-08",
+      "exports": []
+    },
+    {
+      "name": "flashcardTracker",
+      "filePath": "src/services/flashcardTracker.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 6,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "FlashcardEvent",
+        "FlashcardAnalytics",
+        "FlashcardTracker",
+        "calculateNewInterval"
+      ]
+    },
+    {
+      "name": "pcrTracker",
+      "filePath": "src/services/pcrTracker.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 8,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "PcrEvent",
+        "PcrAnalytics",
+        "PcrTracker",
+        "calculatePcrScore"
+      ]
+    },
+    {
+      "name": "performanceTracker",
+      "filePath": "src/services/performanceTracker.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 13,
+      "lastModified": "2025-12-09",
+      "exports": [
+        "PerformanceEvent",
+        "TrackEventData",
+        "WeakArea",
+        "StudyStreak",
+        "PerformanceTracker"
+      ]
+    },
+    {
+      "name": "ClinicalReasoning",
+      "filePath": "src/types/ClinicalReasoning.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 7,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "DifficultyLevel",
+        "BodySystem",
+        "CaseStatus",
+        "UnfoldingCase",
+        "CaseStage",
+        "VisualCue",
+        "CaseOption",
+        "Hint",
+        "UserCaseResponse",
+        "CaseAttempt",
+        "ClinicalFeedback",
+        "LearningGap",
+        "PerformanceAnalytics",
+        "BodySystemPerformance",
+        "DifficultyProgression",
+        "LearningTrend",
+        "CaseRecommendation"
+      ]
+    },
+    {
+      "name": "react-speech-recognition.d",
+      "filePath": "src/types/react-speech-recognition.d.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "useSpeechRecognition"
+      ]
+    },
+    {
+      "name": "speech.d",
+      "filePath": "src/types/speech.d.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 2,
+      "lastModified": "2025-12-03",
+      "exports": []
+    },
+    {
+      "name": "optimized-search",
+      "filePath": "src/utils/optimized-search.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 15,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "SearchResult",
+        "SearchFilters",
+        "SearchSuggestion",
+        "optimizedSearchEngine"
+      ]
+    },
+    {
+      "name": "progressTracking",
+      "filePath": "src/utils/progressTracking.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 10,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "QuizProgress",
+        "FlashcardProgress",
+        "PCRProgress",
+        "ChapterProgress",
+        "StudySession",
+        "UserProgress",
+        "getProgress",
+        "saveProgress",
+        "saveQuizProgress",
+        "saveFlashcardProgress",
+        "savePCRProgress",
+        "saveChapterProgress",
+        "startStudySession",
+        "endStudySession",
+        "getQuizProgress",
+        "getChapterProgress",
+        "getFlashcardProgress",
+        "getPCRProgressByScenario",
+        "toggleFavoriteChapter",
+        "toggleBookmark",
+        "exportProgress",
+        "importProgress",
+        "clearAllProgress",
+        "getStatistics"
+      ]
+    },
+    {
+      "name": "quiz-generator",
+      "filePath": "src/utils/quiz-generator.ts",
+      "type": "component",
+      "dependencies": [
+        "../data/practice-quizzes-complete-structure"
+      ],
+      "sizeKB": 12,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "QuizGenerator",
+        "generateAllQuestions"
+      ]
+    },
+    {
+      "name": "referenceTools",
+      "filePath": "src/utils/referenceTools.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 0,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "getToolIcon",
+        "formatToolCategory"
+      ]
+    },
+    {
+      "name": "search",
+      "filePath": "src/utils/search.ts",
+      "type": "component",
+      "dependencies": [],
+      "sizeKB": 10,
+      "lastModified": "2025-12-03",
+      "exports": [
+        "SearchResult",
+        "SearchFilters",
+        "searchEngine"
+      ]
+    },
+    {
+      "name": "textAnalysis",
+      "filePath": "src/utils/textAnalysis.ts",
+      "type": "component",
+      "dependencies": [
+        "../data/curriculum",
+        "../data/pharmacology"
+      ],
+      "sizeKB": 2,
+      "lastModified": "2025-12-08",
+      "exports": [
+        "TranscriptSegment",
+        "KeywordEntry",
+        "buildDictionary",
+        "processTranscript"
+      ]
+    }
+  ]
+}
