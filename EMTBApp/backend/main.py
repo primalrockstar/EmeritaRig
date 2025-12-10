@@ -6,7 +6,10 @@ import jwt
 from sqlalchemy.orm import Session
 import stripe
 from fastapi.middleware.cors import CORSMiddleware
-# Rate limiting middleware will be added with slowapi
+from slowapi import Limiter
+from slowapi.errors import RateLimitExceeded, _rate_limit_exceeded_handler
+from slowapi.middleware import SlowAPIMiddleware
+from slowapi.util import get_remote_address
 from .stripe_ops import handle_checkout_session
 
 # Import from root backend
