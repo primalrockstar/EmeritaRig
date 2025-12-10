@@ -62,3 +62,14 @@ def login(request: LoginRequest, db: Session = Depends(get_db)):
             "isInstructorVerified": True
         }
     }
+
+@router.get("/me")
+def get_me(current_user: User = Depends(get_current_user)):
+    return {
+        "id": current_user.id,
+        "email": current_user.email,
+        "name": current_user.email.split('@')[0],
+        "role": "admin" if current_user.is_superuser else "student",
+        "emailVerified": True,
+        "isInstructorVerified": True
+    }

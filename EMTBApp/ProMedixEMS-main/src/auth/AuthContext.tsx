@@ -39,7 +39,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           if (savedUser?.token) {
             // Verify token with backend
             try {
-              const { data } = await api.get('/auth/me');
+              const { data } = await api.get('/api/auth/me');
               const role = (data.role as Role) || 'student';
               const serverUser: User = {
                 id: String(data.id ?? 'u_' + Date.now()),
@@ -67,10 +67,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const login = async (email: string, password: string, instructorCode?: string) => {
-    const formData = new FormData();
-    formData.append('username', email);
-    formData.append('password', password);
-    const { data } = await api.post('/auth/login', formData);
+    const { data } = await api.post('/api/auth/login', { email, password });
     const role = (data.user?.role as Role) || 'student';
     const serverUser: User = {
       id: String(data.user?.id ?? 'u_' + Date.now()),
@@ -87,7 +84,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const signup = async (email: string, password: string) => {
-    const { data } = await api.post('/auth/signup', { email, password });
+    const { data } = await api.post('/api/auth/register', { email, password });
     const role = (data.user?.role as Role) || 'student';
     const serverUser: User = {
       id: String(data.user?.id ?? 'u_' + Date.now()),
