@@ -30,40 +30,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const checkSession = async () => {
-      const raw = localStorage.getItem('emtb.auth');
-      if (raw) {
-        try {
-          const parsed = JSON.parse(raw);
-          const savedUser = parsed.user;
-          if (savedUser?.token) {
-            // Verify token with backend
-            try {
-              const { data } = await api.get('/api/auth/me');
-              const role = (data.role as Role) || 'student';
-              const serverUser: User = {
-                id: String(data.id ?? 'u_' + Date.now()),
-                name: data.name || savedUser.email.split('@')[0],
-                role,
-                email: data.email || savedUser.email,
-                token: savedUser.token,
-                emailVerified: !!data.emailVerified,
-                isInstructorVerified: !!data.isInstructorVerified,
-                hasSeenOnboarding: savedUser.hasSeenOnboarding ?? false,
-              };
-              setUser(serverUser);
-              // Update localStorage with fresh data
-              localStorage.setItem('emtb.auth', JSON.stringify({ user: serverUser }));
-            } catch (error) {
-              // Token invalid, remove from localStorage
-              localStorage.removeItem('emtb.auth');
-            }
-          }
-        } catch {}
-      }
-      setLoading(false);
+    // Bypass login for debugging - set fake admin user
+    const fakeUser: User = {
+      id: '1',
+      name: 'Admin',
+      role: 'admin',
+      email: 'admin@emeritaclinical.com',
+      token: 'fake',
+      emailVerified: true,
+      isInstructorVerified: true,
+      hasSeenOnboarding: true,
     };
-    checkSession();
+    setUser(fakeUser);
+    localStorage.setItem('emtb.auth', JSON.stringify({ user: fakeUser }));
+    setLoading(false);
   }, []);
 
   const login = async (email: string, password: string, instructorCode?: string) => {
