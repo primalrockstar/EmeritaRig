@@ -21,7 +21,7 @@ from services.engine import calculate_elo, get_next_question
 from routers.flashcards import router as flashcards_router
 from routers.scenarios import router as scenarios_router
 from routers.meds import router as meds_router
-from routers.auth import router as auth_router
+from auth_routes import router as auth_router
 
 def rate_limit_exceeded_handler(request: Request, exc: RateLimitExceeded):
     return JSONResponse(
