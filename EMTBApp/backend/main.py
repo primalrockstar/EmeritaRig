@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request, Depends, HTTPException, status
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordBearer
 from dotenv import load_dotenv
+from contextlib import asynccontextmanager
 import os
 import jwt
 from sqlalchemy.orm import Session
@@ -23,6 +24,13 @@ from routers.scenarios import router as scenarios_router
 from routers.meds import router as meds_router
 from auth_routes import router as auth_router
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup
+    create_admin_user()
+    yield
+    # Shutdown
+
 def rate_limit_exceeded_handler(request: Request, exc: RateLimitExceeded):
     return JSONResponse(
         status_code=429,
@@ -34,7 +42,7 @@ load_dotenv()
 stripe.api_key = os.getenv("STRIPE_API_KEY")
 
 limiter = Limiter(key_func=get_remote_address)
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, rate_limit_exceeded_handler)
 app.add_middleware(SlowAPIMiddleware)
@@ -54,7 +62,6 @@ app.include_router(scenarios_router, prefix="/api")
 app.include_router(meds_router, prefix="/api")
 app.include_router(auth_router, prefix="/api")
 
-@app.on_event("startup")
 def create_admin_user():
     db = SessionLocal()
     try:
