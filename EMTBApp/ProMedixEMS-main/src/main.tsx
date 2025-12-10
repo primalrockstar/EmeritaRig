@@ -1,13 +1,16 @@
 ﻿import React from 'react';
 import ReactDOM from 'react-dom/client';
+/*
 import * as Sentry from '@sentry/react';
 import Analytics from 'analytics';
 import googleAnalytics from '@analytics/google-analytics';
+*/
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthContext';
 import App from './App';
 import './index.css';
 
+/*
 const analytics = Analytics({
   app: 'EMT-B Web App',
   plugins: [
@@ -30,6 +33,7 @@ Sentry.init({
 
 // Track page views
 analytics.page();
+*/
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
