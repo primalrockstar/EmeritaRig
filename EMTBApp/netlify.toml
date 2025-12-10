@@ -7,6 +7,7 @@
   SECRETS_SCAN_ENABLED = "false"
   SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"
   NPM_FLAGS = "--legacy-peer-deps"
+  NODE_VERSION = "20.18.0"
   # Enable demo mode for this deployment
   VITE_DEMO_MODE = "true"
 
