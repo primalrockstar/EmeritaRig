@@ -7,7 +7,7 @@ const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation() as any;
   const [email, setEmail] = useState(location.state?.prefillEmail || 'admin@emeritaclinical.com');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('admin');
   const [error, setError] = useState<string | null>(null);
 
   const from = location.state?.redirectTo || location.state?.from || '/dashboard';
