@@ -1,7 +1,7 @@
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 
-from backend.models import Question, User
+from models import Question, User
 
 
 def calculate_elo(user_rating: float, question_rating: float, actual_score: int) -> tuple[float, float]:

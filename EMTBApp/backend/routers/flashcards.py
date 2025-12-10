@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
-from backend.database import SessionLocal
-from backend.models import Flashcard, User
+from database import SessionLocal
+from models import Flashcard, User
 from typing import List, Optional
 
 from fastapi.security import OAuth2PasswordBearer
-from backend.auth import SECRET_KEY, ALGORITHM
+from auth import SECRET_KEY, ALGORITHM
 import jwt
 from fastapi import HTTPException, status
 

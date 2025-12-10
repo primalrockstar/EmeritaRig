@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from backend.database import SessionLocal
-from backend.models import Medication
+from database import SessionLocal
+from models import Medication
 
 def generate_medications():
     medications = [

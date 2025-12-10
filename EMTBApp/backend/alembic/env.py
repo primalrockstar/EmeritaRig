@@ -21,7 +21,7 @@ if config.config_file_name is not None:
 # Force Python to see the parent directory (project root)
 sys.path.append(os.getcwd())
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from backend.models import Base
+from models import Base
 target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
