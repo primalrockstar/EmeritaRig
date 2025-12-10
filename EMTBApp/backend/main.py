@@ -67,7 +67,7 @@ app.add_middleware(
 app.include_router(flashcards_router, prefix="/api")
 app.include_router(scenarios_router, prefix="/api")
 app.include_router(meds_router, prefix="/api")
-app.include_router(auth_router, prefix="/api")
+app.include_router(auth_router, prefix="/api/auth")
 
 def create_admin_user():
     db = SessionLocal()
