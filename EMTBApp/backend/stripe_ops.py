@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from .models import User
+from models import User
 
 def handle_checkout_session(session, db: Session):
     user_id = session.client_reference_id
