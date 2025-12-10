@@ -6,7 +6,7 @@ const LoginPage: React.FC = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation() as any;
-  const [email, setEmail] = useState(location.state?.prefillEmail || 'emtb_admin@webconnect360.com');
+  const [email, setEmail] = useState(location.state?.prefillEmail || 'admin@emeritaclinical.com');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
 

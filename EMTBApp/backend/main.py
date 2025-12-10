@@ -16,7 +16,7 @@ from stripe_ops import handle_checkout_session
 # Import from root backend
 from database import SessionLocal
 from models import User, Question, ExamAttempt, Flashcard, Medication
-from auth import SECRET_KEY, ALGORITHM
+from auth import SECRET_KEY, ALGORITHM, get_password_hash
 from services.engine import calculate_elo, get_next_question
 from routers.flashcards import router as flashcards_router
 from routers.scenarios import router as scenarios_router
@@ -53,6 +53,30 @@ app.include_router(flashcards_router, prefix="/api")
 app.include_router(scenarios_router, prefix="/api")
 app.include_router(meds_router, prefix="/api")
 app.include_router(auth_router, prefix="/api")
+
+@app.on_event("startup")
+def create_admin_user():
+    db = SessionLocal()
+    try:
+        # Check if admin user exists
+        admin_email = "admin@emeritaclinical.com"
+        existing_admin = db.query(User).filter(User.email == admin_email).first()
+        if not existing_admin:
+            # Create admin user
+            hashed_password = get_password_hash("Admin123!")
+            admin_user = User(
+                email=admin_email,
+                hashed_password=hashed_password,
+                is_superuser=True,
+                has_lifetime_access=True
+            )
+            db.add(admin_user)
+            db.commit()
+            print(f"Created admin user: {admin_email}")
+        else:
+            print(f"Admin user already exists: {admin_email}")
+    finally:
+        db.close()
 
 # Free Tier Limits
 FREE_TIER_LIMITS = {
