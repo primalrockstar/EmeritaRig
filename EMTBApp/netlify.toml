@@ -1,6 +1,6 @@
 [build]
-  command = "cd ../ProMedixEMS-main && npm install --legacy-peer-deps && npm run build"
-  publish = "../ProMedixEMS-main/dist"
+  command = "cd ProMedixEMS-main && npm install --legacy-peer-deps && npm run build"
+  publish = "ProMedixEMS-main/dist"
 
 [build.environment]
   # Force disable the secret scanner

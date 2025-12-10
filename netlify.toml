@@ -1,7 +1,7 @@
 [build]
-  base = "EMTBApp/ProMedixEMS-main"
-  publish = "dist"
-  command = "npm run build"
+  base = "EMTBApp"
+  publish = "ProMedixEMS-main/dist"
+  command = "cd ProMedixEMS-main && npm install --legacy-peer-deps && npm run build"
 
 [[redirects]]
   from = "/*"
