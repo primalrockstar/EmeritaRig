@@ -61,9 +61,9 @@ def create_admin_user():
         # Check if admin user exists
         admin_email = "admin@emeritaclinical.com"
         existing_admin = db.query(User).filter(User.email == admin_email).first()
+        hashed_password = get_password_hash("Fdd1FU1cH58e3T0_z05xkA")
         if not existing_admin:
             # Create admin user
-            hashed_password = get_password_hash("Fdd1FU1cH58e3T0_z05xkA")
             admin_user = User(
                 email=admin_email,
                 hashed_password=hashed_password,
@@ -74,7 +74,12 @@ def create_admin_user():
             db.commit()
             print(f"Created admin user: {admin_email}")
         else:
-            print(f"Admin user already exists: {admin_email}")
+            # Update password
+            existing_admin.hashed_password = hashed_password
+            existing_admin.is_superuser = True
+            existing_admin.has_lifetime_access = True
+            db.commit()
+            print(f"Updated admin user: {admin_email}")
     finally:
         db.close()
 
