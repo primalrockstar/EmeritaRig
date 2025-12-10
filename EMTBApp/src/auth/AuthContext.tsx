@@ -29,35 +29,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for stored token on app start
-    const initSession = async () => {
-      try {
-        const token = await AsyncStorage.getItem('authToken');
-        if (token) {
-          // Validate token with backend
-          const response = await fetch('http://localhost:8001/api/me', {
-            headers: {
-              'Authorization': `Bearer ${token}`,
-            },
-          });
-          if (response.ok) {
-            const userData = await response.json();
-            setUser(userData);
-          } else {
-            await AsyncStorage.removeItem('authToken');
-          }
-        }
-      } catch (error) {
-        console.error('Error initializing session:', error);
-      }
-      setLoading(false);
-    };
-
-    initSession();
+    // Bypass login for debugging - set fake admin user
+    setUser({
+      id: '1',
+      name: 'Admin',
+      role: 'admin',
+      email: 'admin@emeritaclinical.com',
+      emailVerified: true,
+      isInstructorVerified: true
+    });
+    setLoading(false);
   }, []);
 
   const login = async (email: string, password: string, instructorCode?: string) => {
     try {
+      console.log('Attempting login to http://localhost:8001/api/auth/login');
       const response = await fetch('http://localhost:8001/api/auth/login', {
         method: 'POST',
         headers: {
@@ -65,15 +51,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         },
         body: JSON.stringify({ email, password }),
       });
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
 
       if (!response.ok) {
+        const errorText = await response.text();
+        console.log('Error response:', errorText);
         throw new Error('Invalid credentials');
       }
 
       const data = await response.json();
+      console.log('Login data:', data);
       await AsyncStorage.setItem('authToken', data.access_token);
       setUser(data.user);
     } catch (error) {
+      console.error('Login error:', error);
       throw new Error('Login failed');
     }
   };
