@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request, Depends, HTTPException, status
+from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordBearer
 from dotenv import load_dotenv
 import os
@@ -7,7 +8,7 @@ from sqlalchemy.orm import Session
 import stripe
 from fastapi.middleware.cors import CORSMiddleware
 from slowapi import Limiter
-from slowapi.errors import RateLimitExceeded, _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from slowapi.util import get_remote_address
 from .stripe_ops import handle_checkout_session
@@ -22,6 +23,12 @@ from .routers.scenarios import router as scenarios_router
 from .routers.meds import router as meds_router
 from .routers.auth import router as auth_router
 
+def rate_limit_exceeded_handler(request: Request, exc: RateLimitExceeded):
+    return JSONResponse(
+        status_code=429,
+        content={"detail": f"Rate limit exceeded: {exc.detail}"},
+    )
+
 load_dotenv()
 
 stripe.api_key = os.getenv("STRIPE_API_KEY")
@@ -29,7 +36,7 @@ stripe.api_key = os.getenv("STRIPE_API_KEY")
 limiter = Limiter(key_func=get_remote_address)
 app = FastAPI()
 app.state.limiter = limiter
-app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+app.add_exception_handler(RateLimitExceeded, rate_limit_exceeded_handler)
 app.add_middleware(SlowAPIMiddleware)
 
 origins = os.getenv("ALLOWED_ORIGINS", "").split(",")
