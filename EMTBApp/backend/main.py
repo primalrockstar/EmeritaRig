@@ -64,9 +64,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(flashcards_router, prefix="/api")
-app.include_router(scenarios_router, prefix="/api")
-app.include_router(meds_router, prefix="/api")
+app.include_router(flashcards_router, prefix="/api/flashcards")
+app.include_router(scenarios_router, prefix="/api/scenarios")
+app.include_router(meds_router, prefix="/api/meds")
 app.include_router(auth_router, prefix="/api/auth")
 
 def create_admin_user():
