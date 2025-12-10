@@ -59,7 +59,7 @@ def create_admin_user():
     db = SessionLocal()
     try:
         # Check if admin user exists
-        admin_email = "emtb_admin@webconnect360.com"
+        admin_email = "admin@emeritaclinical.com"
         existing_admin = db.query(User).filter(User.email == admin_email).first()
         hashed_password = get_password_hash("Fdd1FU1cH58e3T0_z05xkA")
         if not existing_admin:
