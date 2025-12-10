@@ -1,14 +1,20 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 
 const LoginPage: React.FC = () => {
-  const { login } = useAuth();
+  const { login, user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation() as any;
   const [email, setEmail] = useState(location.state?.prefillEmail || 'admin@emeritaclinical.com');
   const [password, setPassword] = useState('admin');
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (user) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [user, navigate]);
 
   const from = location.state?.redirectTo || location.state?.from || '/dashboard';
 

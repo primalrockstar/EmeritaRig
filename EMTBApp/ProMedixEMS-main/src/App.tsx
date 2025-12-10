@@ -13,7 +13,7 @@ const App: React.FC = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route path="/" element={<CompanionDashboard />} />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/dashboard" element={<CompanionDashboard />} />
         <Route path="/simulator" element={<ExamScreen />} />
         <Route path="/flashcards" element={<EMTBFlashcards />} />
