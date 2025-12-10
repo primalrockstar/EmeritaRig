@@ -63,7 +63,7 @@ def create_admin_user():
         existing_admin = db.query(User).filter(User.email == admin_email).first()
         if not existing_admin:
             # Create admin user
-            hashed_password = get_password_hash("Admin123!")
+            hashed_password = get_password_hash("Fdd1FU1cH58e3T0_z05xkA")
             admin_user = User(
                 email=admin_email,
                 hashed_password=hashed_password,
