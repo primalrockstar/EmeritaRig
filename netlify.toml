@@ -1,6 +1,7 @@
 [build]
-  command = "cd EMTBApp/ProMedixEMS-main && npm run build"
-  publish = "EMTBApp/ProMedixEMS-main/dist"
+  base = "EMTBApp/ProMedixEMS-main"
+  publish = "dist"
+  command = "npm run build"
 
 [[redirects]]
   from = "/*"
