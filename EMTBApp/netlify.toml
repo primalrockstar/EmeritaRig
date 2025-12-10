@@ -1,5 +1,5 @@
 [build]
-  command = "cd ProMedixEMS-main && npm install --legacy-peer-deps && npx expo export --platform web"
+  command = "cd ProMedixEMS-main && npm install --legacy-peer-deps && npm run build"
   publish = "ProMedixEMS-main/dist"
 
 [build.environment]
