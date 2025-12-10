@@ -64,10 +64,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(flashcards_router, prefix="/api/flashcards")
-app.include_router(scenarios_router, prefix="/api/scenarios")
-app.include_router(meds_router, prefix="/api/meds")
-app.include_router(auth_router, prefix="/api/auth")
+# Mount routers with the correct /api prefix
+app.include_router(auth_router, prefix="/api/auth", tags=["Auth"])
+app.include_router(flashcards_router, prefix="/api/flashcards", tags=["Flashcards"])
+app.include_router(scenarios_router, prefix="/api/scenarios", tags=["Scenarios"])
+app.include_router(meds_router, prefix="/api/meds", tags=["Meds"])
 
 def create_admin_user():
     db = SessionLocal()
