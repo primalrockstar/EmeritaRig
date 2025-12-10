@@ -1,1 +1,1 @@
-export const API_URL = 'https://emeritarig-production.up.railway.app';
+export const API_URL = 'https://emerita-rig-production.up.railway.app';
