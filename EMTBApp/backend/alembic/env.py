@@ -1,5 +1,6 @@
 from logging.config import fileConfig
 import os
+import sys
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
@@ -17,8 +18,8 @@ if config.config_file_name is not None:
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-import sys
-sys.path.append('../..')
+# Add the parent directory to sys.path so we can import 'backend'
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from backend.models import Base
 target_metadata = Base.metadata
 
