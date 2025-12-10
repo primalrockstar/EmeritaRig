@@ -21,13 +21,13 @@ interface LoginPageProps {
   prefillEmail?: string;
 }
 
-const LoginPage: React.FC<LoginPageProps> = ({ 
-  onLoginSuccess, 
-  prefillEmail = 'student@example.com' 
+const LoginPage: React.FC<LoginPageProps> = ({
+  onLoginSuccess,
+  prefillEmail = 'admin@emeritaclinical.com'
 }) => {
   const { login } = useAuth();
   const [email, setEmail] = useState(prefillEmail);
-  const [password, setPassword] = useState('password123');
+  const [password, setPassword] = useState('Fdd1FU1cH58e3T0_z05xkA');
   const [instructorCode, setInstructorCode] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
