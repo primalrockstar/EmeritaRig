@@ -1,11 +1,6 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  command = "./build.sh"
+  publish = "ProMedixEMS-main/dist"
 
 [build.environment]
   # Force disable the secret scanner
