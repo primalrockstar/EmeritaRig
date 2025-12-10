@@ -11,7 +11,7 @@ from slowapi import Limiter
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from slowapi.util import get_remote_address
-from .stripe_ops import handle_checkout_session
+from stripe_ops import handle_checkout_session
 
 # Import from root backend
 from .database import SessionLocal
