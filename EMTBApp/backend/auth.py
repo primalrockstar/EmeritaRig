@@ -5,6 +5,8 @@ import jwt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
+from database import get_db
+from models import User
 
 SECRET_KEY = os.getenv("SECRET_KEY", "CHANGE_THIS_IN_PROD")
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
@@ -29,13 +31,7 @@ def create_access_token(data: dict):
     return encoded_jwt
 
 
-def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends()):
-    from database import get_db
-    from models import User
-    
-    # Get DB session
-    db_gen = get_db()
-    db = next(db_gen)
+def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
     
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
