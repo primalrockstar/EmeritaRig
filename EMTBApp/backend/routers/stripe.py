@@ -3,9 +3,9 @@ from sqlalchemy.orm import Session
 import stripe
 import os
 from datetime import datetime, timedelta
-from ..database import get_db
-from ..models import User
-from ..auth import get_current_user
+from database import get_db
+from models import User
+from auth import get_current_user
 
 router = APIRouter()
 
