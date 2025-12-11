@@ -1,7 +1,7 @@
 [build]
   base = "EMTBApp"
-  publish = "ProMedixEMS-main/dist"
-  command = "cd ProMedixEMS-main && npm install --legacy-peer-deps && npm run build"
+  publish = "dist"
+  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "20.18.0"

@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@expo/metro-config": "^0.17.0",
+    "@expo/webpack-config": "^19.0.0",
     "@react-native/metro-config": "^0.82.1",
     "@types/react": "^18.0.24",
     "jest": "^29.2.1",
