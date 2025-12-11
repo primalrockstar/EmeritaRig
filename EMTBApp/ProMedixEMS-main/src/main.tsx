@@ -5,7 +5,9 @@ import * as Sentry from '@sentry/react';
 import Analytics from 'analytics';
 import googleAnalytics from '@analytics/google-analytics';
 */
-import ProtectedApp from './ProtectedApp';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { AuthProvider } from './auth/AuthContext';
+import App from './App';
 import './index.css';
 
 /*
@@ -35,6 +37,10 @@ analytics.page();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ProtectedApp />
+    <AuthProvider>
+      <Router>
+        <App />
+      </Router>
+    </AuthProvider>
   </React.StrictMode>
 );

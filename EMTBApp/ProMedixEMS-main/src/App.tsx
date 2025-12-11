@@ -1,27 +1,40 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useAuth } from './auth/AuthContext';
 
 const LoginPage = lazy(() => import('./auth/LoginPage'));
-const ExamScreen = lazy(() => import('./screens/ExamScreen'));
-const CompanionDashboard = lazy(() => import('./app/components/dashboard/CompanionDashboard'));
-const InstrumentationValidator = lazy(() => import('./components/debug/InstrumentationValidator'));
-const InstrumentationTests = lazy(() => import('./components/debug/InstrumentationTests'));
-const EMTBFlashcards = lazy(() => import('./components/emtb/EMTBFlashcards'));
-const EMTBPcrTrainer = lazy(() => import('./components/emtb/EMTBPcrTrainer'));
+const DashboardScreen = lazy(() => import('./screens/DashboardScreen'));
+
+const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { user, loading } = useAuth();
+  
+  if (loading) {
+    return <div className="flex items-center justify-center min-h-screen">Loading...</div>;
+  }
+  
+  return user ? <>{children}</> : <Navigate to="/" replace />;
+};
 
 const App: React.FC = () => {
+  const { user, loading } = useAuth();
+  
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/dashboard" element={<CompanionDashboard />} />
-        <Route path="/simulator" element={<ExamScreen />} />
-        <Route path="/flashcards" element={<EMTBFlashcards />} />
-        <Route path="/pcr-trainer" element={<EMTBPcrTrainer />} />
-        <>
-          <Route path="/validate" element={<InstrumentationValidator />} />
-          <Route path="/tests" element={<InstrumentationTests />} />
-        </>
+        <Route path="/" element={
+          loading ? (
+            <div className="flex items-center justify-center min-h-screen">Loading...</div>
+          ) : user ? (
+            <Navigate to="/dashboard" replace />
+          ) : (
+            <LoginPage />
+          )
+        } />
+        <Route path="/dashboard" element={
+          <PrivateRoute>
+            <DashboardScreen />
+          </PrivateRoute>
+        } />
       </Routes>
     </Suspense>
   );
