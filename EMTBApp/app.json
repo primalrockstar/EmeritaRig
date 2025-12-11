@@ -26,7 +26,10 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./public/images/EMTBFavicon.jpg"
-    }
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

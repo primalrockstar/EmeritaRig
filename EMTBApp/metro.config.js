@@ -1,8 +1,7 @@
-const { getDefaultConfig } = require('@expo/metro-config');
+const { getDefaultConfig } = require('expo/metro-config');
 
 /**
- * Metro configuration aligned with Expo tooling.
- * https://docs.expo.dev/guides/customizing-metro/
+ * Metro configuration for Expo + React Native Web.
  */
 const config = getDefaultConfig(__dirname);
 

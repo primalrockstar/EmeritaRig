@@ -55,6 +55,7 @@ Thumbs.db
 *.key
 *.mobileprovision
 *.orig.*
+.expo/
 web-build/
 
 # Android
