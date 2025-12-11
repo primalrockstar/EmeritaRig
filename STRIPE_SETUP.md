@@ -9,17 +9,17 @@ Go to: https://dashboard.stripe.com/products
 - **Description:** Full access to all EMT training materials
 - **Pricing:**
   - Type: `Recurring`
-  - Price: `$19.99 USD`
+  - Price: `$24.99 USD`
   - Billing period: `Monthly`
   - Currency: `USD`
 - **Copy the Price ID:** `price_xxxxxxxxxxxxx`
 
 ### Product 2: Semester Pass (One-Time)
 - **Name:** Emerita Clinical Semester Pass  
-- **Description:** 6 months of full access (one-time payment)
+- **Description:** 6 months of full access - Save $70!
 - **Pricing:**
   - Type: `One time`
-  - Price: `$59.99 USD`
+  - Price: `$79.99 USD`
   - Currency: `USD`
 - **Copy the Price ID:** `price_xxxxxxxxxxxxx`
 

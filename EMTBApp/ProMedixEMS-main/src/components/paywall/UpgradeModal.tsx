@@ -69,7 +69,7 @@ const UpgradeModal: React.FC<UpgradeModalProps> = ({ onClose }) => {
             </div>
             
             <div className="mb-6">
-              <span className="text-4xl font-bold text-gray-900 dark:text-white">$19.99</span>
+              <span className="text-4xl font-bold text-gray-900 dark:text-white">$24.99</span>
               <span className="text-gray-600 dark:text-gray-400">/month</span>
             </div>
 
@@ -118,11 +118,11 @@ const UpgradeModal: React.FC<UpgradeModalProps> = ({ onClose }) => {
             </div>
             
             <div className="mb-2">
-              <span className="text-4xl font-bold text-gray-900 dark:text-white">$59.99</span>
+              <span className="text-4xl font-bold text-gray-900 dark:text-white">$79.99</span>
               <span className="text-gray-600 dark:text-gray-400"> one-time</span>
             </div>
             <p className="text-sm text-green-600 dark:text-green-400 mb-6 font-semibold">
-              Save $60 • Just $10/month for 6 months
+              Save $70 • Just $13.33/month for 6 months
             </p>
 
             <ul className="space-y-3 mb-6">
