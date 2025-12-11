@@ -22,6 +22,7 @@ from services.engine import calculate_elo, get_next_question
 from routers.flashcards import router as flashcards_router
 from routers.scenarios import router as scenarios_router
 from routers.meds import router as meds_router
+from routers.stripe import router as stripe_router
 from auth_routes import router as auth_router
 
 @asynccontextmanager
@@ -68,6 +69,7 @@ app.include_router(auth_router, prefix="/api/auth", tags=["Auth"])
 app.include_router(flashcards_router, prefix="/api/flashcards", tags=["Flashcards"])
 app.include_router(scenarios_router, prefix="/api/scenarios", tags=["Scenarios"])
 app.include_router(meds_router, prefix="/api/meds", tags=["Meds"])
+app.include_router(stripe_router, prefix="/api/stripe", tags=["Stripe"])
 
 def create_admin_user():
     db = SessionLocal()
@@ -134,6 +136,10 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
 @app.get("/")
 def read_root():
     return {"Status": "EMT-B Backend is Live"}
+
+@app.get("/api/auth/health")
+def health_check():
+    return {"status": "ok", "service": "Emerita Clinical API"}
 
 @app.post("/webhook")
 async def stripe_webhook(request: Request):
