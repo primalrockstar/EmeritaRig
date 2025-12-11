@@ -1,4 +1,4 @@
-﻿import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import api from '../api/axios';
 
 export type Role = 'student' | 'instructor' | 'admin';
@@ -30,19 +30,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Bypass login for debugging - set fake admin user
-    const fakeUser: User = {
-      id: '1',
-      name: 'Admin',
-      role: 'admin',
-      email: 'admin@emeritaclinical.com',
-      token: 'fake',
-      emailVerified: true,
-      isInstructorVerified: true,
-      hasSeenOnboarding: true,
-    };
-    setUser(fakeUser);
-    localStorage.setItem('emtb.auth', JSON.stringify({ user: fakeUser }));
+    // Check for existing auth in localStorage
+    try {
+      const stored = localStorage.getItem('emtb.auth');
+      if (stored) {
+        const { user: storedUser } = JSON.parse(stored);
+        if (storedUser) {
+          setUser(storedUser);
+        }
+      }
+    } catch (error) {
+      console.error('Failed to load stored auth:', error);
+    }
     setLoading(false);
   }, []);
 
