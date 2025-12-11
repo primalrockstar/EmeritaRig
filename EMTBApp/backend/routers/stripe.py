@@ -24,7 +24,12 @@ async def create_checkout_session(
 ):
     """Create a Stripe checkout session for Premium or Semester Pass"""
     
+    import logging
+    logger = logging.getLogger(__name__)
+    
     try:
+        logger.info(f"Creating checkout session for user {current_user.email}, price_type: {price_type}")
+        
         # Determine which price to use
         if price_type == "premium":
             price_id = PREMIUM_PRICE_ID
@@ -33,7 +38,10 @@ async def create_checkout_session(
             price_id = SEMESTER_PRICE_ID
             mode = "payment"
         else:
+            logger.error(f"Invalid price type: {price_type}")
             raise HTTPException(status_code=400, detail="Invalid price type")
+        
+        logger.info(f"Using price_id: {price_id}, mode: {mode}")
         
         # Create or retrieve Stripe customer
         if not current_user.stripe_customer_id:
