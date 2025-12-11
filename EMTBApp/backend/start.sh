@@ -7,6 +7,9 @@ echo "Starting Emerita Clinical backend..."
 # Set default port if not provided
 PORT=${PORT:-8000}
 
+echo "Running database migrations..."
+python migrate_db.py
+
 echo "Running on port $PORT"
 
 # Start uvicorn - we're already in the backend directory
