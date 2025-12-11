@@ -1,13 +1,11 @@
-﻿import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 /*
 import * as Sentry from '@sentry/react';
 import Analytics from 'analytics';
 import googleAnalytics from '@analytics/google-analytics';
 */
-import { BrowserRouter as Router } from 'react-router-dom';
-import { AuthProvider } from './auth/AuthContext';
-import App from './App';
+import ProtectedApp from './ProtectedApp';
 import './index.css';
 
 /*
@@ -37,10 +35,6 @@ analytics.page();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <AuthProvider>
-      <Router>
-        <App />
-      </Router>
-    </AuthProvider>
+    <ProtectedApp />
   </React.StrictMode>
 );
