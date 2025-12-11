@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
+import UpgradeModal from '../components/paywall/UpgradeModal';
 
 const DashboardScreen: React.FC = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
 
   const getRank = (rating: number) => {
     if (rating < 800) return "Probie";
@@ -21,9 +23,25 @@ const DashboardScreen: React.FC = () => {
     <div className="min-h-screen bg-slate-950 text-white p-6">
       {/* Header */}
       <header className="mb-8">
-        <h1 className="text-3xl font-bold text-center mb-2">
-          Command Center
-        </h1>
+        <div className="flex justify-between items-center mb-4">
+          <h1 className="text-3xl font-bold">
+            Command Center
+          </h1>
+          <div className="flex gap-4">
+            <button
+              onClick={() => setShowUpgradeModal(true)}
+              className="px-6 py-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all"
+            >
+              💎 Upgrade to Premium
+            </button>
+            <button
+              onClick={logout}
+              className="px-4 py-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
         <p className="text-gray-400 text-center">
           Welcome back, {user?.name || 'Medic'}
         </p>
@@ -89,6 +107,11 @@ const DashboardScreen: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Upgrade Modal */}
+      {showUpgradeModal && (
+        <UpgradeModal onClose={() => setShowUpgradeModal(false)} />
+      )}
     </div>
   );
 };
