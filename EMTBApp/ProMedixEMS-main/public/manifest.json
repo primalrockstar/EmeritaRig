@@ -1,16 +1,17 @@
 {
-  "name": "EMS Training Platform",
-  "short_name": "EMS Training",
-  "description": "Professional Emergency Medical Services training platform",
+  "name": "Emerita Clinical: The Rig",
+  "short_name": "The Rig",
+  "description": "Professional Emergency Medical Technician training platform - FOR EDUCATIONAL PURPOSES ONLY",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#dc2626",
   "icons": [
     {
-      "src": "/EMTBFavicon.jpg",
+      "src": "/logo.png",
       "sizes": "192x192 512x512",
-      "type": "image/jpeg"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

@@ -91,8 +91,8 @@ const UltraModernHeader = () => {
             
             <Link to="/" className="flex-1 flex justify-center">
               <img 
-                src="/assets/LOGOFINALTRANS.png" 
-                alt="ProMedix EMS" 
+                src="/assets/logo.png" 
+                alt="Emerita Clinical: The Rig" 
                 className="h-40 sm:h-48 w-auto drop-shadow-[0_8px_16px_rgba(59,130,246,0.3)]"
               />
             </Link>
@@ -139,8 +139,8 @@ const UltraModernHeader = () => {
         <div className="border-b border-blue-200 bg-gradient-to-r from-white via-blue-50 to-blue-100 dark:border-sky-500/20 dark:from-[#031021]/60 dark:via-[#062342]/60 dark:to-[#0A3E6A]/60">
           <div className="flex justify-center py-6">
             <img 
-              src="/assets/LOGOFINALTRANS.png" 
-              alt="ProMedix EMS" 
+              src="/assets/logo.png" 
+              alt="Emerita Clinical: The Rig" 
               className="h-56 w-auto drop-shadow-[0_20px_40px_rgba(59,130,246,0.35)]"
             />
           </div>
