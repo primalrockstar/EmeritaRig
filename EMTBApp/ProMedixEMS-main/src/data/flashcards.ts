@@ -1,4 +1,4 @@
-﻿import { chapter1Flashcards } from './emtb/chapter1-flashcards';
+import { chapter1Flashcards } from './emtb/chapter1-flashcards';
 import { chapter2Flashcards } from './emtb/chapter2-flashcards';
 import { chapter3Flashcards } from './emtb/chapter3-flashcards';
 import { chapter4Flashcards } from './emtb/chapter4-flashcards';
@@ -162,6 +162,9 @@ export const allFlashcards = [
   ...chapter44Flashcards,
   ...chapter45Flashcards
 ];
+
+// Export for compatibility
+export const flashcards = allFlashcards;
 
 // Helper function to get total flashcards
 export const getTotalFlashcards = (): number => allFlashcards.length;
