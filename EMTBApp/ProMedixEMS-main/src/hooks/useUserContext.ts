@@ -37,7 +37,7 @@ interface UserContext {
 export const useUserContext = (): UserContext => {
   const [loading, setLoading] = useState(true);
   const [context, setContext] = useState<UserContext | null>(null);
-  const { getWeakAreas, getAllEvents, getStudyStreak, getLearningInsights } = usePerformanceTracker();
+  const { weakAreas: performanceWeakAreas, studyStreak: performanceStreak, performanceEvents } = usePerformanceTracker();
 
   // Get time of day
   const getTimeOfDay = (): 'morning' | 'afternoon' | 'evening' | 'late' => {
@@ -53,14 +53,13 @@ export const useUserContext = (): UserContext => {
     const loadUserData = () => {
       try {
         // Get real weak areas from performance tracking
-        const realWeakAreas = getWeakAreas().map(area => area.topic);
+        const realWeakAreas = performanceWeakAreas.map(area => area.topic);
         // If no weak areas yet, use some initial mock data to get started
         const weakAreas = realWeakAreas.length > 0 ? realWeakAreas.slice(0, 3) :
           ["Airway Management", "CPR", "Pediatric Assessment"];
 
         // Get recent activity from performance events
-        const allEvents = getAllEvents();
-        const recentEvents = allEvents
+        const recentEvents = performanceEvents
           .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
           .slice(0, 5);
 
@@ -72,31 +71,34 @@ export const useUserContext = (): UserContext => {
         }));
 
         // Get study streak
-        const streak = getStudyStreak();
+        const streak = performanceStreak;
 
-        // Get learning insights for goals
-        const insights = getLearningInsights();
+        // Calculate basic insights from performance events
+        const totalStudyTime = performanceEvents.reduce((acc, event) => acc + (event.timeSpent || 0), 0);
+        const averageScore = performanceEvents.length > 0
+          ? performanceEvents.reduce((acc, event) => acc + (event.score || 0), 0) / performanceEvents.length
+          : 0;
 
         // Calculate goals based on real data
         const goals = [
           {
             id: 'study-hours',
             title: 'Study Hours This Week',
-            current: Math.round(insights.totalStudyTime / 60 * 10) / 10, // Convert minutes to hours
+            current: Math.round(totalStudyTime / 60 * 10) / 10, // Convert minutes to hours
             target: 20,
             unit: 'hours'
           },
           {
             id: 'quiz-average',
             title: 'Quiz Average Score',
-            current: insights.averageScore,
+            current: Math.round(averageScore),
             target: 90,
             unit: '%'
           },
           {
             id: 'scenarios-completed',
             title: 'Scenarios This Month',
-            current: allEvents.filter(e =>
+            current: performanceEvents.filter(e =>
               e.activityType === 'scenario' &&
               e.timestamp > new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
             ).length,
@@ -157,7 +159,7 @@ export const useUserContext = (): UserContext => {
     };
 
     loadUserData();
-  }, [getWeakAreas, getAllEvents, getStudyStreak, getLearningInsights]);
+  }, [performanceWeakAreas, performanceEvents, performanceStreak]);
 
   return context || {
     timeOfDay: getTimeOfDay(),
