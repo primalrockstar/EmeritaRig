@@ -2,11 +2,12 @@
 
 set -e
 
-echo "Running database migrations..."
-alembic upgrade head
+echo "Starting Emerita Clinical backend..."
 
-echo "Migrations completed successfully."
-
-echo "Starting the application..."
+# Set default port if not provided
 PORT=${PORT:-8000}
-uvicorn main:app --host 0.0.0.0 --port $PORT
+
+echo "Running on port $PORT"
+
+# Start uvicorn - we're already in the backend directory
+uvicorn main:app --host 0.0.0.0 --port $PORT --log-level info
