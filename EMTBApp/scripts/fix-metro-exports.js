@@ -9,6 +9,7 @@ const packagesNeedingSrcExports = [
   { name: 'metro-cache', target: './src/*.js' },
   { name: 'metro-transform-worker', target: './src/*.js' },
   { name: 'metro', target: './src/*.js' },
+  { name: 'metro-transform-plugins', target: './src/*' },
 ];
 
 packagesNeedingSrcExports.forEach(({ name, target }) => {
@@ -23,11 +24,7 @@ packagesNeedingSrcExports.forEach(({ name, target }) => {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
     packageJson.exports = packageJson.exports || {};
 
-    if (packageJson.exports['./src/*'] === target) {
-      return;
-    }
-
-    if (!packageJson.exports['./src/*']) {
+    if (packageJson.exports['./src/*'] !== target) {
       packageJson.exports['./src/*'] = target;
       fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + '\n');
       console.log(`[postinstall] Added "./src/*" export to ${name}.`);
@@ -107,3 +104,56 @@ if (fs.existsSync(reactIndexPath)) {
     console.warn('[postinstall] Unable to patch react/index.js:', error.message);
   }
 }
+
+const expoDomDir = path.join(rootDir, 'node_modules', 'expo', 'dom');
+const expoDomGlobalPath = path.join(expoDomDir, 'global.js');
+const expoDomIndexPath = path.join(expoDomDir, 'index.js');
+const ensureExpoDomShim = () => {
+  try {
+    fs.mkdirSync(expoDomDir, { recursive: true });
+    if (!fs.existsSync(expoDomGlobalPath)) {
+      const shim = `'use strict';
+const listeners = new Set();
+
+function addGlobalDomEventListener(listener) {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function emitGlobalDomEvent(event) {
+  listeners.forEach((listener) => {
+    try {
+      listener(event);
+    } catch (error) {
+      console.warn('[postinstall] expo/dom/global listener error:', error?.message ?? error);
+    }
+  });
+}
+
+module.exports = {
+  addGlobalDomEventListener,
+  emitGlobalDomEvent,
+};
+`;
+      fs.writeFileSync(expoDomGlobalPath, shim);
+      console.log('[postinstall] Added expo/dom/global shim.');
+    }
+
+    if (!fs.existsSync(expoDomIndexPath)) {
+      const indexContents = `'use strict';
+const global = require('./global');
+
+module.exports = {
+  addGlobalDomEventListener: global.addGlobalDomEventListener,
+  emitGlobalDomEvent: global.emitGlobalDomEvent,
+};
+`;
+      fs.writeFileSync(expoDomIndexPath, indexContents);
+      console.log('[postinstall] Added expo/dom shim.');
+    }
+  } catch (error) {
+    console.warn('[postinstall] Unable to create expo/dom shim:', error.message);
+  }
+};
+
+ensureExpoDomShim();
