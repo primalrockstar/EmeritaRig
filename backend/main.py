@@ -25,6 +25,7 @@ from .routers.auth import router as auth_router
 from .routers.flashcards import router as flashcards_router
 from .routers.scenarios import router as scenarios_router
 from .routers.meds import router as meds_router
+from .routers.stripe import router as stripe_router
 
 load_dotenv()
 
@@ -118,6 +119,7 @@ app.include_router(auth_router, prefix="/api/auth")
 app.include_router(flashcards_router, prefix="/api")
 app.include_router(scenarios_router, prefix="/api")
 app.include_router(meds_router, prefix="/api")
+app.include_router(stripe_router, prefix="/api/stripe", tags=["stripe"])
 
 # Free Tier Limits
 FREE_TIER_LIMITS = {

@@ -1,4 +1,5 @@
-from sqlalchemy import Boolean, Column, Float, ForeignKey, Integer, JSON, String, Text
+from sqlalchemy import Boolean, Column, Float, ForeignKey, Integer, JSON, String, Text, DateTime
+from datetime import datetime
 from .database import Base
 
 
@@ -11,6 +12,13 @@ class User(Base):
     is_superuser = Column(Boolean, default=False)
     has_lifetime_access = Column(Boolean, default=False)
     elo_rating = Column(Float, default=1000.0)
+    
+    # Subscription fields
+    is_premium = Column(Boolean, default=False)
+    semester_pass_active = Column(Boolean, default=False)
+    plan_expiration = Column(DateTime, nullable=True)
+    stripe_customer_id = Column(String, nullable=True)
+    stripe_subscription_id = Column(String, nullable=True)
 
 
 class Question(Base):
