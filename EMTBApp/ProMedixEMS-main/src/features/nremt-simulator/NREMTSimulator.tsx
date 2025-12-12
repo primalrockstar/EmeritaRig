@@ -210,8 +210,20 @@ const NREMTSimulator: React.FC = () => {
               </div>
             </div>
 
+            <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg mb-6">
+              <p className="text-blue-300 text-xl font-semibold mb-3">
+                💙 Your EMT-B Companion has prepared you for this.
+              </p>
+              <p className="text-slate-300 text-base mb-2">
+                Students who use this platform consistently alongside their EMT course pass NREMT on their first try. 
+              </p>
+              <p className="text-blue-400 font-semibold text-lg">
+                Trust your preparation. You've got this! 🚑
+              </p>
+            </div>
+            
             <div className="bg-amber-900/20 border border-amber-500/30 p-4 rounded-lg mb-6">
-              <h3 className="font-semibold text-amber-400 mb-2">⚠️ Important Notice</h3>
+              <h3 className="font-semibold text-amber-400 mb-2">📋 Important Notice</h3>
               <p className="text-amber-300 text-sm">
                 This simulator mirrors official NREMT specifications but contains original content.
                 It is designed for educational purposes and does not constitute official NREMT certification.
