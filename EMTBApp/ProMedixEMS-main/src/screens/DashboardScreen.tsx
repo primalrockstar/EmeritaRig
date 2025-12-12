@@ -106,6 +106,33 @@ const DashboardScreen: React.FC = () => {
             <p className="text-gray-400 text-sm">Dosage & assessment tools</p>
           </div>
         </div>
+
+        {/* Study Notes */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/study-notes')}>
+          <div className="text-center">
+            <div className="text-4xl mb-4">📚</div>
+            <h3 className="text-lg font-bold mb-2">Study Notes</h3>
+            <p className="text-gray-400 text-sm">Comprehensive chapter notes</p>
+          </div>
+        </div>
+
+        {/* PCR Trainer */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/pcr-trainer')}>
+          <div className="text-center">
+            <div className="text-4xl mb-4">📋</div>
+            <h3 className="text-lg font-bold mb-2">PCR Trainer</h3>
+            <p className="text-gray-400 text-sm">Patient care documentation</p>
+          </div>
+        </div>
+
+        {/* Progress Tracking */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/progress')}>
+          <div className="text-center">
+            <div className="text-4xl mb-4">📊</div>
+            <h3 className="text-lg font-bold mb-2">Progress Tracking</h3>
+            <p className="text-gray-400 text-sm">View your performance analytics</p>
+          </div>
+        </div>
       </div>
       
       {/* Upgrade Modal */}

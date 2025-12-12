@@ -4,6 +4,14 @@ import { useAuth } from './auth/AuthContext';
 
 const LoginPage = lazy(() => import('./auth/LoginPage'));
 const DashboardScreen = lazy(() => import('./screens/DashboardScreen'));
+const ExamScreen = lazy(() => import('./screens/ExamScreen'));
+const EMTBFlashcards = lazy(() => import('./features/quiz/EMTBFlashcards'));
+const NREMTSimulator = lazy(() => import('./features/nremt-simulator/NREMTSimulator'));
+const ClinicalCalculatorsHub = lazy(() => import('./components/ClinicalCalculatorsHub'));
+const EMTScopeMedications = lazy(() => import('./features/tools/EMTScopeMedications'));
+const ComprehensiveEMTBStudyNotes = lazy(() => import('./features/study/ComprehensiveEMTBStudyNotes'));
+const EMTBPcrTrainer = lazy(() => import('./components/emtb/EMTBPcrTrainer'));
+const ProgressDashboard = lazy(() => import('./components/ProgressDashboard'));
 
 // Payment Success Page
 const PaymentSuccess: React.FC = () => {
@@ -99,6 +107,56 @@ const App: React.FC = () => {
         <Route path="/payment/cancel" element={
           <PrivateRoute>
             <PaymentCancel />
+          </PrivateRoute>
+        } />
+        <Route path="/flashcards" element={
+          <PrivateRoute>
+            <EMTBFlashcards />
+          </PrivateRoute>
+        } />
+        <Route path="/nremt-simulator" element={
+          <PrivateRoute>
+            <NREMTSimulator />
+          </PrivateRoute>
+        } />
+        <Route path="/simulator" element={
+          <PrivateRoute>
+            <ExamScreen />
+          </PrivateRoute>
+        } />
+        <Route path="/calculators" element={
+          <PrivateRoute>
+            <ClinicalCalculatorsHub />
+          </PrivateRoute>
+        } />
+        <Route path="/medications" element={
+          <PrivateRoute>
+            <EMTScopeMedications />
+          </PrivateRoute>
+        } />
+        <Route path="/study-notes" element={
+          <PrivateRoute>
+            <ComprehensiveEMTBStudyNotes />
+          </PrivateRoute>
+        } />
+        <Route path="/pcr-trainer" element={
+          <PrivateRoute>
+            <EMTBPcrTrainer />
+          </PrivateRoute>
+        } />
+        <Route path="/progress" element={
+          <PrivateRoute>
+            <ProgressDashboard />
+          </PrivateRoute>
+        } />
+        <Route path="/scenarios" element={
+          <PrivateRoute>
+            <NREMTSimulator />
+          </PrivateRoute>
+        } />
+        <Route path="/meds" element={
+          <PrivateRoute>
+            <EMTScopeMedications />
           </PrivateRoute>
         } />
       </Routes>
