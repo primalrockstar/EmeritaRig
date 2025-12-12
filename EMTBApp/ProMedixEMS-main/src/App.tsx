@@ -1,9 +1,65 @@
-import React, { Suspense, lazy } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React, { Suspense, lazy, useEffect } from 'react';
+import { Routes, Route, Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from './auth/AuthContext';
 
 const LoginPage = lazy(() => import('./auth/LoginPage'));
 const DashboardScreen = lazy(() => import('./screens/DashboardScreen'));
+
+// Payment Success Page
+const PaymentSuccess: React.FC = () => {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const sessionId = searchParams.get('session_id');
+  
+  useEffect(() => {
+    // Redirect to dashboard after 3 seconds
+    const timer = setTimeout(() => {
+      navigate('/dashboard');
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [navigate]);
+  
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center p-6">
+      <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md text-center">
+        <div className="text-6xl mb-4">🎉</div>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">Payment Successful!</h1>
+        <p className="text-gray-600 mb-6">
+          Welcome to The Rig Premium! You now have full access to all features.
+        </p>
+        <p className="text-sm text-gray-500 mb-4">
+          Session ID: {sessionId?.substring(0, 20)}...
+        </p>
+        <div className="text-sm text-gray-400">
+          Redirecting to dashboard in 3 seconds...
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Payment Cancel Page
+const PaymentCancel: React.FC = () => {
+  const navigate = useNavigate();
+  
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-6">
+      <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md text-center">
+        <div className="text-6xl mb-4">❌</div>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">Payment Cancelled</h1>
+        <p className="text-gray-600 mb-6">
+          No charges were made. You can try again anytime.
+        </p>
+        <button
+          onClick={() => navigate('/dashboard')}
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+        >
+          Return to Dashboard
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, loading } = useAuth();
@@ -33,6 +89,16 @@ const App: React.FC = () => {
         <Route path="/dashboard" element={
           <PrivateRoute>
             <DashboardScreen />
+          </PrivateRoute>
+        } />
+        <Route path="/payment/success" element={
+          <PrivateRoute>
+            <PaymentSuccess />
+          </PrivateRoute>
+        } />
+        <Route path="/payment/cancel" element={
+          <PrivateRoute>
+            <PaymentCancel />
           </PrivateRoute>
         } />
       </Routes>
