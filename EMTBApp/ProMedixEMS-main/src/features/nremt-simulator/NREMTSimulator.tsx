@@ -163,7 +163,17 @@ const NREMTSimulator: React.FC = () => {
           <div className="text-center mb-8">
             <div className="text-slate-400 mb-4">
               <p className="text-lg">Computerized Adaptive Testing (CAT) Format</p>
-              <p className="text-sm">70-120 questions • 2-hour time limit • Official NREMT weightings</p>
+              <p className="text-sm">70-130 questions (includes 10 pilot) • 2-hour time limit • Official NREMT weightings</p>
+            </div>
+            
+            <div className="bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg mb-6">
+              <p className="text-blue-300 text-lg font-semibold mb-2">
+                Your EMT-B Companion has prepared you for this.
+              </p>
+              <p className="text-slate-300 text-sm">
+                Students who use this platform consistently alongside their EMT course pass NREMT on their first try. 
+                Trust your preparation. You've got this! 🚑
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
