@@ -386,20 +386,31 @@ const formatTimeAgo = (date: Date) => {
 
 const getDrillTypes = (weakAreas: string[], navigate: any): DrillType[] => [
   {
-    id: 'adaptive',
-    title: 'Adaptive Practice',
-    description: 'Questions adjust to your skill level in real-time',
-    icon: '🎯',
+    id: 'flashcards',
+    title: 'Flashcard Review',
+    description: '1,173 professional flashcards with spaced repetition',
+    icon: '🃏',
     estimatedTime: 15,
     priority: 'high',
     type: 'adaptive',
     recommended: true,
-    action: () => navigate('/quiz/adaptive')
+    action: () => navigate('/flashcards')
+  },
+  {
+    id: 'nremt-quiz',
+    title: 'NREMT Practice Quiz',
+    description: '900+ exam questions with adaptive difficulty',
+    icon: '🎯',
+    estimatedTime: 20,
+    priority: 'high',
+    type: 'adaptive',
+    recommended: true,
+    action: () => navigate('/enhanced-quiz')
   },
   {
     id: 'scenario',
     title: 'Clinical Scenarios',
-    description: 'Full patient encounter simulations with documentation',
+    description: '28 interactive patient encounters',
     icon: '🏥',
     estimatedTime: 20,
     priority: 'high',

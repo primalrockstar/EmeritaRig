@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UWorldSidebar from './UWorldSidebar';
 import { Menu, Activity } from 'lucide-react';
 import InstallPrompt from '../pwa/InstallPrompt';
+import EnhancedSearchBar from '../EnhancedSearchBar';
+import { SearchResult } from '../../utils/search';
 
 interface UWorldLayoutProps {
   children: React.ReactNode;
@@ -9,6 +12,15 @@ interface UWorldLayoutProps {
 
 const UWorldLayout: React.FC<UWorldLayoutProps> = ({ children }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSearch = (query: string, results: SearchResult[]) => {
+    navigate('/search', { state: { query, results } });
+  };
+
+  const handleResultSelect = (result: SearchResult) => {
+    navigate(result.url);
+  };
 
   return (
     <div className="flex min-h-screen bg-background text-foreground">
@@ -38,7 +50,23 @@ const UWorldLayout: React.FC<UWorldLayoutProps> = ({ children }) => {
         </button>
       </div>
 
+      {/* Main Content with Search Bar */}
       <main className="flex-1 md:ml-72 ml-0 p-4 sm:p-8 w-full pt-16 md:pt-0 pb-safe">
+        {/* Universal Search Bar */}
+        <div className="max-w-7xl mx-auto mb-6">
+          <div className="bg-slate-900/50 backdrop-blur-md border border-slate-800 rounded-xl p-4">
+            <EnhancedSearchBar
+              placeholder="Search study notes, medications, protocols, calculators, scenarios..."
+              onSearch={handleSearch}
+              onResultSelect={handleResultSelect}
+              showFilters={true}
+              showInstantResults={true}
+              size="md"
+            />
+          </div>
+        </div>
+        
+        {/* Page Content */}
         <div className="max-w-7xl mx-auto">
           {children}
         </div>

@@ -19,7 +19,7 @@ const CompanionDashboard = () => {
     loading
   } = useUserContext();
 
-  const { getFlashcardPerformance } = usePerformanceTracker();
+  const { getFlashcardWeakAreas, getDueFlashcardsCount } = usePerformanceTracker();
   const navigate = useNavigate();
 
   if (loading) {
@@ -132,9 +132,9 @@ const CompanionDashboard = () => {
 
   const generateFlashcardCards = () => {
     const cards = [];
-    const flashcardStats = getFlashcardPerformance();
+    const flashcardStats = { dueCards: getDueFlashcardsCount(), topics: getFlashcardWeakAreas() };
 
-    if (flashcardStats) {
+    if (flashcardStats && flashcardStats.dueCards !== undefined) {
       // Card for due flashcards
       if (flashcardStats.dueCards > 0) {
         cards.push({

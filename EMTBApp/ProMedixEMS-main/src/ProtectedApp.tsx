@@ -31,6 +31,7 @@ import { AuthProvider, RequireRole } from './auth/AuthContext';
 import LoginPage from './auth/LoginPage';
 import InstructorDashboard from './auth/InstructorDashboard';
 import EnhancedPracticeQuizSystem from './components/EnhancedPracticeQuizSystem';
+import NREMTSimulator from './features/nremt-simulator/NREMTSimulator';
 import VoiceNoteTranscriber from './components/VoiceNoteTranscriber';
 import NationalProtocolFoundationManager from './components/NationalProtocolFoundationManager';
 import ClinicalCalculatorsHub from './components/tools/ClinicalCalculatorsHub';
@@ -91,8 +92,8 @@ const UltraModernHeader = () => {
             
             <Link to="/" className="flex-1 flex justify-center">
               <img 
-                src="/assets/LOGOFINALTRANS.png" 
-                alt="ProMedix EMS" 
+                src="/assets/logo.png" 
+                alt="Emerita Clinical: The Rig" 
                 className="h-40 sm:h-48 w-auto drop-shadow-[0_8px_16px_rgba(59,130,246,0.3)]"
               />
             </Link>
@@ -109,15 +110,14 @@ const UltraModernHeader = () => {
         {isMobileMenuOpen && (
           <nav className="px-4 pb-4 space-y-2 text-slate-800 dark:text-slate-100">
             {[
-              { label: 'Dashboard', path: '/', icon: Home },
-              { label: 'Enhanced Quiz', path: '/enhanced-quiz', icon: Target },
-              { label: 'Voice Transcriber', path: '/voice-transcriber', icon: Mic },
-              { label: 'National Protocols', path: '/national-protocols', icon: Shield },
-              { label: 'Study Materials', path: '/study', icon: BookOpen },
-              { label: 'Tools', path: '/tools', icon: Calculator },
-              { label: 'Scenarios', path: '/scenarios', icon: Activity },
-              { label: 'Skills Lab', path: '/skills-practice', icon: ClipboardList },
-              { label: 'Progress', path: '/progress', icon: TrendingUp }
+              { label: 'Study Notes (45 Chapters)', path: '/study-notes', icon: BookOpen },
+              { label: 'Chapter Flashcards', path: '/flashcards', icon: Brain },
+              { label: 'EMT-B Medications', path: '/medications', icon: Stethoscope },
+              { label: 'Medical Calculators', path: '/tools', icon: Calculator },
+              { label: 'Clinical Scenarios', path: '/scenarios', icon: Activity },
+              { label: 'PCR Report Sim', path: '/pcr-practice', icon: ClipboardList },
+              { label: 'NREMT Exam Sim', path: '/enhanced-quiz', icon: Target },
+              { label: 'Progress Dashboard', path: '/progress', icon: TrendingUp }
             ].map(({ label, path, icon: Icon }) => (
               <Link
                 key={path}
@@ -139,8 +139,8 @@ const UltraModernHeader = () => {
         <div className="border-b border-blue-200 bg-gradient-to-r from-white via-blue-50 to-blue-100 dark:border-sky-500/20 dark:from-[#031021]/60 dark:via-[#062342]/60 dark:to-[#0A3E6A]/60">
           <div className="flex justify-center py-6">
             <img 
-              src="/assets/LOGOFINALTRANS.png" 
-              alt="ProMedix EMS" 
+              src="/assets/logo.png" 
+              alt="Emerita Clinical: The Rig" 
               className="h-56 w-auto drop-shadow-[0_20px_40px_rgba(59,130,246,0.35)]"
             />
           </div>
@@ -880,6 +880,7 @@ function ProtectedRoutes() {
         <Route path="/curriculum" element={<CurriculumPage />} />
         <Route path="/chapters" element={<CurriculumPage />} />
         <Route path="/scenarios" element={<ScenariosPage />} />
+        <Route path="/nremt-simulator" element={<PageContainer title="NREMT Exam Simulator" subtitle="High-stakes CAT exam - No assistance provided. Training wheels OFF."><NREMTSimulator /></PageContainer>} />
 
         <Route path="/progress" element={<ProgressPage />} />
         
@@ -927,6 +928,7 @@ const AuthenticatedApp: React.FC = () => {
             <Route path="/curriculum" element={<CurriculumPage />} />
             <Route path="/chapters" element={<CurriculumPage />} />
             <Route path="/scenarios" element={<ScenariosPage />} />
+            <Route path="/nremt-simulator" element={<PageContainer title="NREMT Exam Simulator" subtitle="High-stakes CAT exam - No assistance provided. Training wheels OFF."><NREMTSimulator /></PageContainer>} />
             <Route path="/progress" element={<ProgressPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />

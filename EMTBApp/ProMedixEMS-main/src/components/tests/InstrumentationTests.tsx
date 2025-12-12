@@ -3,7 +3,7 @@ import { usePerformanceTracker } from '../../hooks/usePerformanceTracker';
 import { ModernButton } from '../ui/ModernGlassComponents';
 
 const InstrumentationTests: React.FC = () => {
-  const { trackEvent, getWeakAreas, getAllEvents } = usePerformanceTracker();
+  const { trackEvent, weakAreas, performanceEvents } = usePerformanceTracker();
   const [testResults, setTestResults] = useState<Record<string, boolean>>({});
   const [loading, setLoading] = useState(false);
 
@@ -28,7 +28,6 @@ const InstrumentationTests: React.FC = () => {
     
     // Test 2: Weak area calculation
     try {
-      const weakAreas = getWeakAreas();
       results['weakAreaCalculation'] = Array.isArray(weakAreas);
     } catch (e) {
       results['weakAreaCalculation'] = false;
@@ -36,8 +35,7 @@ const InstrumentationTests: React.FC = () => {
     
     // Test 3: LocalStorage persistence
     try {
-      const events = getAllEvents();
-      const hasTestEvent = events.some((e) => e.metadata?.test === true);
+      const hasTestEvent = performanceEvents.some((e) => e.metadata?.test === true);
       results['localStoragePersistence'] = hasTestEvent;
     } catch (e) {
       results['localStoragePersistence'] = false;
@@ -45,7 +43,6 @@ const InstrumentationTests: React.FC = () => {
     
     // Test 4: Data structure validation
     try {
-      const events = getAllEvents();
       const validEvents = events.filter((e) => 
         e.activityType && 
         e.topic && 
@@ -62,8 +59,7 @@ const InstrumentationTests: React.FC = () => {
   };
 
   const clearTestData = () => {
-    const events = getAllEvents();
-    const filtered = events.filter((e) => !e.metadata?.test);
+    const filtered = performanceEvents.filter((e) => !e.metadata?.test);
     localStorage.setItem('emt_performance_events', JSON.stringify(filtered));
     setTestResults({});
   };

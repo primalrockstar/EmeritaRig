@@ -57,9 +57,10 @@ export class CATEngine {
     return questionResponse;
   }
 
-  // Check if exam should end (NREMT specifications: 70-120 questions, 2-hour limit)
+  // Check if exam should end (NREMT specifications: 70-120 scored questions + 10 pilot)
   shouldEndExam(): boolean {
     const totalAnswered = this.answeredQuestions.length;
+    const scoredAnswered = this.answeredQuestions.filter(q => !q.isPilot).length;
     const timeElapsed = Date.now() - this.examStartTime;
     const timeLimit = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
 
@@ -68,13 +69,18 @@ export class CATEngine {
       return true;
     }
 
-    // Minimum questions
-    if (totalAnswered < 70) {
+    // Minimum scored questions (must answer at least 70 that count)
+    if (scoredAnswered < 70) {
       return false;
     }
 
-    // Maximum questions
-    if (totalAnswered >= 120) {
+    // Maximum questions (120 scored + 10 pilot = 130 total max)
+    if (totalAnswered >= 130) {
+      return true;
+    }
+
+    // Maximum scored questions (even if more pilot questions remain)
+    if (scoredAnswered >= 120) {
       return true;
     }
 

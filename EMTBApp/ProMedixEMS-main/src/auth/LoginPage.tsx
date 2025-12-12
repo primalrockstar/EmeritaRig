@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 
@@ -6,8 +6,8 @@ const LoginPage: React.FC = () => {
   const { login, user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation() as any;
-  const [email, setEmail] = useState(location.state?.prefillEmail || 'admin@emeritaclinical.com');
-  const [password, setPassword] = useState('admin');
+  const [email, setEmail] = useState(location.state?.prefillEmail || '');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
