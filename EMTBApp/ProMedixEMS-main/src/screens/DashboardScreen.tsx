@@ -62,12 +62,12 @@ const DashboardScreen: React.FC = () => {
 
       {/* Main Grid */}
       <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
-        {/* NREMT Simulator */}
-        <div className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/nremt-simulator')}>
+        {/* Study Notes - 45 Chapters! */}
+        <div className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/study-notes')}>
           <div className="text-center">
-            <div className="text-4xl mb-4">🎯</div>
-            <h3 className="text-xl font-bold mb-2">NREMT Simulator</h3>
-            <p className="text-gray-400 text-sm">Adaptive CAT exam with 800+ questions</p>
+            <div className="text-4xl mb-4">📚</div>
+            <h3 className="text-xl font-bold mb-2">Study Notes - 45 Chapters</h3>
+            <p className="text-gray-400 text-sm">Complete EMT-B curriculum with quizzes</p>
           </div>
         </div>
 
@@ -75,13 +75,13 @@ const DashboardScreen: React.FC = () => {
         <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/flashcards')}>
           <div className="text-center">
             <div className="text-4xl mb-4">🃏</div>
-            <h3 className="text-lg font-bold mb-2">Daily Flashcards</h3>
+            <h3 className="text-lg font-bold mb-2">Flashcards</h3>
             <p className="text-gray-400 text-sm">1,173 professional flashcards</p>
           </div>
         </div>
 
         {/* Clinical Scenarios */}
-        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/simulator')}>
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/scenarios')}>
           <div className="text-center">
             <div className="text-4xl mb-4">🏥</div>
             <h3 className="text-lg font-bold mb-2">Clinical Scenarios</h3>
@@ -89,39 +89,30 @@ const DashboardScreen: React.FC = () => {
           </div>
         </div>
 
-        {/* Reference Tools */}
-        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/meds')}>
+        {/* EMT-B Medications */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/medications')}>
           <div className="text-center">
             <div className="text-4xl mb-4">💊</div>
-            <h3 className="text-lg font-bold mb-2">Reference Tools</h3>
-            <p className="text-gray-400 text-sm">Medications & calculators</p>
+            <h3 className="text-lg font-bold mb-2">EMT-B Medications</h3>
+            <p className="text-gray-400 text-sm">Complete drug reference</p>
           </div>
         </div>
 
-        {/* Tools/Calculators */}
-        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/calculators')}>
+        {/* Medical Calculators */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/tools')}>
           <div className="text-center">
             <div className="text-4xl mb-4">🧮</div>
             <h3 className="text-lg font-bold mb-2">Medical Calculators</h3>
-            <p className="text-gray-400 text-sm">Dosage & assessment tools</p>
+            <p className="text-gray-400 text-sm">GCS, APGAR, Dosing tools</p>
           </div>
         </div>
 
-        {/* Study Notes - Temporarily disabled */}
-        {/* <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/study-notes')}>
+        {/* NREMT Practice Quiz */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/enhanced-quiz')}>
           <div className="text-center">
-            <div className="text-4xl mb-4">📚</div>
-            <h3 className="text-lg font-bold mb-2">Study Notes</h3>
-            <p className="text-gray-400 text-sm">Comprehensive chapter notes</p>
-          </div>
-        </div> */}
-
-        {/* PCR Trainer */}
-        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/pcr-trainer')}>
-          <div className="text-center">
-            <div className="text-4xl mb-4">📋</div>
-            <h3 className="text-lg font-bold mb-2">PCR Trainer</h3>
-            <p className="text-gray-400 text-sm">Patient care documentation</p>
+            <div className="text-4xl mb-4">🎯</div>
+            <h3 className="text-lg font-bold mb-2">NREMT Practice</h3>
+            <p className="text-gray-400 text-sm">900+ exam questions</p>
           </div>
         </div>
 
@@ -130,7 +121,7 @@ const DashboardScreen: React.FC = () => {
           <div className="text-center">
             <div className="text-4xl mb-4">📊</div>
             <h3 className="text-lg font-bold mb-2">Progress Tracking</h3>
-            <p className="text-gray-400 text-sm">View your performance analytics</p>
+            <p className="text-gray-400 text-sm">Performance analytics</p>
           </div>
         </div>
       </div>
