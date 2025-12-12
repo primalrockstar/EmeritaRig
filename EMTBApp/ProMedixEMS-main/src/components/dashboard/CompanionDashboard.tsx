@@ -132,9 +132,9 @@ const CompanionDashboard = () => {
 
   const generateFlashcardCards = () => {
     const cards = [];
-    const flashcardStats = { dueCount: getDueFlashcardsCount(), weakAreas: getFlashcardWeakAreas() };
+    const flashcardStats = { dueCards: getDueFlashcardsCount(), topics: getFlashcardWeakAreas() };
 
-    if (flashcardStats) {
+    if (flashcardStats && flashcardStats.dueCards !== undefined) {
       // Card for due flashcards
       if (flashcardStats.dueCards > 0) {
         cards.push({
