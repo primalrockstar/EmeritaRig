@@ -31,6 +31,7 @@ import { AuthProvider, RequireRole } from './auth/AuthContext';
 import LoginPage from './auth/LoginPage';
 import InstructorDashboard from './auth/InstructorDashboard';
 import EnhancedPracticeQuizSystem from './components/EnhancedPracticeQuizSystem';
+import NREMTSimulator from './features/nremt-simulator/NREMTSimulator';
 import VoiceNoteTranscriber from './components/VoiceNoteTranscriber';
 import NationalProtocolFoundationManager from './components/NationalProtocolFoundationManager';
 import ClinicalCalculatorsHub from './components/tools/ClinicalCalculatorsHub';
@@ -879,6 +880,7 @@ function ProtectedRoutes() {
         <Route path="/curriculum" element={<CurriculumPage />} />
         <Route path="/chapters" element={<CurriculumPage />} />
         <Route path="/scenarios" element={<ScenariosPage />} />
+        <Route path="/nremt-simulator" element={<PageContainer title="NREMT Exam Simulator" subtitle="High-stakes CAT exam - No assistance provided. Training wheels OFF."><NREMTSimulator /></PageContainer>} />
 
         <Route path="/progress" element={<ProgressPage />} />
         
@@ -926,6 +928,7 @@ const AuthenticatedApp: React.FC = () => {
             <Route path="/curriculum" element={<CurriculumPage />} />
             <Route path="/chapters" element={<CurriculumPage />} />
             <Route path="/scenarios" element={<ScenariosPage />} />
+            <Route path="/nremt-simulator" element={<PageContainer title="NREMT Exam Simulator" subtitle="High-stakes CAT exam - No assistance provided. Training wheels OFF."><NREMTSimulator /></PageContainer>} />
             <Route path="/progress" element={<ProgressPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
