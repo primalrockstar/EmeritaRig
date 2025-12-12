@@ -109,15 +109,14 @@ const UltraModernHeader = () => {
         {isMobileMenuOpen && (
           <nav className="px-4 pb-4 space-y-2 text-slate-800 dark:text-slate-100">
             {[
-              { label: 'Dashboard', path: '/', icon: Home },
-              { label: 'Enhanced Quiz', path: '/enhanced-quiz', icon: Target },
-              { label: 'Voice Transcriber', path: '/voice-transcriber', icon: Mic },
-              { label: 'National Protocols', path: '/national-protocols', icon: Shield },
-              { label: 'Study Materials', path: '/study', icon: BookOpen },
-              { label: 'Tools', path: '/tools', icon: Calculator },
-              { label: 'Scenarios', path: '/scenarios', icon: Activity },
-              { label: 'Skills Lab', path: '/skills-practice', icon: ClipboardList },
-              { label: 'Progress', path: '/progress', icon: TrendingUp }
+              { label: 'Study Notes (45 Chapters)', path: '/study-notes', icon: BookOpen },
+              { label: 'Chapter Flashcards', path: '/flashcards', icon: Brain },
+              { label: 'EMT-B Medications', path: '/medications', icon: Stethoscope },
+              { label: 'Medical Calculators', path: '/tools', icon: Calculator },
+              { label: 'Clinical Scenarios', path: '/scenarios', icon: Activity },
+              { label: 'PCR Report Sim', path: '/pcr-practice', icon: ClipboardList },
+              { label: 'NREMT Exam Sim', path: '/enhanced-quiz', icon: Target },
+              { label: 'Progress Dashboard', path: '/progress', icon: TrendingUp }
             ].map(({ label, path, icon: Icon }) => (
               <Link
                 key={path}

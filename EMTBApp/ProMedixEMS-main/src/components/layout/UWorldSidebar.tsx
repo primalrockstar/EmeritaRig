@@ -25,11 +25,14 @@ interface UWorldSidebarProps {
 
 const UWorldSidebar: React.FC<UWorldSidebarProps> = ({ isMobileMenuOpen, onCloseMobileMenu }) => {
   const navItems = [
-    { icon: Target, label: 'TODAY', path: '/today' },
-    { icon: BookOpen, label: 'LEARN', path: '/learn' },
-    { icon: Brain, label: 'DRILL', path: '/drill' },
-    { icon: Stethoscope, label: 'REFERENCE', path: '/reference' },
-    { icon: BarChart2, label: 'PROGRESS', path: '/progress' },
+    { icon: BookOpen, label: 'STUDY NOTES', path: '/study-notes', description: '45 Chapters' },
+    { icon: Brain, label: 'CHAPTER FLASHCARDS', path: '/flashcards', description: '1,173 Cards' },
+    { icon: Pill, label: 'EMT-B MEDICATIONS', path: '/medications', description: 'Drug Reference' },
+    { icon: Calculator, label: 'CALCULATORS', path: '/tools', description: 'GCS, APGAR, Dosing' },
+    { icon: Activity, label: 'SCENARIOS', path: '/scenarios', description: '28 Cases + FTO' },
+    { icon: ClipboardList, label: 'PCR REPORT SIM', path: '/pcr-practice', description: 'Practice + Voice' },
+    { icon: Target, label: 'NREMT EXAM SIM', path: '/enhanced-quiz', description: '900+ Questions' },
+    { icon: BarChart2, label: 'PROGRESS', path: '/progress', description: 'Analytics' },
   ];
 
   return (
@@ -68,10 +71,15 @@ const UWorldSidebar: React.FC<UWorldSidebarProps> = ({ isMobileMenuOpen, onClose
                     }`
                   }
                 >
-                  <item.icon className={`w-5 h-5 mr-3 transition-colors ${
+                  <item.icon className={`w-5 h-5 mr-3 transition-colors flex-shrink-0 ${
                     window.location.pathname === item.path ? 'text-blue-400' : 'text-slate-500 group-hover:text-white'
                   }`} />
-                  {item.label}
+                  <div className="flex-1">
+                    <div className="font-semibold">{item.label}</div>
+                    {item.description && (
+                      <div className="text-xs text-slate-500 group-hover:text-slate-400">{item.description}</div>
+                    )}
+                  </div>
                 </NavLink>
               </li>
             ))}
@@ -129,10 +137,15 @@ const UWorldSidebar: React.FC<UWorldSidebarProps> = ({ isMobileMenuOpen, onClose
                       }
                       onClick={onCloseMobileMenu}
                     >
-                      <item.icon className={`w-5 h-5 mr-3 transition-colors ${
+                      <item.icon className={`w-5 h-5 mr-3 transition-colors flex-shrink-0 ${
                         window.location.pathname === item.path ? 'text-blue-400' : 'text-slate-500 group-hover:text-white'
                       }`} />
-                      {item.label}
+                      <div className="flex-1">
+                        <div className="font-semibold">{item.label}</div>
+                        {item.description && (
+                          <div className="text-xs text-slate-500 group-hover:text-slate-400">{item.description}</div>
+                        )}
+                      </div>
                     </NavLink>
                   </li>
                 ))}
