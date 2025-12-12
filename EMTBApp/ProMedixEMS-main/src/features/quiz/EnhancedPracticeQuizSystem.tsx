@@ -29,6 +29,7 @@ import {
   ENHANCED_QUIZ_STATS
 } from '../data/enhanced-quiz-system';
 import { allScenarioQuestions, SCENARIO_QUESTION_STATS } from '../data/scenario-questions';
+import { SCOPE_WARNINGS } from '../../components/ScopeWarning';
 
 interface EnhancedQuizAttempt {
   id: string;
@@ -394,6 +395,11 @@ const EnhancedPracticeQuizSystem: React.FC<EnhancedQuizComponentProps> = ({ onCl
                 {configError}
               </div>
             ) : null}
+
+            {/* Scope Compliance Notice */}
+            <div className="px-8 pt-6">
+              {SCOPE_WARNINGS.nremtFocus}
+            </div>
 
             {/* Quiz settings */}
             <div className="p-8">

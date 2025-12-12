@@ -6,6 +6,7 @@ import { GlassCard, ModernButton } from './ui/ModernGlassComponents';
 import EMTBStudyNotesEnhanced from './emtb/EMTBStudyNotesEnhanced';
 import { useAuth } from '../auth/AuthContext';
 import api from '../api/axios';
+import { SCOPE_WARNINGS } from './ScopeWarning';
 
 interface ModuleDefinition {
   id: string;
@@ -154,7 +155,7 @@ const enhancementModules: ModuleDefinition[] = [
   {
     id: 'moduleBonusClinical',
     title: 'Advanced Clinical Deep Dives',
-    summary: 'Extended anatomy and physiology chapters for advanced review.',
+    summary: 'Extended anatomy and physiology chapters for advanced review. ⚠️ Some content may be beyond EMT-B scope - included for career development.',
     accent: 'border-gray-200',
     highlight: 'text-gray-700',
     chapters: [
@@ -167,7 +168,7 @@ const enhancementModules: ModuleDefinition[] = [
   {
     id: 'moduleBonusFoundations',
     title: 'Body Systems Primer',
-    summary: 'Supplemental anatomy sequence ideal for refreshers and cross-training.',
+    summary: 'Supplemental anatomy sequence ideal for refreshers and cross-training. Educational content for comprehensive EMS knowledge.',
     accent: 'border-zinc-200',
     highlight: 'text-zinc-700',
     chapters: [
@@ -308,6 +309,11 @@ export const StudyNotesOverview: React.FC = () => {
         </div>
       </section>
 
+      {/* Bonus Content Scope Warning */}
+      <div className="max-w-4xl mx-auto px-4">
+        {SCOPE_WARNINGS.bonusContent}
+      </div>
+
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {enhancementModules.map((module) => (
           <GlassCard
@@ -320,7 +326,7 @@ export const StudyNotesOverview: React.FC = () => {
               <div>
                 <div className={`inline-flex items-center gap-2 text-sm font-semibold text-amber-400`}>
                   <Layers className="w-4 h-4" />
-                  Bonus Content
+                  ⭐ Bonus Content • May Exceed EMT-B Scope
                 </div>
                 <h3 className="text-xl font-semibold text-white mt-2">
                   {module.title}
