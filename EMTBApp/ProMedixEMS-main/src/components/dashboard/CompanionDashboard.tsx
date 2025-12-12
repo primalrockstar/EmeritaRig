@@ -19,7 +19,7 @@ const CompanionDashboard = () => {
     loading
   } = useUserContext();
 
-  const { getFlashcardPerformance } = usePerformanceTracker();
+  const { getFlashcardWeakAreas, getDueFlashcardsCount } = usePerformanceTracker();
   const navigate = useNavigate();
 
   if (loading) {
@@ -132,7 +132,7 @@ const CompanionDashboard = () => {
 
   const generateFlashcardCards = () => {
     const cards = [];
-    const flashcardStats = getFlashcardPerformance();
+    const flashcardStats = { dueCount: getDueFlashcardsCount(), weakAreas: getFlashcardWeakAreas() };
 
     if (flashcardStats) {
       // Card for due flashcards
