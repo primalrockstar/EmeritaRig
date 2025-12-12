@@ -32,7 +32,7 @@ const UWorldSidebar: React.FC<UWorldSidebarProps> = ({ isMobileMenuOpen, onClose
     { icon: Activity, label: 'SCENARIOS', path: '/scenarios', description: '28 Cases (FTO Help)', divider: false },
     { icon: ClipboardList, label: 'PCR REPORT SIM', path: '/pcr-practice', description: 'Practice + Voice', divider: false },
     { icon: FileText, label: 'CHAPTER QUIZZES', path: '/enhanced-quiz', description: '15Q per chapter', divider: true },
-    { icon: Target, label: 'NREMT EXAM SIM', path: '/nremt-simulator', description: 'CAT Exam (No Help!)', divider: false },
+    { icon: Target, label: 'NREMT EXAM SIM', path: '/nremt-simulator', description: '70-130Q CAT (No Help!)', divider: false },
     { icon: BarChart2, label: 'PROGRESS', path: '/progress', description: 'Analytics', divider: false },
   ];
 
