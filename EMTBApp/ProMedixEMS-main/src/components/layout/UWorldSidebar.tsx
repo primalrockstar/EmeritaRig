@@ -25,7 +25,7 @@ interface UWorldSidebarProps {
 
 const UWorldSidebar: React.FC<UWorldSidebarProps> = ({ isMobileMenuOpen, onCloseMobileMenu }) => {
   const navItems = [
-    { icon: BookOpen, label: 'STUDY NOTES', path: '/study-notes', description: '45 Chapters' },
+    { icon: BookOpen, label: 'STUDY NOTES', path: '/study-notes', description: '41 Core + 6 Bonus' },
     { icon: Brain, label: 'CHAPTER FLASHCARDS', path: '/flashcards', description: '1,173 Cards' },
     { icon: Pill, label: 'EMT-B MEDICATIONS', path: '/medications', description: 'Drug Reference' },
     { icon: Calculator, label: 'CALCULATORS', path: '/tools', description: 'GCS, APGAR, Dosing' },

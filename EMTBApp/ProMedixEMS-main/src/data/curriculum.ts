@@ -20,17 +20,19 @@ export const studyModules: StudyModule[] = [
   // Bonus Module: Advanced Clinical Deep Dives
   {
     id: 11,
-    title: "Advanced Clinical Deep Dives",
-    description: "Extended clinical scenarios, advanced case studies, and professional development topics",
-    chapters: [42, 43, 44, 45],
-    estimatedHours: 8,
+    title: "⭐ BONUS: Advanced Clinical Deep Dives",
+    description: "Extended clinical scenarios, advanced case studies, and professional development topics. Note: Some content may be beyond EMT-B scope but excellent for career advancement.",
+    chapters: [40, 41, 42, 43, 44, 45],
+    estimatedHours: 12,
     isBonus: true
   }
 ];
 
 // All bonus chapters with their basic information
 export const chapters: Chapter[] = [
-  // Bonus Module (Advanced Clinical Deep Dives)
+  // Bonus Module (Advanced Clinical Deep Dives) - Beyond EMT-B scope in some areas
+  { id: 40, title: "Advanced Pharmacology Concepts", moduleId: 11, estimatedStudyTime: "2 hours", objectives: ["Understand medication interactions", "Advanced drug calculations", "Pharmacokinetics basics"] },
+  { id: 41, title: "Advanced Patient Assessment", moduleId: 11, estimatedStudyTime: "2 hours", objectives: ["Detailed physical exam techniques", "ECG interpretation basics", "Lab value interpretation"] },
   { id: 42, title: "Advanced Cardiac Life Support Integration", moduleId: 11, estimatedStudyTime: "2 hours", objectives: ["Integrate EMT with ACLS care", "Understand advanced interventions", "Coordinate with advanced providers"] },
   { id: 43, title: "Complex Medical Case Studies", moduleId: 11, estimatedStudyTime: "2 hours", objectives: ["Analyze complex cases", "Apply critical thinking", "Develop treatment plans"] },
   { id: 44, title: "Professional Development and Leadership", moduleId: 11, estimatedStudyTime: "2 hours", objectives: ["Develop leadership skills", "Engage in lifelong learning", "Contribute to profession"] },
