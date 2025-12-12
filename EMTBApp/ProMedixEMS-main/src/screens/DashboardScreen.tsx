@@ -63,11 +63,11 @@ const DashboardScreen: React.FC = () => {
       {/* Main Grid */}
       <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
         {/* NREMT Simulator */}
-        <div className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/simulator')}>
+        <div className="col-span-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/nremt-simulator')}>
           <div className="text-center">
             <div className="text-4xl mb-4">🎯</div>
             <h3 className="text-xl font-bold mb-2">NREMT Simulator</h3>
-            <p className="text-gray-400 text-sm">Adaptive exam practice with live scoring</p>
+            <p className="text-gray-400 text-sm">Adaptive CAT exam with 800+ questions</p>
           </div>
         </div>
 
@@ -76,16 +76,16 @@ const DashboardScreen: React.FC = () => {
           <div className="text-center">
             <div className="text-4xl mb-4">🃏</div>
             <h3 className="text-lg font-bold mb-2">Daily Flashcards</h3>
-            <p className="text-gray-400 text-sm">Spaced repetition learning</p>
+            <p className="text-gray-400 text-sm">1,173 professional flashcards</p>
           </div>
         </div>
 
         {/* Clinical Scenarios */}
-        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/scenarios')}>
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/simulator')}>
           <div className="text-center">
             <div className="text-4xl mb-4">🏥</div>
             <h3 className="text-lg font-bold mb-2">Clinical Scenarios</h3>
-            <p className="text-gray-400 text-sm">Interactive case studies</p>
+            <p className="text-gray-400 text-sm">28 interactive case studies</p>
           </div>
         </div>
 
