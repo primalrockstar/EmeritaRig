@@ -59,8 +59,7 @@ const InstrumentationTests: React.FC = () => {
   };
 
   const clearTestData = () => {
-    const events = getAllEvents();
-    const filtered = events.filter((e) => !e.metadata?.test);
+    const filtered = performanceEvents.filter((e) => !e.metadata?.test);
     localStorage.setItem('emt_performance_events', JSON.stringify(filtered));
     setTestResults({});
   };
