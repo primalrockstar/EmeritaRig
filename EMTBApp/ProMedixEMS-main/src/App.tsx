@@ -9,7 +9,7 @@ const EMTBFlashcards = lazy(() => import('./features/quiz/EMTBFlashcards'));
 const NREMTSimulator = lazy(() => import('./features/nremt-simulator/NREMTSimulator'));
 const ClinicalCalculatorsHub = lazy(() => import('./components/ClinicalCalculatorsHub'));
 const EMTScopeMedications = lazy(() => import('./features/tools/EMTScopeMedications'));
-const ComprehensiveEMTBStudyNotes = lazy(() => import('./features/study/ComprehensiveEMTBStudyNotes'));
+// const ComprehensiveEMTBStudyNotes = lazy(() => import('./features/study/ComprehensiveEMTBStudyNotes'));
 const EMTBPcrTrainer = lazy(() => import('./components/emtb/EMTBPcrTrainer'));
 const ProgressDashboard = lazy(() => import('./components/ProgressDashboard'));
 
@@ -134,11 +134,11 @@ const App: React.FC = () => {
             <EMTScopeMedications />
           </PrivateRoute>
         } />
-        <Route path="/study-notes" element={
+        {/* <Route path="/study-notes" element={
           <PrivateRoute>
             <ComprehensiveEMTBStudyNotes />
           </PrivateRoute>
-        } />
+        } /> */}
         <Route path="/pcr-trainer" element={
           <PrivateRoute>
             <EMTBPcrTrainer />

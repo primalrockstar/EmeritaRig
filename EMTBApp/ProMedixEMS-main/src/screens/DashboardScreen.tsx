@@ -107,14 +107,14 @@ const DashboardScreen: React.FC = () => {
           </div>
         </div>
 
-        {/* Study Notes */}
-        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/study-notes')}>
+        {/* Study Notes - Temporarily disabled */}
+        {/* <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/study-notes')}>
           <div className="text-center">
             <div className="text-4xl mb-4">📚</div>
             <h3 className="text-lg font-bold mb-2">Study Notes</h3>
             <p className="text-gray-400 text-sm">Comprehensive chapter notes</p>
           </div>
-        </div>
+        </div> */}
 
         {/* PCR Trainer */}
         <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer" onClick={() => navigate('/pcr-trainer')}>
