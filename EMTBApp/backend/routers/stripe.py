@@ -72,6 +72,9 @@ async def create_checkout_session(
         return {"checkout_url": checkout_session.url, "session_id": checkout_session.id}
     
     except Exception as e:
+        print(f"!!!ERROR!!! create_checkout_session failed: {str(e)}, Type: {type(e).__name__}")
+        import traceback
+        traceback.print_exc()
         raise HTTPException(status_code=400, detail=str(e))
 
 
