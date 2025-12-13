@@ -51,7 +51,7 @@ app.add_middleware(SlowAPIMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",
+        os.getenv("FRONTEND_URL", "http://localhost:3000"),
         "http://localhost:5173",
         "https://therig.netlify.app",
         "https://emeritarig-production.up.railway.app"
@@ -193,8 +193,8 @@ def create_checkout_session(current_user: User = Depends(get_current_user)):
             mode='payment',
             client_reference_id=str(current_user.id),
             customer_email=current_user.email,
-            success_url='http://localhost:3000/dashboard?payment=success',
-            cancel_url='http://localhost:3000/dashboard?payment=cancelled'
+            success_url=f'{os.getenv("FRONTEND_URL", "http://localhost:3000")}/dashboard?payment=success',
+            cancel_url=f'{os.getenv("FRONTEND_URL", "http://localhost:3000")}/dashboard?payment=cancelled'
         )
         return {"checkout_url": session.url}
     except Exception as e:

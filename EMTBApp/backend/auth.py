@@ -8,7 +8,13 @@ from sqlalchemy.orm import Session
 from database import get_db
 from models import User
 
-SECRET_KEY = os.getenv("SECRET_KEY", "CHANGE_THIS_IN_PROD")
+SECRET_KEY = os.getenv("SECRET_KEY")
+if not SECRET_KEY:
+    # Warn in logs or raise error in production
+    if os.getenv("ENVIRONMENT") == "production":
+        raise ValueError("FATAL: SECRET_KEY not set in production!")
+    SECRET_KEY = "CHANGE_THIS_IN_PROD"
+
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
