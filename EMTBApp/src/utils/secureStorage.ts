@@ -5,6 +5,7 @@ import CryptoJS from 'crypto-js';
 // In a real app, this key should be derived from a user secret or fetched securely.
 // For this implementation, we'll use a generated device-specific key stored in Keychain.
 const ENCRYPTION_KEY_ALIAS = 'EMTB_DATA_KEY';
+const isServerEnvironment = typeof window === 'undefined';
 
 /**
  * Initialize the encryption key if it doesn't exist.
@@ -58,6 +59,8 @@ export const removeSecureItem = async (key: string): Promise<void> => {
  * Encrypt and store large data in AsyncStorage
  */
 export const storeEncryptedData = async (key: string, data: any): Promise<void> => {
+  if (isServerEnvironment) return;
+
   try {
     const encryptionKey = await getEncryptionKey();
     const jsonString = JSON.stringify(data);
@@ -73,6 +76,8 @@ export const storeEncryptedData = async (key: string, data: any): Promise<void> 
  * Retrieve and decrypt large data from AsyncStorage
  */
 export const getEncryptedData = async <T>(key: string): Promise<T | null> => {
+  if (isServerEnvironment) return null;
+
   try {
     const encrypted = await AsyncStorage.getItem(key);
     if (!encrypted) return null;
