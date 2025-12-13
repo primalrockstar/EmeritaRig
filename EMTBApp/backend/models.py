@@ -20,6 +20,33 @@ class User(Base):
     stripe_customer_id = Column(String, nullable=True)
     stripe_subscription_id = Column(String, nullable=True)
 
+    # Instructor fields
+    is_instructor = Column(Boolean, default=False)
+    institution_name = Column(String, nullable=True)
+    instructor_verification_status = Column(String, default='pending') # pending, verified, rejected
+    referral_code = Column(String, unique=True, nullable=True)
+    students_referred = Column(Integer, default=0)
+    referral_used = Column(String, nullable=True)
+
+    # Quality/Bounty fields
+    quality_reports_submitted = Column(Integer, default=0)
+    quality_reports_confirmed = Column(Integer, default=0)
+    badges = Column(JSON, default=[])
+
+
+class Issue(Base):
+    __tablename__ = "issues"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    content_type = Column(String)  # 'question', 'flashcard', 'scenario', 'chapter'
+    content_id = Column(Integer)
+    issue_type = Column(String)  # 'clinical_error', 'typo', 'outdated', 'unclear', 'other'
+    description = Column(Text)
+    status = Column(String, default='pending')  # 'pending', 'reviewed', 'fixed', 'invalid'
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+
 
 class Question(Base):
     __tablename__ = "questions"

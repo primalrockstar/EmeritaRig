@@ -54,6 +54,7 @@ import CompanionProgressTab from './components/dashboard/CompanionProgressTab';
 import CompanionDrillTab from './components/dashboard/CompanionDrillTab';
 
 import CompanionReferenceTab from './components/dashboard/CompanionReferenceTab';
+import HelpPage from './pages/Help';
 
 // Enhanced Ultra-Modern Header with Glass Morphism
 const UltraModernHeader = () => {
@@ -889,6 +890,7 @@ function ProtectedRoutes() {
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/disclaimer" element={<MedicalDisclaimer />} />
         <Route path="/support" element={<SupportCenter />} />
+        <Route path="/help" element={<HelpPage />} />
         <Route path="/contact" element={<ContactUs />} />
 
         <Route path="*" element={<NotFoundPage />} />
@@ -934,6 +936,7 @@ const AuthenticatedApp: React.FC = () => {
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/disclaimer" element={<MedicalDisclaimer />} />
             <Route path="/support" element={<SupportCenter />} />
+            <Route path="/help" element={<HelpPage />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes></UWorldLayout>} />
