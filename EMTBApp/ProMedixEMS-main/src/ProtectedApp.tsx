@@ -54,6 +54,7 @@ import CompanionProgressTab from './components/dashboard/CompanionProgressTab';
 import CompanionDrillTab from './components/dashboard/CompanionDrillTab';
 
 import CompanionReferenceTab from './components/dashboard/CompanionReferenceTab';
+import EMTBPcrTrainer from './components/emtb/EMTBPcrTrainer';
 
 // Enhanced Ultra-Modern Header with Glass Morphism
 const UltraModernHeader = () => {
@@ -880,6 +881,7 @@ function ProtectedRoutes() {
         <Route path="/curriculum" element={<CurriculumPage />} />
         <Route path="/chapters" element={<CurriculumPage />} />
         <Route path="/scenarios" element={<ScenariosPage />} />
+        <Route path="/pcr-practice" element={<PageContainer title="PCR Report Sim" subtitle="Practice patient care report documentation with FTO evaluation and real-world scenarios."><EMTBPcrTrainer /></PageContainer>} />
         <Route path="/nremt-simulator" element={<PageContainer title="NREMT Exam Simulator" subtitle="High-stakes CAT exam - No assistance provided. Training wheels OFF."><NREMTSimulator /></PageContainer>} />
 
         <Route path="/progress" element={<ProgressPage />} />
@@ -928,6 +930,7 @@ const AuthenticatedApp: React.FC = () => {
             <Route path="/curriculum" element={<CurriculumPage />} />
             <Route path="/chapters" element={<CurriculumPage />} />
             <Route path="/scenarios" element={<ScenariosPage />} />
+            <Route path="/pcr-practice" element={<PageContainer title="PCR Report Sim" subtitle="Practice patient care report documentation with FTO evaluation and real-world scenarios."><EMTBPcrTrainer /></PageContainer>} />
             <Route path="/nremt-simulator" element={<PageContainer title="NREMT Exam Simulator" subtitle="High-stakes CAT exam - No assistance provided. Training wheels OFF."><NREMTSimulator /></PageContainer>} />
             <Route path="/progress" element={<ProgressPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
