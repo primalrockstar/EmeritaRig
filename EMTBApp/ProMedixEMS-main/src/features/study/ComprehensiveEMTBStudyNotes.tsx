@@ -566,20 +566,20 @@ const ComprehensiveEMTBStudyNotes: React.FC = () => {
         {activeTab === 'overview' ? (
           <div className="space-y-6">
             {/* Chapter Overview */}
-            <GlassCard className="p-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">{currentChapter.title}</h2>
-              <p className="text-gray-600 mb-6">{currentChapter.description}</p>
-              
+            <GlassCard className="p-6" variant="solid">
+              <h2 className="text-xl font-semibold text-slate-50 mb-4">{currentChapter.title}</h2>
+              <p className="text-slate-300 mb-6">{currentChapter.description}</p>
+
               {/* Learning Objectives */}
               <div className="mb-6">
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Learning Objectives</h3>
+                <h3 className="text-lg font-medium text-slate-50 mb-3">Learning Objectives</h3>
                 <ul className="space-y-2">
                   {currentChapter.learningObjectives.map((objective, index) => (
                     <li key={index} className="flex items-start">
                       <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-medium mr-3 mt-0.5">
                         {index + 1}
                       </span>
-                      <span className="text-gray-700">{objective}</span>
+                      <span className="text-slate-300">{objective}</span>
                     </li>
                   ))}
                 </ul>
@@ -587,7 +587,7 @@ const ComprehensiveEMTBStudyNotes: React.FC = () => {
 
               {/* Key Terms */}
               <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Key Terms</h3>
+                <h3 className="text-lg font-medium text-slate-50 mb-3">Key Terms</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                   {currentChapter.keyTerms.map((term, index) => (
                     <Badge key={index} label={term} color="blue" />
@@ -599,26 +599,26 @@ const ComprehensiveEMTBStudyNotes: React.FC = () => {
             {/* Sections */}
             <div className="space-y-4">
               {filteredSections.map((section, index) => (
-                <GlassCard key={index}>
+                <GlassCard key={index} variant="solid">
                   <button
                     onClick={() => toggleSection(index)}
                     className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50"
                   >
-                    <h3 className="text-lg font-medium text-gray-900">{section.title}</h3>
+                    <h3 className="text-lg font-medium text-slate-50">{section.title}</h3>
                     {expandedSections.has(index) ? (
                       <ChevronUp className="h-5 w-5 text-gray-500" />
                     ) : (
                       <ChevronDown className="h-5 w-5 text-gray-500" />
                     )}
                   </button>
-                  
+
                   {expandedSections.has(index) && (
                     <div className="px-6 pb-4">
                       <ul className="space-y-2">
                         {section.content.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-start">
                             <span className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>
-                            <span className="text-gray-700">{item}</span>
+                            <span className="text-slate-300">{item}</span>
                           </li>
                         ))}
                       </ul>
