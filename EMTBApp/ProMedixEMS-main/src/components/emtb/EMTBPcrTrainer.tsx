@@ -13,7 +13,7 @@ const SCENARIOS = [
     "stress_fto_responses": ["Don't agitate the child! Pediatric Protocol 2.4 violation!", "This is a load and go situation!"],
     "options": [
       {"text": "Administer supplemental oxygen via nasal cannula and prepare for rapid transport", "is_correct": true},
-      {"text": "Intubate the patient for airway control", "is_correct": false, "feedback": "OUT OF SCOPE! EMT cannot perform intubation. Refer to EMT Scope of Practice Protocol."},
+      {"text": "Intubate the patient for airway control", "is_correct": false, "feedback": "OUT OF SCOPE! Endotracheal intubation requires Paramedic level certification. EMT-B scope is limited to basic airway management."},
       {"text": "Start an IV line for fluid resuscitation", "is_correct": false}
     ],
     "hazards": {"type": "Biohazard/Safety", "action": "Don PPE and minimize agitation"}
@@ -27,7 +27,7 @@ const SCENARIOS = [
     "stress_fto_responses": ["Seizure protocol! Check glucose immediately!", "Load and go - time critical!"],
     "options": [
       {"text": "Assess ABCs, check blood glucose, provide supportive care, and transport", "is_correct": true},
-      {"text": "Intubate for airway protection", "is_correct": false, "feedback": "OUT OF SCOPE! EMT cannot perform intubation. Refer to EMT Scope of Practice Protocol."},
+      {"text": "Intubate for airway protection", "is_correct": false, "feedback": "OUT OF SCOPE! Endotracheal intubation requires Paramedic level certification. EMT-B scope is limited to basic airway management."},
       {"text": "Administer intramuscular diazepam", "is_correct": false}
     ],
     "hazards": {"type": "Biohazard/Safety", "action": "Don PPE and secure scene"}
@@ -41,7 +41,7 @@ const SCENARIOS = [
     "stress_fto_responses": ["Airway is swelling shut! Intubate now!", "Protocol violation - child is crashing!"],
     "options": [
       {"text": "Administer epinephrine auto-injector, provide supplemental oxygen, and transport", "is_correct": true},
-      {"text": "Start IV line and administer epinephrine intravenously", "is_correct": false, "feedback": "OUT OF SCOPE! EMT uses auto-injector only. Refer to EMT Scope of Practice Protocol."},
+      {"text": "Start IV line and administer epinephrine intravenously", "is_correct": false, "feedback": "OUT OF SCOPE! IV access and IV medications require AEMT level certification. EMT-B uses auto-injectors only."},
       {"text": "Administer oral diphenhydramine only", "is_correct": false}
     ],
     "hazards": {"type": "Biohazard/Safety", "action": "Don PPE and monitor closely"}
@@ -55,7 +55,7 @@ const SCENARIOS = [
     "stress_fto_responses": ["Head injury! This is a load and go!", "Don't move the child without precautions!"],
     "options": [
       {"text": "Apply C-spine immobilization, control bleeding, and transport", "is_correct": true},
-      {"text": "Intubate immediately for airway protection", "is_correct": false, "feedback": "OUT OF SCOPE! EMT cannot perform intubation. Refer to EMT Scope of Practice Protocol."},
+      {"text": "Intubate immediately for airway protection", "is_correct": false, "feedback": "OUT OF SCOPE! Endotracheal intubation requires Paramedic level certification. EMT-B scope is limited to basic airway management."},
       {"text": "Apply cold pack to head", "is_correct": false}
     ],
     "hazards": {"type": "Biohazard/Safety", "action": "Don PPE and C-spine precautions"}
@@ -69,7 +69,7 @@ const SCENARIOS = [
     "stress_fto_responses": ["CPR now! Pediatric protocol!", "Don't delay - infant is critical!"],
     "options": [
       {"text": "Initiate CPR, apply pediatric AED pads, and transport", "is_correct": true},
-      {"text": "Intubate and defibrillate with adult energy dose", "is_correct": false, "feedback": "OUT OF SCOPE! EMT cannot intubate and must use pediatric pads. Refer to EMT Scope of Practice Protocol."},
+      {"text": "Intubate and defibrillate with adult energy dose", "is_correct": false, "feedback": "OUT OF SCOPE! Endotracheal intubation requires Paramedic certification. EMT-B must use pediatric AED pads and cannot intubate."},
       {"text": "Administer epinephrine intravenously", "is_correct": false}
     ],
     "hazards": {"type": "Biohazard/Safety", "action": "Don PPE and handle gently"}
@@ -153,7 +153,7 @@ const SCENARIOS = [
     "stress_fto_responses": ["Splint the fracture now!", "Load and go - shock setting in!"],
     "options": [
       {"text": "Immobilize limb with traction splint if available, manage pain, and transport", "is_correct": true},
-      {"text": "Perform needle decompression for suspected pneumothorax", "is_correct": false, "feedback": "OUT OF SCOPE! ALS procedure. Refer to Trauma Protocol."},
+      {"text": "Perform needle decompression for suspected pneumothorax", "is_correct": false, "feedback": "OUT OF SCOPE! Needle decompression requires Paramedic level certification. EMT-B scope does not include invasive procedures."},
       {"text": "Suture any open wounds", "is_correct": false}
     ],
     "hazards": {"type": "Trauma/Safety", "action": "Secure scene and C-spine"}
@@ -237,7 +237,7 @@ const SCENARIOS = [
     "stress_fto_responses": ["Nebulize immediately!", "Protocol violation - can't breathe!"],
     "options": [
       {"text": "Administer nebulized albuterol and supplemental oxygen", "is_correct": true},
-      {"text": "Administer adenosine for SVT", "is_correct": false, "feedback": "OUT OF SCOPE! ALS medication. Refer to Respiratory Protocol."},
+      {"text": "Administer adenosine for SVT", "is_correct": false, "feedback": "OUT OF SCOPE! Adenosine requires Paramedic level certification. EMT-B scope is limited to basic medications."},
       {"text": "Perform endotracheal intubation", "is_correct": false}
     ],
     "hazards": {"type": "Respiratory/Safety", "action": "Use PPE"}
@@ -307,7 +307,7 @@ const SCENARIOS = [
     "stress_fto_responses": ["High BP crisis!", "Protocol violation - eclampsia risk!"],
     "options": [
       {"text": "Monitor vital signs, position left lateral, and transport", "is_correct": true},
-      {"text": "Administer magnesium sulfate IV", "is_correct": false, "feedback": "OUT OF SCOPE! ALS medication. Refer to OB Protocol."},
+      {"text": "Administer magnesium sulfate IV", "is_correct": false, "feedback": "OUT OF SCOPE! IV magnesium sulfate requires Paramedic level certification. EMT-B scope does not include IV medications."},
       {"text": "Perform emergency delivery", "is_correct": false}
     ],
     "hazards": {"type": "OB/Safety", "action": "Monitor blood pressure"}
