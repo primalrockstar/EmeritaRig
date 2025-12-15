@@ -259,16 +259,16 @@ const EMTBFlashcards: React.FC = () => {
 
   if (!selectedCategory) {
     return (
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="max-w-4xl mx-auto p-6 bg-slate-900">
         <h1 className="text-3xl font-bold text-white mb-6">EMT-B Flashcards</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className="p-4 bg-slate-800 hover:bg-slate-700 rounded-lg text-white font-medium"
+              className="p-6 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-lg text-white font-medium transition-all hover:border-amber-500/50 hover:shadow-[0_0_10px_rgba(245,158,11,0.2)]"
             >
-              {category}
+              📚 {category}
             </button>
           ))}
         </div>
@@ -282,7 +282,7 @@ const EMTBFlashcards: React.FC = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-4xl mx-auto p-6 bg-slate-900">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold text-white">{selectedCategory} Flashcards</h1>
@@ -314,10 +314,10 @@ const EMTBFlashcards: React.FC = () => {
         </div>
       </div>
 
-      {/* Progress Bar */}
-      <div className="w-full bg-slate-700 rounded-full h-2 mb-6">
+      {/* System Charge Bar */}
+      <div className="w-full bg-slate-900 rounded-full h-3 mb-6 border border-slate-700">
         <div
-          className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+          className="bg-gradient-to-r from-amber-600 to-yellow-400 h-3 rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(245,158,11,0.5)]"
           style={{ width: `${getProgressPercentage()}%` }}
         />
       </div>
@@ -331,10 +331,10 @@ const EMTBFlashcards: React.FC = () => {
           onClick={handleCardClick}
         >
           {/* Front */}
-          <div className={`absolute inset-0 w-full h-full bg-slate-800 rounded-lg p-6 flex flex-col justify-center items-center ${
-            isFlipped ? 'opacity-0' : 'opacity-100'
-          } transition-opacity duration-300`}>
-            <div className="text-2xl font-bold text-white text-center mb-4">
+          <div className={`absolute inset-0 w-full h-full bg-slate-800/90 backdrop-blur-sm rounded-lg p-6 flex flex-col justify-center items-center border ${
+            isFlipped ? 'border-slate-600' : 'border-amber-500/50 shadow-[0_0_15px_rgba(245,158,11,0.2)]'
+          } transition-all duration-300`}>
+            <div className="text-3xl font-mono font-bold text-amber-400 text-center mb-4">
               {currentCard.front}
             </div>
             {!showAnswer && (
@@ -343,10 +343,10 @@ const EMTBFlashcards: React.FC = () => {
           </div>
 
           {/* Back */}
-          <div className={`absolute inset-0 w-full h-full bg-slate-700 rounded-lg p-6 flex flex-col justify-center items-center transform rotate-y-180 ${
-            isFlipped ? 'opacity-100' : 'opacity-0'
-          } transition-opacity duration-300`}>
-            <div className="text-xl text-white text-center">
+          <div className={`absolute inset-0 w-full h-full bg-slate-800/90 backdrop-blur-sm rounded-lg p-6 flex flex-col justify-center items-center transform rotate-y-180 border ${
+            isFlipped ? 'border-amber-500/50 shadow-[0_0_15px_rgba(245,158,11,0.2)]' : 'border-slate-600'
+          } transition-all duration-300`}>
+            <div className="text-lg text-slate-100 text-center">
               {currentCard.back}
             </div>
           </div>
@@ -358,27 +358,27 @@ const EMTBFlashcards: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <button
             onClick={() => handleConfidenceRating('again')}
-            className="p-4 bg-red-600 hover:bg-red-700 rounded-lg text-white font-medium"
+            className="p-4 bg-red-400 text-red-900 font-medium rounded-lg shadow-[0_0_10px_rgba(239,68,68,0.5)] hover:shadow-[0_0_15px_rgba(239,68,68,0.7)] transition-all duration-200"
           >
-            Again (0%)
+            🔴 Study Again (0%)
           </button>
           <button
             onClick={() => handleConfidenceRating('hard')}
-            className="p-4 bg-orange-600 hover:bg-orange-700 rounded-lg text-white font-medium"
+            className="p-4 bg-slate-700 hover:bg-slate-600 text-white font-medium rounded-lg transition-colors"
           >
             Hard (50%)
           </button>
           <button
             onClick={() => handleConfidenceRating('good')}
-            className="p-4 bg-green-600 hover:bg-green-700 rounded-lg text-white font-medium"
+            className="p-4 bg-slate-700 hover:bg-slate-600 text-white font-medium rounded-lg transition-colors"
           >
             Good (85%)
           </button>
           <button
             onClick={() => handleConfidenceRating('easy')}
-            className="p-4 bg-emerald-600 hover:bg-emerald-700 rounded-lg text-white font-medium"
+            className="p-4 bg-emerald-400 text-emerald-900 font-medium rounded-lg shadow-[0_0_10px_rgba(16,185,129,0.5)] hover:shadow-[0_0_15px_rgba(16,185,129,0.7)] transition-all duration-200"
           >
-            Easy (100%)
+            🟢 Mark as Known (100%)
           </button>
         </div>
       )}
@@ -388,16 +388,16 @@ const EMTBFlashcards: React.FC = () => {
         <button
           onClick={previousCard}
           disabled={currentCardIndex === 0}
-          className="px-6 py-3 bg-slate-600 hover:bg-slate-700 disabled:bg-slate-800 rounded-lg text-white font-medium"
+          className="px-6 py-3 bg-slate-700 hover:bg-slate-600 disabled:bg-slate-800 rounded-lg text-white font-medium transition-colors"
         >
-          Previous
+          ◀ Previous
         </button>
         <button
           onClick={nextCard}
           disabled={!showAnswer}
-          className="px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-800 rounded-lg text-white font-medium"
+          className="px-6 py-3 bg-slate-700 hover:bg-slate-600 disabled:bg-slate-800 rounded-lg text-white font-medium transition-colors"
         >
-          Next Card
+          Next ▶
         </button>
       </div>
     </div>

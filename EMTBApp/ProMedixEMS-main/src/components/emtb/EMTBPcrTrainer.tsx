@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { usePerformanceTracker } from '../../hooks/usePerformanceTracker';
 import { PcrTracker, calculatePcrScore } from '../../services/pcrTracker';
+import VoiceNoteTranscriber from '../VoiceNoteTranscriber';
 
 // Import scenarios from seed data
 const SCENARIOS = [
@@ -353,6 +354,160 @@ const SCENARIOS = [
       {"text": "Administer sedative medication", "is_correct": false}
     ],
     "hazards": {"type": "Sensitive/Safety", "action": "Maintain patient privacy"}
+  },
+  {
+    "title": "Adult Cardiac Arrest",
+    "category": "Medical",
+    "pcr_text": "65-year-old unresponsive and pulseless. Bystander CPR in progress for 5 minutes.",
+    "correct_error": "Cardiac arrest. Initiate CPR and apply AED per Cardiac Arrest Protocol.",
+    "chaos_events": ["Family members screaming", "AED pads expired"],
+    "stress_fto_responses": ["CPR now!", "AED immediately - protocol!"],
+    "options": [
+      {"text": "Initiate CPR, apply AED pads, and continue resuscitation", "is_correct": true},
+      {"text": "Administer epinephrine IV", "is_correct": false, "feedback": "OUT OF SCOPE! IV epinephrine requires Paramedic level certification. EMT-B uses AED only."},
+      {"text": "Perform endotracheal intubation", "is_correct": false}
+    ],
+    "hazards": {"type": "Biohazard/Safety", "action": "Don PPE and minimize interruptions"}
+  },
+  {
+    "title": "Severe Allergic Reaction",
+    "category": "Medical",
+    "pcr_text": "35-year-old with hives, swelling, and difficulty breathing after eating shellfish.",
+    "correct_error": "Anaphylaxis. Administer epinephrine auto-injector per Allergic Reaction Protocol.",
+    "chaos_events": ["Patient has no known allergies", "Auto-injector needle broken"],
+    "stress_fto_responses": ["Epi now!", "Airway swelling - inject!"],
+    "options": [
+      {"text": "Administer epinephrine auto-injector and provide oxygen", "is_correct": true},
+      {"text": "Start IV line for fluid bolus", "is_correct": false, "feedback": "OUT OF SCOPE! IV access requires AEMT level certification. EMT-B uses auto-injectors only."},
+      {"text": "Administer oral antihistamine only", "is_correct": false}
+    ],
+    "hazards": {"type": "Biohazard/Safety", "action": "Monitor for deterioration"}
+  },
+  {
+    "title": "Diabetic Ketoacidosis",
+    "category": "Medical",
+    "pcr_text": "22-year-old diabetic with nausea, vomiting, and altered mental status. Breath smells fruity.",
+    "correct_error": "Suspected DKA. Check blood glucose and transport per Diabetic Protocol.",
+    "chaos_events": ["Patient combative and refusing care", "Glucometer malfunctioning"],
+    "stress_fto_responses": ["Check sugar!", "DKA protocol - transport!"],
+    "options": [
+      {"text": "Check blood glucose, provide supportive care, and transport", "is_correct": true},
+      {"text": "Administer insulin subcutaneously", "is_correct": false, "feedback": "OUT OF SCOPE! Insulin administration requires Paramedic level certification. EMT-B monitors glucose only."},
+      {"text": "Start IV fluids", "is_correct": false}
+    ],
+    "hazards": {"type": "Biohazard/Safety", "action": "Protect from injury"}
+  },
+  {
+    "title": "Heat Stroke",
+    "category": "Environmental",
+    "pcr_text": "45-year-old construction worker with hot, dry skin, confusion, and rectal temperature 104°F.",
+    "correct_error": "Heat stroke. Active cooling and transport per Environmental Protocol.",
+    "chaos_events": ["Patient resisting cooling measures", "Scene temperature over 100°F"],
+    "stress_fto_responses": ["Cool them down!", "Heat stroke protocol!"],
+    "options": [
+      {"text": "Remove clothing, apply cool packs, and transport with cooling", "is_correct": true},
+      {"text": "Administer IV fluids aggressively", "is_correct": false, "feedback": "OUT OF SCOPE! IV fluid administration requires Paramedic level certification. EMT-B provides external cooling only."},
+      {"text": "Give ice water to drink", "is_correct": false}
+    ],
+    "hazards": {"type": "Environmental/Safety", "action": "Prevent further heat exposure"}
+  },
+  {
+    "title": "Hypothermia",
+    "category": "Environmental",
+    "pcr_text": "60-year-old found unresponsive in cold weather with core temperature 92°F.",
+    "correct_error": "Severe hypothermia. Handle gently and transport per Environmental Protocol.",
+    "chaos_events": ["Patient rigid and difficult to move", "Wind chill factor extreme"],
+    "stress_fto_responses": ["Warm them up!", "Hypothermia protocol!"],
+    "options": [
+      {"text": "Handle gently, prevent further heat loss, and transport", "is_correct": true},
+      {"text": "Apply external warming devices aggressively", "is_correct": false, "feedback": "OUT OF SCOPE! Aggressive rewarming requires Paramedic level certification. EMT-B prevents further heat loss."},
+      {"text": "Give hot coffee to drink", "is_correct": false}
+    ],
+    "hazards": {"type": "Environmental/Safety", "action": "Minimize patient movement"}
+  },
+  {
+    "title": "Near Drowning",
+    "category": "Trauma",
+    "pcr_text": "8-year-old pulled from pool unconscious but breathing. Water in airway.",
+    "correct_error": "Near drowning. Provide oxygen and transport per Drowning Protocol.",
+    "chaos_events": ["Parent performing improper CPR", "Pool water contaminated"],
+    "stress_fto_responses": ["Suction airway!", "Drowning protocol!"],
+    "options": [
+      {"text": "Provide supplemental oxygen and transport", "is_correct": true},
+      {"text": "Perform gastric decompression", "is_correct": false, "feedback": "OUT OF SCOPE! Advanced airway procedure. Refer to Drowning Protocol."},
+      {"text": "Administer warmed IV fluids", "is_correct": false}
+    ],
+    "hazards": {"type": "Biohazard/Safety", "action": "Don PPE"}
+  },
+  {
+    "title": "Burn Injury",
+    "category": "Trauma",
+    "pcr_text": "30-year-old with partial thickness burns to both arms from hot water. 15% TBSA.",
+    "correct_error": "Burn injury. Cover with dry dressing and transport per Burn Protocol.",
+    "chaos_events": ["Patient in severe pain", "Burns continuing to deepen"],
+    "stress_fto_responses": ["Cover burns!", "Pain control needed!"],
+    "options": [
+      {"text": "Cover burns with dry sterile dressing and transport", "is_correct": true},
+      {"text": "Apply ice to burned areas", "is_correct": false, "feedback": "OUT OF SCOPE! Ice application can worsen burns. Refer to Burn Protocol."},
+      {"text": "Administer IV pain medication", "is_correct": false}
+    ],
+    "hazards": {"type": "Biohazard/Safety", "action": "Prevent contamination"}
+  },
+  {
+    "title": "Eye Injury",
+    "category": "Trauma",
+    "pcr_text": "25-year-old with chemical splash to eyes. Eyes red and painful.",
+    "correct_error": "Chemical eye injury. Irrigate with water per Eye Injury Protocol.",
+    "chaos_events": ["Patient squeezing eyes shut", "Chemical unknown"],
+    "stress_fto_responses": ["Irrigate now!", "Eye injury protocol!"],
+    "options": [
+      {"text": "Irrigate eyes with clean water for 20 minutes", "is_correct": true},
+      {"text": "Apply eye drops", "is_correct": false, "feedback": "OUT OF SCOPE! Medication administration requires Paramedic level certification. EMT-B irrigates only."},
+      {"text": "Patch both eyes", "is_correct": false}
+    ],
+    "hazards": {"type": "Chemical/Safety", "action": "Protect provider eyes"}
+  },
+  {
+    "title": "Nosebleed",
+    "category": "Medical",
+    "pcr_text": "50-year-old with active anterior nosebleed. Patient taking aspirin.",
+    "correct_error": "Epistaxis. Apply direct pressure per Bleeding Protocol.",
+    "chaos_events": ["Blood dripping on scene", "Patient anxious"],
+    "stress_fto_responses": ["Pinch nose!", "Bleeding protocol!"],
+    "options": [
+      {"text": "Apply direct pressure to nostrils and transport", "is_correct": true},
+      {"text": "Pack nose with gauze", "is_correct": false, "feedback": "OUT OF SCOPE! Nasal packing requires advanced training. EMT-B applies direct pressure only."},
+      {"text": "Administer nasal spray", "is_correct": false}
+    ],
+    "hazards": {"type": "Biohazard/Safety", "action": "Don PPE"}
+  },
+  {
+    "title": "Seizure - Post-Ictal",
+    "category": "Medical",
+    "pcr_text": "40-year-old post-ictal after witnessed seizure. Confused but responding to commands.",
+    "correct_error": "Post-ictal state. Assess ABCs and transport per Seizure Protocol.",
+    "chaos_events": ["Patient combative", "Bystanders restraining patient"],
+    "stress_fto_responses": ["Check glucose!", "Seizure protocol!"],
+    "options": [
+      {"text": "Assess ABCs, check blood glucose, and transport", "is_correct": true},
+      {"text": "Administer rectal diazepam", "is_correct": false, "feedback": "OUT OF SCOPE! Rectal medication administration requires Paramedic level certification. EMT-B monitors only."},
+      {"text": "Restrain patient", "is_correct": false}
+    ],
+    "hazards": {"type": "Biohazard/Safety", "action": "Protect from injury"}
+  },
+  {
+    "title": "Abdominal Pain",
+    "category": "Medical",
+    "pcr_text": "55-year-old with severe abdominal pain and vomiting. History of gallstones.",
+    "correct_error": "Abdominal pain. Assess and transport per Abdominal Pain Protocol.",
+    "chaos_events": ["Patient writhing in pain", "Scene has strong odor"],
+    "stress_fto_responses": ["Assess abdomen!", "Transport now!"],
+    "options": [
+      {"text": "Assess vital signs, provide supportive care, and transport", "is_correct": true},
+      {"text": "Administer pain medication IV", "is_correct": false, "feedback": "OUT OF SCOPE! IV pain medication requires Paramedic level certification. EMT-B provides supportive care only."},
+      {"text": "Perform abdominal ultrasound", "is_correct": false}
+    ],
+    "hazards": {"type": "Biohazard/Safety", "action": "Don PPE"}
   }
 ];
 
@@ -528,7 +683,7 @@ const EMTBPcrTrainer: React.FC = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto p-6 bg-slate-900">
       {/* Header */}
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-white mb-2">EMT-B FTO Training Simulator</h1>
@@ -561,9 +716,9 @@ const EMTBPcrTrainer: React.FC = () => {
             </div>
 
             {/* Chaos Events */}
-            <div className="bg-red-900/20 border border-red-500/30 p-3 rounded-lg mb-4">
+            <div className="bg-red-900/90 border border-red-500 p-3 rounded-lg mb-4">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-sm font-semibold text-red-400 uppercase">🚨 Chaos Events</h3>
+                <h3 className="text-sm font-semibold text-white uppercase">⚠️ Chaos Events</h3>
                 <button
                   onClick={() => setShowChaosEvents(!showChaosEvents)}
                   className="text-xs px-2 py-1 bg-red-600 hover:bg-red-700 rounded text-white"
@@ -572,7 +727,7 @@ const EMTBPcrTrainer: React.FC = () => {
                 </button>
               </div>
               {showChaosEvents && (
-                <ul className="text-red-300 text-sm space-y-1">
+                <ul className="text-white text-sm space-y-1">
                   {currentScenario.chaos_events.map((event, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-red-400">•</span>
@@ -617,7 +772,7 @@ const EMTBPcrTrainer: React.FC = () => {
               value={reportText}
               onChange={(e) => setReportText(e.target.value)}
               placeholder="Document your assessment, interventions, transport decision, and rationale..."
-              className="w-full h-48 p-4 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-400 resize-none focus:border-purple-500 focus:outline-none"
+              className="w-full h-48 p-4 bg-slate-800 border border-slate-600 rounded-lg text-amber-500 placeholder-slate-400 resize-none focus:border-amber-500 focus:outline-none font-mono"
               disabled={showAnswer}
             />
 
@@ -625,11 +780,16 @@ const EMTBPcrTrainer: React.FC = () => {
               <button
                 onClick={handleSubmitReport}
                 disabled={selectedOption === null}
-                className="w-full mt-4 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 rounded-lg text-white font-medium transition-colors"
+                className="w-full mt-4 py-4 bg-amber-600 hover:bg-amber-500 disabled:bg-slate-600 rounded-full text-white font-medium transition-colors text-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
               >
-                Submit FTO Evaluation
+                📡 Submit FTO Evaluation
               </button>
             )}
+          </div>
+
+          {/* Voice Note Transcriber */}
+          <div className="bg-slate-800/50 backdrop-blur border border-slate-600 rounded-xl p-4">
+            <VoiceNoteTranscriber />
           </div>
 
           {/* FTO Feedback */}

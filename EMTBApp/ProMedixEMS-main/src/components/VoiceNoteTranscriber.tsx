@@ -234,7 +234,7 @@ const VoiceNoteTranscriber: React.FC<VoiceNoteTranscriberProps> = ({ onSave, onC
       canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
       canvasCtx.lineWidth = 2;
-      canvasCtx.strokeStyle = 'rgb(37, 99, 235)'; // blue-600
+      canvasCtx.strokeStyle = '#10B981'; // neon green
 
       canvasCtx.beginPath();
 
