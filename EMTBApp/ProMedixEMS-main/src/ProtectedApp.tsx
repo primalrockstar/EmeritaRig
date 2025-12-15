@@ -911,11 +911,11 @@ const AuthenticatedApp: React.FC = () => {
           <Route path="/admin" element={<RequireRole role="admin"><InstructorDashboard /></RequireRole>} />
           {/* Temporarily bypass auth for testing */}
           <Route path="/*" element={<UWorldLayout><Routes>
-            <Route path="/" element={<CompanionDashboard />} />
-            <Route path="/today" element={<CompanionDashboard />} />
+            <Route path="/" element={<UltraModernDashboard />} />
+            <Route path="/today" element={<UltraModernDashboard />} />
             <Route path="/dashboard" element={<UltraModernDashboard />} />
             <Route path="/search" element={<SearchResultsPage />} />
-            <Route path="/enhanced-quiz" element={<EnhancedQuizPage />} />
+            <Route path="/enhanced-quiz" element={<ClinicalLayout title="NREMT EMT-Basic Certification Exam"><EnhancedQuizPage /></ClinicalLayout>} />
             <Route path="/voice-transcriber" element={<VoiceTranscriberPage />} />
             <Route path="/national-protocols" element={<ProtocolsPage />} />
             <Route path="/flashcards" element={<FlashcardsPage />} />
@@ -930,7 +930,7 @@ const AuthenticatedApp: React.FC = () => {
             <Route path="/study-notes/:chapterId" element={<ChapterReader />} />
             <Route path="/scenarios" element={<ScenariosPage />} />
             <Route path="/pcr-practice" element={<PageContainer title="PCR Report Sim" subtitle="Practice patient care report documentation with FTO evaluation and real-world scenarios."><EMTBPcrTrainer /></PageContainer>} />
-            <Route path="/nremt-simulator" element={<PageContainer title="NREMT Exam Simulator" subtitle="High-stakes CAT exam - No assistance provided. Training wheels OFF."><NREMTSimulator /></PageContainer>} />
+            <Route path="/nremt-simulator" element={<ClinicalLayout title="NREMT Computer Adaptive Testing (CAT) Simulator"><NREMTSimulator /></ClinicalLayout>} />
             <Route path="/progress" element={<ProgressPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
