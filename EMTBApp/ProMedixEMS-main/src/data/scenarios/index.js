@@ -49,6 +49,34 @@ try {
   console.warn('Could not load scenarios-special.json:', error.message);
 }
 
+try {
+  const traumaTransportScenarios = require('./trauma_transport.json');
+  loadScenariosFromFile(traumaTransportScenarios, 'trauma_transport.json');
+} catch (error) {
+  console.warn('Could not load trauma_transport.json:', error.message);
+}
+
+try {
+  const sceneSafetyScenarios = require('./scene_safety.json');
+  loadScenariosFromFile(sceneSafetyScenarios, 'scene_safety.json');
+} catch (error) {
+  console.warn('Could not load scene_safety.json:', error.message);
+}
+
+try {
+  const medicalSecondaryScenarios = require('./medical_secondary.json');
+  loadScenariosFromFile(medicalSecondaryScenarios, 'medical_secondary.json');
+} catch (error) {
+  console.warn('Could not load medical_secondary.json:', error.message);
+}
+
+try {
+  const medicalGeneralScenarios = require('./medical_general.json');
+  loadScenariosFromFile(medicalGeneralScenarios, 'medical_general.json');
+} catch (error) {
+  console.warn('Could not load medical_general.json:', error.message);
+}
+
 // Log total scenarios loaded
 console.log(`Total scenarios loaded: ${ALL_SCENARIOS.length}`);
 

@@ -1,0 +1,380 @@
+[
+  {
+    "title": "Stroke vs TIA Assessment",
+    "category": "Medical",
+    "pcr_text": "65-year-old male with sudden left-sided weakness and slurred speech. Symptoms began 30 minutes ago. Is this a stroke or TIA?",
+    "correct_error": "Stroke vs TIA: TIA symptoms resolve within 24 hours, stroke symptoms persist per neurology protocols.",
+    "chaos_events": ["Patient improving slightly", "Family anxious"],
+    "stress_fto_responses": ["TIA - symptoms resolve!", "Stroke - persistent symptoms!"],
+    "options": [
+      {"text": "Stroke - symptoms persist beyond 24 hours, requires immediate transport", "is_correct": true},
+      {"text": "TIA - symptoms will resolve, can wait for primary care", "is_correct": false, "feedback": "INCORRECT! Persistent symptoms = stroke requiring immediate ED evaluation."},
+      {"text": "Migraine headache - give pain medication", "is_correct": false}
+    ],
+    "hazards": {"type": "Cerebrovascular Accident/Safety", "action": "Immediate transport for stroke"}
+  },
+  {
+    "title": "Cincinnati Prehospital Stroke Scale - Facial Droop",
+    "category": "Medical",
+    "pcr_text": "75-year-old female with facial asymmetry. Testing Cincinnati Stroke Scale: 'Show me your teeth' - one side of face doesn't move. What does this indicate?",
+    "correct_error": "Cincinnati Scale facial droop: abnormal facial movement indicates stroke per neurology protocols.",
+    "chaos_events": ["Patient frustrated", "Time critical"],
+    "stress_fto_responses": ["Normal aging!", "Facial droop - stroke!"],
+    "options": [
+      {"text": "Abnormal - facial droop present, positive stroke scale finding", "is_correct": true},
+      {"text": "Normal - facial asymmetry is common in elderly", "is_correct": false, "feedback": "INCORRECT! Facial droop on Cincinnati Scale = abnormal, indicates stroke."},
+      {"text": "Bell's palsy - not a stroke", "is_correct": false}
+    ],
+    "hazards": {"type": "Stroke Assessment/Safety", "action": "Positive Cincinnati Scale"}
+  },
+  {
+    "title": "Hypoglycemia Mimicking Stroke",
+    "category": "Medical",
+    "pcr_text": "50-year-old diabetic with sudden confusion, right-sided weakness, blood glucose 45 mg/dL. Is this stroke or hypoglycemia?",
+    "correct_error": "Hypoglycemia mimics stroke: check blood glucose first per endocrinology protocols.",
+    "chaos_events": ["Patient combative", "Family says 'diabetic'"],
+    "stress_fto_responses": ["Stroke symptoms!", "Check blood sugar!"],
+    "options": [
+      {"text": "Hypoglycemia - administer glucose, symptoms should resolve", "is_correct": true},
+      {"text": "Stroke - transport immediately without glucose", "is_correct": false, "feedback": "INCORRECT! Hypoglycemia can perfectly mimic stroke. Check glucose first."},
+      {"text": "Both - treat glucose and transport for stroke", "is_correct": false}
+    ],
+    "hazards": {"type": "Hypoglycemia/Safety", "action": "Check blood glucose"}
+  },
+  {
+    "title": "DKA - Fruity Breath and Kussmaul",
+    "category": "Medical",
+    "pcr_text": "25-year-old Type 1 diabetic with fruity breath odor, deep rapid breathing, blood glucose 550 mg/dL. What condition is this?",
+    "correct_error": "DKA: fruity breath (acetone), Kussmaul respirations, hyperglycemia per endocrinology protocols.",
+    "chaos_events": ["Patient dehydrated", "Altered mental status"],
+    "stress_fto_responses": ["Insulin shock!", "DKA - fruity breath!"],
+    "options": [
+      {"text": "Diabetic ketoacidosis - fruity breath, Kussmaul respirations, hyperglycemia", "is_correct": true},
+      {"text": "Insulin overdose - hypoglycemia would be present", "is_correct": false, "feedback": "INCORRECT! Fruity breath and hyperglycemia = DKA, not insulin shock."},
+      {"text": "Pneumonia - fruity breath indicates infection", "is_correct": false}
+    ],
+    "hazards": {"type": "Diabetic Ketoacidosis/Safety", "action": "Fluid resuscitation"}
+  },
+  {
+    "title": "Abdominal Aortic Aneurysm - Pulsating Mass",
+    "category": "Medical",
+    "pcr_text": "80-year-old male with severe abdominal pain, palpable pulsating mass in abdomen. Should you palpate the mass?",
+    "correct_error": "AAA: pulsating abdominal mass - DO NOT PALPATE, can rupture per GI protocols.",
+    "chaos_events": ["Patient in severe pain", "Mass visibly pulsating"],
+    "stress_fto_responses": ["Palpate to assess!", "Don't touch - AAA!"],
+    "options": [
+      {"text": "Do not palpate - risk of rupture, transport immediately", "is_correct": true},
+      {"text": "Gently palpate to confirm diagnosis", "is_correct": false, "feedback": "DANGEROUS! Palpating AAA can cause rupture. Do not touch!"},
+      {"text": "Apply pressure to stop bleeding", "is_correct": false}
+    ],
+    "hazards": {"type": "Abdominal Aortic Aneurysm/Safety", "action": "No palpation"}
+  },
+  {
+    "title": "Cincinnati Prehospital Stroke Scale - Arm Drift",
+    "category": "Medical",
+    "pcr_text": "60-year-old male with weakness. Testing Cincinnati Scale: 'Close your eyes and hold arms out' - left arm drifts down. What does this indicate?",
+    "correct_error": "Cincinnati Scale arm drift: abnormal motor function indicates stroke per neurology protocols.",
+    "chaos_events": ["Patient trying hard", "Arm shaking"],
+    "stress_fto_responses": ["Normal weakness!", "Arm drift - stroke!"],
+    "options": [
+      {"text": "Abnormal - arm drift present, positive stroke scale finding", "is_correct": true},
+      {"text": "Normal - arm drift can occur in fatigue", "is_correct": false, "feedback": "INCORRECT! Arm drift on Cincinnati Scale = abnormal, indicates stroke."},
+      {"text": "Parkinson's disease - not a stroke", "is_correct": false}
+    ],
+    "hazards": {"type": "Stroke Assessment/Safety", "action": "Positive Cincinnati Scale"}
+  },
+  {
+    "title": "Insulin Shock vs DKA",
+    "category": "Medical",
+    "pcr_text": "35-year-old diabetic found unconscious, shallow breathing, blood glucose 35 mg/dL, no fruity breath. Insulin shock or DKA?",
+    "correct_error": "Insulin shock: hypoglycemia, no Kussmaul respirations, no fruity breath per endocrinology protocols.",
+    "chaos_events": ["Patient unresponsive", "Family has glucagon"],
+    "stress_fto_responses": ["DKA!", "Insulin shock - glucose!"],
+    "options": [
+      {"text": "Insulin shock - administer glucose immediately", "is_correct": true},
+      {"text": "DKA - requires IV fluids and insulin", "is_correct": false, "feedback": "INCORRECT! Hypoglycemia without fruity breath = insulin shock, not DKA."},
+      {"text": "Both - treat with glucagon and fluids", "is_correct": false}
+    ],
+    "hazards": {"type": "Insulin Shock/Safety", "action": "Rapid glucose administration"}
+  },
+  {
+    "title": "Appendicitis Assessment",
+    "category": "Medical",
+    "pcr_text": "18-year-old male with right lower quadrant pain, nausea, low-grade fever, pain worse with movement. What is suspected?",
+    "correct_error": "Appendicitis: RLQ pain, nausea, fever, pain with movement per GI protocols.",
+    "chaos_events": ["Patient guarding abdomen", "Pain increasing"],
+    "stress_fto_responses": ["Gas pains!", "Appendicitis!"],
+    "options": [
+      {"text": "Appendicitis - transport immediately, no oral intake", "is_correct": true},
+      {"text": "Gastritis - give antacids and observe", "is_correct": false, "feedback": "INCORRECT! RLQ pain with fever and guarding = appendicitis requiring surgery."},
+      {"text": "Kidney stones - pain is flank, not RLQ", "is_correct": false}
+    ],
+    "hazards": {"type": "Appendicitis/Safety", "action": "NPO and transport"}
+  },
+  {
+    "title": "GI Bleed - Coffee Ground Emesis",
+    "category": "Medical",
+    "pcr_text": "55-year-old male vomiting dark brown, grainy material that looks like coffee grounds. What does this indicate?",
+    "correct_error": "Coffee ground emesis: digested blood from upper GI bleed per GI protocols.",
+    "chaos_events": ["Patient pale and diaphoretic", "More vomiting"],
+    "stress_fto_responses": ["Food poisoning!", "GI bleed!"],
+    "options": [
+      {"text": "Upper GI bleed - digested blood, transport immediately", "is_correct": true},
+      {"text": "Coffee ingestion - normal appearance", "is_correct": false, "feedback": "INCORRECT! Coffee ground emesis = upper GI bleeding requiring urgent care."},
+      {"text": "Bile reflux - green fluid expected", "is_correct": false}
+    ],
+    "hazards": {"type": "GI Hemorrhage/Safety", "action": "Immediate transport"}
+  },
+  {
+    "title": "Autism - Sensory Overload Response",
+    "category": "Medical",
+    "pcr_text": "14-year-old autistic patient having meltdown in chaotic scene, covering ears and rocking. What is the best approach?",
+    "correct_error": "Autism sensory overload: reduce stimuli, allow coping mechanisms per special populations protocols.",
+    "chaos_events": ["Loud sirens", "Crowd of people"],
+    "stress_fto_responses": ["Restrain patient!", "Reduce stimulation!"],
+    "options": [
+      {"text": "Reduce sensory input and allow self-soothing behaviors", "is_correct": true},
+      {"text": "Physically restrain to prevent self-injury", "is_correct": false, "feedback": "INCORRECT! Restraint increases agitation. Use de-escalation techniques."},
+      {"text": "Administer sedative medication", "is_correct": false}
+    ],
+    "hazards": {"type": "Autism/Special Populations", "action": "Sensory de-escalation"}
+  },
+  {
+    "title": "Cincinnati Prehospital Stroke Scale - Speech",
+    "category": "Medical",
+    "pcr_text": "70-year-old female with slurred speech. Testing Cincinnati Scale: 'You know how to say the name of this object?' - patient unable to repeat correctly. What does this indicate?",
+    "correct_error": "Cincinnati Scale abnormal speech: indicates stroke per neurology protocols.",
+    "chaos_events": ["Patient frustrated", "Family translating"],
+    "stress_fto_responses": ["Language barrier!", "Abnormal speech - stroke!"],
+    "options": [
+      {"text": "Abnormal - speech deficit present, positive stroke scale finding", "is_correct": true},
+      {"text": "Normal - speech can be slurred in elderly", "is_correct": false, "feedback": "INCORRECT! Abnormal speech on Cincinnati Scale = positive finding for stroke."},
+      {"text": "Dementia - not acute stroke", "is_correct": false}
+    ],
+    "hazards": {"type": "Stroke Assessment/Safety", "action": "Positive Cincinnati Scale"}
+  },
+  {
+    "title": "LVAD Patient - Normal Assessment",
+    "category": "Medical",
+    "pcr_text": "45-year-old LVAD patient presents with chest pain. Device is humming normally. Should you expect a pulse?",
+    "correct_error": "LVAD patients: no palpable pulse is normal, device maintains circulation per special populations protocols.",
+    "chaos_events": ["Patient anxious", "Device functioning"],
+    "stress_fto_responses": ["No pulse - arrest!", "LVAD maintains circulation!"],
+    "options": [
+      {"text": "No palpable pulse is normal - LVAD maintains circulation", "is_correct": true},
+      {"text": "Absence of pulse indicates cardiac arrest", "is_correct": false, "feedback": "INCORRECT! LVAD patients often have no palpable pulse. Assess mentation and perfusion."},
+      {"text": "Check for pulse on both sides", "is_correct": false}
+    ],
+    "hazards": {"type": "LVAD Patient/Special Populations", "action": "Device maintains circulation"}
+  },
+  {
+    "title": "Dialysis Patient - Shunt Bleeding",
+    "category": "Medical",
+    "pcr_text": "65-year-old dialysis patient with bright red blood soaking through dressing on arm shunt. How should you control bleeding?",
+    "correct_error": "Dialysis shunt bleeding: apply direct pressure only, do not use tourniquet per special populations protocols.",
+    "chaos_events": ["Heavy bleeding", "Patient on anticoagulation"],
+    "stress_fto_responses": ["Tourniquet!", "Direct pressure only!"],
+    "options": [
+      {"text": "Apply direct pressure with gloved hand", "is_correct": true},
+      {"text": "Apply tourniquet proximal to shunt", "is_correct": false, "feedback": "DANGEROUS! Tourniquets can damage shunt. Use direct pressure only."},
+      {"text": "Elevate arm above heart", "is_correct": false}
+    ],
+    "hazards": {"type": "Dialysis Shunt/Special Populations", "action": "Direct pressure only"}
+  },
+  {
+    "title": "Build-a-List: Seizure Management Steps",
+    "category": "Medical",
+    "pcr_text": "30-year-old male having tonic-clonic seizure. Order the management steps:",
+    "correct_error": "Seizure management sequence: protect head, clear area, recovery position per neurology protocols.",
+    "chaos_events": ["Patient thrashing", "Crowd interfering"],
+    "stress_fto_responses": ["Hold patient down!", "Follow protocol steps!"],
+    "options": [
+      {"text": "1. Protect head from injury, 2. Clear area of hazards, 3. Place in recovery position after seizure stops, 4. Transport if indicated", "is_correct": true},
+      {"text": "1. Administer diazepam, 2. Protect head, 3. Clear area", "is_correct": false, "feedback": "INCORRECT ORDER! EMT-B cannot administer benzodiazepines. Protect head first."},
+      {"text": "1. Clear area, 2. Recovery position, 3. Protect head", "is_correct": false}
+    ],
+    "hazards": {"type": "Seizure Management/Safety", "action": "Follow protocol sequence"}
+  },
+  {
+    "title": "DKA - Kussmaul Respirations",
+    "category": "Medical",
+    "pcr_text": "22-year-old diabetic with deep, rapid breathing pattern, fruity breath, altered mental status. What breathing pattern is this?",
+    "correct_error": "Kussmaul respirations: deep rapid breathing in DKA to compensate for acidosis per endocrinology protocols.",
+    "chaos_events": ["Patient tiring", "Respiratory fatigue"],
+    "stress_fto_responses": ["Normal breathing!", "Kussmaul - DKA!"],
+    "options": [
+      {"text": "Kussmaul respirations - deep and rapid in DKA", "is_correct": true},
+      {"text": "Cheyne-Stokes - irregular in brain injury", "is_correct": false, "feedback": "INCORRECT! Deep, rapid breathing with fruity breath = Kussmaul in DKA."},
+      {"text": "Apneustic - prolonged inspiration in brainstem injury", "is_correct": false}
+    ],
+    "hazards": {"type": "Diabetic Ketoacidosis/Safety", "action": "Support ventilation if fatigued"}
+  },
+  {
+    "title": "Stroke - Time Last Known Normal",
+    "category": "Medical",
+    "pcr_text": "55-year-old female found with left-sided weakness. Family reports she was normal this morning. What time was she last known normal?",
+    "correct_error": "Stroke time criteria: last known normal time determines TPA eligibility per neurology protocols.",
+    "chaos_events": ["Family unsure of exact time", "Patient improving"],
+    "stress_fto_responses": ["Time doesn't matter!", "Last normal time critical!"],
+    "options": [
+      {"text": "This morning - within time window for potential intervention", "is_correct": true},
+      {"text": "Yesterday - outside time window for acute treatment", "is_correct": false, "feedback": "INCORRECT! Time last normal determines treatment eligibility. Document accurately."},
+      {"text": "Unknown - cannot determine stroke timing", "is_correct": false}
+    ],
+    "hazards": {"type": "Stroke Time Window/Safety", "action": "Document last known normal"}
+  },
+  {
+    "title": "Build-a-List: CPAP Application Steps",
+    "category": "Medical",
+    "pcr_text": "75-year-old male with severe respiratory distress, oxygen saturation 85%. Order the CPAP application steps:",
+    "correct_error": "CPAP application sequence: assess, explain, apply, monitor per respiratory protocols.",
+    "chaos_events": ["Patient anxious", "Mask fit difficult"],
+    "stress_fto_responses": ["Just put on mask!", "Follow steps carefully!"],
+    "options": [
+      {"text": "1. Assess contraindications, 2. Explain procedure, 3. Apply mask and initiate low pressure, 4. Titrate pressure, 5. Monitor response", "is_correct": true},
+      {"text": "1. Apply mask, 2. Turn on high pressure, 3. Monitor saturation", "is_correct": false, "feedback": "INCORRECT ORDER! Assess contraindications first, start low pressure."},
+      {"text": "1. Explain procedure, 2. Apply mask, 3. High pressure immediately", "is_correct": false}
+    ],
+    "hazards": {"type": "CPAP Application/Safety", "action": "Proper sequence prevents complications"}
+  },
+  {
+    "title": "Hypoglycemia - Altered Mental Status",
+    "category": "Medical",
+    "pcr_text": "40-year-old diabetic confused and combative, blood glucose 42 mg/dL. Should you treat as behavioral or medical?",
+    "correct_error": "Hypoglycemia can mimic psychiatric emergency: check glucose first per endocrinology protocols.",
+    "chaos_events": ["Patient swinging at staff", "Family says 'not diabetic'"],
+    "stress_fto_responses": ["Psychiatric emergency!", "Check blood sugar!"],
+    "options": [
+      {"text": "Medical emergency - administer glucose immediately", "is_correct": true},
+      {"text": "Psychiatric emergency - restrain and transport", "is_correct": false, "feedback": "INCORRECT! Hypoglycemia perfectly mimics psychiatric symptoms. Check glucose first."},
+      {"text": "Both - give glucose and sedate", "is_correct": false}
+    ],
+    "hazards": {"type": "Hypoglycemia/Safety", "action": "Check glucose before restraint"}
+  },
+  {
+    "title": "GI Bleed - Bright Red Blood",
+    "category": "Medical",
+    "pcr_text": "45-year-old male vomiting bright red blood, dizzy and pale. What type of GI bleed is this?",
+    "correct_error": "Hematemesis: bright red blood indicates active upper GI bleed per GI protocols.",
+    "chaos_events": ["Blood pressure dropping", "Patient vomiting again"],
+    "stress_fto_responses": ["Lower GI bleed!", "Upper GI - hematemesis!"],
+    "options": [
+      {"text": "Upper GI bleed - bright red blood from esophagus/stomach", "is_correct": true},
+      {"text": "Lower GI bleed - dark tarry stools expected", "is_correct": false, "feedback": "INCORRECT! Bright red vomited blood = upper GI bleed (hematemesis)."},
+      {"text": "Nosebleed - blood from nasopharynx", "is_correct": false}
+    ],
+    "hazards": {"type": "GI Hemorrhage/Safety", "action": "Immediate transport"}
+  },
+  {
+    "title": "Autism - Communication Assessment",
+    "category": "Medical",
+    "pcr_text": "16-year-old autistic patient in pain but nonverbal. How do you assess pain level?",
+    "correct_error": "Autism pain assessment: observe behavioral indicators, use nonverbal scales per special populations protocols.",
+    "chaos_events": ["Patient moaning", "Unable to communicate"],
+    "stress_fto_responses": ["Ask yes/no questions!", "Observe behaviors!"],
+    "options": [
+      {"text": "Observe behavioral cues and use nonverbal pain assessment", "is_correct": true},
+      {"text": "Use standard 1-10 verbal pain scale", "is_correct": false, "feedback": "INEFFECTIVE! Autistic patients may not communicate pain verbally. Use behavioral assessment."},
+      {"text": "Assume no pain since patient can't verbalize", "is_correct": false}
+    ],
+    "hazards": {"type": "Autism/Special Populations", "action": "Behavioral pain assessment"}
+  },
+  {
+    "title": "Build-a-List: Seizure Management - Post-Ictal",
+    "category": "Medical",
+    "pcr_text": "25-year-old female post-seizure, confused and disoriented. Order the post-ictal care steps:",
+    "correct_error": "Post-ictal care sequence: ensure safety, recovery position, assess ABCs per neurology protocols.",
+    "chaos_events": ["Patient combative", "Family concerned"],
+    "stress_fto_responses": ["Restrain patient!", "Recovery position!"],
+    "options": [
+      {"text": "1. Ensure scene safety, 2. Place in recovery position, 3. Assess ABCs, 4. Monitor for recurrence, 5. Transport if indicated", "is_correct": true},
+      {"text": "1. Administer oxygen, 2. Restrain patient, 3. Recovery position", "is_correct": false, "feedback": "INCORRECT ORDER! Recovery position first, then assess ABCs. No restraint."},
+      {"text": "1. Recovery position, 2. Oxygen, 3. Transport immediately", "is_correct": false}
+    ],
+    "hazards": {"type": "Post-Ictal Care/Safety", "action": "Gentle handling prevents injury"}
+  },
+  {
+    "title": "LVAD Patient - Alarm Response",
+    "category": "Medical",
+    "pcr_text": "50-year-old LVAD patient with device alarm sounding 'low flow'. Patient is alert but tachycardic. What should you do?",
+    "correct_error": "LVAD alarm: do not attempt manual CPR, focus on device function per special populations protocols.",
+    "chaos_events": ["Alarm beeping loudly", "Patient anxious"],
+    "stress_fto_responses": ["Start CPR!", "Check device connections!"],
+    "options": [
+      {"text": "Check device connections and power source", "is_correct": true},
+      {"text": "Begin manual CPR immediately", "is_correct": false, "feedback": "INEFFECTIVE! LVAD maintains circulation. Address device issues first."},
+      {"text": "Disconnect device and defibrillate", "is_correct": false}
+    ],
+    "hazards": {"type": "LVAD Malfunction/Special Populations", "action": "Maintain device function"}
+  },
+  {
+    "title": "Dialysis Patient - Access Complications",
+    "category": "Medical",
+    "pcr_text": "70-year-old dialysis patient with swollen, painful arm at fistula site, low-grade fever. What is suspected?",
+    "correct_error": "Dialysis fistula infection: redness, swelling, fever at access site per special populations protocols.",
+    "chaos_events": ["Patient in pain", "Access site red"],
+    "stress_fto_responses": ["Normal post-dialysis!", "Infection - transport!"],
+    "options": [
+      {"text": "Fistula infection - transport immediately, no BP in affected arm", "is_correct": true},
+      {"text": "Normal post-dialysis swelling - observe at scene", "is_correct": false, "feedback": "INCORRECT! Red, swollen, painful fistula with fever = infection requiring IV antibiotics."},
+      {"text": "Deep vein thrombosis - elevate arm", "is_correct": false}
+    ],
+    "hazards": {"type": "Dialysis Access/Special Populations", "action": "No procedures on access"}
+  },
+  {
+    "title": "Build-a-List: CPAP Troubleshooting",
+    "category": "Medical",
+    "pcr_text": "60-year-old male on CPAP with persistent low oxygen saturation. Order the troubleshooting steps:",
+    "correct_error": "CPAP troubleshooting sequence: check mask fit, increase pressure, assess patient per respiratory protocols.",
+    "chaos_events": ["Mask leaking", "Patient uncomfortable"],
+    "stress_fto_responses": ["Increase pressure!", "Check mask seal!"],
+    "options": [
+      {"text": "1. Check mask fit and seal, 2. Adjust head strap, 3. Increase pressure gradually, 4. Assess for contraindications, 5. Consider alternative oxygenation", "is_correct": true},
+      {"text": "1. Increase pressure to maximum, 2. Check mask, 3. Remove CPAP", "is_correct": false, "feedback": "INCORRECT ORDER! Check fit first, increase pressure gradually."},
+      {"text": "1. Remove mask, 2. Increase pressure, 3. Reapply mask", "is_correct": false}
+    ],
+    "hazards": {"type": "CPAP Troubleshooting/Safety", "action": "Systematic problem solving"}
+  },
+  {
+    "title": "Stroke Mimic - Complex Migraine",
+    "category": "Medical",
+    "pcr_text": "35-year-old female with sudden headache, visual changes, left-sided numbness. History of migraines. Stroke or migraine?",
+    "correct_error": "Stroke mimics: migraines can present with focal neurological symptoms per neurology protocols.",
+    "chaos_events": ["Symptoms fluctuating", "Patient has migraine meds"],
+    "stress_fto_responses": ["Migraine!", "Stroke - transport!"],
+    "options": [
+      {"text": "Cannot rule out stroke - transport for CT scan", "is_correct": true},
+      {"text": "Complex migraine - give pain medication and observe", "is_correct": false, "feedback": "INCORRECT! New neurological symptoms require stroke rule-out, even with migraine history."},
+      {"text": "Tension headache - not neurological", "is_correct": false}
+    ],
+    "hazards": {"type": "Stroke Mimic/Safety", "action": "Transport for evaluation"}
+  },
+  {
+    "title": "DKA - Treatment Priority",
+    "category": "Medical",
+    "pcr_text": "19-year-old diabetic in DKA, altered mental status, deep respirations. What is the immediate treatment priority?",
+    "correct_error": "DKA treatment: IV fluids most critical, insulin secondary per endocrinology protocols.",
+    "chaos_events": ["Patient dehydrated", "IV access difficult"],
+    "stress_fto_responses": ["Insulin first!", "Fluids critical!"],
+    "options": [
+      {"text": "IV fluid resuscitation - correct dehydration first", "is_correct": true},
+      {"text": "Insulin administration - correct hyperglycemia", "is_correct": false, "feedback": "INCORRECT! Fluids are priority in DKA. Insulin can be given after fluid bolus."},
+      {"text": "Sodium bicarbonate - correct acidosis", "is_correct": false}
+    ],
+    "hazards": {"type": "Diabetic Ketoacidosis/Safety", "action": "Fluid resuscitation priority"}
+  },
+  {
+    "title": "Build-a-List: Seizure First Aid",
+    "category": "Medical",
+    "pcr_text": "20-year-old male experiencing first seizure. Order the immediate first aid steps:",
+    "correct_error": "Seizure first aid sequence: protect patient, time seizure, recovery position per neurology protocols.",
+    "chaos_events": ["Seizure prolonged", "Bystanders panicking"],
+    "stress_fto_responses": ["Put something in mouth!", "Time the seizure!"],
+    "options": [
+      {"text": "1. Protect head, 2. Clear area, 3. Time seizure duration, 4. Recovery position after, 5. Assess ABCs", "is_correct": true},
+      {"text": "1. Put finger in mouth, 2. Hold down, 3. Recovery position", "is_correct": false, "feedback": "INCORRECT ORDER! Never put anything in mouth. Protect head and time seizure."},
+      {"text": "1. Recovery position, 2. Clear area, 3. Protect head", "is_correct": false}
+    ],
+    "hazards": {"type": "Seizure First Aid/Safety", "action": "Do not restrain or insert objects"}
+  }
+]
