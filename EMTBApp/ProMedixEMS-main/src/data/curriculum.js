@@ -189,3 +189,7 @@ export const getRegularModules = () => {
 export const getBonusModules = () => {
   return CURRICULUM_MODULES.filter(module => module.isBonus);
 };
+
+// Compatibility exports for textAnalysis.ts
+export const chapters = getAllChapters();
+export const studyModules = CURRICULUM_MODULES;
