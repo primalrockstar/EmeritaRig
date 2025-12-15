@@ -16,11 +16,12 @@ export interface Chapter {
 }
 
 // EMT-B Study Modules organized by the National EMS Education Standards
+// Modules mirror the STUDY_NOTES_MODULE_MAP.md structure
 export const studyModules: StudyModule[] = [
   {
     id: 1,
     title: "Foundations of EMS Practice",
-    description: "Introduction to emergency medical services, roles and responsibilities, legal and ethical considerations, and wellness and safety.",
+    description: "Broad orientation topics grouped so learners see system, safety, legal, and communications content together.",
     chapters: [1, 2, 3, 4],
     estimatedHours: 8,
     isBonus: false
@@ -28,7 +29,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 2,
     title: "Clinical Foundations",
-    description: "Human body systems, medical terminology, pathophysiology basics, and communication skills.",
+    description: "Core science and movement skills; additional chapter (9) carries interprofessional competencies that bridge Module 1 and assessment content.",
     chapters: [5, 6, 7, 8, 9],
     estimatedHours: 12,
     isBonus: false
@@ -36,7 +37,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 3,
     title: "Patient Assessment Mastery",
-    description: "Comprehensive patient assessment including scene size-up, primary and secondary surveys, and reassessment.",
+    description: "Dedicated full-length module for comprehensive assessment; typically taught over several lab sessions so the chapter stands alone.",
     chapters: [10],
     estimatedHours: 6,
     isBonus: false
@@ -44,7 +45,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 4,
     title: "Airway & Ventilatory Management",
-    description: "Airway anatomy, assessment and management, oxygen therapy, and ventilatory support.",
+    description: "Airway mastery is a standalone block with extensive lab practice; keeping a single focus clarifies priorities.",
     chapters: [11],
     estimatedHours: 8,
     isBonus: false
@@ -52,7 +53,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 5,
     title: "Pharmacology for EMT-B",
-    description: "Medication administration, routes, and EMT-B scope medications including epinephrine auto-injector.",
+    description: "Medication administration scope for EMT-B is concentrated into one detailed unit.",
     chapters: [12],
     estimatedHours: 4,
     isBonus: false
@@ -60,7 +61,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 6,
     title: "Shock & Circulatory Management",
-    description: "Shock pathophysiology, recognition and management, and basic circulatory support.",
+    description: "Shock physiology and BLS life support are paired because protocol updates overlap heavily.",
     chapters: [13, 14],
     estimatedHours: 6,
     isBonus: false
@@ -68,7 +69,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 7,
     title: "Medical Emergency Response",
-    description: "Respiratory and cardiovascular emergencies, diabetes, and allergic reactions.",
+    description: "Respiratory and cardiovascular crises live together for systems-based review.",
     chapters: [15, 16, 17],
     estimatedHours: 9,
     isBonus: false
@@ -76,7 +77,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 8,
     title: "Neurologic & Systemic Emergencies",
-    description: "Stroke, seizures, infectious diseases, and toxicological emergencies.",
+    description: "High-acuity neurologic, abdominal, metabolic, and hematologic conditions.",
     chapters: [18, 19, 20],
     estimatedHours: 9,
     isBonus: false
@@ -84,7 +85,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 9,
     title: "Specialized Emergency Care",
-    description: "Behavioral emergencies, gynecological emergencies, and environmental emergencies.",
+    description: "Allergic, toxicological, behavioral, and gynecologic emergencies frequently taught as a specialty block.",
     chapters: [21, 22, 23, 24],
     estimatedHours: 8,
     isBonus: false
@@ -92,7 +93,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 10,
     title: "Trauma Response Principles",
-    description: "Trauma systems, hemorrhage control, and soft tissue injuries.",
+    description: "Trauma system fundamentals with hemorrhage and soft tissue management.",
     chapters: [25, 26, 27],
     estimatedHours: 6,
     isBonus: false
@@ -100,7 +101,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 11,
     title: "Traumatic Injury Management",
-    description: "Head, spinal, thoracic, and abdominal trauma management.",
+    description: "Craniofacial, spinal, and thoracic trauma require contiguous emphasis.",
     chapters: [28, 29, 30],
     estimatedHours: 9,
     isBonus: false
@@ -108,7 +109,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 12,
     title: "Environmental & Musculoskeletal Emergencies",
-    description: "Cold and heat emergencies, submersion incidents, and orthopedic injuries.",
+    description: "Environmental exposure paired with orthopedic and abdominal trauma follow-ups.",
     chapters: [31, 32, 33],
     estimatedHours: 6,
     isBonus: false
@@ -116,7 +117,7 @@ export const studyModules: StudyModule[] = [
   {
     id: 13,
     title: "Special Patient Populations",
-    description: "Pediatric, geriatric, and special needs patients.",
+    description: "Obstetric, neonatal, pediatric, geriatric, and special populations consolidated for comparative study.",
     chapters: [34, 35, 36, 37],
     estimatedHours: 8,
     isBonus: false
@@ -124,16 +125,16 @@ export const studyModules: StudyModule[] = [
   {
     id: 14,
     title: "EMS Operations & Disaster Response",
-    description: "Ambulance operations, multiple casualty incidents, and disaster response.",
+    description: "Operations, technical rescue, ICS, and MCI are operationally linked and typically taught consecutively.",
     chapters: [38, 39, 40, 41],
     estimatedHours: 8,
     isBonus: false
   },
-  // Bonus Module: Advanced Clinical Deep Dives
+  // Advanced Track: Extended physiology deep dives and cellular refreshers for accelerated cohorts
   {
     id: 15,
-    title: "⭐ BONUS: Advanced Clinical Deep Dives",
-    description: "Extended clinical scenarios, advanced case studies, and professional development topics. Note: Some content may be beyond EMT-B scope but excellent for career advancement.",
+    title: "Advanced Track",
+    description: "Chapters 42–45, Bonus anatomy series. Extended physiology deep dives and cellular refreshers for accelerated cohorts.",
     chapters: [42, 43, 44, 45],
     estimatedHours: 12,
     isBonus: true
