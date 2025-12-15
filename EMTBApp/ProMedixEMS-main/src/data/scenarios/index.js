@@ -1,9 +1,9 @@
-// EMT-B PCR Training Scenarios Index
-// This file imports scenario data from multiple JSON files and exports a combined array
+// EMT-B PCR Training Scenarios Engine
+// Comprehensive scenario management system with data fusion and helper functions
 
 const ALL_SCENARIOS = [];
 
-// Import scenarios from 5 JSON files with error handling
+// Import scenarios from all populated JSON files with error handling
 const loadScenariosFromFile = (scenarios, fileName) => {
   if (Array.isArray(scenarios)) {
     ALL_SCENARIOS.push(...scenarios);
@@ -13,40 +13,19 @@ const loadScenariosFromFile = (scenarios, fileName) => {
   }
 };
 
-// Try to import each scenario file (will fail gracefully if files don't exist)
+// Load all populated scenario files
 try {
-  const basicScenarios = require('./scenarios-basic.json');
-  loadScenariosFromFile(basicScenarios, 'scenarios-basic.json');
+  const operationsScenarios = require('./operations.json');
+  loadScenariosFromFile(operationsScenarios, 'operations.json');
 } catch (error) {
-  console.warn('Could not load scenarios-basic.json:', error.message);
+  console.warn('Could not load operations.json:', error.message);
 }
 
 try {
-  const medicalScenarios = require('./scenarios-medical.json');
-  loadScenariosFromFile(medicalScenarios, 'scenarios-medical.json');
+  const primaryAssessmentScenarios = require('./primary_assessment.json');
+  loadScenariosFromFile(primaryAssessmentScenarios, 'primary_assessment.json');
 } catch (error) {
-  console.warn('Could not load scenarios-medical.json:', error.message);
-}
-
-try {
-  const traumaScenarios = require('./scenarios-trauma.json');
-  loadScenariosFromFile(traumaScenarios, 'scenarios-trauma.json');
-} catch (error) {
-  console.warn('Could not load scenarios-trauma.json:', error.message);
-}
-
-try {
-  const pediatricScenarios = require('./scenarios-pediatric.json');
-  loadScenariosFromFile(pediatricScenarios, 'scenarios-pediatric.json');
-} catch (error) {
-  console.warn('Could not load scenarios-pediatric.json:', error.message);
-}
-
-try {
-  const specialScenarios = require('./scenarios-special.json');
-  loadScenariosFromFile(specialScenarios, 'scenarios-special.json');
-} catch (error) {
-  console.warn('Could not load scenarios-special.json:', error.message);
+  console.warn('Could not load primary_assessment.json:', error.message);
 }
 
 try {
@@ -77,19 +56,49 @@ try {
   console.warn('Could not load medical_general.json:', error.message);
 }
 
-try {
-  const operationsScenarios = require('./operations.json');
-  loadScenariosFromFile(operationsScenarios, 'operations.json');
-} catch (error) {
-  console.warn('Could not load operations.json:', error.message);
-}
+// Helper Functions
+/**
+ * Get scenarios filtered by domain
+ * @param {string} domain - The domain to filter by (e.g., 'Medical', 'Trauma', 'Peds')
+ * @returns {Array} Array of scenarios for the specified domain
+ */
+export const getScenariosByDomain = (domain) => {
+  return ALL_SCENARIOS.filter(scenario => scenario.category === domain);
+};
 
-try {
-  const primaryAssessmentScenarios = require('./primary_assessment.json');
-  loadScenariosFromFile(primaryAssessmentScenarios, 'primary_assessment.json');
-} catch (error) {
-  console.warn('Could not load primary_assessment.json:', error.message);
-}
+/**
+ * Get a specific scenario by ID (index in the flattened array)
+ * @param {number} id - The scenario ID (0-based index)
+ * @returns {Object|null} The scenario object or null if not found
+ */
+export const getScenarioById = (id) => {
+  return ALL_SCENARIOS[id] || null;
+};
+
+/**
+ * Get all unique domains available
+ * @returns {Array} Array of unique domain strings
+ */
+export const getAvailableDomains = () => {
+  return Array.from(new Set(ALL_SCENARIOS.map(s => s.category))).sort();
+};
+
+/**
+ * Get scenario statistics
+ * @returns {Object} Statistics object with counts by domain and totals
+ */
+export const getScenarioStats = () => {
+  const stats = {
+    total: ALL_SCENARIOS.length,
+    byDomain: {}
+  };
+
+  ALL_SCENARIOS.forEach(scenario => {
+    stats.byDomain[scenario.category] = (stats.byDomain[scenario.category] || 0) + 1;
+  });
+
+  return stats;
+};
 
 // Sanity check log for system startup
 console.log(`[System] Loaded ${ALL_SCENARIOS.length} scenarios successfully.`);
