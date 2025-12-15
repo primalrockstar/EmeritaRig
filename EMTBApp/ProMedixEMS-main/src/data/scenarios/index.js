@@ -77,6 +77,23 @@ try {
   console.warn('Could not load medical_general.json:', error.message);
 }
 
+try {
+  const operationsScenarios = require('./operations.json');
+  loadScenariosFromFile(operationsScenarios, 'operations.json');
+} catch (error) {
+  console.warn('Could not load operations.json:', error.message);
+}
+
+try {
+  const primaryAssessmentScenarios = require('./primary_assessment.json');
+  loadScenariosFromFile(primaryAssessmentScenarios, 'primary_assessment.json');
+} catch (error) {
+  console.warn('Could not load primary_assessment.json:', error.message);
+}
+
+// Sanity check log for system startup
+console.log(`[System] Loaded ${ALL_SCENARIOS.length} scenarios successfully.`);
+
 // Log total scenarios loaded
 console.log(`Total scenarios loaded: ${ALL_SCENARIOS.length}`);
 
