@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Ambulance, TrendingUp, Clock, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
+import { AlertTriangle, TrendingUp, Clock, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 import { emergencyScenarios } from '../data/emergency-scenarios';
 import { formatDuration } from '../utils/timeUtils';
 
@@ -31,7 +31,7 @@ const HomeDashboard: React.FC = () => {
         {/* Widget A: ACTIVE DISPATCH (Hero - spans 2 cols) */}
         <div className="md:col-span-2 bg-slate-800 border border-slate-700 rounded-xl p-6 animate-pulse border-amber-500/50">
           <div className="flex items-center space-x-2 mb-4">
-            <Ambulance className="w-6 h-6 text-amber-400" />
+            <AlertTriangle className="w-6 h-6 text-amber-400" />
             <h2 className="text-slate-400 font-mono text-xs uppercase">ACTIVE DISPATCH</h2>
           </div>
           <h3 className="text-white font-bold text-xl mb-2">🚑 INCOMING PRIORITY CALL</h3>
