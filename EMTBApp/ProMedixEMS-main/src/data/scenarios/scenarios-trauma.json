@@ -1,1 +1,296 @@
-[]
+[
+  {
+    "title": "Blunt Chest Trauma - Rib Fractures",
+    "category": "Trauma",
+    "pcr_text": "35-year-old male involved in MVC, complaining of severe chest pain with inspiration. Patient has paradoxical chest movement and crepitus. BP 120/80, HR 105, RR 24, SpO2 95%.",
+    "correct_error": "Rib fractures with flail chest risk. Provide oxygen and pain management per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient in severe pain", "Becoming more dyspneic"],
+    "stress_fto_responses": ["Oxygen support!", "Pain management!"],
+    "options": [
+      {"text": "Administer supplemental oxygen and manage pain if possible", "is_correct": true},
+      {"text": "Apply chest splinting", "is_correct": false, "feedback": "OUT OF SCOPE! Chest splinting not recommended. Oxygen and pain management per 2022 Standards."},
+      {"text": "Perform needle decompression", "is_correct": false}
+    ],
+    "hazards": {"type": "Chest Trauma/Safety", "action": "Monitor respiratory status"}
+  },
+  {
+    "title": "Penetrating Chest Trauma",
+    "category": "Trauma",
+    "pcr_text": "28-year-old male with stab wound to left chest, 2 inches lateral to sternum. Patient has respiratory distress with diminished breath sounds on left. BP 100/70, HR 115, RR 28, SpO2 94%.",
+    "correct_error": "Penetrating chest trauma. Apply occlusive dressing and oxygen per 2022 National EMS Education Standards.",
+    "chaos_events": ["Active bleeding", "Patient becoming unresponsive"],
+    "stress_fto_responses": ["Occlusive dressing!", "Oxygen now!"],
+    "options": [
+      {"text": "Apply occlusive dressing and high-flow oxygen", "is_correct": true},
+      {"text": "Perform needle decompression", "is_correct": false, "feedback": "OUT OF SCOPE! Needle decompression requires Paramedic certification. Occlusive dressing is EMT-B intervention per 2022 Standards."},
+      {"text": "Remove impaled object", "is_correct": false}
+    ],
+    "hazards": {"type": "Penetrating Trauma/Safety", "action": "Monitor for tension pneumothorax"}
+  },
+  {
+    "title": "Abdominal Trauma - Blunt",
+    "category": "Trauma",
+    "pcr_text": "42-year-old female pedestrian struck by vehicle, complaining of severe abdominal pain. Patient has seatbelt sign across abdomen. BP 110/75, HR 105, RR 22, SpO2 97%.",
+    "correct_error": "Blunt abdominal trauma. Monitor ABCs and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient guarding abdomen", "Becoming hypotensive"],
+    "stress_fto_responses": ["Monitor ABCs!", "Rapid transport!"],
+    "options": [
+      {"text": "Monitor vital signs and transport immediately", "is_correct": true},
+      {"text": "Perform abdominal ultrasound", "is_correct": false, "feedback": "OUT OF SCOPE! Ultrasound requires advanced certification. Monitor ABCs per 2022 Standards."},
+      {"text": "Give patient food to eat", "is_correct": false}
+    ],
+    "hazards": {"type": "Abdominal Trauma/Safety", "action": "Monitor for internal bleeding"}
+  },
+  {
+    "title": "Head Trauma - Mild TBI",
+    "category": "Trauma",
+    "pcr_text": "25-year-old male fell from ladder, struck head on concrete. Patient has headache and confusion but no focal deficits. GCS 14. BP 135/85, HR 95, RR 18, SpO2 98%.",
+    "correct_error": "Mild traumatic brain injury. Perform secondary assessment and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient vomited once", "Family wants to watch at home"],
+    "stress_fto_responses": ["GCS assessment!", "Monitor mental status!"],
+    "options": [
+      {"text": "Perform thorough neurological assessment and transport", "is_correct": true},
+      {"text": "Administer pain medication", "is_correct": false, "feedback": "INCORRECT! Assess first. Pain management may be indicated but assessment priority per 2022 Standards."},
+      {"text": "Allow patient to sleep", "is_correct": false}
+    ],
+    "hazards": {"type": "Head Trauma/Safety", "action": "Monitor for deterioration"}
+  },
+  {
+    "title": "Spinal Trauma - Suspected Injury",
+    "category": "Trauma",
+    "pcr_text": "45-year-old male fell from roof, landed on back. Patient complains of back pain and numbness in legs. No obvious deformities. BP 125/80, HR 100, RR 20, SpO2 97%.",
+    "correct_error": "Suspected spinal injury. Immobilize C-spine and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient wants to move", "Hard to access patient"],
+    "stress_fto_responses": ["C-spine control!", "Don't move patient!"],
+    "options": [
+      {"text": "Immobilize C-spine and secure to backboard", "is_correct": true},
+      {"text": "Allow patient to sit up", "is_correct": false, "feedback": "INCORRECT! Maintain spinal precautions. Immobilization required per 2022 Standards."},
+      {"text": "Give patient pain medication first", "is_correct": false}
+    ],
+    "hazards": {"type": "Spinal Trauma/Safety", "action": "Maintain spinal alignment"}
+  },
+  {
+    "title": "Extremity Trauma - Open Fracture",
+    "category": "Trauma",
+    "pcr_text": "32-year-old male with deformed and bleeding left forearm after fall. Bone protruding through skin. Patient in severe pain. BP 130/85, HR 110, RR 22, SpO2 96%.",
+    "correct_error": "Open fracture. Control bleeding and splint per 2022 National EMS Education Standards.",
+    "chaos_events": ["Heavy bleeding", "Patient in shock"],
+    "stress_fto_responses": ["Control bleeding!", "Splint in place!"],
+    "options": [
+      {"text": "Control bleeding with direct pressure and splint extremity", "is_correct": true},
+      {"text": "Reduce the fracture manually", "is_correct": false, "feedback": "OUT OF SCOPE! Fracture reduction requires Paramedic certification. Splint in place per 2022 Standards."},
+      {"text": "Clean wound with alcohol", "is_correct": false}
+    ],
+    "hazards": {"type": "Open Fracture/Safety", "action": "Control hemorrhage"}
+  },
+  {
+    "title": "Facial Trauma - Mandible Fracture",
+    "category": "Trauma",
+    "pcr_text": "38-year-old male punched in face during altercation. Patient has deformed mandible, bleeding from mouth, and difficulty speaking. BP 125/75, HR 105, RR 20, SpO2 96%.",
+    "correct_error": "Mandible fracture. Control bleeding and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient drooling blood", "Airway concern"],
+    "stress_fto_responses": ["Control bleeding!", "Monitor airway!"],
+    "options": [
+      {"text": "Control bleeding and monitor airway", "is_correct": true},
+      {"text": "Manually reduce jaw", "is_correct": false, "feedback": "OUT OF SCOPE! Jaw manipulation requires advanced care. Control bleeding per 2022 Standards."},
+      {"text": "Give patient ice to hold", "is_correct": false}
+    ],
+    "hazards": {"type": "Facial Trauma/Safety", "action": "Maintain airway"}
+  },
+  {
+    "title": "Burn Trauma - Thermal Burns",
+    "category": "Trauma",
+    "pcr_text": "22-year-old female with burns to arms and chest from house fire. Approximately 25% BSA burned, partial and full thickness. Patient in pain. BP 115/70, HR 120, RR 24, SpO2 95%.",
+    "correct_error": "Major thermal burns. Stop burning process and cover wounds per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient screaming in pain", "Smoke inhalation suspected"],
+    "stress_fto_responses": ["Stop burning!", "Cover burns!"],
+    "options": [
+      {"text": "Stop burning process and cover with clean sheets", "is_correct": true},
+      {"text": "Apply ice to burns", "is_correct": false, "feedback": "INCORRECT! Ice can worsen burns. Clean covering is appropriate per 2022 Standards."},
+      {"text": "Apply antibiotic ointment", "is_correct": false}
+    ],
+    "hazards": {"type": "Burn Trauma/Safety", "action": "Monitor for airway compromise"}
+  },
+  {
+    "title": "Multiple Trauma - MVC",
+    "category": "Trauma",
+    "pcr_text": "55-year-old male ejected from vehicle in rollover MVC. Patient has head laceration, chest pain, abdominal tenderness, and deformed left leg. BP 95/60, HR 125, RR 26, SpO2 93%.",
+    "correct_error": "Multiple system trauma. Prioritize ABCs and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient unresponsive initially", "Multiple injuries to assess"],
+    "stress_fto_responses": ["ABCs first!", "Rapid transport!"],
+    "options": [
+      {"text": "Assess and support ABCs, then transport immediately", "is_correct": true},
+      {"text": "Treat all injuries simultaneously", "is_correct": false, "feedback": "INCORRECT! ABCs take priority over other assessments. Systematic approach per 2022 Standards."},
+      {"text": "Wait for advanced life support", "is_correct": false}
+    ],
+    "hazards": {"type": "Multiple Trauma/Safety", "action": "Monitor for decompensation"}
+  },
+  {
+    "title": "Pelvic Trauma - Unstable",
+    "category": "Trauma",
+    "pcr_text": "48-year-old female fell from horse, complaining of severe pelvic pain. Patient has rotational instability of pelvis. BP 110/70, HR 115, RR 22, SpO2 96%.",
+    "correct_error": "Unstable pelvic fracture. Immobilize pelvis and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient in severe pain", "Hard to immobilize"],
+    "stress_fto_responses": ["Immobilize pelvis!", "Pain management!"],
+    "options": [
+      {"text": "Immobilize pelvis with sheet or binder and transport", "is_correct": true},
+      {"text": "Allow patient to ambulate", "is_correct": false, "feedback": "INCORRECT! Pelvic immobilization required. Movement can worsen bleeding per 2022 Standards."},
+      {"text": "Reduce fracture manually", "is_correct": false}
+    ],
+    "hazards": {"type": "Pelvic Trauma/Safety", "action": "Control pelvic bleeding"}
+  },
+  {
+    "title": "Eye Trauma - Penetrating",
+    "category": "Trauma",
+    "pcr_text": "30-year-old male with metal shard in left eye from grinding accident. Patient has severe pain and blurred vision. BP 125/80, HR 105, RR 20, SpO2 97%.",
+    "correct_error": "Penetrating eye trauma. Stabilize object and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Object moving with eye movement", "Patient panicking"],
+    "stress_fto_responses": ["Don't remove object!", "Stabilize in place!"],
+    "options": [
+      {"text": "Stabilize object in place and cover both eyes", "is_correct": true},
+      {"text": "Remove the metal shard", "is_correct": false, "feedback": "INCORRECT! Never remove impaled objects. Stabilize and transport per 2022 Standards."},
+      {"text": "Irrigate eye with water", "is_correct": false}
+    ],
+    "hazards": {"type": "Eye Trauma/Safety", "action": "Prevent further injury"}
+  },
+  {
+    "title": "Neck Trauma - Blunt",
+    "category": "Trauma",
+    "pcr_text": "35-year-old male assaulted with blunt object to neck. Patient has swelling, difficulty swallowing, and hoarse voice. BP 135/85, HR 100, RR 18, SpO2 96%.",
+    "correct_error": "Blunt neck trauma. Monitor airway and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Swelling increasing", "Patient anxious"],
+    "stress_fto_responses": ["Monitor airway!", "Watch for deterioration!"],
+    "options": [
+      {"text": "Monitor airway closely and transport immediately", "is_correct": true},
+      {"text": "Apply ice to neck", "is_correct": false, "feedback": "INCORRECT! Ice may mask injury. Monitor ABCs per 2022 Standards."},
+      {"text": "Give patient water to drink", "is_correct": false}
+    ],
+    "hazards": {"type": "Neck Trauma/Safety", "action": "Maintain airway"}
+  },
+  {
+    "title": "Shoulder Dislocation",
+    "category": "Trauma",
+    "pcr_text": "42-year-old male fell while skiing, anterior shoulder dislocation. Arm held in abduction, severe pain. BP 120/80, HR 95, RR 18, SpO2 98%.",
+    "correct_error": "Anterior shoulder dislocation. Immobilize arm and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient in severe pain", "Neurovascular compromise"],
+    "stress_fto_responses": ["Immobilize arm!", "Check circulation!"],
+    "options": [
+      {"text": "Immobilize arm in position of comfort and transport", "is_correct": true},
+      {"text": "Reduce dislocation on scene", "is_correct": false, "feedback": "OUT OF SCOPE! Reduction requires Paramedic certification. Immobilize per 2022 Standards."},
+      {"text": "Allow patient to move arm", "is_correct": false}
+    ],
+    "hazards": {"type": "Joint Dislocation/Safety", "action": "Assess distal circulation"}
+  },
+  {
+    "title": "Amputation - Traumatic",
+    "category": "Trauma",
+    "pcr_text": "28-year-old male with partial amputation of right index finger in table saw accident. Heavy bleeding controlled. Patient in shock. BP 90/60, HR 130, RR 24, SpO2 95%.",
+    "correct_error": "Traumatic amputation. Control bleeding and transport amputated part per 2022 National EMS Education Standards.",
+    "chaos_events": ["Amputated part found", "Patient becoming unresponsive"],
+    "stress_fto_responses": ["Control bleeding!", "Save amputated part!"],
+    "options": [
+      {"text": "Control bleeding and wrap amputated part in saline", "is_correct": true},
+      {"text": "Reattach finger on scene", "is_correct": false, "feedback": "OUT OF SCOPE! Reattachment requires surgical intervention. Preserve part per 2022 Standards."},
+      {"text": "Apply tourniquet permanently", "is_correct": false}
+    ],
+    "hazards": {"type": "Traumatic Amputation/Safety", "action": "Control hemorrhage"}
+  },
+  {
+    "title": "Electrical Burn",
+    "category": "Trauma",
+    "pcr_text": "45-year-old male shocked by live wire, entry wound palm, exit wound foot. Patient unconscious initially but now responsive. BP 115/75, HR 105, RR 20, SpO2 96%.",
+    "correct_error": "Electrical injury. Assess for internal injuries and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Scene not safe initially", "Patient has arrhythmias"],
+    "stress_fto_responses": ["Scene safety!", "Monitor cardiac rhythm!"],
+    "options": [
+      {"text": "Ensure scene safety and assess ABCs", "is_correct": true},
+      {"text": "Apply ice to burn wounds", "is_correct": false, "feedback": "INCORRECT! Ice worsens electrical burns. Clean covering appropriate per 2022 Standards."},
+      {"text": "Give patient caffeine", "is_correct": false}
+    ],
+    "hazards": {"type": "Electrical Trauma/Safety", "action": "Monitor for cardiac complications"}
+  },
+  {
+    "title": "Chemical Burn - Acid",
+    "category": "Trauma",
+    "pcr_text": "35-year-old female with sulfuric acid spill on arms and chest. Skin white and leathery. Patient in severe pain. BP 125/80, HR 115, RR 22, SpO2 97%.",
+    "correct_error": "Chemical burn. Irrigate with water and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Acid still active", "Patient screaming"],
+    "stress_fto_responses": ["Irrigate copiously!", "Remove contaminated clothing!"],
+    "options": [
+      {"text": "Irrigate with large amounts of water for 20 minutes", "is_correct": true},
+      {"text": "Neutralize with baking soda", "is_correct": false, "feedback": "INCORRECT! Neutralization can cause exothermic reaction. Water irrigation only per 2022 Standards."},
+      {"text": "Apply antibiotic cream", "is_correct": false}
+    ],
+    "hazards": {"type": "Chemical Burn/Safety", "action": "Protect rescuers from contamination"}
+  },
+  {
+    "title": "Drowning - Near Drowning",
+    "category": "Trauma",
+    "pcr_text": "22-year-old male pulled from lake unconscious. Bystander CPR for 5 minutes. Patient now responsive but coughing up water. BP 110/70, HR 100, RR 24, SpO2 94%.",
+    "correct_error": "Near drowning. Provide oxygen and monitor per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient vomiting", "Aspiration pneumonia risk"],
+    "stress_fto_responses": ["Oxygen support!", "Monitor closely!"],
+    "options": [
+      {"text": "Administer supplemental oxygen and monitor ABCs", "is_correct": true},
+      {"text": "Administer steroids", "is_correct": false, "feedback": "OUT OF SCOPE! Steroids not indicated. Oxygen is primary treatment per 2022 Standards."},
+      {"text": "Force patient to drink water", "is_correct": false}
+    ],
+    "hazards": {"type": "Near Drowning/Safety", "action": "Monitor for respiratory complications"}
+  },
+  {
+    "title": "Hypothermia - Severe",
+    "category": "Trauma",
+    "pcr_text": "65-year-old male found outside in winter, unresponsive with core temperature 89°F. Patient rigid with slow breathing. BP 85/50, HR 35, RR 8, SpO2 90%.",
+    "correct_error": "Severe hypothermia. Handle gently and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient appears dead", "Rewarming too aggressive"],
+    "stress_fto_responses": ["Handle gently!", "Don't rewarm aggressively!"],
+    "options": [
+      {"text": "Handle gently and transport immediately", "is_correct": true},
+      {"text": "Apply heating blankets aggressively", "is_correct": false, "feedback": "INCORRECT! Aggressive rewarming can cause complications. Gentle handling per 2022 Standards."},
+      {"text": "Give hot coffee", "is_correct": false}
+    ],
+    "hazards": {"type": "Severe Hypothermia/Safety", "action": "Prevent further heat loss"}
+  },
+  {
+    "title": "Heat Stroke",
+    "category": "Trauma",
+    "pcr_text": "38-year-old male working outdoors, confused and combative. Skin hot and dry, core temperature 105°F. BP 130/85, HR 140, RR 30, SpO2 97%.",
+    "correct_error": "Heat stroke. Rapid cooling and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient combative", "Scene very hot"],
+    "stress_fto_responses": ["Cool rapidly!", "Remove clothing!"],
+    "options": [
+      {"text": "Remove clothing and apply cooling measures", "is_correct": true},
+      {"text": "Give patient ice water to drink", "is_correct": false, "feedback": "INCORRECT! Oral intake may cause vomiting. External cooling preferred per 2022 Standards."},
+      {"text": "Place in warm room", "is_correct": false}
+    ],
+    "hazards": {"type": "Heat Stroke/Safety", "action": "Monitor core temperature"}
+  },
+  {
+    "title": "Active Shooter Incident",
+    "category": "Trauma",
+    "pcr_text": "Multiple victims from active shooter. 25-year-old male with gunshot wound to thigh, bleeding controlled. Scene not yet secure. BP 110/70, HR 115, RR 22, SpO2 96%.",
+    "correct_error": "Active shooter incident. Stage and wait for scene security per 2022 National EMS Education Standards.",
+    "chaos_events": ["Shooter still at large", "Multiple casualties"],
+    "stress_fto_responses": ["Wait for security!", "Stage safely!"],
+    "options": [
+      {"text": "Stage at safe distance until scene declared secure", "is_correct": true},
+      {"text": "Enter scene to treat patients", "is_correct": false, "feedback": "INCORRECT! Scene safety first. Wait for law enforcement clearance per 2022 Standards."},
+      {"text": "Transport immediately", "is_correct": false}
+    ],
+    "hazards": {"type": "Active Shooter/Safety", "action": "Ensure rescuer safety"}
+  },
+  {
+    "title": "Building Collapse",
+    "category": "Trauma",
+    "pcr_text": "55-year-old female trapped under collapsed wall, conscious but in pain. Multiple fractures suspected. Scene unstable. BP 125/80, HR 105, RR 20, SpO2 96%.",
+    "correct_error": "Entrapment in collapse. Wait for technical rescue per 2022 National EMS Education Standards.",
+    "chaos_events": ["Building shifting", "Patient becoming hypothermic"],
+    "stress_fto_responses": ["Wait for rescue!", "Support ABCs!"],
+    "options": [
+      {"text": "Support ABCs and wait for technical rescue team", "is_correct": true},
+      {"text": "Attempt to lift debris yourself", "is_correct": false, "feedback": "INCORRECT! Unsafe for rescuers. Wait for trained personnel per 2022 Standards."},
+      {"text": "Give patient pain medication", "is_correct": false}
+    ],
+    "hazards": {"type": "Structural Collapse/Safety", "action": "Prevent further injury"}
+  }
+]

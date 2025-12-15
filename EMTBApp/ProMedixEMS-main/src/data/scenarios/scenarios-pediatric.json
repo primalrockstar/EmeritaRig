@@ -1,1 +1,282 @@
-[]
+[
+  {
+    "title": "Pediatric Fever - Febrile Seizure",
+    "category": "Pediatric",
+    "pcr_text": "18-month-old female having seizure. Mother reports high fever and child stopped breathing momentarily. Rectal temp 103.5°F. BP 85/50, HR 160, RR 30, SpO2 95%.",
+    "correct_error": "Febrile seizure. Support ABCs and cooling measures per 2022 National EMS Education Standards.",
+    "chaos_events": ["Seizure continuing", "Mother hysterical"],
+    "stress_fto_responses": ["Support ABCs!", "Cool child!"],
+    "options": [
+      {"text": "Support ABCs and apply cooling measures", "is_correct": true},
+      {"text": "Administer acetaminophen rectally", "is_correct": false, "feedback": "INCORRECT! EMT-B cannot administer medications. Cooling is appropriate per 2022 Standards."},
+      {"text": "Restrain child forcefully", "is_correct": false}
+    ],
+    "hazards": {"type": "Febrile Seizure/Safety", "action": "Protect child from injury"}
+  },
+  {
+    "title": "Pediatric Asthma - Acute Attack",
+    "category": "Pediatric",
+    "pcr_text": "8-year-old male with severe wheezing, unable to speak in full sentences. Child using accessory muscles, oxygen saturation 90%. BP 115/70, HR 135, RR 35, SpO2 90%.",
+    "correct_error": "Acute pediatric asthma. Administer nebulized albuterol per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child panicking", "Nebulizer not working"],
+    "stress_fto_responses": ["Albuterol now!", "Calm child!"],
+    "options": [
+      {"text": "Administer nebulized albuterol and oxygen", "is_correct": true},
+      {"text": "Administer subcutaneous epinephrine", "is_correct": false, "feedback": "INCORRECT! Epinephrine for anaphylaxis. Albuterol is first-line for asthma per 2022 Standards."},
+      {"text": "Give child water to drink", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Asthma/Safety", "action": "Monitor oxygen saturation"}
+  },
+  {
+    "title": "Pediatric Anaphylaxis",
+    "category": "Pediatric",
+    "pcr_text": "5-year-old female with hives, swelling, and difficulty breathing after eating peanuts. Child has EpiPen but parents unsure how to use it. BP 95/55, HR 140, RR 28, SpO2 92%.",
+    "correct_error": "Pediatric anaphylaxis. Administer epinephrine auto-injector per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child becoming unresponsive", "Parents panicking"],
+    "stress_fto_responses": ["EpiPen now!", "Airway priority!"],
+    "options": [
+      {"text": "Administer epinephrine auto-injector and oxygen", "is_correct": true},
+      {"text": "Administer oral antihistamine", "is_correct": false, "feedback": "INCORRECT! Epinephrine is first-line treatment. Oral meds too slow per 2022 Standards."},
+      {"text": "Give child milk to drink", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Anaphylaxis/Safety", "action": "Monitor for airway compromise"}
+  },
+  {
+    "title": "Pediatric Diabetic Emergency - Hypoglycemia",
+    "category": "Pediatric",
+    "pcr_text": "12-year-old male with altered mental status. Parent reports child is diabetic and missed lunch. Blood glucose 45 mg/dL. Child responsive but confused.",
+    "correct_error": "Pediatric hypoglycemia. Administer oral glucose per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child combative", "No glucose paste available"],
+    "stress_fto_responses": ["Oral glucose!", "Check blood sugar!"],
+    "options": [
+      {"text": "Administer oral glucose paste and reassess", "is_correct": true},
+      {"text": "Administer glucagon IM", "is_correct": false, "feedback": "INCORRECT! Oral glucose preferred for conscious patients. Glucagon for unconscious per 2022 Standards."},
+      {"text": "Give child candy to eat", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Hypoglycemia/Safety", "action": "Monitor mental status"}
+  },
+  {
+    "title": "Pediatric Foreign Body Airway",
+    "category": "Pediatric",
+    "pcr_text": "3-year-old male suddenly choking on candy, unable to cough or speak. Child cyanotic with poor air exchange. BP 110/70, HR 140, RR 0, SpO2 75%.",
+    "correct_error": "Pediatric foreign body airway obstruction. Perform back blows and chest thrusts per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child becoming unresponsive", "Parent interfering"],
+    "stress_fto_responses": ["Back blows first!", "Don't do abdominal thrusts!"],
+    "options": [
+      {"text": "Perform 5 back blows followed by 5 chest thrusts", "is_correct": true},
+      {"text": "Perform abdominal thrusts like adult", "is_correct": false, "feedback": "INCORRECT! Abdominal thrusts can damage child organs. Back blows and chest thrusts per 2022 Standards."},
+      {"text": "Perform blind finger sweep", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Airway Obstruction/Safety", "action": "Act quickly to restore airway"}
+  },
+  {
+    "title": "Neonatal Resuscitation",
+    "category": "Pediatric",
+    "pcr_text": "Newborn male not breathing at birth, apneic and bradycardic. HR 60, RR 0, SpO2 60%. Meconium present.",
+    "correct_error": "Neonatal respiratory failure. Provide ventilations per 2022 National EMS Education Standards.",
+    "chaos_events": ["Mother in distress", "Meconium aspiration"],
+    "stress_fto_responses": ["Ventilate now!", "Monitor heart rate!"],
+    "options": [
+      {"text": "Provide positive pressure ventilations", "is_correct": true},
+      {"text": "Perform chest compressions first", "is_correct": false, "feedback": "INCORRECT! Ventilations first for bradycardia. Compressions if HR <60 per 2022 Standards."},
+      {"text": "Administer epinephrine", "is_correct": false}
+    ],
+    "hazards": {"type": "Neonatal Resuscitation/Safety", "action": "Maintain airway"}
+  },
+  {
+    "title": "Pediatric Seizure - Status Epilepticus",
+    "category": "Pediatric",
+    "pcr_text": "6-year-old female having continuous seizure for 10 minutes. Child known epileptic but not taking medications. BP 120/80, HR 150, RR 30, SpO2 92%.",
+    "correct_error": "Status epilepticus. Support ABCs and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Seizure not stopping", "Child post-ictal"],
+    "stress_fto_responses": ["Support ABCs!", "Transport immediately!"],
+    "options": [
+      {"text": "Support ABCs and transport immediately", "is_correct": true},
+      {"text": "Administer benzodiazepines", "is_correct": false, "feedback": "OUT OF SCOPE! Benzodiazepines require Paramedic certification. ABCs support per 2022 Standards."},
+      {"text": "Restrain child", "is_correct": false}
+    ],
+    "hazards": {"type": "Status Epilepticus/Safety", "action": "Protect from injury"}
+  },
+  {
+    "title": "Pediatric Burns - Scald",
+    "category": "Pediatric",
+    "pcr_text": "2-year-old female with hot water burns to chest and arms. Approximately 20% BSA burned, partial thickness. Child crying in pain. BP 105/65, HR 140, RR 25, SpO2 97%.",
+    "correct_error": "Pediatric scald burns. Stop burning and cover wounds per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child inconsolable", "Blisters present"],
+    "stress_fto_responses": ["Stop burning!", "Cover burns!"],
+    "options": [
+      {"text": "Stop burning process and cover with clean sheet", "is_correct": true},
+      {"text": "Apply ice to burns", "is_correct": false, "feedback": "INCORRECT! Ice can cause hypothermia in children. Clean covering appropriate per 2022 Standards."},
+      {"text": "Pop blisters", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Burns/Safety", "action": "Monitor for shock"}
+  },
+  {
+    "title": "Pediatric Trauma - Head Injury",
+    "category": "Pediatric",
+    "pcr_text": "4-year-old male fell from playground equipment, struck head. Child vomiting and lethargic. GCS 12. BP 110/70, HR 120, RR 20, SpO2 96%.",
+    "correct_error": "Pediatric head trauma. Monitor ABCs and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child vomiting again", "Parents insisting on home care"],
+    "stress_fto_responses": ["Monitor closely!", "Transport immediately!"],
+    "options": [
+      {"text": "Monitor neurological status and transport", "is_correct": true},
+      {"text": "Allow child to sleep", "is_correct": false, "feedback": "INCORRECT! Monitor for deterioration. No sleep until cleared per 2022 Standards."},
+      {"text": "Give child pain medication", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Head Trauma/Safety", "action": "Monitor for increased ICP"}
+  },
+  {
+    "title": "Pediatric Dehydration",
+    "category": "Pediatric",
+    "pcr_text": "10-month-old female with severe diarrhea and vomiting for 2 days. Infant lethargic with sunken fontanelles and dry mucous membranes. BP 85/50, HR 170, RR 40, SpO2 95%.",
+    "correct_error": "Severe pediatric dehydration. Monitor ABCs and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Infant becoming unresponsive", "Parents gave inappropriate fluids"],
+    "stress_fto_responses": ["Monitor ABCs!", "Transport urgently!"],
+    "options": [
+      {"text": "Monitor vital signs and transport immediately", "is_correct": true},
+      {"text": "Administer oral rehydration solution", "is_correct": false, "feedback": "INCORRECT! Vomiting contraindicates oral intake. IV fluids needed per 2022 Standards."},
+      {"text": "Give infant soda to drink", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Dehydration/Safety", "action": "Monitor for shock"}
+  },
+  {
+    "title": "Pediatric Respiratory Distress - Croup",
+    "category": "Pediatric",
+    "pcr_text": "2-year-old male with barky cough and stridor. Child has inspiratory retractions and appears anxious. BP 100/60, HR 140, RR 35, SpO2 92%.",
+    "correct_error": "Pediatric croup. Provide humidified oxygen and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Stridor worsening", "Child panicking"],
+    "stress_fto_responses": ["Humidified oxygen!", "Calm child!"],
+    "options": [
+      {"text": "Administer humidified oxygen and monitor", "is_correct": true},
+      {"text": "Administer nebulized epinephrine", "is_correct": false, "feedback": "OUT OF SCOPE! Racemic epinephrine requires Paramedic certification. Humidified oxygen per 2022 Standards."},
+      {"text": "Give child cough syrup", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Croup/Safety", "action": "Monitor airway"}
+  },
+  {
+    "title": "Pediatric Cardiac Arrest",
+    "category": "Pediatric",
+    "pcr_text": "3-year-old female found unresponsive and pulseless. Witness reports child had been ill with fever. CPR in progress for 5 minutes.",
+    "correct_error": "Pediatric cardiac arrest. Initiate CPR per 2022 National EMS Education Standards.",
+    "chaos_events": ["Family present", "AED not appropriate for age"],
+    "stress_fto_responses": ["CPR now!", "Minimize interruptions!"],
+    "options": [
+      {"text": "Initiate CPR immediately", "is_correct": true},
+      {"text": "Apply AED first", "is_correct": false, "feedback": "INCORRECT! AED not indicated for children <8. CPR first per 2022 Standards."},
+      {"text": "Administer epinephrine IV", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Cardiac Arrest/Safety", "action": "Minimize interruptions in CPR"}
+  },
+  {
+    "title": "Pediatric Drowning",
+    "category": "Pediatric",
+    "pcr_text": "4-year-old male pulled from pool unresponsive. Bystander CPR for 3 minutes. Child now responsive but coughing. BP 100/60, HR 120, RR 28, SpO2 90%.",
+    "correct_error": "Pediatric near drowning. Provide oxygen and monitor per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child vomiting water", "Aspiration pneumonia risk"],
+    "stress_fto_responses": ["Oxygen support!", "Monitor closely!"],
+    "options": [
+      {"text": "Administer supplemental oxygen and monitor", "is_correct": true},
+      {"text": "Administer steroids", "is_correct": false, "feedback": "OUT OF SCOPE! Steroids not indicated. Oxygen is primary treatment per 2022 Standards."},
+      {"text": "Force child to drink water", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Drowning/Safety", "action": "Monitor for respiratory complications"}
+  },
+  {
+    "title": "Pediatric Abdominal Pain - Appendicitis",
+    "category": "Pediatric",
+    "pcr_text": "9-year-old female with severe right lower quadrant abdominal pain. Child has nausea and fever. BP 115/75, HR 110, RR 20, SpO2 97%, temp 101°F.",
+    "correct_error": "Suspected pediatric appendicitis. Monitor ABCs and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child in severe pain", "Rebound tenderness"],
+    "stress_fto_responses": ["Monitor ABCs!", "Transport for evaluation!"],
+    "options": [
+      {"text": "Monitor vital signs and transport", "is_correct": true},
+      {"text": "Give child pain medication", "is_correct": false, "feedback": "INCORRECT! Pain medication may mask symptoms. Transport for evaluation per 2022 Standards."},
+      {"text": "Have child walk to test pain", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Abdominal Pain/Safety", "action": "Monitor for peritonitis"}
+  },
+  {
+    "title": "Pediatric Poisoning - Ingestion",
+    "category": "Pediatric",
+    "pcr_text": "2-year-old male ingested grandmother's heart medication. Child drowsy but responsive. Empty pill bottle found. BP 95/55, HR 110, RR 22, SpO2 96%.",
+    "correct_error": "Pediatric poisoning. Contact poison control and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Unknown amount ingested", "Child becoming more drowsy"],
+    "stress_fto_responses": ["Contact poison control!", "Transport immediately!"],
+    "options": [
+      {"text": "Contact poison control and transport", "is_correct": true},
+      {"text": "Induce vomiting", "is_correct": false, "feedback": "INCORRECT! Never induce vomiting. Contact poison control per 2022 Standards."},
+      {"text": "Give child milk to drink", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Poisoning/Safety", "action": "Monitor ABCs"}
+  },
+  {
+    "title": "Pediatric Heat Illness",
+    "category": "Pediatric",
+    "pcr_text": "5-year-old male left in hot car, confused and lethargic. Skin hot and dry, rectal temp 104°F. BP 100/60, HR 150, RR 30, SpO2 97%.",
+    "correct_error": "Pediatric heat stroke. Rapid cooling and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child combative", "Parents distraught"],
+    "stress_fto_responses": ["Cool rapidly!", "Monitor temperature!"],
+    "options": [
+      {"text": "Remove clothing and apply cooling measures", "is_correct": true},
+      {"text": "Give child ice water to drink", "is_correct": false, "feedback": "INCORRECT! Oral intake may cause vomiting. External cooling preferred per 2022 Standards."},
+      {"text": "Place in warm shower", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Heat Stroke/Safety", "action": "Monitor core temperature"}
+  },
+  {
+    "title": "Pediatric Hypothermia",
+    "category": "Pediatric",
+    "pcr_text": "18-month-old female found outside in cold weather, unresponsive with core temp 91°F. Infant rigid with slow breathing. BP 80/50, HR 60, RR 8, SpO2 85%.",
+    "correct_error": "Severe pediatric hypothermia. Handle gently and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Infant appears dead", "Rewarming concerns"],
+    "stress_fto_responses": ["Handle gently!", "Don't rewarm aggressively!"],
+    "options": [
+      {"text": "Handle gently and transport immediately", "is_correct": true},
+      {"text": "Apply heating blankets aggressively", "is_correct": false, "feedback": "INCORRECT! Aggressive rewarming dangerous in children. Gentle handling per 2022 Standards."},
+      {"text": "Give hot bottle to suck", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Hypothermia/Safety", "action": "Prevent further heat loss"}
+  },
+  {
+    "title": "Pediatric Sepsis",
+    "category": "Pediatric",
+    "pcr_text": "7-year-old male with high fever, lethargy, and rapid breathing. Child has petechiae and appears septic. BP 85/45, HR 160, RR 35, SpO2 92%, temp 103.5°F.",
+    "correct_error": "Pediatric sepsis. Provide oxygen and rapid transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child becoming unresponsive", "Parents gave inappropriate meds"],
+    "stress_fto_responses": ["Oxygen support!", "Rapid transport!"],
+    "options": [
+      {"text": "Administer supplemental oxygen and transport", "is_correct": true},
+      {"text": "Administer antibiotics", "is_correct": false, "feedback": "OUT OF SCOPE! Antibiotics require Paramedic certification. Oxygen support per 2022 Standards."},
+      {"text": "Give child acetaminophen", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Sepsis/Safety", "action": "Monitor for septic shock"}
+  },
+  {
+    "title": "Pediatric Epiglottitis",
+    "category": "Pediatric",
+    "pcr_text": "4-year-old female with severe sore throat, drooling, and tripod positioning. Child has inspiratory stridor and appears toxic. BP 110/70, HR 140, RR 30, SpO2 90%.",
+    "correct_error": "Suspected pediatric epiglottitis. Maintain airway and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Child panicking", "Airway closing"],
+    "stress_fto_responses": ["Don't agitate child!", "Maintain airway!"],
+    "options": [
+      {"text": "Keep child comfortable and transport immediately", "is_correct": true},
+      {"text": "Attempt to visualize throat", "is_correct": false, "feedback": "INCORRECT! Visualization can cause complete obstruction. Keep child calm per 2022 Standards."},
+      {"text": "Give child lozenges", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Epiglottitis/Safety", "action": "Maintain airway"}
+  },
+  {
+    "title": "Pediatric Intussusception",
+    "category": "Pediatric",
+    "pcr_text": "8-month-old male with intermittent screaming, drawing legs to abdomen. Infant has currant jelly stools. BP 95/55, HR 160, RR 35, SpO2 95%.",
+    "correct_error": "Suspected pediatric intussusception. Monitor ABCs and transport per 2022 National EMS Education Standards.",
+    "chaos_events": ["Infant in severe pain", "Parents concerned"],
+    "stress_fto_responses": ["Monitor ABCs!", "Transport urgently!"],
+    "options": [
+      {"text": "Monitor vital signs and transport", "is_correct": true},
+      {"text": "Attempt reduction", "is_correct": false, "feedback": "OUT OF SCOPE! Reduction requires surgical intervention. Transport per 2022 Standards."},
+      {"text": "Give infant pain medication", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Intussusception/Safety", "action": "Monitor for shock"}
+  }
+]

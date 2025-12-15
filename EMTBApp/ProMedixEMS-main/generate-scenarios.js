@@ -141,8 +141,8 @@ function createScenario(domain, id) {
 console.log("⚠️  IMPORTANT: This is a template generator.");
 console.log("Each scenario must be reviewed by EMT instructors for medical accuracy.");
 console.log("Total scenarios needed: 450");
-console.log("Current scenarios: 24");
-console.log("Additional needed: 426");
+console.log("Current scenarios: 207");
+console.log("Additional needed: 243");
 console.log("\n📋 Recommended approach:");
 console.log("1. Work with EMT-B curriculum experts");
 console.log("2. Base scenarios on NHTSA case studies");

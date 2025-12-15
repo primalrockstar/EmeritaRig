@@ -1,1 +1,282 @@
-[]
+[
+  {
+    "title": "Basic Airway Assessment",
+    "category": "Airway",
+    "pcr_text": "35-year-old male responsive but with noisy breathing. Should you assess airway first or take vital signs?",
+    "correct_error": "Airway assessment first in primary survey per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient becoming more agitated", "Scene distractions"],
+    "stress_fto_responses": ["Vitals first!", "Airway assessment!"],
+    "options": [
+      {"text": "Assess airway patency and breathing adequacy first", "is_correct": true},
+      {"text": "Take blood pressure and pulse first", "is_correct": false, "feedback": "INCORRECT! Airway assessment is first priority in primary survey."},
+      {"text": "Ask patient how they feel", "is_correct": false}
+    ],
+    "hazards": {"type": "Airway Assessment/Safety", "action": "Systematic primary survey"}
+  },
+  {
+    "title": "Basic Breathing Assessment",
+    "category": "Breathing",
+    "pcr_text": "50-year-old female with shortness of breath. Respiratory rate 28, oxygen saturation 94%. What is your immediate action?",
+    "correct_error": "Breathing assessment includes rate, depth, and oxygen saturation per 2022 Standards.",
+    "chaos_events": ["Patient talking rapidly", "Family interrupting"],
+    "stress_fto_responses": ["Listen to lungs!", "Assess breathing!"],
+    "options": [
+      {"text": "Assess respiratory rate, depth, and provide oxygen if indicated", "is_correct": true},
+      {"text": "Take blood pressure immediately", "is_correct": false, "feedback": "INCORRECT! Breathing assessment precedes circulation in primary survey."},
+      {"text": "Ask patient about allergies", "is_correct": false}
+    ],
+    "hazards": {"type": "Breathing Assessment/Safety", "action": "Monitor respiratory status"}
+  },
+  {
+    "title": "Basic Circulation Assessment",
+    "category": "Circulation",
+    "pcr_text": "42-year-old male with chest pain. Pulse 110, skin pale and cool. What should you assess next?",
+    "correct_error": "Circulation assessment includes pulse, skin condition, and capillary refill per 2022 Standards.",
+    "chaos_events": ["Patient in pain", "Multiple bystanders"],
+    "stress_fto_responses": ["Check pulse!", "Assess circulation!"],
+    "options": [
+      {"text": "Assess pulse quality, skin color/temperature, and capillary refill", "is_correct": true},
+      {"text": "Listen to heart sounds", "is_correct": false, "feedback": "INCORRECT! Basic EMT-B assesses pulse and perfusion, not heart sounds."},
+      {"text": "Take temperature", "is_correct": false}
+    ],
+    "hazards": {"type": "Circulation Assessment/Safety", "action": "Identify shock early"}
+  },
+  {
+    "title": "Mental Status Assessment",
+    "category": "Neurological",
+    "pcr_text": "28-year-old female found confused. AVPU scale shows patient is responsive to pain only. What does this indicate?",
+    "correct_error": "AVPU assessment: A=Alert, V=Voice, P=Pain, U=Unresponsive per 2022 Standards.",
+    "chaos_events": ["Patient moaning", "Scene chaotic"],
+    "stress_fto_responses": ["Check responsiveness!", "AVPU assessment!"],
+    "options": [
+      {"text": "Patient is responsive to pain - significant alteration in mental status", "is_correct": true},
+      {"text": "Patient is alert and oriented", "is_correct": false, "feedback": "INCORRECT! Responsive to pain only indicates altered mental status."},
+      {"text": "Patient is sleeping normally", "is_correct": false}
+    ],
+    "hazards": {"type": "Mental Status/Safety", "action": "Identify neurological compromise"}
+  },
+  {
+    "title": "Primary Survey Sequence",
+    "category": "Assessment",
+    "pcr_text": "60-year-old male unresponsive after fall. What is the correct order of primary survey?",
+    "correct_error": "Primary survey: Airway, Breathing, Circulation, Disability, Exposure per 2022 Standards.",
+    "chaos_events": ["Patient not breathing", "Blood present"],
+    "stress_fto_responses": ["ABC order!", "Primary survey sequence!"],
+    "options": [
+      {"text": "Airway, Breathing, Circulation, Disability, Exposure", "is_correct": true},
+      {"text": "Circulation, Airway, Breathing, Exposure, Disability", "is_correct": false, "feedback": "INCORRECT ORDER! Airway is always first in primary survey."},
+      {"text": "Breathing, Circulation, Airway, Disability, Exposure", "is_correct": false}
+    ],
+    "hazards": {"type": "Primary Survey/Safety", "action": "Systematic assessment prevents missed injuries"}
+  },
+  {
+    "title": "SAMPLE History",
+    "category": "Assessment",
+    "pcr_text": "Patient with abdominal pain. What does SAMPLE stand for in patient history?",
+    "correct_error": "SAMPLE: Signs/Symptoms, Allergies, Medications, Past medical history, Last oral intake, Events per 2022 Standards.",
+    "chaos_events": ["Patient in pain", "Family providing information"],
+    "stress_fto_responses": ["Patient history!", "SAMPLE mnemonic!"],
+    "options": [
+      {"text": "Signs/Symptoms, Allergies, Medications, Past medical history, Last oral intake, Events leading to call", "is_correct": true},
+      {"text": "Symptoms, Age, Medications, Pain level, Events, Location", "is_correct": false, "feedback": "INCORRECT! SAMPLE is specific history-taking format."},
+      {"text": "Signs, Assessment, Medical history, Pain, Events, Location", "is_correct": false}
+    ],
+    "hazards": {"type": "Patient History/Safety", "action": "Complete assessment"}
+  },
+  {
+    "title": "OPQRST Pain Assessment",
+    "category": "Assessment",
+    "pcr_text": "Patient complaining of chest pain. What does OPQRST assess?",
+    "correct_error": "OPQRST: Onset, Provocation/Palliation, Quality, Radiation, Severity, Timing per 2022 Standards.",
+    "chaos_events": ["Patient short of breath", "Multiple symptoms"],
+    "stress_fto_responses": ["Pain assessment!", "OPQRST tool!"],
+    "options": [
+      {"text": "Onset, Provocation/Palliation, Quality, Radiation, Severity, Timing", "is_correct": true},
+      {"text": "Onset, Pain level, Quality, Radiation, Symptoms, Treatment", "is_correct": false, "feedback": "INCORRECT! OPQRST is specific pain assessment format."},
+      {"text": "Origin, Pressure, Quantity, Radiation, Severity, Time", "is_correct": false}
+    ],
+    "hazards": {"type": "Pain Assessment/Safety", "action": "Accurate pain description"}
+  },
+  {
+    "title": "Vital Signs - Normal Ranges",
+    "category": "Assessment",
+    "pcr_text": "Adult patient assessment. What are normal adult vital sign ranges?",
+    "correct_error": "Normal vitals: HR 60-100, RR 12-20, BP 90-140/60-90, Temp 98.6°F per 2022 Standards.",
+    "chaos_events": ["Patient anxious", "Equipment issues"],
+    "stress_fto_responses": ["Normal ranges!", "Vital signs assessment!"],
+    "options": [
+      {"text": "Heart rate 60-100, Respiratory rate 12-20, Blood pressure 90-140/60-90", "is_correct": true},
+      {"text": "Heart rate 80-120, Respiratory rate 16-24, Blood pressure 120-160/80-100", "is_correct": false, "feedback": "INCORRECT! Standard normal ranges are HR 60-100, RR 12-20, BP 90-140/60-90."},
+      {"text": "Heart rate 40-60, Respiratory rate 8-12, Blood pressure 80-100/50-70", "is_correct": false}
+    ],
+    "hazards": {"type": "Vital Signs/Safety", "action": "Recognize abnormalities"}
+  },
+  {
+    "title": "Glasgow Coma Scale",
+    "category": "Neurological",
+    "pcr_text": "Patient with head injury, eyes open to pain, makes incomprehensible sounds, localizes pain. What is GCS score?",
+    "correct_error": "GCS: Eyes 2, Verbal 3, Motor 5 = 10 total per 2022 Standards.",
+    "chaos_events": ["Patient agitated", "Assessment difficult"],
+    "stress_fto_responses": ["GCS assessment!", "Neurological status!"],
+    "options": [
+      {"text": "GCS 10 (Eyes 2 + Verbal 3 + Motor 5)", "is_correct": true},
+      {"text": "GCS 15 (fully alert and oriented)", "is_correct": false, "feedback": "INCORRECT! Patient shows neurological deficits - GCS <15."},
+      {"text": "GCS 3 (deep coma)", "is_correct": false}
+    ],
+    "hazards": {"type": "GCS Assessment/Safety", "action": "Quantify neurological status"}
+  },
+  {
+    "title": "Secondary Assessment",
+    "category": "Assessment",
+    "pcr_text": "Patient stable after primary survey. What is included in head-to-toe secondary assessment?",
+    "correct_error": "Secondary assessment: Head, neck, chest, abdomen, pelvis, extremities, back per 2022 Standards.",
+    "chaos_events": ["Patient uncomfortable", "Time pressure"],
+    "stress_fto_responses": ["Head to toe!", "Secondary assessment!"],
+    "options": [
+      {"text": "Head, neck, chest, abdomen, pelvis, extremities, posterior", "is_correct": true},
+      {"text": "Vital signs, patient history, treatment", "is_correct": false, "feedback": "INCORRECT! Secondary assessment is physical examination from head to toe."},
+      {"text": "Mental status, airway, breathing only", "is_correct": false}
+    ],
+    "hazards": {"type": "Secondary Assessment/Safety", "action": "Identify all injuries"}
+  },
+  {
+    "title": "Scene Safety Assessment",
+    "category": "Operations",
+    "pcr_text": "Arrive at MVC scene with downed power lines. What is your first action?",
+    "correct_error": "Scene safety first: Ensure rescuer safety before patient care per 2022 Standards.",
+    "chaos_events": ["Patients calling for help", "Traffic ongoing"],
+    "stress_fto_responses": ["Help patients!", "Scene safety first!"],
+    "options": [
+      {"text": "Assess scene safety and call for utilities if power lines involved", "is_correct": true},
+      {"text": "Approach patients immediately to provide care", "is_correct": false, "feedback": "DANGEROUS! Scene safety assessment is first priority."},
+      {"text": "Park ambulance and turn on lights", "is_correct": false}
+    ],
+    "hazards": {"type": "Scene Safety/Safety", "action": "Protect rescuers first"}
+  },
+  {
+    "title": "Body Substance Isolation",
+    "category": "Operations",
+    "pcr_text": "Patient with active bleeding. What PPE is required for direct patient contact?",
+    "correct_error": "BSI: Gloves, mask if respiratory, gown if splashing per 2022 Standards.",
+    "chaos_events": ["Blood on scene", "Patient combative"],
+    "stress_fto_responses": ["PPE required!", "Body substance isolation!"],
+    "options": [
+      {"text": "Non-sterile examination gloves for all direct contact", "is_correct": true},
+      {"text": "Full hazmat suit for all patients", "is_correct": false, "feedback": "OVERKILL! Standard precautions require gloves for blood contact."},
+      {"text": "No PPE needed for basic assessment", "is_correct": false}
+    ],
+    "hazards": {"type": "BSI/Safety", "action": "Prevent disease transmission"}
+  },
+  {
+    "title": "Mechanism of Injury",
+    "category": "Assessment",
+    "pcr_text": "Patient ejected from vehicle at highway speed. What does this MOI suggest?",
+    "correct_error": "High MOI: Ejection suggests severe injury potential per 2022 Standards.",
+    "chaos_events": ["Patient ambulatory", "Scene chaotic"],
+    "stress_fto_responses": ["Assess MOI!", "High energy injury!"],
+    "options": [
+      {"text": "High energy transfer - suspect serious internal injuries", "is_correct": true},
+      {"text": "Minor injury - patient is walking around", "is_correct": false, "feedback": "INCORRECT! Ejection from vehicle at speed indicates high injury potential."},
+      {"text": "No injuries - MOI not significant", "is_correct": false}
+    ],
+    "hazards": {"type": "MOI Assessment/Safety", "action": "Predict injury patterns"}
+  },
+  {
+    "title": "Nature of Illness",
+    "category": "Assessment",
+    "pcr_text": "Patient called 911 for 'difficulty breathing'. What should you determine first?",
+    "correct_error": "NOI assessment: Determine if medical or trauma, acute or chronic per 2022 Standards.",
+    "chaos_events": ["Patient on phone", "Family information"],
+    "stress_fto_responses": ["Determine NOI!", "Medical vs trauma!"],
+    "options": [
+      {"text": "Whether this is medical or traumatic in nature", "is_correct": true},
+      {"text": "Patient's exact blood pressure", "is_correct": false, "feedback": "INCORRECT! Nature of illness determines assessment approach."},
+      {"text": "How long ago symptoms started", "is_correct": false}
+    ],
+    "hazards": {"type": "NOI Assessment/Safety", "action": "Appropriate assessment pathway"}
+  },
+  {
+    "title": "Patient Priority Determination",
+    "category": "Assessment",
+    "pcr_text": "Three patients: one with chest pain, one with ankle sprain, one with shortness of breath. Who goes first?",
+    "correct_error": "Priority: Respiratory distress takes precedence over cardiac and minor trauma per 2022 Standards.",
+    "chaos_events": ["All patients demanding care", "Limited resources"],
+    "stress_fto_responses": ["Triage patients!", "Priority assessment!"],
+    "options": [
+      {"text": "Patient with shortness of breath - airway/breathing threat", "is_correct": true},
+      {"text": "Patient with chest pain - cardiac emergency", "is_correct": false, "feedback": "INCORRECT PRIORITY! Respiratory distress is more immediate threat."},
+      {"text": "Patient with ankle sprain - can wait", "is_correct": false}
+    ],
+    "hazards": {"type": "Patient Priority/Safety", "action": "Treat most critical first"}
+  },
+  {
+    "title": "General Impression",
+    "category": "Assessment",
+    "pcr_text": "Walk up to patient sitting on curb. What should you form immediately?",
+    "correct_error": "General impression: Overall appearance and chief complaint per 2022 Standards.",
+    "chaos_events": ["Patient talking", "Scene distractions"],
+    "stress_fto_responses": ["General impression!", "Overall assessment!"],
+    "options": [
+      {"text": "General impression of patient's overall condition and chief complaint", "is_correct": true},
+      {"text": "Detailed medical history", "is_correct": false, "feedback": "INCORRECT! General impression is initial overall assessment."},
+      {"text": "Vital signs immediately", "is_correct": false}
+    ],
+    "hazards": {"type": "General Impression/Safety", "action": "Rapid assessment"}
+  },
+  {
+    "title": "Chief Complaint",
+    "category": "Assessment",
+    "pcr_text": "Patient states 'I don't feel well'. What should you determine next?",
+    "correct_error": "Chief complaint: Patient's primary reason for calling EMS per 2022 Standards.",
+    "chaos_events": ["Vague symptoms", "Patient confused"],
+    "stress_fto_responses": ["Chief complaint!", "Primary symptom!"],
+    "options": [
+      {"text": "Patient's chief complaint and duration of symptoms", "is_correct": true},
+      {"text": "Patient's complete medical history", "is_correct": false, "feedback": "INCORRECT! Chief complaint is the primary symptom or problem."},
+      {"text": "Patient's vital signs", "is_correct": false}
+    ],
+    "hazards": {"type": "Chief Complaint/Safety", "action": "Identify primary problem"}
+  },
+  {
+    "title": "Baseline Vital Signs",
+    "category": "Assessment",
+    "pcr_text": "Patient stable after initial assessment. Why are baseline vital signs important?",
+    "correct_error": "Baseline vitals: Allow comparison if condition changes per 2022 Standards.",
+    "chaos_events": ["Patient condition fluctuating", "Assessment ongoing"],
+    "stress_fto_responses": ["Baseline vitals!", "Monitor changes!"],
+    "options": [
+      {"text": "Establish baseline for comparison if patient's condition changes", "is_correct": true},
+      {"text": "Determine exact diagnosis immediately", "is_correct": false, "feedback": "INCORRECT! Baseline vitals track trends, not diagnose."},
+      {"text": "Only needed for critical patients", "is_correct": false}
+    ],
+    "hazards": {"type": "Baseline Vitals/Safety", "action": "Detect deterioration"}
+  },
+  {
+    "title": "Reassessment",
+    "category": "Assessment",
+    "pcr_text": "Patient loaded in ambulance with chest pain. How often should you reassess?",
+    "correct_error": "Reassessment: Every 5 minutes for critical patients, 15 minutes for stable per 2022 Standards.",
+    "chaos_events": ["Transport bumpy", "Patient talking"],
+    "stress_fto_responses": ["Frequent reassessment!", "Monitor changes!"],
+    "options": [
+      {"text": "Every 5 minutes for unstable patients, 15 minutes for stable", "is_correct": true},
+      {"text": "Once at beginning and once at hospital", "is_correct": false, "feedback": "INADEQUATE! Critical patients require frequent reassessment."},
+      {"text": "Only if patient complains", "is_correct": false}
+    ],
+    "hazards": {"type": "Reassessment/Safety", "action": "Monitor for changes"}
+  },
+  {
+    "title": "Transport Decision",
+    "category": "Operations",
+    "pcr_text": "Patient with minor laceration, hemostasis achieved. Should you transport or allow to refuse?",
+    "correct_error": "Transport decision: Consider condition, distance, resources per 2022 Standards.",
+    "chaos_events": ["Patient wants to refuse", "Family disagreement"],
+    "stress_fto_responses": ["Transport decision!", "Patient condition!"],
+    "options": [
+      {"text": "Assess patient's condition and ability to refuse transport", "is_correct": true},
+      {"text": "Transport all patients regardless of condition", "is_correct": false, "feedback": "INCORRECT! Appropriate patients can refuse transport after assessment."},
+      {"text": "Never transport for minor injuries", "is_correct": false}
+    ],
+    "hazards": {"type": "Transport Decision/Safety", "action": "Appropriate disposition"}
+  }
+]
