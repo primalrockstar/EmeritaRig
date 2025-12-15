@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, BookOpen, Activity, Brain, ClipboardList, Menu, X } from 'lucide-react';
 import { getCurrentTimeMilitary } from '../../utils/timeUtils';
+import LegalDisclaimer from '../common/LegalDisclaimer';
 
 interface TacticalLayoutProps {
   children: React.ReactNode;
@@ -71,6 +72,7 @@ const TacticalLayout: React.FC<TacticalLayoutProps> = ({ children }) => {
                 );
               })}
             </div>
+            <LegalDisclaimer />
           </nav>
         </div>
 

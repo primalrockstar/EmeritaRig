@@ -1,5 +1,6 @@
 import React from 'react';
 import { GraduationCap } from 'lucide-react';
+import LegalDisclaimer from '../components/common/LegalDisclaimer';
 
 interface ClinicalLayoutProps {
   children: React.ReactNode;
@@ -56,6 +57,7 @@ const ClinicalLayout: React.FC<ClinicalLayoutProps> = ({
               </button>
             </div>
           </div>
+          <LegalDisclaimer />
         </div>
       </footer>
     </div>
