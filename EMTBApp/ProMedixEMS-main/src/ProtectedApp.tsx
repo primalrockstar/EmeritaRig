@@ -36,7 +36,7 @@ import VoiceNoteTranscriber from './components/VoiceNoteTranscriber';
 import NationalProtocolFoundationManager from './components/NationalProtocolFoundationManager';
 import ClinicalCalculatorsHub from './components/tools/ClinicalCalculatorsHub';
 import { StudyNotesOverview, StudyNotesChapterView } from './components/StudyNotesNavigator';
-import EMTBNavigation from './features/study/EMTBNavigation';
+
 import EMTBFlashcards from './features/quiz/EMTBFlashcards';
 import SkillsPracticeModule from './features/study/SkillsPracticeModule';
 import EMTScopeMedications from './features/tools/EMTScopeMedications';
@@ -46,6 +46,8 @@ import { ModernButton } from './components/ui/ModernGlassComponents';
 import EnhancedSearchBar from './components/EnhancedSearchBar';
 import { SearchResult } from './utils/search';
 import UWorldLayout from './components/layout/UWorldLayout';
+import TacticalLayout from './components/layout/TacticalLayout';
+import ClinicalLayout from './components/layout/ClinicalLayout';
 import { PrivacyPolicy, TermsOfService, MedicalDisclaimer, SupportCenter, ContactUs } from './components/LegalSupportPages';
 import LectureCompanion from './features/study/LectureCompanion';
 import CompanionDashboard from './components/dashboard/CompanionDashboard';
@@ -55,6 +57,10 @@ import CompanionDrillTab from './components/dashboard/CompanionDrillTab';
 
 import CompanionReferenceTab from './components/dashboard/CompanionReferenceTab';
 import EMTBPcrTrainer from './components/emtb/EMTBPcrTrainer';
+import DebugScenarios from './components/DebugScenarios';
+import SimpleDebugScenarios from './components/SimpleDebugScenarios';
+import FieldManual from './components/study/FieldManual';
+import ChapterReader from './components/study/ChapterReader';
 
 // Enhanced Ultra-Modern Header with Glass Morphism
 const UltraModernHeader = () => {
@@ -234,15 +240,7 @@ const highlightSections: HighlightItem[] = [
     iconColor: 'text-blue-500',
     includes: ['Module-based navigation', '41 enhanced chapters', 'Clinical pearls & downloads']
   },
-  {
-    title: 'Comprehensive Curriculum',
-    description: 'Review the complete EMT-B roadmap and chapter outlines',
-    icon: ClipboardList,
-    to: '/curriculum',
-    accent: 'hover:border-blue-300',
-    iconColor: 'text-blue-500',
-    includes: ['Module summaries', 'Core competencies', 'Suggested study flow']
-  },
+
   {
     title: 'Clinical Calculators',
     description: 'Evidence-based calculations and scoring tools',
@@ -317,7 +315,6 @@ const recentActivity = [
 
 const platformLinks = [
   { label: 'Dashboard', to: '/' },
-  { label: 'Curriculum', to: '/curriculum' },
   { label: 'Study Notes', to: '/study' },
   { label: 'Clinical Calculators', to: '/tools' },
   { label: 'Practice Center', to: '/enhanced-quiz' },
@@ -327,7 +324,7 @@ const platformLinks = [
 
 const resourceLinks = [
   { label: 'Flashcards Library', to: '/flashcards' },
-  { label: 'EMT-B Navigation', to: '/curriculum' },
+  { label: 'Study Notes', to: '/study-notes' },
   { label: 'Balanced Quiz System', to: '/enhanced-quiz' },
   { label: 'Medical Disclaimer', to: '/disclaimer' },
   { label: 'Modern Landing', to: '/' },
@@ -518,13 +515,13 @@ const UltraModernDashboard: React.FC = () => {
                   <Activity className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-blue-900 leading-none">ProMedix<span className="text-blue-600">EMS</span>™</h3>
-                  <p className="text-[10px] text-slate-500 uppercase tracking-wider">Professional EMT Education</p>
+                  <h3 className="font-bold text-blue-900 leading-none">Emerita Clinical</h3>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-wider">EMT-B Education Platform</p>
                 </div>
               </div>
               <p className="text-sm text-slate-600 max-w-sm">
-                Professional EMT education software designed for modern EMS students and healthcare professionals.
-                Part of the comprehensive Emerita Clinical suite.
+                Modern EMT-B education platform designed for comprehensive learning and certification success.
+                Built for the next generation of emergency medical professionals.
               </p>
               <div className="flex gap-4 text-sm font-medium text-blue-600">
                 <a href="https://emeritaclinical.com" target="_blank" rel="noreferrer" className="hover:text-blue-800">EmeritaClinical.com</a>
@@ -537,7 +534,7 @@ const UltraModernDashboard: React.FC = () => {
               <h4 className="font-bold text-blue-900 mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm text-slate-600">
                 <li><Link to="/study-notes" className="hover:text-blue-600">Study Center</Link></li>
-                <li><Link to="/curriculum" className="hover:text-blue-600">Browse Content</Link></li>
+                <li><Link to="/study" className="hover:text-blue-600">Browse Content</Link></li>
                 <li><Link to="/progress" className="hover:text-blue-600">Progress Analytics</Link></li>
                 <li><Link to="/settings" className="hover:text-blue-600">Settings</Link></li>
               </ul>
@@ -628,24 +625,35 @@ const ProtocolsPage: React.FC = () => (
 );
 
 const FlashcardsPage: React.FC = () => (
-  <PageContainer
-    title="Interactive Flashcards"
-    subtitle="Targeted decks with clinical mnemonics, step-by-step skills, and scenario prompts across every EMT-B module."
-    gradient="from-blue-50 via-blue-100 to-white"
-    fullBleed
-  >
-    <EMTBFlashcards />
-  </PageContainer>
+  <TacticalLayout title="FLASHCARD HUD">
+    <div className="min-h-screen bg-slate-900">
+      <div className="max-w-7xl mx-auto p-6">
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-amber-400 mb-2">INTERACTIVE FLASHCARDS</h1>
+          <p className="text-slate-300">Targeted decks with clinical mnemonics, step-by-step skills, and scenario prompts across every EMT-B module.</p>
+        </div>
+        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+          <EMTBFlashcards />
+        </div>
+      </div>
+    </div>
+  </TacticalLayout>
 );
 
 const CalculatorsPage: React.FC = () => (
-  <PageContainer
-    title="Clinical Calculators Hub"
-    subtitle="Evidence-based calculators for neurologic assessment, pediatrics, trauma, airway, and medication dosing."
-    gradient="from-white via-blue-50 to-blue-100"
-  >
-    <ClinicalCalculatorsHub />
-  </PageContainer>
+  <TacticalLayout title="CALCULATORS HUB">
+    <div className="min-h-screen bg-slate-900">
+      <div className="max-w-7xl mx-auto p-6">
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-amber-400 mb-2">CLINICAL CALCULATORS HUB</h1>
+          <p className="text-slate-300">Evidence-based calculators for neurologic assessment, pediatrics, trauma, airway, and medication dosing.</p>
+        </div>
+        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+          <ClinicalCalculatorsHub />
+        </div>
+      </div>
+    </div>
+  </TacticalLayout>
 );
 
 const SkillsPracticePage: React.FC = () => (
@@ -659,13 +667,19 @@ const SkillsPracticePage: React.FC = () => (
 );
 
 const MedicationsPage: React.FC = () => (
-  <PageContainer
-    title="EMT Scope of Practice Medications"
-    subtitle="Quick reference for medications EMTs may administer or assist with under most state protocols."
-    gradient="from-white via-blue-50 to-blue-100"
-  >
-    <EMTScopeMedications />
-  </PageContainer>
+  <TacticalLayout title="MEDICATIONS DATABASE">
+    <div className="min-h-screen bg-slate-900">
+      <div className="max-w-7xl mx-auto p-6">
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-amber-400 mb-2">EMT SCOPE OF PRACTICE MEDICATIONS</h1>
+          <p className="text-slate-300">Quick reference for medications EMTs may administer or assist with under most state protocols.</p>
+        </div>
+        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+          <EMTScopeMedications />
+        </div>
+      </div>
+    </div>
+  </TacticalLayout>
 );
 
 const StudyMaterialsPage: React.FC = () => {
@@ -692,10 +706,7 @@ const StudyMaterialsPage: React.FC = () => {
           </button>
         </div>
         <StudyNotesOverview />
-        <div className="rounded-3xl bg-white border border-blue-100 p-6 shadow-inner">
-          <h2 className="text-2xl font-semibold text-blue-900 mb-4">Curriculum Navigation</h2>
-          <EMTBNavigation />
-        </div>
+
         <div className="rounded-3xl bg-white border border-blue-100 p-6 shadow-inner">
           <EMTScopeMedications />
         </div>
@@ -704,15 +715,7 @@ const StudyMaterialsPage: React.FC = () => {
   );
 };
 
-const CurriculumPage: React.FC = () => (
-  <PageContainer
-    title="Comprehensive Curriculum"
-    subtitle="Explore module summaries, competencies, and recommended sequencing for confident mastery."
-    gradient="from-white via-blue-50 to-blue-100"
-  >
-    <EMTBNavigation />
-  </PageContainer>
-);
+
 
 const ScenariosPage: React.FC = () => (
   <PageContainer
@@ -876,13 +879,11 @@ function ProtectedRoutes() {
         <Route path="/learn" element={<PageContainer title="Learn" subtitle="Your personalized learning companion with context-aware recommendations"><CompanionLearnTab /></PageContainer>} />
         <Route path="/drill" element={<CompanionDrillTab />} />
         <Route path="/reference" element={<CompanionReferenceTab />} />
-        <Route path="/study-notes" element={<StudyMaterialsPage />} />
-        <Route path="/study-notes/chapter/:chapterId" element={<StudyNotesChapterPage />} />
-        <Route path="/curriculum" element={<CurriculumPage />} />
-        <Route path="/chapters" element={<CurriculumPage />} />
+        <Route path="/study-notes" element={<FieldManual />} />
+        <Route path="/study-notes/:chapterId" element={<ChapterReader />} />
         <Route path="/scenarios" element={<ScenariosPage />} />
-        <Route path="/pcr-practice" element={<PageContainer title="PCR Report Sim" subtitle="Practice patient care report documentation with FTO evaluation and real-world scenarios."><EMTBPcrTrainer /></PageContainer>} />
-        <Route path="/nremt-simulator" element={<PageContainer title="NREMT Exam Simulator" subtitle="High-stakes CAT exam - No assistance provided. Training wheels OFF."><NREMTSimulator /></PageContainer>} />
+        <Route path="/pcr-practice" element={<TacticalLayout title="PCR SIMULATOR"><EMTBPcrTrainer /></TacticalLayout>} />
+        <Route path="/nremt-simulator" element={<ClinicalLayout title="NREMT EXAM SIMULATOR"><NREMTSimulator /></ClinicalLayout>} />
 
         <Route path="/progress" element={<ProgressPage />} />
         
@@ -925,10 +926,8 @@ const AuthenticatedApp: React.FC = () => {
             <Route path="/learn" element={<PageContainer title="Learn" subtitle="Your personalized learning companion with context-aware recommendations"><CompanionLearnTab /></PageContainer>} />
             <Route path="/drill" element={<CompanionDrillTab />} />
             <Route path="/reference" element={<CompanionReferenceTab />} />
-            <Route path="/study-notes" element={<StudyMaterialsPage />} />
-            <Route path="/study-notes/chapter/:chapterId" element={<StudyNotesChapterPage />} />
-            <Route path="/curriculum" element={<CurriculumPage />} />
-            <Route path="/chapters" element={<CurriculumPage />} />
+            <Route path="/study-notes" element={<FieldManual />} />
+            <Route path="/study-notes/:chapterId" element={<ChapterReader />} />
             <Route path="/scenarios" element={<ScenariosPage />} />
             <Route path="/pcr-practice" element={<PageContainer title="PCR Report Sim" subtitle="Practice patient care report documentation with FTO evaluation and real-world scenarios."><EMTBPcrTrainer /></PageContainer>} />
             <Route path="/nremt-simulator" element={<PageContainer title="NREMT Exam Simulator" subtitle="High-stakes CAT exam - No assistance provided. Training wheels OFF."><NREMTSimulator /></PageContainer>} />
