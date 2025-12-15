@@ -1,0 +1,450 @@
+[
+  {
+    "title": "Multi-System Trauma - Golden Period Decision",
+    "category": "Trauma",
+    "pcr_text": "25-year-old MVC victim with altered mental status, multiple deformities, and active bleeding. 15-minute transport time. Should you stay and splint or load and go?",
+    "correct_error": "Golden Period Critical - Load and Go. Multi-system trauma requires immediate transport per trauma protocols.",
+    "chaos_events": ["Patient becoming unresponsive", "Heavy bleeding continues"],
+    "stress_fto_responses": ["Splint everything first!", "Load and go - golden period!"],
+    "options": [
+      {"text": "Load and go immediately - prioritize transport over complete splinting", "is_correct": true},
+      {"text": "Stay and splint all fractures before transport", "is_correct": false, "feedback": "CRITICAL ERROR! Golden period violation. Multi-system trauma requires immediate transport."},
+      {"text": "Wait for advanced life support", "is_correct": false}
+    ],
+    "hazards": {"type": "Multi-System Trauma/Safety", "action": "Rapid transport priority"}
+  },
+  {
+    "title": "Flail Chest with Respiratory Distress",
+    "category": "Trauma",
+    "pcr_text": "35-year-old with paradoxical chest movement, severe shortness of breath, and cyanosis after MVC. Should you attempt extensive splinting or transport immediately?",
+    "correct_error": "Flail chest with respiratory failure. Load and go for definitive airway management per trauma protocols.",
+    "chaos_events": ["Patient's breathing deteriorating", "Scene not secure"],
+    "stress_fto_responses": ["Splint the chest!", "Load and go - airway critical!"],
+    "options": [
+      {"text": "Load and go immediately - respiratory failure requires hospital intervention", "is_correct": true},
+      {"text": "Stay and attempt external chest splinting", "is_correct": false, "feedback": "GOLDEN PERIOD VIOLATION! Flail chest with respiratory distress needs immediate transport."},
+      {"text": "Administer pain medication only", "is_correct": false}
+    ],
+    "hazards": {"type": "Respiratory Failure/Safety", "action": "Minimize scene time"}
+  },
+  {
+    "title": "Abdominal Evisceration - Transport Priority",
+    "category": "Trauma",
+    "pcr_text": "40-year-old with exposed bowel from GSW, alert but in pain. 10-minute transport. Should you attempt complex dressing or rapid transport?",
+    "correct_error": "Abdominal evisceration. Cover minimally and load and go per trauma protocols.",
+    "chaos_events": ["Patient vomiting", "Bowel drying out"],
+    "stress_fto_responses": ["Cover the bowel!", "Load and go - contamination risk!"],
+    "options": [
+      {"text": "Apply moist dressing and load and go immediately", "is_correct": true},
+      {"text": "Attempt surgical repair on scene", "is_correct": false, "feedback": "OUT OF SCOPE! Surgical repair requires hospital. Load and go for evisceration."},
+      {"text": "Wait for surgical team", "is_correct": false}
+    ],
+    "hazards": {"type": "Abdominal Trauma/Safety", "action": "Rapid transport to OR"}
+  },
+  {
+    "title": "Femur Fracture with Shock",
+    "category": "Trauma",
+    "pcr_text": "30-year-old with deformed femur, pale, diaphoretic, and tachycardic. Suspected hypovolemic shock. Should you apply traction splint or transport immediately?",
+    "correct_error": "Femur fracture with shock. Load and go - traction splinting can wait per trauma protocols.",
+    "chaos_events": ["Patient becoming unresponsive", "Splinting equipment difficult to apply"],
+    "stress_fto_responses": ["Splint the femur!", "Load and go - shock priority!"],
+    "options": [
+      {"text": "Load and go immediately - address shock in transport", "is_correct": true},
+      {"text": "Stay and apply traction splint before transport", "is_correct": false, "feedback": "GOLDEN PERIOD CRITICAL! Shock takes precedence over splinting in transport."},
+      {"text": "Administer IV fluids first", "is_correct": false}
+    ],
+    "hazards": {"type": "Hypovolemic Shock/Safety", "action": "Minimize scene time"}
+  },
+  {
+    "title": "Impaled Object in Chest",
+    "category": "Trauma",
+    "pcr_text": "45-year-old with metal rod impaled in chest, breathing but in severe pain. Should you remove the object or transport with it in place?",
+    "correct_error": "Impaled chest object. Leave in place and load and go per trauma protocols.",
+    "chaos_events": ["Object shifting with breathing", "Patient panicking"],
+    "stress_fto_responses": ["Remove the rod!", "Stabilize and transport!"],
+    "options": [
+      {"text": "Stabilize object and load and go immediately", "is_correct": true},
+      {"text": "Remove object before transport", "is_correct": false, "feedback": "CRITICAL ERROR! Removing impaled objects can cause fatal bleeding. Transport with object stabilized."},
+      {"text": "Wait for specialized extrication team", "is_correct": false}
+    ],
+    "hazards": {"type": "Impaled Object/Safety", "action": "Do not remove object"}
+  },
+  {
+    "title": "Amputation with Massive Bleeding",
+    "category": "Trauma",
+    "pcr_text": "50-year-old with complete hand amputation, spurting arterial blood. Should you attempt reattachment or control bleeding and transport?",
+    "correct_error": "Traumatic amputation with hemorrhage. Apply tourniquet and load and go per trauma protocols.",
+    "chaos_events": ["Blood loss significant", "Patient in shock"],
+    "stress_fto_responses": ["Control bleeding!", "Load and go - hemorrhage!"],
+    "options": [
+      {"text": "Apply tourniquet proximal to injury and load and go", "is_correct": true},
+      {"text": "Attempt to reattach hand on scene", "is_correct": false, "feedback": "OUT OF SCOPE! Reattachment requires surgical facility. Control bleeding and transport."},
+      {"text": "Apply direct pressure only", "is_correct": false}
+    ],
+    "hazards": {"type": "Massive Hemorrhage/Safety", "action": "Tourniquet application"}
+  },
+  {
+    "title": "Build-a-List: Tourniquet Application Steps",
+    "category": "Trauma",
+    "pcr_text": "Severe arterial bleeding from leg laceration. Order the steps for proper tourniquet application.",
+    "correct_error": "Tourniquet application sequence per bleeding control protocols.",
+    "chaos_events": ["Patient bleeding heavily", "Tourniquet not immediately available"],
+    "stress_fto_responses": ["Apply tourniquet!", "Follow protocol order!"],
+    "options": [
+      {"text": "1. Expose wound, 2. Apply direct pressure, 3. Apply tourniquet 2-3 inches above wound, 4. Tighten until bleeding stops, 5. Note time applied", "is_correct": true},
+      {"text": "1. Apply tourniquet, 2. Check pulse, 3. Transport", "is_correct": false, "feedback": "INCOMPLETE SEQUENCE! Direct pressure first, then tourniquet with proper placement."},
+      {"text": "1. Direct pressure, 2. Tourniquet below wound, 3. Transport", "is_correct": false}
+    ],
+    "hazards": {"type": "Bleeding Control/Safety", "action": "Proper tourniquet technique"}
+  },
+  {
+    "title": "Multi-System Trauma - Head and Chest",
+    "category": "Trauma",
+    "pcr_text": "22-year-old MVC with GCS 12, flail chest, and internal bleeding suspected. 12-minute transport. Load and go or stay and assess?",
+    "correct_error": "Multi-system trauma with head injury. Load and go immediately per golden period protocols.",
+    "chaos_events": ["Patient becoming more confused", "Respirations labored"],
+    "stress_fto_responses": ["Assess GCS!", "Load and go - critical!"],
+    "options": [
+      {"text": "Load and go - head injury takes precedence", "is_correct": true},
+      {"text": "Stay for complete neurological assessment", "is_correct": false, "feedback": "GOLDEN PERIOD VIOLATION! Multi-system trauma requires immediate transport."},
+      {"text": "Splint chest before transport", "is_correct": false}
+    ],
+    "hazards": {"type": "Multi-System Trauma/Safety", "action": "Rapid transport priority"}
+  },
+  {
+    "title": "Pelvic Fracture with Shock",
+    "category": "Trauma",
+    "pcr_text": "55-year-old fell from ladder with pelvic pain, hypotension, and tachycardia. Should you attempt pelvic binding or transport immediately?",
+    "correct_error": "Pelvic fracture with shock. Load and go - pelvic binding can be done en route per trauma protocols.",
+    "chaos_events": ["Patient in severe pain", "Scene access difficult"],
+    "stress_fto_responses": ["Bind the pelvis!", "Load and go - shock!"],
+    "options": [
+      {"text": "Load and go immediately with manual stabilization", "is_correct": true},
+      {"text": "Stay and apply commercial pelvic binder", "is_correct": false, "feedback": "GOLDEN PERIOD CRITICAL! Shock management takes precedence over binding."},
+      {"text": "Administer pain medication first", "is_correct": false}
+    ],
+    "hazards": {"type": "Hypovolemic Shock/Safety", "action": "Minimize scene time"}
+  },
+  {
+    "title": "Spinal Injury with Neurogenic Shock",
+    "category": "Trauma",
+    "pcr_text": "28-year-old diving injury with paralysis and hypotension. Should you focus on spinal immobilization or address shock first?",
+    "correct_error": "Spinal injury with neurogenic shock. Load and go with spinal precautions per trauma protocols.",
+    "chaos_events": ["Patient bradycardic", "Spinal board application difficult"],
+    "stress_fto_responses": ["Immobilize spine!", "Load and go - shock priority!"],
+    "options": [
+      {"text": "Load and go with spinal immobilization - address shock in transport", "is_correct": true},
+      {"text": "Complete full spinal assessment before transport", "is_correct": false, "feedback": "GOLDEN PERIOD VIOLATION! Neurogenic shock requires immediate transport."},
+      {"text": "Administer fluids before moving", "is_correct": false}
+    ],
+    "hazards": {"type": "Neurogenic Shock/Safety", "action": "Spinal immobilization"}
+  },
+  {
+    "title": "Build-a-List: Traction Splinting Steps",
+    "category": "Trauma",
+    "pcr_text": "Isolated mid-shaft femur fracture with shortening and rotation. Order the steps for traction splinting.",
+    "correct_error": "Traction splinting sequence for femur fracture per trauma protocols.",
+    "chaos_events": ["Patient in severe pain", "Equipment setup time-consuming"],
+    "stress_fto_responses": ["Apply traction!", "Follow splinting steps!"],
+    "options": [
+      {"text": "1. Assess neurovascular status, 2. Align limb manually, 3. Apply splint with traction, 4. Secure ischial pad, 5. Reassess circulation", "is_correct": true},
+      {"text": "1. Apply splint, 2. Pull traction, 3. Transport", "is_correct": false, "feedback": "INCOMPLETE SEQUENCE! Manual alignment first, then proper splint application."},
+      {"text": "1. Traction, 2. Splint, 3. Check pulse", "is_correct": false}
+    ],
+    "hazards": {"type": "Femur Fracture/Safety", "action": "Proper traction technique"}
+  },
+  {
+    "title": "Open Tibia Fracture",
+    "category": "Trauma",
+    "pcr_text": "35-year-old with open tibia fracture, bone protruding, heavy bleeding. Should you attempt wound care or load and go?",
+    "correct_error": "Open fracture with bleeding. Cover wound and load and go per trauma protocols.",
+    "chaos_events": ["Bone exposed", "Patient screaming"],
+    "stress_fto_responses": ["Cover the wound!", "Load and go - infection risk!"],
+    "options": [
+      {"text": "Apply sterile dressing and load and go immediately", "is_correct": true},
+      {"text": "Irrigate wound thoroughly before transport", "is_correct": false, "feedback": "GOLDEN PERIOD VIOLATION! Irrigation can wait - transport open fractures immediately."},
+      {"text": "Attempt to reduce the fracture", "is_correct": false}
+    ],
+    "hazards": {"type": "Open Fracture/Safety", "action": "Minimize contamination"}
+  },
+  {
+    "title": "Tension Pneumothorax",
+    "category": "Trauma",
+    "pcr_text": "40-year-old with penetrating chest trauma, absent breath sounds on right, jugular venous distension, and respiratory distress. Load and go or needle decompression?",
+    "correct_error": "Tension pneumothorax. Load and go - needle decompression requires paramedic certification per trauma protocols.",
+    "chaos_events": ["Patient deteriorating rapidly", "Scene unsafe"],
+    "stress_fto_responses": ["Needle decompression!", "Load and go - critical!"],
+    "options": [
+      {"text": "Load and go immediately - hospital intervention required", "is_correct": true},
+      {"text": "Perform needle decompression on scene", "is_correct": false, "feedback": "OUT OF SCOPE! Needle decompression requires Paramedic certification. Load and go."},
+      {"text": "Apply three-sided dressing", "is_correct": false}
+    ],
+    "hazards": {"type": "Tension Pneumothorax/Safety", "action": "Rapid transport"}
+  },
+  {
+    "title": "Hemorrhagic Shock - Multiple Fractures",
+    "category": "Trauma",
+    "pcr_text": "45-year-old with bilateral femur fractures, pale, BP 80/50, HR 130. Should you splint both legs or transport immediately?",
+    "correct_error": "Multiple fractures with shock. Load and go - address shock first per trauma protocols.",
+    "chaos_events": ["Patient becoming unresponsive", "Splinting taking too long"],
+    "stress_fto_responses": ["Splint both legs!", "Load and go - shock!"],
+    "options": [
+      {"text": "Load and go with manual stabilization - shock is priority", "is_correct": true},
+      {"text": "Stay and apply traction splints to both legs", "is_correct": false, "feedback": "GOLDEN PERIOD CRITICAL! Shock management precedes splinting in transport."},
+      {"text": "Administer IV fluids before moving", "is_correct": false}
+    ],
+    "hazards": {"type": "Hemorrhagic Shock/Safety", "action": "Minimize scene time"}
+  },
+  {
+    "title": "Build-a-List: Tourniquet Application for Amputation",
+    "category": "Trauma",
+    "pcr_text": "Complete forearm amputation with severe bleeding. Order the steps for tourniquet application.",
+    "correct_error": "Tourniquet application sequence for traumatic amputation per bleeding control protocols.",
+    "chaos_events": ["Heavy arterial bleeding", "Patient in shock"],
+    "stress_fto_responses": ["Apply tourniquet!", "Control hemorrhage!"],
+    "options": [
+      {"text": "1. Apply direct pressure, 2. Place tourniquet 2-3 inches above wound, 3. Tighten until bleeding stops, 4. Secure tourniquet, 5. Note time", "is_correct": true},
+      {"text": "1. Tourniquet, 2. Transport, 3. Note time", "is_correct": false, "feedback": "INCOMPLETE SEQUENCE! Direct pressure first, proper placement required."},
+      {"text": "1. Pressure, 2. Tourniquet below wound, 3. Transport", "is_correct": false}
+    ],
+    "hazards": {"type": "Traumatic Amputation/Safety", "action": "Immediate hemorrhage control"}
+  },
+  {
+    "title": "Cervical Spine Injury with Hypotension",
+    "category": "Trauma",
+    "pcr_text": "32-year-old with neck pain after fall, C-spine precautions applied, BP 90/60. Should you complete full assessment or load and go?",
+    "correct_error": "Spinal injury with hypotension. Load and go - possible neurogenic shock per trauma protocols.",
+    "chaos_events": ["Patient complaining of neck pain", "Manual C-spine control difficult"],
+    "stress_fto_responses": ["Assess spine!", "Load and go - shock signs!"],
+    "options": [
+      {"text": "Load and go with C-spine immobilization - address hypotension in transport", "is_correct": true},
+      {"text": "Stay for detailed neurological assessment", "is_correct": false, "feedback": "GOLDEN PERIOD VIOLATION! Hypotension with spinal injury suggests shock - transport immediately."},
+      {"text": "Remove C-collar for better assessment", "is_correct": false}
+    ],
+    "hazards": {"type": "Neurogenic Shock/Safety", "action": "Maintain spinal immobilization"}
+  },
+  {
+    "title": "Facial Trauma with Airway Threat",
+    "category": "Trauma",
+    "pcr_text": "25-year-old with facial fractures, swelling, and blood in airway. Should you attempt airway management or load and go?",
+    "correct_error": "Facial trauma with airway compromise. Load and go for definitive airway control per trauma protocols.",
+    "chaos_events": ["Patient unable to clear airway", "Swelling increasing"],
+    "stress_fto_responses": ["Clear airway!", "Load and go - airway!"],
+    "options": [
+      {"text": "Load and go immediately - hospital airway management required", "is_correct": true},
+      {"text": "Attempt advanced airway techniques on scene", "is_correct": false, "feedback": "OUT OF SCOPE! Advanced airway requires Paramedic certification. Load and go for facial trauma."},
+      {"text": "Suction aggressively", "is_correct": false}
+    ],
+    "hazards": {"type": "Airway Compromise/Safety", "action": "Position for drainage"}
+  },
+  {
+    "title": "Build-a-List: Traction Splint for Femur Fracture",
+    "category": "Trauma",
+    "pcr_text": "Angulated femur fracture with shortening. Order the steps for applying traction splint.",
+    "correct_error": "Traction splinting sequence for femur fracture per trauma protocols.",
+    "chaos_events": ["Patient in extreme pain", "Splint application challenging"],
+    "stress_fto_responses": ["Apply traction!", "Follow steps carefully!"],
+    "options": [
+      {"text": "1. Provide pain management, 2. Manually align limb, 3. Apply ankle hitch, 4. Apply traction, 5. Secure splint, 6. Reassess", "is_correct": true},
+      {"text": "1. Traction, 2. Splint, 3. Transport", "is_correct": false, "feedback": "INCOMPLETE SEQUENCE! Manual alignment and proper hitching required."},
+      {"text": "1. Splint, 2. Traction, 3. Check pulse", "is_correct": false}
+    ],
+    "hazards": {"type": "Femur Fracture/Safety", "action": "Proper alignment prevents complications"}
+  },
+  {
+    "title": "Intra-Abdominal Bleeding",
+    "category": "Trauma",
+    "pcr_text": "50-year-old with handlebar injury to abdomen, tender and rigid abdomen, tachycardia. Should you attempt abdominal assessment or load and go?",
+    "correct_error": "Suspected intra-abdominal bleeding. Load and go - surgical intervention required per trauma protocols.",
+    "chaos_events": ["Patient guarding abdomen", "Signs of peritonitis"],
+    "stress_fto_responses": ["Assess abdomen!", "Load and go - bleeding!"],
+    "options": [
+      {"text": "Load and go immediately - surgical abdomen suspected", "is_correct": true},
+      {"text": "Stay for detailed abdominal examination", "is_correct": false, "feedback": "GOLDEN PERIOD VIOLATION! Rigid abdomen suggests surgical emergency - transport immediately."},
+      {"text": "Administer pain medication", "is_correct": false}
+    ],
+    "hazards": {"type": "Intra-Abdominal Bleeding/Safety", "action": "Rapid transport to surgery"}
+  },
+  {
+    "title": "Multiple Rib Fractures",
+    "category": "Trauma",
+    "pcr_text": "60-year-old with MVC, multiple rib fractures, shallow breathing, and chest pain. Should you attempt pain management or load and go?",
+    "correct_error": "Multiple rib fractures with respiratory compromise. Load and go for pain control and monitoring per trauma protocols.",
+    "chaos_events": ["Patient splinting chest", "Respiratory rate increasing"],
+    "stress_fto_responses": ["Pain management!", "Load and go - respiratory!"],
+    "options": [
+      {"text": "Load and go with oxygen - hospital pain management required", "is_correct": true},
+      {"text": "Stay and administer opioids for pain", "is_correct": false, "feedback": "OUT OF SCOPE! Opioid administration requires Paramedic certification. Load and go."},
+      {"text": "Apply chest splinting", "is_correct": false}
+    ],
+    "hazards": {"type": "Respiratory Compromise/Safety", "action": "Monitor breathing"}
+  },
+  {
+    "title": "Build-a-List: Tourniquet for Lower Extremity",
+    "category": "Trauma",
+    "pcr_text": "Severe bleeding from femoral artery injury. Order the steps for tourniquet application.",
+    "correct_error": "Tourniquet application sequence for extremity hemorrhage per bleeding control protocols.",
+    "chaos_events": ["Arterial spurting", "Patient hypotensive"],
+    "stress_fto_responses": ["Tourniquet now!", "Control bleeding fast!"],
+    "options": [
+      {"text": "1. Apply direct pressure, 2. Locate artery, 3. Apply tourniquet 2-3 inches above, 4. Tighten until bleeding stops, 5. Mark time", "is_correct": true},
+      {"text": "1. Tourniquet, 2. Pressure, 3. Transport", "is_correct": false, "feedback": "INCORRECT SEQUENCE! Direct pressure first, then tourniquet with proper technique."},
+      {"text": "1. Pressure below wound, 2. Tourniquet, 3. Time", "is_correct": false}
+    ],
+    "hazards": {"type": "Arterial Hemorrhage/Safety", "action": "Immediate control"}
+  },
+  {
+    "title": "Skull Fracture with Altered Mental Status",
+    "category": "Trauma",
+    "pcr_text": "18-year-old fell, GCS 11, battle's sign present, vomiting. Should you attempt full neurological assessment or load and go?",
+    "correct_error": "Skull fracture with AMS. Load and go - possible epidural hematoma per trauma protocols.",
+    "chaos_events": ["Patient vomiting", "Level of consciousness fluctuating"],
+    "stress_fto_responses": ["Neuro assessment!", "Load and go - head injury!"],
+    "options": [
+      {"text": "Load and go immediately - head injury priority", "is_correct": true},
+      {"text": "Stay for complete Glasgow Coma Scale assessment", "is_correct": false, "feedback": "GOLDEN PERIOD CRITICAL! AMS with skull fracture requires immediate transport."},
+      {"text": "Elevate head to reduce swelling", "is_correct": false}
+    ],
+    "hazards": {"type": "Intracranial Bleeding/Safety", "action": "Rapid transport"}
+  },
+  {
+    "title": "Displaced Shoulder Fracture",
+    "category": "Trauma",
+    "pcr_text": "40-year-old with anterior shoulder dislocation, severe pain, neurovascular intact. Should you attempt reduction or transport?",
+    "correct_error": "Shoulder dislocation. Immobilize and transport - reduction requires analgesia per trauma protocols.",
+    "chaos_events": ["Patient in extreme pain", "Joint deformity obvious"],
+    "stress_fto_responses": ["Reduce the shoulder!", "Immobilize and transport!"],
+    "options": [
+      {"text": "Immobilize in position of comfort and transport", "is_correct": true},
+      {"text": "Attempt closed reduction on scene", "is_correct": false, "feedback": "OUT OF SCOPE! Reduction requires sedation. Immobilize and transport."},
+      {"text": "Apply traction to reduce", "is_correct": false}
+    ],
+    "hazards": {"type": "Joint Dislocation/Safety", "action": "Immobilize securely"}
+  },
+  {
+    "title": "Build-a-List: Traction Splint Application",
+    "category": "Trauma",
+    "pcr_text": "Femur fracture with 2-inch shortening. Order the steps for traction splint application.",
+    "correct_error": "Traction splinting sequence for shortened femur fracture per trauma protocols.",
+    "chaos_events": ["Patient combative from pain", "Splint components scattered"],
+    "stress_fto_responses": ["Apply traction!", "Step by step!"],
+    "options": [
+      {"text": "1. Assess distal circulation, 2. Provide analgesia if possible, 3. Apply ankle hitch, 4. Apply gentle traction, 5. Secure splint, 6. Reassess", "is_correct": true},
+      {"text": "1. Traction, 2. Hitch, 3. Splint", "is_correct": false, "feedback": "INCOMPLETE SEQUENCE! Circulation assessment and analgesia first."},
+      {"text": "1. Splint, 2. Traction, 3. Transport", "is_correct": false}
+    ],
+    "hazards": {"type": "Femur Fracture/Safety", "action": "Gentle traction application"}
+  },
+  {
+    "title": "Thoracic Trauma with Hemopneumothorax",
+    "category": "Trauma",
+    "pcr_text": "30-year-old with stab wound to chest, decreased breath sounds, subcutaneous emphysema. Should you attempt chest decompression or load and go?",
+    "correct_error": "Hemopneumothorax suspected. Load and go - chest tube required per trauma protocols.",
+    "chaos_events": ["Air in tissues", "Respiratory distress increasing"],
+    "stress_fto_responses": ["Chest decompression!", "Load and go - critical!"],
+    "options": [
+      {"text": "Load and go immediately - surgical intervention required", "is_correct": true},
+      {"text": "Perform needle decompression", "is_correct": false, "feedback": "OUT OF SCOPE! Needle decompression requires Paramedic certification. Load and go."},
+      {"text": "Apply petroleum jelly dressing", "is_correct": false}
+    ],
+    "hazards": {"type": "Hemopneumothorax/Safety", "action": "Rapid transport"}
+  },
+  {
+    "title": "Extremity Crush Injury",
+    "category": "Trauma",
+    "pcr_text": "35-year-old with crushed arm under machinery, pale and in shock. Should you attempt extrication or call for specialized rescue?",
+    "correct_error": "Crush injury with shock. Load and go if possible, or await specialized rescue per trauma protocols.",
+    "chaos_events": ["Machinery unstable", "Patient trapped"],
+    "stress_fto_responses": ["Free the arm!", "Load and go - shock!"],
+    "options": [
+      {"text": "Assess for rapid extrication or await heavy rescue - shock is priority", "is_correct": true},
+      {"text": "Attempt to lift machinery alone", "is_correct": false, "feedback": "DANGEROUS! Crush injuries require specialized rescue equipment."},
+      {"text": "Administer pain medication while trapped", "is_correct": false}
+    ],
+    "hazards": {"type": "Crush Injury/Safety", "action": "Specialized rescue required"}
+  },
+  {
+    "title": "Build-a-List: Tourniquet Steps for Brachial Injury",
+    "category": "Trauma",
+    "pcr_text": "Laceration to brachial artery with severe bleeding. Order the tourniquet application steps.",
+    "correct_error": "Tourniquet application sequence for upper extremity hemorrhage per bleeding control protocols.",
+    "chaos_events": ["Rapid blood loss", "Patient becoming unresponsive"],
+    "stress_fto_responses": ["Tourniquet fast!", "Control bleeding!"],
+    "options": [
+      {"text": "1. Direct pressure to wound, 2. Apply tourniquet 2-3 inches above, 3. Tighten until bleeding stops, 4. Secure and note time, 5. Transport", "is_correct": true},
+      {"text": "1. Tourniquet, 2. Transport, 3. Note time", "is_correct": false, "feedback": "INCOMPLETE SEQUENCE! Direct pressure first, proper securing required."},
+      {"text": "1. Pressure below wound, 2. Tourniquet above, 3. Time", "is_correct": false}
+    ],
+    "hazards": {"type": "Arterial Bleeding/Safety", "action": "Immediate control prevents death"}
+  },
+  {
+    "title": "Blunt Cardiac Injury",
+    "category": "Trauma",
+    "pcr_text": "45-year-old steering wheel injury to chest, irregular pulse, chest pain. Should you attempt cardiac monitoring or load and go?",
+    "correct_error": "Suspected blunt cardiac injury. Load and go - cardiac monitoring required per trauma protocols.",
+    "chaos_events": ["Irregular rhythm", "Patient anxious"],
+    "stress_fto_responses": ["Monitor heart!", "Load and go - cardiac!"],
+    "options": [
+      {"text": "Load and go with cardiac monitoring - hospital evaluation required", "is_correct": true},
+      {"text": "Stay for ECG interpretation", "is_correct": false, "feedback": "OUT OF SCOPE! ECG interpretation requires Paramedic certification. Load and go."},
+      {"text": "Administer aspirin only", "is_correct": false}
+    ],
+    "hazards": {"type": "Blunt Cardiac Injury/Safety", "action": "Cardiac monitoring"}
+  },
+  {
+    "title": "Maxillofacial Trauma",
+    "category": "Trauma",
+    "pcr_text": "28-year-old with facial fractures, airway noisy, blood in mouth. Should you attempt airway adjuncts or load and go?",
+    "correct_error": "Maxillofacial trauma with airway compromise. Load and go for surgical airway per trauma protocols.",
+    "chaos_events": ["Airway becoming obstructed", "Patient unable to cooperate"],
+    "stress_fto_responses": ["Airway adjunct!", "Load and go - airway!"],
+    "options": [
+      {"text": "Load and go immediately - surgical airway may be required", "is_correct": true},
+      {"text": "Attempt nasopharyngeal airway insertion", "is_correct": false, "feedback": "RISKY! Facial trauma may contraindicate nasal airways. Load and go for definitive care."},
+      {"text": "Suction aggressively", "is_correct": false}
+    ],
+    "hazards": {"type": "Airway Obstruction/Safety", "action": "Maintain airway"}
+  },
+  {
+    "title": "Build-a-List: Traction Splint for Adult Femur",
+    "category": "Trauma",
+    "pcr_text": "Adult with comminuted femur fracture. Order the traction splinting steps.",
+    "correct_error": "Traction splinting sequence for adult femur fracture per trauma protocols.",
+    "chaos_events": ["Bone fragments", "Severe deformity"],
+    "stress_fto_responses": ["Gentle traction!", "Step by step application!"],
+    "options": [
+      {"text": "1. Assess neurovascular status, 2. Provide analgesia, 3. Manually align, 4. Apply ankle hitch, 5. Apply traction, 6. Secure and reassess", "is_correct": true},
+      {"text": "1. Traction, 2. Hitch, 3. Splint", "is_correct": false, "feedback": "INCOMPLETE SEQUENCE! Assessment and analgesia required for painful procedure."},
+      {"text": "1. Splint, 2. Traction, 3. Transport", "is_correct": false}
+    ],
+    "hazards": {"type": "Comminuted Fracture/Safety", "action": "Careful manipulation"}
+  },
+  {
+    "title": "Abdominal Trauma with Evisceration",
+    "category": "Trauma",
+    "pcr_text": "55-year-old with GSW to abdomen, omentum protruding, patient stable. Should you attempt to reduce the evisceration or load and go?",
+    "correct_error": "Abdominal evisceration. Cover and load and go - surgical exploration required per trauma protocols.",
+    "chaos_events": ["Organs exposed", "Patient stable but in pain"],
+    "stress_fto_responses": ["Cover organs!", "Load and go - surgical!"],
+    "options": [
+      {"text": "Cover with moist dressing and load and go immediately", "is_correct": true},
+      {"text": "Attempt to reduce protruding organs", "is_correct": false, "feedback": "OUT OF SCOPE! Organ reduction requires surgical facility. Cover and transport."},
+      {"text": "Apply dry dressing", "is_correct": false}
+    ],
+    "hazards": {"type": "Abdominal Evisceration/Safety", "action": "Keep organs moist"}
+  },
+  {
+    "title": "Golden Period - Multi-Trauma Load and Go",
+    "category": "Trauma",
+    "pcr_text": "Final Golden Period scenario: 20-year-old with head injury, chest trauma, and extremity fractures. 8-minute transport. Load and go or stay and treat?",
+    "correct_error": "CRITICAL Golden Period violation risk. Multi-system trauma ALWAYS requires load and go per all trauma protocols.",
+    "chaos_events": ["All injuries competing for attention", "Time pressure"],
+    "stress_fto_responses": ["Treat everything!", "LOAD AND GO - GOLDEN PERIOD!"],
+    "options": [
+      {"text": "Load and go immediately - golden period critical for multi-system trauma", "is_correct": true},
+      {"text": "Stay 10+ minutes for complete assessment and treatment", "is_correct": false, "feedback": "CRITICAL ERROR! Golden period violation. Multi-system trauma = load and go ALWAYS."},
+      {"text": "Transport after splinting one extremity", "is_correct": false}
+    ],
+    "hazards": {"type": "Golden Period Violation/Safety", "action": "Immediate transport saves lives"}
+  }
+]

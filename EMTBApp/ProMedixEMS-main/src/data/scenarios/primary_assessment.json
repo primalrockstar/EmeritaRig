@@ -1,0 +1,310 @@
+[
+  {
+    "title": "Adult Airway Obstruction - Choking",
+    "category": "Airway",
+    "pcr_text": "45-year-old male clutching throat with hands, unable to speak, cyanotic face. Witness reports he was eating steak when he suddenly started choking.",
+    "correct_error": "Complete airway obstruction. Perform abdominal thrusts (Heimlich maneuver) per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient becomes unresponsive", "Large crowd gathering"],
+    "stress_fto_responses": ["Don't perform blind finger sweep!", "Abdominal thrusts now - protocol!"],
+    "options": [
+      {"text": "Perform abdominal thrusts until object is expelled or patient becomes unresponsive", "is_correct": true},
+      {"text": "Perform blind finger sweep first", "is_correct": false, "feedback": "OUT OF SCOPE! Blind finger sweep can push object deeper. Abdominal thrusts are first-line for conscious choking victims per 2022 Standards."},
+      {"text": "Administer oxygen via nasal cannula", "is_correct": false}
+    ],
+    "hazards": {"type": "Airway Obstruction/Safety", "action": "Act quickly to restore airway"}
+  },
+  {
+    "title": "Pediatric Choking - Infant",
+    "category": "Airway",
+    "pcr_text": "8-month-old infant with poor air exchange, weak cry, and cyanosis. Mother reports infant was eating crackers and suddenly stopped breathing.",
+    "correct_error": "Partial airway obstruction in infant. Perform back blows and chest thrusts per 2022 National EMS Education Standards.",
+    "chaos_events": ["Mother screaming hysterically", "Infant going limp"],
+    "stress_fto_responses": ["Back blows first!", "Don't do abdominal thrusts on infants!"],
+    "options": [
+      {"text": "Perform 5 back blows followed by 5 chest thrusts", "is_correct": true},
+      {"text": "Perform abdominal thrusts like adult", "is_correct": false, "feedback": "OUT OF SCOPE! Abdominal thrusts can damage infant organs. Use back blows and chest thrusts per 2022 Standards."},
+      {"text": "Administer nebulized albuterol", "is_correct": false}
+    ],
+    "hazards": {"type": "Airway Obstruction/Safety", "action": "Support infant securely"}
+  },
+  {
+    "title": "Severe Anaphylaxis - Airway Compromise",
+    "category": "Airway",
+    "pcr_text": "28-year-old female with urticaria, facial swelling, stridor, and respiratory distress following bee sting. Patient reports known bee allergy.",
+    "correct_error": "Anaphylactic airway compromise. Administer epinephrine auto-injector immediately per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient's EpiPen is expired", "Swelling progressing rapidly"],
+    "stress_fto_responses": ["Epi now - airway closing!", "Don't wait for IV access!"],
+    "options": [
+      {"text": "Administer epinephrine auto-injector and provide oxygen", "is_correct": true},
+      {"text": "Start IV line for epinephrine infusion", "is_correct": false, "feedback": "OUT OF SCOPE! IV access requires AEMT certification. EMT-B uses auto-injectors for anaphylaxis per 2022 Standards."},
+      {"text": "Administer oral antihistamine only", "is_correct": false}
+    ],
+    "hazards": {"type": "Airway Compromise/Safety", "action": "Monitor for deterioration"}
+  },
+  {
+    "title": "Tension Pneumothorax - Breathing Threat",
+    "category": "Breathing",
+    "pcr_text": "35-year-old male with penetrating chest trauma, severe respiratory distress, absent breath sounds on left side, and tracheal deviation to right.",
+    "correct_error": "Tension pneumothorax. Provide oxygen and transport immediately per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient becoming unresponsive", "Large open chest wound"],
+    "stress_fto_responses": ["Needle decompression now!", "Air in chest - critical!"],
+    "options": [
+      {"text": "Apply high-flow oxygen and transport immediately", "is_correct": true},
+      {"text": "Perform needle decompression", "is_correct": false, "feedback": "OUT OF SCOPE! Needle decompression requires Paramedic certification. EMT-B provides oxygen and transports per 2022 Standards."},
+      {"text": "Apply occlusive dressing to wound", "is_correct": false}
+    ],
+    "hazards": {"type": "Tension Pneumothorax/Safety", "action": "Monitor respiratory status"}
+  },
+  {
+    "title": "Acute Asthma - Respiratory Failure",
+    "category": "Breathing",
+    "pcr_text": "42-year-old male with severe wheezing, unable to speak in full sentences, using accessory muscles, and oxygen saturation 88% on room air.",
+    "correct_error": "Acute severe asthma exacerbation. Administer nebulized albuterol per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient has no inhaler", "Nebulizer equipment malfunctioning"],
+    "stress_fto_responses": ["Albuterol now!", "Can't breathe - protocol!"],
+    "options": [
+      {"text": "Administer nebulized albuterol and supplemental oxygen", "is_correct": true},
+      {"text": "Administer subcutaneous epinephrine", "is_correct": false, "feedback": "OUT OF SCOPE! Epinephrine requires assessment for anaphylaxis. Albuterol is first-line for asthma per 2022 Standards."},
+      {"text": "Perform endotracheal intubation", "is_correct": false}
+    ],
+    "hazards": {"type": "Respiratory Failure/Safety", "action": "Monitor oxygen saturation"}
+  },
+  {
+    "title": "Cardiac Arrest - VF/VT",
+    "category": "Circulation",
+    "pcr_text": "62-year-old male unresponsive, pulseless, with witnessed collapse. Bystander CPR in progress for 3 minutes.",
+    "correct_error": "Cardiac arrest with shockable rhythm. Initiate CPR and apply AED per 2022 National EMS Education Standards.",
+    "chaos_events": ["AED pads not sticking", "Family interfering with CPR"],
+    "stress_fto_responses": ["CPR and AED now!", "Don't delay defibrillation!"],
+    "options": [
+      {"text": "Initiate CPR and apply AED immediately", "is_correct": true},
+      {"text": "Administer epinephrine IV first", "is_correct": false, "feedback": "OUT OF SCOPE! IV epinephrine requires Paramedic certification. AED is first intervention for EMT-B per 2022 Standards."},
+      {"text": "Perform manual defibrillation", "is_correct": false}
+    ],
+    "hazards": {"type": "Cardiac Arrest/Safety", "action": "Minimize interruptions in CPR"}
+  },
+  {
+    "title": "Major Hemorrhage - Arterial Bleeding",
+    "category": "Circulation",
+    "pcr_text": "25-year-old male with deep laceration to forearm, bright red blood spurting from wound, patient pale and diaphoretic.",
+    "correct_error": "Arterial hemorrhage. Apply direct pressure and tourniquet if needed per 2022 National EMS Education Standards.",
+    "chaos_events": ["Blood making floor slippery", "Patient becoming unresponsive"],
+    "stress_fto_responses": ["Tourniquet now!", "Control bleeding - priority!"],
+    "options": [
+      {"text": "Apply direct pressure, elevate extremity, and apply tourniquet if bleeding continues", "is_correct": true},
+      {"text": "Apply ice to wound", "is_correct": false, "feedback": "OUT OF SCOPE! Ice can worsen bleeding. Direct pressure and tourniquet are indicated per 2022 Standards."},
+      {"text": "Administer pain medication", "is_correct": false}
+    ],
+    "hazards": {"type": "Major Hemorrhage/Safety", "action": "Control bleeding quickly"}
+  },
+  {
+    "title": "Build-a-List: Adult Choking Management",
+    "category": "Airway",
+    "pcr_text": "55-year-old male suddenly clutching throat, unable to speak, turning cyanotic. Witness reports eating food.",
+    "correct_error": "Order the steps for managing conscious adult choking victim per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient falling to knees", "Crowd interfering"],
+    "stress_fto_responses": ["Act fast!", "Protocol order critical!"],
+    "options": [
+      {"text": "1. Assess responsiveness, 2. Call for help, 3. Perform abdominal thrusts, 4. Continue until object expelled or unconscious", "is_correct": true},
+      {"text": "1. Perform blind finger sweep, 2. Abdominal thrusts, 3. Call for help", "is_correct": false, "feedback": "INCORRECT ORDER! Assess responsiveness first, then call for help, then abdominal thrusts per 2022 Standards."},
+      {"text": "1. Administer oxygen, 2. Abdominal thrusts, 3. Call for help", "is_correct": false}
+    ],
+    "hazards": {"type": "Airway Obstruction/Safety", "action": "Follow protocol sequence"}
+  },
+  {
+    "title": "Build-a-List: Infant Choking Response",
+    "category": "Airway",
+    "pcr_text": "10-month-old infant suddenly stops breathing while eating, poor air exchange, turning blue.",
+    "correct_error": "Order the steps for infant choking management per 2022 National EMS Education Standards.",
+    "chaos_events": ["Parent panicking", "Infant becoming limp"],
+    "stress_fto_responses": ["Back blows first!", "Sequence matters!"],
+    "options": [
+      {"text": "1. Support infant, 2. Deliver 5 back blows, 3. Turn over for 5 chest thrusts, 4. Repeat until object expelled", "is_correct": true},
+      {"text": "1. Abdominal thrusts, 2. Back blows, 3. Call for help", "is_correct": false, "feedback": "INCORRECT ORDER! Back blows then chest thrusts for infants per 2022 Standards. No abdominal thrusts."},
+      {"text": "1. Call for help, 2. Abdominal thrusts, 3. Back blows", "is_correct": false}
+    ],
+    "hazards": {"type": "Airway Obstruction/Safety", "action": "Support infant properly"}
+  },
+  {
+    "title": "Build-a-List: Anaphylaxis Management",
+    "category": "Airway",
+    "pcr_text": "32-year-old female with sudden hives, swelling, and difficulty breathing after eating shellfish.",
+    "correct_error": "Order the steps for anaphylaxis management per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient carrying EpiPen", "Swelling worsening"],
+    "stress_fto_responses": ["Epi first!", "Airway priority!"],
+    "options": [
+      {"text": "1. Assess ABCs, 2. Administer epinephrine auto-injector, 3. Provide oxygen, 4. Transport immediately", "is_correct": true},
+      {"text": "1. Administer antihistamine, 2. Epinephrine, 3. Oxygen", "is_correct": false, "feedback": "INCORRECT ORDER! Epinephrine is first-line treatment for anaphylaxis per 2022 Standards."},
+      {"text": "1. Provide oxygen, 2. Antihistamine, 3. Epinephrine", "is_correct": false}
+    ],
+    "hazards": {"type": "Anaphylaxis/Safety", "action": "Monitor for deterioration"}
+  },
+  {
+    "title": "Build-a-List: Cardiac Arrest Management",
+    "category": "Circulation",
+    "pcr_text": "70-year-old female found unresponsive and pulseless. No bystander CPR.",
+    "correct_error": "Order the steps for cardiac arrest management per 2022 National EMS Education Standards.",
+    "chaos_events": ["Family present", "AED in different room"],
+    "stress_fto_responses": ["CPR first!", "Don't delay!"],
+    "options": [
+      {"text": "1. Confirm unresponsiveness, 2. Call for help/activate EMS, 3. Check pulse, 4. Start CPR, 5. Apply AED", "is_correct": true},
+      {"text": "1. Apply AED, 2. Check pulse, 3. Start CPR", "is_correct": false, "feedback": "INCORRECT ORDER! Confirm unresponsiveness and call for help first per 2022 Standards."},
+      {"text": "1. Check pulse, 2. Apply AED, 3. Start CPR", "is_correct": false}
+    ],
+    "hazards": {"type": "Cardiac Arrest/Safety", "action": "Minimize interruptions"}
+  },
+  {
+    "title": "Build-a-List: Major Bleeding Control",
+    "category": "Circulation",
+    "pcr_text": "40-year-old male with deep laceration to thigh, blood pooling on floor, patient becoming pale.",
+    "correct_error": "Order the steps for major bleeding control per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient in shock", "Hard to access wound"],
+    "stress_fto_responses": ["Pressure first!", "Control hemorrhage!"],
+    "options": [
+      {"text": "1. Don PPE, 2. Apply direct pressure, 3. Elevate extremity, 4. Apply tourniquet if needed, 5. Transport", "is_correct": true},
+      {"text": "1. Apply tourniquet, 2. Direct pressure, 3. Elevate", "is_correct": false, "feedback": "INCORRECT ORDER! Direct pressure is first, tourniquet is last resort per 2022 Standards."},
+      {"text": "1. Elevate extremity, 2. Tourniquet, 3. Pressure", "is_correct": false}
+    ],
+    "hazards": {"type": "Major Hemorrhage/Safety", "action": "Control bleeding rapidly"}
+  },
+  {
+    "title": "Complete Airway Obstruction - Adult",
+    "category": "Airway",
+    "pcr_text": "58-year-old male becomes unresponsive during choking episode. Witness reports steak lodged in throat.",
+    "correct_error": "Unresponsive choking victim. Begin CPR immediately per 2022 National EMS Education Standards.",
+    "chaos_events": ["Large piece of food visible", "Patient vomiting"],
+    "stress_fto_responses": ["CPR now!", "Don't try to remove object!"],
+    "options": [
+      {"text": "Begin CPR immediately - do not attempt to remove object", "is_correct": true},
+      {"text": "Perform blind finger sweep to remove food", "is_correct": false, "feedback": "OUT OF SCOPE! Blind finger sweep can push object deeper. CPR takes priority per 2022 Standards."},
+      {"text": "Administer naloxone", "is_correct": false}
+    ],
+    "hazards": {"type": "Airway Obstruction/Safety", "action": "Protect airway during CPR"}
+  },
+  {
+    "title": "Anaphylaxis with Respiratory Arrest",
+    "category": "Airway",
+    "pcr_text": "19-year-old male with severe allergic reaction, unresponsive, no breathing, but has pulse. History of peanut allergy.",
+    "correct_error": "Anaphylaxis with respiratory arrest. Provide rescue breathing per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient has EpiPen in pocket", "Family knows allergy history"],
+    "stress_fto_responses": ["Breathing first!", "Epi already given?"],
+    "options": [
+      {"text": "Provide rescue breathing and transport immediately", "is_correct": true},
+      {"text": "Administer additional epinephrine", "is_correct": false, "feedback": "OUT OF SCOPE! EMT-B cannot administer additional epinephrine. Rescue breathing is priority per 2022 Standards."},
+      {"text": "Perform endotracheal intubation", "is_correct": false}
+    ],
+    "hazards": {"type": "Respiratory Arrest/Safety", "action": "Maintain open airway"}
+  },
+  {
+    "title": "Flail Chest - Paradoxical Breathing",
+    "category": "Breathing",
+    "pcr_text": "45-year-old male with MVC injury showing paradoxical chest movement, severe pain, and shortness of breath.",
+    "correct_error": "Flail chest with impaired breathing. Provide oxygen and pain management per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient combative from pain", "Multiple rib fractures suspected"],
+    "stress_fto_responses": ["Oxygen now!", "Pain control needed!"],
+    "options": [
+      {"text": "Administer high-flow oxygen and manage pain if possible", "is_correct": true},
+      {"text": "Perform needle decompression", "is_correct": false, "feedback": "OUT OF SCOPE! Needle decompression requires Paramedic certification. Oxygen is primary treatment per 2022 Standards."},
+      {"text": "Apply chest splinting", "is_correct": false}
+    ],
+    "hazards": {"type": "Impaired Breathing/Safety", "action": "Monitor respiratory status"}
+  },
+  {
+    "title": "Pulmonary Edema - Respiratory Distress",
+    "category": "Breathing",
+    "pcr_text": "68-year-old male with severe shortness of breath, pink frothy sputum, and bilateral crackles. History of CHF.",
+    "correct_error": "Acute pulmonary edema. Provide oxygen and transport in upright position per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient coughing up blood", "Becoming unresponsive"],
+    "stress_fto_responses": ["Oxygen high flow!", "Upright position!"],
+    "options": [
+      {"text": "Administer high-flow oxygen and position upright", "is_correct": true},
+      {"text": "Administer nitroglycerin", "is_correct": false, "feedback": "OUT OF SCOPE! Nitroglycerin requires Paramedic certification. Oxygen is EMT-B intervention per 2022 Standards."},
+      {"text": "Perform endotracheal intubation", "is_correct": false}
+    ],
+    "hazards": {"type": "Respiratory Distress/Safety", "action": "Monitor for respiratory arrest"}
+  },
+  {
+    "title": "Cardiac Arrest - Asystole",
+    "category": "Circulation",
+    "pcr_text": "75-year-old female found unresponsive, pulseless, apneic. CPR in progress for 10 minutes.",
+    "correct_error": "Asystolic cardiac arrest. Continue CPR per 2022 National EMS Education Standards.",
+    "chaos_events": ["Family requesting to stop CPR", "Prolonged downtime"],
+    "stress_fto_responses": ["Continue CPR!", "Don't stop!"],
+    "options": [
+      {"text": "Continue CPR and transport if indicated", "is_correct": true},
+      {"text": "Administer epinephrine IV", "is_correct": false, "feedback": "OUT OF SCOPE! IV epinephrine requires Paramedic certification. EMT-B continues CPR per 2022 Standards."},
+      {"text": "Stop CPR - prolonged downtime", "is_correct": false}
+    ],
+    "hazards": {"type": "Cardiac Arrest/Safety", "action": "Minimize interruptions"}
+  },
+  {
+    "title": "Exsanguinating Hemorrhage",
+    "category": "Circulation",
+    "pcr_text": "30-year-old male with amputated finger, blood spurting from wound, patient in shock.",
+    "correct_error": "Exsanguinating hemorrhage. Apply tourniquet immediately per 2022 National EMS Education Standards.",
+    "chaos_events": ["Blood everywhere", "Patient becoming unresponsive"],
+    "stress_fto_responses": ["Tourniquet now!", "Control bleeding!"],
+    "options": [
+      {"text": "Apply tourniquet proximal to injury", "is_correct": true},
+      {"text": "Apply direct pressure only", "is_correct": false, "feedback": "INSUFFICIENT! Spurting blood requires tourniquet per 2022 Standards for severe hemorrhage."},
+      {"text": "Elevate extremity only", "is_correct": false}
+    ],
+    "hazards": {"type": "Exsanguination/Safety", "action": "Control bleeding rapidly"}
+  },
+  {
+    "title": "Build-a-List: Severe Asthma Management",
+    "category": "Breathing",
+    "pcr_text": "35-year-old female with status asthmaticus, unable to speak, oxygen saturation 85%, using all accessory muscles.",
+    "correct_error": "Order the steps for severe asthma management per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient has no inhaler", "Nebulizer not working"],
+    "stress_fto_responses": ["Albuterol first!", "Oxygen critical!"],
+    "options": [
+      {"text": "1. Assess ABCs, 2. Administer nebulized albuterol, 3. Provide high-flow oxygen, 4. Transport immediately", "is_correct": true},
+      {"text": "1. Oxygen, 2. Epinephrine, 3. Albuterol", "is_correct": false, "feedback": "INCORRECT ORDER! Albuterol is first-line for asthma per 2022 Standards."},
+      {"text": "1. Epinephrine, 2. Albuterol, 3. Oxygen", "is_correct": false}
+    ],
+    "hazards": {"type": "Respiratory Failure/Safety", "action": "Monitor oxygen saturation"}
+  },
+  {
+    "title": "Build-a-List: Hemorrhage Control Sequence",
+    "category": "Circulation",
+    "pcr_text": "50-year-old male with gunshot wound to leg, severe bleeding, patient pale and tachycardic.",
+    "correct_error": "Order the steps for hemorrhage control per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient in severe pain", "Scene not secure"],
+    "stress_fto_responses": ["Direct pressure!", "Tourniquet if needed!"],
+    "options": [
+      {"text": "1. Ensure scene safety, 2. Don PPE, 3. Apply direct pressure, 4. Elevate if possible, 5. Tourniquet if bleeding continues", "is_correct": true},
+      {"text": "1. Tourniquet, 2. Direct pressure, 3. PPE", "is_correct": false, "feedback": "INCORRECT ORDER! Scene safety and PPE first, then direct pressure per 2022 Standards."},
+      {"text": "1. Direct pressure, 2. Tourniquet, 3. Elevate", "is_correct": false}
+    ],
+    "hazards": {"type": "Major Hemorrhage/Safety", "action": "Control bleeding systematically"}
+  },
+  {
+    "title": "Foreign Body Airway - Child",
+    "category": "Airway",
+    "pcr_text": "6-year-old child suddenly collapses during play, unresponsive, no breathing. Witness reports child was eating candy.",
+    "correct_error": "Foreign body airway obstruction in unresponsive child. Begin CPR per 2022 National EMS Education Standards.",
+    "chaos_events": ["Candy wrapper found nearby", "Child has vomited"],
+    "stress_fto_responses": ["CPR now!", "Don't attempt removal!"],
+    "options": [
+      {"text": "Begin CPR immediately", "is_correct": true},
+      {"text": "Perform abdominal thrusts", "is_correct": false, "feedback": "OUT OF SCOPE! Abdominal thrusts for unresponsive patients. CPR is indicated per 2022 Standards."},
+      {"text": "Attempt blind finger sweep", "is_correct": false}
+    ],
+    "hazards": {"type": "Airway Obstruction/Safety", "action": "Protect airway"}
+  },
+  {
+    "title": "Tension Pneumothorax Progression",
+    "category": "Breathing",
+    "pcr_text": "28-year-old male stabbed in chest, initially stable but now with severe respiratory distress, absent breath sounds right side, jugular venous distension.",
+    "correct_error": "Progressing tension pneumothorax. Provide oxygen and transport urgently per 2022 National EMS Education Standards.",
+    "chaos_events": ["Patient becoming unresponsive", "Active bleeding from wound"],
+    "stress_fto_responses": ["Needle decompression!", "Critical breathing!"],
+    "options": [
+      {"text": "Apply high-flow oxygen and transport immediately", "is_correct": true},
+      {"text": "Perform needle decompression", "is_correct": false, "feedback": "OUT OF SCOPE! Needle decompression requires Paramedic certification. Oxygen and transport priority per 2022 Standards."},
+      {"text": "Apply three-sided occlusive dressing", "is_correct": false}
+    ],
+    "hazards": {"type": "Tension Pneumothorax/Safety", "action": "Monitor for decompensation"}
+  }
+]

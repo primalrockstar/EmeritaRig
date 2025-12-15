@@ -1,0 +1,212 @@
+[
+  {
+    "title": "MCI Triage - Priority Decision",
+    "category": "Operations",
+    "pcr_text": "Multi-vehicle accident with 8 victims. You have 4 immediate patients requiring transport. Which patient gets transported first?",
+    "correct_error": "MCI triage priority. Transport most critical patient first per START triage protocol.",
+    "chaos_events": ["Additional victims arriving", "Resources limited"],
+    "stress_fto_responses": ["Triage now!", "Priority transport!"],
+    "options": [
+      {"text": "Patient with respiratory arrest and pulse", "is_correct": true},
+      {"text": "Patient with minor lacerations", "is_correct": false, "feedback": "INCORRECT PRIORITY! Respiratory arrest takes precedence over minor injuries in MCI triage."},
+      {"text": "Patient who arrived first", "is_correct": false}
+    ],
+    "hazards": {"type": "MCI Triage/Safety", "action": "Follow START protocol"}
+  },
+  {
+    "title": "Radio Report Content",
+    "category": "Operations",
+    "pcr_text": "En route with critical STEMI patient. What key elements must be included in your radio report to receiving hospital?",
+    "correct_error": "Complete radio report. Include patient condition, ETA, and special requirements per communications protocol.",
+    "chaos_events": ["Poor radio signal", "Heavy traffic delaying ETA"],
+    "stress_fto_responses": ["Give full report!", "Hospital needs info!"],
+    "options": [
+      {"text": "Age, chief complaint, vital signs, ETA, and equipment needs", "is_correct": true},
+      {"text": "Just the chief complaint and ETA", "is_correct": false, "feedback": "INCOMPLETE REPORT! Full patient status required for hospital preparation."},
+      {"text": "Patient name and address only", "is_correct": false}
+    ],
+    "hazards": {"type": "Communications/Safety", "action": "Clear radio transmission"}
+  },
+  {
+    "title": "Patient Refusal - Medico-Legal",
+    "category": "Operations",
+    "pcr_text": "45-year-old male with mild chest pain refuses transport despite your recommendation. He is alert and oriented. What is your legal obligation?",
+    "correct_error": "Patient refusal. Document assessment, obtain signature, and provide written refusal form per medico-legal protocol.",
+    "chaos_events": ["Patient becoming argumentative", "Family pressuring acceptance"],
+    "stress_fto_responses": ["Get signature!", "Document everything!"],
+    "options": [
+      {"text": "Document assessment, explain risks, obtain written refusal", "is_correct": true},
+      {"text": "Transport against will", "is_correct": false, "feedback": "ILLEGAL! Cannot transport competent adults against their will."},
+      {"text": "Leave without documentation", "is_correct": false}
+    ],
+    "hazards": {"type": "Medico-Legal/Safety", "action": "Protect provider liability"}
+  },
+  {
+    "title": "Safe Lifting Technique",
+    "category": "Operations",
+    "pcr_text": "Moving unconscious 250lb patient from floor to stretcher. What is the safest lifting technique?",
+    "correct_error": "Safe lifting. Use proper body mechanics and team lifting per safety protocols.",
+    "chaos_events": ["Patient slipping", "Confined space"],
+    "stress_fto_responses": ["Team lift!", "Protect your back!"],
+    "options": [
+      {"text": "Use power grip, bend at knees, keep load close to body", "is_correct": true},
+      {"text": "Bend at waist and lift with arms only", "is_correct": false, "feedback": "DANGEROUS! Causes back injury. Use proper lifting mechanics."},
+      {"text": "Drag patient across floor", "is_correct": false}
+    ],
+    "hazards": {"type": "Lifting Injury/Safety", "action": "Use team lifting"}
+  },
+  {
+    "title": "Transport vs Treat - Critical Patient",
+    "category": "Operations",
+    "pcr_text": "28-year-old male with gunshot wound to chest, respiratory distress, 2 minute transport time. Should you treat on scene or transport immediately?",
+    "correct_error": "Load and go decision. Transport critical patients immediately per trauma protocols.",
+    "chaos_events": ["Patient deteriorating", "Scene becoming unsafe"],
+    "stress_fto_responses": ["Load and go!", "Time critical!"],
+    "options": [
+      {"text": "Transport immediately - load and go", "is_correct": true},
+      {"text": "Treat on scene for 10 minutes", "is_correct": false, "feedback": "DELAYS CARE! Critical trauma patients need immediate transport."},
+      {"text": "Wait for advanced life support", "is_correct": false}
+    ],
+    "hazards": {"type": "Trauma/Safety", "action": "Rapid transport priority"}
+  },
+  {
+    "title": "Hotspot: Landing Zone Selection",
+    "category": "Operations",
+    "pcr_text": "Air ambulance requested for critical patient. Which area would you designate as the landing zone?",
+    "correct_error": "Safe landing zone. Select open, flat area away from obstacles per aviation safety protocols.",
+    "chaos_events": ["Power lines overhead", "Crowd gathering"],
+    "stress_fto_responses": ["Clear area!", "Safe LZ critical!"],
+    "options": [
+      {"text": "Open field 100ft x 100ft, clear of obstacles", "is_correct": true},
+      {"text": "Parking lot with cars nearby", "is_correct": false, "feedback": "UNSAFE LZ! Must be clear of all obstacles and vehicles."},
+      {"text": "Under power lines", "is_correct": false}
+    ],
+    "hazards": {"type": "Aviation/Safety", "action": "Clear 100ft radius"}
+  },
+  {
+    "title": "MCI Triage Tag Application",
+    "category": "Operations",
+    "pcr_text": "During MCI, you encounter a patient with agonal respirations and weak pulse. What triage tag should be applied?",
+    "correct_error": "MCI triage tagging. Red tag for immediate priority per START protocol.",
+    "chaos_events": ["Multiple patients requiring assessment", "Chaos in triage area"],
+    "stress_fto_responses": ["Red tag!", "Immediate priority!"],
+    "options": [
+      {"text": "Red tag - immediate", "is_correct": true},
+      {"text": "Yellow tag - delayed", "is_correct": false, "feedback": "INCORRECT TAG! Agonal respirations require immediate intervention."},
+      {"text": "Black tag - deceased", "is_correct": false}
+    ],
+    "hazards": {"type": "MCI Triage/Safety", "action": "Accurate triage tagging"}
+  },
+  {
+    "title": "Radio Report Timing",
+    "category": "Operations",
+    "pcr_text": "En route with stable patient. When should you provide radio update to dispatch?",
+    "correct_error": "Radio communications. Update dispatch at key points per communications protocol.",
+    "chaos_events": ["Heavy radio traffic", "Changing patient condition"],
+    "stress_fto_responses": ["Keep dispatch informed!", "Regular updates!"],
+    "options": [
+      {"text": "At scene departure, major intersections, and hospital arrival", "is_correct": true},
+      {"text": "Only at hospital arrival", "is_correct": false, "feedback": "INADEQUATE COMMUNICATIONS! Regular updates required for safety."},
+      {"text": "Never during transport", "is_correct": false}
+    ],
+    "hazards": {"type": "Communications/Safety", "action": "Maintain contact"}
+  },
+  {
+    "title": "DNR Documentation - Legal",
+    "category": "Operations",
+    "pcr_text": "Elderly patient with DNR bracelet found unresponsive. Family confirms wishes. What documentation is required?",
+    "correct_error": "DNR protocol. Confirm validity and document per medico-legal requirements.",
+    "chaos_events": ["Family emotional", "DNR form not immediately available"],
+    "stress_fto_responses": ["Confirm DNR!", "Document thoroughly!"],
+    "options": [
+      {"text": "Confirm bracelet validity, contact physician if needed, document in PCR", "is_correct": true},
+      {"text": "Begin CPR immediately", "is_correct": false, "feedback": "VIOLATES DNR! Must confirm validity before withholding care."},
+      {"text": "Ignore DNR and transport", "is_correct": false}
+    ],
+    "hazards": {"type": "Medico-Legal/Safety", "action": "Verify DNR validity"}
+  },
+  {
+    "title": "Safe Lifting - Team Coordination",
+    "category": "Operations",
+    "pcr_text": "Moving obese patient down narrow stairs. How should your team coordinate the lift?",
+    "correct_error": "Team lifting. Assign roles and communicate clearly per safety protocols.",
+    "chaos_events": ["Stairs are steep", "Patient anxious"],
+    "stress_fto_responses": ["Count together!", "Team coordination!"],
+    "options": [
+      {"text": "Designate leader, count to 3, lift simultaneously", "is_correct": true},
+      {"text": "Each person lifts when ready", "is_correct": false, "feedback": "DANGEROUS! Uncoordinated lifting causes injury."},
+      {"text": "One person lifts, others guide", "is_correct": false}
+    ],
+    "hazards": {"type": "Lifting Injury/Safety", "action": "Synchronized team lift"}
+  },
+  {
+    "title": "Transport vs Treat - Minor Injury",
+    "category": "Operations",
+    "pcr_text": "15-year-old with ankle sprain, able to bear weight, 20 minute transport time. Should you treat on scene or transport?",
+    "correct_error": "Stay and play decision. Treat minor injuries on scene when appropriate per protocols.",
+    "chaos_events": ["Parent demanding transport", "Cold weather"],
+    "stress_fto_responses": ["Treat on scene!", "Not transport priority!"],
+    "options": [
+      {"text": "Treat on scene with splinting and education", "is_correct": true},
+      {"text": "Transport immediately", "is_correct": false, "feedback": "UNNECESSARY TRANSPORT! Minor injuries can be treated on scene."},
+      {"text": "Leave patient untreated", "is_correct": false}
+    ],
+    "hazards": {"type": "Operations/Safety", "action": "Appropriate resource use"}
+  },
+  {
+    "title": "Hotspot: Triage Area Setup",
+    "category": "Operations",
+    "pcr_text": "Setting up MCI triage area. Where should you place the treatment area?",
+    "correct_error": "MCI zone setup. Position treatment area safely away from hazards per MCI protocols.",
+    "chaos_events": ["Multiple access roads", "Weather considerations"],
+    "stress_fto_responses": ["Safe location!", "Organize zones!"],
+    "options": [
+      {"text": "Upwind, uphill from hot zone with easy access", "is_correct": true},
+      {"text": "In the hot zone", "is_correct": false, "feedback": "UNSAFE LOCATION! Treatment area must be in warm zone, away from hazards."},
+      {"text": "Downwind from decontamination", "is_correct": false}
+    ],
+    "hazards": {"type": "MCI Setup/Safety", "action": "Safe zone positioning"}
+  },
+  {
+    "title": "Medico-Legal: Assault Documentation",
+    "category": "Operations",
+    "pcr_text": "Patient admits to being assaulted but refuses police involvement. What is your documentation requirement?",
+    "correct_error": "Assault documentation. Document injuries and report suspicions per mandatory reporting laws.",
+    "chaos_events": ["Patient fearful", "Scene not secure"],
+    "stress_fto_responses": ["Document everything!", "Report required!"],
+    "options": [
+      {"text": "Document all injuries and circumstances, report to authorities", "is_correct": true},
+      {"text": "Respect patient wishes and don't document", "is_correct": false, "feedback": "ILLEGAL! Mandatory reporting laws require documentation and reporting."},
+      {"text": "Only document if police called", "is_correct": false}
+    ],
+    "hazards": {"type": "Medico-Legal/Safety", "action": "Complete documentation"}
+  },
+  {
+    "title": "Radio Report - Critical Update",
+    "category": "Operations",
+    "pcr_text": "Patient condition deteriorating en route. What information must be included in urgent radio update?",
+    "correct_error": "Urgent radio update. Include current status and ETA changes per communications protocol.",
+    "chaos_events": ["Poor radio reception", "Heavy traffic"],
+    "stress_fto_responses": ["Urgent update!", "Hospital must know!"],
+    "options": [
+      {"text": "Current vital signs, interventions performed, ETA", "is_correct": true},
+      {"text": "Just that patient is worse", "is_correct": false, "feedback": "INCOMPLETE UPDATE! Specific status information required."},
+      {"text": "Wait until hospital arrival", "is_correct": false}
+    ],
+    "hazards": {"type": "Communications/Safety", "action": "Timely critical updates"}
+  },
+  {
+    "title": "Safe Lifting - Equipment Use",
+    "category": "Operations",
+    "pcr_text": "Moving patient with suspected spinal injury. What lifting device should be used?",
+    "correct_error": "Spinal injury lifting. Use long board or scoop stretcher per trauma protocols.",
+    "chaos_events": ["Patient in awkward position", "Confined space"],
+    "stress_fto_responses": ["Spinal precautions!", "Proper equipment!"],
+    "options": [
+      {"text": "Long backboard with cervical collar", "is_correct": true},
+      {"text": "Fireman's carry", "is_correct": false, "feedback": "DANGEROUS! Compromises spinal alignment."},
+      {"text": "Drag by extremities", "is_correct": false}
+    ],
+    "hazards": {"type": "Spinal Injury/Safety", "action": "Maintain alignment"}
+  }
+]

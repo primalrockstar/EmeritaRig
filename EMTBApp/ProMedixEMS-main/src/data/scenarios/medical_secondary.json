@@ -1,0 +1,422 @@
+[
+  {
+    "title": "Prolapsed Umbilical Cord - Positioning",
+    "category": "OB",
+    "pcr_text": "28-year-old pregnant woman, 38 weeks, membranes ruptured, umbilical cord visible at vaginal opening. How should you position her?",
+    "correct_error": "Prolapsed cord: position mother in Trendelenburg or knee-chest position to relieve pressure on cord per OB protocols.",
+    "chaos_events": ["Fetal bradycardia on monitor", "Mother anxious"],
+    "stress_fto_responses": ["Push the cord back!", "Trendelenburg position!"],
+    "options": [
+      {"text": "Position in Trendelenburg (head down) or knee-chest to relieve cord compression", "is_correct": true},
+      {"text": "Keep her supine to maintain blood flow", "is_correct": false, "feedback": "CRITICAL ERROR! Supine position increases cord compression. Use Trendelenburg."},
+      {"text": "Elevate her legs to improve circulation", "is_correct": false}
+    ],
+    "hazards": {"type": "Prolapsed Cord/OB Emergency", "action": "Relieve pressure on cord"}
+  },
+  {
+    "title": "Pediatric Respiratory Distress - Appearance",
+    "category": "Peds",
+    "pcr_text": "2-year-old with wheezing, retractions, nasal flaring. Using the Appearance/Work of Breathing/Circulation triangle, what does the child's appearance indicate?",
+    "correct_error": "Pediatric assessment triangle: appearance (mental status), work of breathing, circulation per pediatric protocols.",
+    "chaos_events": ["Child becoming more agitated", "Wheezing worsening"],
+    "stress_fto_responses": ["Just bronchiolitis!", "Severe distress!"],
+    "options": [
+      {"text": "Appearance: anxious/agitated - indicates respiratory distress", "is_correct": true},
+      {"text": "Work of breathing: retractions and nasal flaring", "is_correct": false, "feedback": "PARTIAL! This describes work of breathing, but appearance shows mental status changes."},
+      {"text": "Circulation: tachycardia present", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Respiratory Distress", "action": "Assess all three triangle components"}
+  },
+  {
+    "title": "Breech Birth Management",
+    "category": "OB",
+    "pcr_text": "32-year-old in active labor, fetal buttocks presenting first. Should you attempt delivery or transport immediately?",
+    "correct_error": "Breech presentation: transport to hospital - vaginal delivery contraindicated per OB protocols.",
+    "chaos_events": ["Mother pushing involuntarily", "Fetal heart rate decelerating"],
+    "stress_fto_responses": ["Deliver the baby!", "Transport now!"],
+    "options": [
+      {"text": "Transport immediately - breech delivery requires C-section", "is_correct": true},
+      {"text": "Attempt vaginal delivery with mother pushing", "is_correct": false, "feedback": "CRITICAL ERROR! Breech vaginal delivery can cause fetal injury. Transport immediately."},
+      {"text": "Wait for head to turn to vertex", "is_correct": false}
+    ],
+    "hazards": {"type": "Breech Presentation/OB Emergency", "action": "Immediate transport required"}
+  },
+  {
+    "title": "TEI Hotspot: Infant Pulse Assessment",
+    "category": "Peds",
+    "pcr_text": "6-month-old infant unresponsive. Where do you assess the pulse on an infant?",
+    "correct_error": "Infant pulse assessment: brachial artery (anteromedial aspect of arm) per pediatric protocols.",
+    "chaos_events": ["Infant not breathing", "Time critical"],
+    "stress_fto_responses": ["Check carotid!", "Find brachial pulse!"],
+    "options": [
+      {"text": "Brachial artery - anteromedial aspect of upper arm", "is_correct": true},
+      {"text": "Carotid artery - neck", "is_correct": false, "feedback": "INCORRECT! Carotid pulse difficult in infants. Use brachial artery."},
+      {"text": "Femoral artery - groin", "is_correct": false}
+    ],
+    "hazards": {"type": "Infant Assessment/Pediatrics", "action": "Correct pulse location"}
+  },
+  {
+    "title": "Preeclampsia Recognition",
+    "category": "OB",
+    "pcr_text": "30-year-old pregnant, 32 weeks, severe headache, blurred vision, BP 170/110, 2+ protein in urine. What condition is this?",
+    "correct_error": "Preeclampsia: hypertension, proteinuria, headache/visual changes in pregnancy per OB protocols.",
+    "chaos_events": ["Patient seizing", "Fetal distress"],
+    "stress_fto_responses": ["Just pregnancy headache!", "Preeclampsia emergency!"],
+    "options": [
+      {"text": "Preeclampsia - transport immediately for magnesium sulfate", "is_correct": true},
+      {"text": "Normal pregnancy symptoms", "is_correct": false, "feedback": "CRITICAL ERROR! Severe hypertension with proteinuria = preeclampsia requiring immediate transport."},
+      {"text": "Migraine headache", "is_correct": false}
+    ],
+    "hazards": {"type": "Preeclampsia/OB Emergency", "action": "Immediate transport"}
+  },
+  {
+    "title": "Pediatric Respiratory Failure - Work of Breathing",
+    "category": "Peds",
+    "pcr_text": "4-month-old with RSV, head bobbing, seesaw breathing, cyanotic. What does the work of breathing indicate?",
+    "correct_error": "Work of breathing assessment: head bobbing and seesaw breathing indicate severe respiratory failure per pediatric triangle.",
+    "chaos_events": ["Infant tiring out", "Oxygen saturation dropping"],
+    "stress_fto_responses": ["Just tired!", "Respiratory failure!"],
+    "options": [
+      {"text": "Work of breathing: severe - head bobbing, seesaw respirations indicate failure", "is_correct": true},
+      {"text": "Appearance: lethargic mental status", "is_correct": false, "feedback": "PARTIAL! Lethargy is appearance, but work of breathing shows severe compromise."},
+      {"text": "Circulation: poor perfusion", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Respiratory Failure", "action": "Immediate intervention required"}
+  },
+  {
+    "title": "Autism Spectrum Disorder - Patient Assessment",
+    "category": "Medical",
+    "pcr_text": "8-year-old with autism, nonverbal, self-injurious behavior, mother states 'this is normal for him'. Should you treat as behavioral or assess for injury?",
+    "correct_error": "Autism: assess for injury despite baseline behaviors - don't assume self-injury is normal per special populations protocols.",
+    "chaos_events": ["Child hitting head repeatedly", "Mother insisting it's normal"],
+    "stress_fto_responses": ["Just autism!", "Assess for injury!"],
+    "options": [
+      {"text": "Assess for injury - autism doesn't preclude trauma", "is_correct": true},
+      {"text": "Accept mother's explanation - no assessment needed", "is_correct": false, "feedback": "CRITICAL ERROR! Always assess for injury regardless of developmental disability."},
+      {"text": "Restrain child immediately", "is_correct": false}
+    ],
+    "hazards": {"type": "Autism/Special Populations", "action": "Assess despite baseline behaviors"}
+  },
+  {
+    "title": "Postpartum Hemorrhage",
+    "category": "OB",
+    "pcr_text": "25-year-old post-delivery, soaking through pads rapidly, BP 90/60, HR 120. What is the immediate treatment?",
+    "correct_error": "Postpartum hemorrhage: fundal massage, transport immediately per OB protocols.",
+    "chaos_events": ["Blood loss continuing", "Patient becoming unresponsive"],
+    "stress_fto_responses": ["Just normal bleeding!", "Massage fundus!"],
+    "options": [
+      {"text": "Fundal massage and immediate transport", "is_correct": true},
+      {"text": "Apply direct pressure to vagina", "is_correct": false, "feedback": "INCORRECT! Fundal massage is primary treatment for uterine atony."},
+      {"text": "Wait for bleeding to stop", "is_correct": false}
+    ],
+    "hazards": {"type": "Postpartum Hemorrhage/OB Emergency", "action": "Fundal massage and transport"}
+  },
+  {
+    "title": "TEI Hotspot: Pediatric IV Site",
+    "category": "Peds",
+    "pcr_text": "3-year-old needing IV access. Where is the preferred site for pediatric IV insertion?",
+    "correct_error": "Pediatric IV sites: scalp veins preferred for infants, hands/forearms for children per pediatric protocols.",
+    "chaos_events": ["Child moving", "Time sensitive"],
+    "stress_fto_responses": ["Use neck vein!", "Scalp or hand veins!"],
+    "options": [
+      {"text": "Scalp veins (infants) or dorsum of hand/forearm (toddlers)", "is_correct": true},
+      {"text": "Internal jugular vein", "is_correct": false, "feedback": "DANGEROUS! Central lines require advanced training. Use peripheral sites."},
+      {"text": "Femoral vein", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric IV Access", "action": "Appropriate site selection"}
+  },
+  {
+    "title": "Dementia - Wandering Patient",
+    "category": "Geriatric",
+    "pcr_text": "75-year-old with dementia found wandering streets, confused, hypothermic. Should you transport or return to facility?",
+    "correct_error": "Dementia patient with medical emergency: treat condition first, then address disposition per special populations protocols.",
+    "chaos_events": ["Patient combative", "Family cannot be located"],
+    "stress_fto_responses": ["Take him home!", "Treat hypothermia first!"],
+    "options": [
+      {"text": "Treat hypothermia and transport to ED for evaluation", "is_correct": true},
+      {"text": "Return to nursing home immediately", "is_correct": false, "feedback": "INCORRECT! Medical emergencies take precedence over returning to facility."},
+      {"text": "Wait for family to pick up", "is_correct": false}
+    ],
+    "hazards": {"type": "Dementia/Special Populations", "action": "Medical care before disposition"}
+  },
+  {
+    "title": "Placental Abruption",
+    "category": "OB",
+    "pcr_text": "35-year-old pregnant, severe abdominal pain, vaginal bleeding, rigid abdomen, fetal bradycardia. What is this?",
+    "correct_error": "Placental abruption: painful vaginal bleeding, rigid abdomen, fetal distress per OB protocols.",
+    "chaos_events": ["Heavy bleeding", "Fetal heart rate dropping"],
+    "stress_fto_responses": ["Normal labor!", "Placental abruption!"],
+    "options": [
+      {"text": "Placental abruption - transport immediately in left lateral position", "is_correct": true},
+      {"text": "Normal labor pains with bleeding", "is_correct": false, "feedback": "CRITICAL ERROR! Painful bleeding with rigid abdomen = abruption requiring immediate transport."},
+      {"text": "Wait for contractions to increase", "is_correct": false}
+    ],
+    "hazards": {"type": "Placental Abruption/OB Emergency", "action": "Immediate transport"}
+  },
+  {
+    "title": "Pediatric Circulation Assessment",
+    "category": "Peds",
+    "pcr_text": "18-month-old febrile, mottled skin, delayed capillary refill, weak pulses. What does circulation assessment show?",
+    "correct_error": "Circulation assessment: capillary refill, pulses, skin color indicate perfusion status per pediatric triangle.",
+    "chaos_events": ["Fever spiking", "Dehydration worsening"],
+    "stress_fto_responses": ["Just pale!", "Poor perfusion!"],
+    "options": [
+      {"text": "Circulation: poor perfusion - delayed cap refill, mottled skin", "is_correct": true},
+      {"text": "Appearance: irritable mental status", "is_correct": false, "feedback": "PARTIAL! Irritability is appearance, but circulation shows perfusion problems."},
+      {"text": "Work of breathing: tachypnea", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Shock", "action": "Assess all vital functions"}
+  },
+  {
+    "title": "LVAD Patient - Device Malfunction",
+    "category": "Medical",
+    "pcr_text": "55-year-old with LVAD (HeartMate), presents with device alarm sounding, patient hypotensive. What should you do?",
+    "correct_error": "LVAD malfunction: do not disconnect device, transport immediately per special populations protocols.",
+    "chaos_events": ["Device alarm beeping", "Patient deteriorating"],
+    "stress_fto_responses": ["Unplug the device!", "Transport with device on!"],
+    "options": [
+      {"text": "Transport immediately - do not disconnect LVAD", "is_correct": true},
+      {"text": "Disconnect device and begin CPR", "is_correct": false, "feedback": "CRITICAL ERROR! Never disconnect LVAD. Device maintains circulation."},
+      {"text": "Wait for cardiologist", "is_correct": false}
+    ],
+    "hazards": {"type": "LVAD Malfunction/Special Populations", "action": "Transport with device functioning"}
+  },
+  {
+    "title": "TEI Hotspot: Newborn Pulse Assessment",
+    "category": "Peds",
+    "pcr_text": "Newborn just delivered, not breathing well. Where do you assess pulse on a newborn?",
+    "correct_error": "Newborn pulse: umbilical cord initially, then brachial artery per neonatal protocols.",
+    "chaos_events": ["Newborn cyanotic", "Time critical"],
+    "stress_fto_responses": ["Check neck!", "Umbilical cord pulse!"],
+    "options": [
+      {"text": "Umbilical cord initially, then brachial artery", "is_correct": true},
+      {"text": "Carotid artery in neck", "is_correct": false, "feedback": "DIFFICULT! Umbilical cord provides easiest access for newborns."},
+      {"text": "Femoral artery in groin", "is_correct": false}
+    ],
+    "hazards": {"type": "Neonatal Assessment/Pediatrics", "action": "Correct pulse location"}
+  },
+  {
+    "title": "Shoulder Dystocia",
+    "category": "OB",
+    "pcr_text": "29-year-old in labor, head delivered but shoulders stuck, mother cannot push further. What is this complication?",
+    "correct_error": "Shoulder dystocia: shoulders stuck after head delivery, requires specific maneuvers per OB protocols.",
+    "chaos_events": ["Fetal bradycardia", "Mother exhausted"],
+    "stress_fto_responses": ["Pull harder!", "Shoulder dystocia!"],
+    "options": [
+      {"text": "Shoulder dystocia - call for OB assistance immediately", "is_correct": true},
+      {"text": "Apply suprapubic pressure to release shoulders", "is_correct": false, "feedback": "OUT OF SCOPE! Shoulder dystocia requires specialized OB maneuvers."},
+      {"text": "Wait for shoulders to deliver spontaneously", "is_correct": false}
+    ],
+    "hazards": {"type": "Shoulder Dystocia/OB Emergency", "action": "Specialized delivery required"}
+  },
+  {
+    "title": "Pediatric Asthma - Respiratory Distress",
+    "category": "Peds",
+    "pcr_text": "5-year-old with asthma, tripod position, using accessory muscles, speaking in 2-word sentences. Respiratory status?",
+    "correct_error": "Pediatric asthma: tripod position and accessory muscle use indicate severe respiratory distress per triangle assessment.",
+    "chaos_events": ["Wheezing audible", "Peak flow dropping"],
+    "stress_fto_responses": ["Just asthma!", "Severe distress!"],
+    "options": [
+      {"text": "Severe respiratory distress - tripod position, accessory muscles", "is_correct": true},
+      {"text": "Mild respiratory distress - still speaking in sentences", "is_correct": false, "feedback": "INCORRECT! Tripod position and 2-word sentences indicate severe distress."},
+      {"text": "Respiratory failure - not breathing adequately", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Asthma", "action": "Aggressive treatment required"}
+  },
+  {
+    "title": "Autism - Sensory Overload",
+    "category": "Medical",
+    "pcr_text": "12-year-old autistic child having meltdown at scene, covering ears, rocking. Should you restrain or de-escalate?",
+    "correct_error": "Autism sensory overload: reduce stimuli, allow coping mechanisms per special populations protocols.",
+    "chaos_events": ["Child becoming more agitated", "Scene chaotic"],
+    "stress_fto_responses": ["Restrain the child!", "Reduce stimulation!"],
+    "options": [
+      {"text": "Reduce sensory input and allow coping behaviors", "is_correct": true},
+      {"text": "Physically restrain to prevent injury", "is_correct": false, "feedback": "INCORRECT! Restraint can increase agitation. Use de-escalation techniques."},
+      {"text": "Administer sedative medication", "is_correct": false}
+    ],
+    "hazards": {"type": "Autism/Special Populations", "action": "De-escalation over restraint"}
+  },
+  {
+    "title": "Preterm Labor",
+    "category": "OB",
+    "pcr_text": "26-year-old pregnant at 32 weeks, regular contractions every 5 minutes, cervical dilation. Should you transport or attempt to stop labor?",
+    "correct_error": "Preterm labor: transport immediately - tocolytics require hospital administration per OB protocols.",
+    "chaos_events": ["Contractions increasing", "Fetal heart rate decelerating"],
+    "stress_fto_responses": ["Stop the labor!", "Transport now!"],
+    "options": [
+      {"text": "Transport immediately - preterm delivery requires NICU", "is_correct": true},
+      {"text": "Attempt to stop labor with medications", "is_correct": false, "feedback": "OUT OF SCOPE! Tocolytics require hospital administration."},
+      {"text": "Wait for contractions to space out", "is_correct": false}
+    ],
+    "hazards": {"type": "Preterm Labor/OB Emergency", "action": "Immediate transport"}
+  },
+  {
+    "title": "TEI Hotspot: Pediatric Blood Pressure",
+    "category": "Peds",
+    "pcr_text": "7-year-old in shock. Where do you place the blood pressure cuff on a child?",
+    "correct_error": "Pediatric BP: use appropriate cuff size on upper arm per pediatric protocols.",
+    "chaos_events": ["Child hypotensive", "IV access needed"],
+    "stress_fto_responses": ["Use adult cuff!", "Proper cuff size!"],
+    "options": [
+      {"text": "Upper arm with cuff width 2/3 of upper arm length", "is_correct": true},
+      {"text": "Forearm or lower leg", "is_correct": false, "feedback": "INCORRECT! Upper arm is standard location for accurate readings."},
+      {"text": "Thigh with adult cuff", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric BP Assessment", "action": "Correct cuff placement"}
+  },
+  {
+    "title": "Dementia - Sundowning Syndrome",
+    "category": "Geriatric",
+    "pcr_text": "80-year-old with dementia, agitated and confused at dusk, trying to leave facility. Should you restrain or redirect?",
+    "correct_error": "Sundowning: redirect and reorient gently per dementia protocols.",
+    "chaos_events": ["Patient becoming aggressive", "Staff concerned"],
+    "stress_fto_responses": ["Sedate the patient!", "Redirect calmly!"],
+    "options": [
+      {"text": "Redirect and reorient using calm approach", "is_correct": true},
+      {"text": "Physically restrain to prevent elopement", "is_correct": false, "feedback": "INCORRECT! Restraint increases confusion. Use redirection techniques."},
+      {"text": "Allow patient to leave if they want", "is_correct": false}
+    ],
+    "hazards": {"type": "Dementia/Special Populations", "action": "Gentle redirection"}
+  },
+  {
+    "title": "Cord Around Neck",
+    "category": "OB",
+    "pcr_text": "31-year-old delivering, umbilical cord wrapped around baby's neck. Should you cut the cord or wait for OB?",
+    "correct_error": "Nuchal cord: do not cut cord - attempt to slip over head or wait for OB per delivery protocols.",
+    "chaos_events": ["Fetal heart rate dropping", "Mother pushing"],
+    "stress_fto_responses": ["Cut the cord!", "Slip it over head!"],
+    "options": [
+      {"text": "Attempt to slip cord over head or wait for OB assistance", "is_correct": true},
+      {"text": "Cut cord immediately to deliver baby", "is_correct": false, "feedback": "DANGEROUS! Cutting cord can cause fetal hemorrhage. Slip over head instead."},
+      {"text": "Pull cord to unwrap", "is_correct": false}
+    ],
+    "hazards": {"type": "Nuchal Cord/OB Emergency", "action": "Do not cut cord"}
+  },
+  {
+    "title": "Pediatric Febrile Seizure",
+    "category": "Peds",
+    "pcr_text": "2-year-old post-seizure, temp 104°F, now alert but lethargic. What is the most likely cause?",
+    "correct_error": "Febrile seizure: common in children 6 months-5 years with rapid temperature increase per pediatric protocols.",
+    "chaos_events": ["Fever not responding", "Parents anxious"],
+    "stress_fto_responses": ["Epilepsy!", "Febrile seizure!"],
+    "options": [
+      {"text": "Febrile seizure - most common cause of seizures in this age", "is_correct": true},
+      {"text": "Meningitis requiring antibiotics", "is_correct": false, "feedback": "POSSIBLE but febrile seizure more likely. Assess for meningeal signs."},
+      {"text": "Status epilepticus", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Seizure", "action": "Support ABCs, treat fever"}
+  },
+  {
+    "title": "LVAD Patient - Normal Operation",
+    "category": "Medical",
+    "pcr_text": "60-year-old with LVAD presenting with chest pain. Device humming normally. Should you perform CPR if patient arrests?",
+    "correct_error": "LVAD patient: device maintains circulation, CPR may be ineffective per special populations protocols.",
+    "chaos_events": ["Patient in cardiac arrest", "Device functioning"],
+    "stress_fto_responses": ["Start CPR!", "LVAD maintains circulation!"],
+    "options": [
+      {"text": "CPR may be ineffective - LVAD maintains circulation", "is_correct": true},
+      {"text": "Perform standard CPR despite LVAD", "is_correct": false, "feedback": "INEFFECTIVE! LVAD provides circulation. Focus on reversible causes."},
+      {"text": "Disconnect LVAD to allow manual compressions", "is_correct": false}
+    ],
+    "hazards": {"type": "LVAD Patient/Special Populations", "action": "Device maintains circulation"}
+  },
+  {
+    "title": "TEI Hotspot: Pediatric Stethoscope Placement",
+    "category": "Peds",
+    "pcr_text": "4-month-old with respiratory distress. Where do you place the stethoscope for lung assessment?",
+    "correct_error": "Pediatric lung assessment: anterior chest preferred due to thin chest wall per pediatric protocols.",
+    "chaos_events": ["Infant crying", "Assessment difficult"],
+    "stress_fto_responses": ["Posterior auscultation!", "Anterior chest!"],
+    "options": [
+      {"text": "Anterior chest - thin chest wall allows better auscultation", "is_correct": true},
+      {"text": "Posterior back as with adults", "is_correct": false, "feedback": "DIFFICULT! Anterior approach preferred for infants and small children."},
+      {"text": "Axillary areas only", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Assessment", "action": "Correct auscultation technique"}
+  },
+  {
+    "title": "Eclampsia",
+    "category": "OB",
+    "pcr_text": "28-year-old pregnant with preeclampsia now seizing. What medication should be administered?",
+    "correct_error": "Eclampsia: magnesium sulfate for seizure control per OB protocols.",
+    "chaos_events": ["Seizure activity", "Fetal distress"],
+    "stress_fto_responses": ["Give diazepam!", "Magnesium sulfate!"],
+    "options": [
+      {"text": "Magnesium sulfate for seizure prevention", "is_correct": true},
+      {"text": "Diazepam for immediate seizure control", "is_correct": false, "feedback": "INCORRECT! Magnesium is first-line for eclampsia, diazepam second-line."},
+      {"text": "No medication - transport immediately", "is_correct": false}
+    ],
+    "hazards": {"type": "Eclampsia/OB Emergency", "action": "Magnesium administration"}
+  },
+  {
+    "title": "Pediatric Anaphylaxis",
+    "category": "Peds",
+    "pcr_text": "3-year-old with bee sting, facial swelling, stridor, hypotension. What is the immediate treatment?",
+    "correct_error": "Pediatric anaphylaxis: epinephrine IM, airway management per pediatric protocols.",
+    "chaos_events": ["Airway closing", "Blood pressure dropping"],
+    "stress_fto_responses": ["Benadryl only!", "Epinephrine now!"],
+    "options": [
+      {"text": "Epinephrine IM in lateral thigh", "is_correct": true},
+      {"text": "Oral antihistamines only", "is_correct": false, "feedback": "INSUFFICIENT! Epinephrine is first-line for anaphylaxis with airway involvement."},
+      {"text": "IV fluids for hypotension", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric Anaphylaxis", "action": "Immediate epinephrine"}
+  },
+  {
+    "title": "Autism - Communication Challenges",
+    "category": "Medical",
+    "pcr_text": "15-year-old autistic patient, nonverbal, in pain but unable to communicate. How do you assess pain level?",
+    "correct_error": "Autism pain assessment: observe behaviors, use pain scales adapted for nonverbal patients per special populations protocols.",
+    "chaos_events": ["Patient moaning", "Unable to verbalize"],
+    "stress_fto_responses": ["Ask yes/no questions!", "Observe behaviors!"],
+    "options": [
+      {"text": "Observe behavioral indicators and use nonverbal pain scales", "is_correct": true},
+      {"text": "Assume no pain since patient can't communicate", "is_correct": false, "feedback": "CRITICAL ERROR! Autistic patients feel pain but may not express it typically."},
+      {"text": "Use standard 1-10 pain scale verbally", "is_correct": false}
+    ],
+    "hazards": {"type": "Autism/Special Populations", "action": "Behavioral pain assessment"}
+  },
+  {
+    "title": "Meconium Staining",
+    "category": "OB",
+    "pcr_text": "Newborn delivered with meconium-stained fluid, baby vigorous. Should you suction the airway?",
+    "correct_error": "Meconium: suction only if baby depressed, not if vigorous per neonatal protocols.",
+    "chaos_events": ["Baby crying", "Meconium present"],
+    "stress_fto_responses": ["Suction airway!", "No suction needed!"],
+    "options": [
+      {"text": "No suction needed - baby is vigorous", "is_correct": true},
+      {"text": "Deep suction of mouth and nose", "is_correct": false, "feedback": "INCORRECT! Vigorous babies do not need suctioning, may cause bradycardia."},
+      {"text": "Intubate immediately", "is_correct": false}
+    ],
+    "hazards": {"type": "Meconium Aspiration/OB Emergency", "action": "Assess newborn vigor"}
+  },
+  {
+    "title": "TEI Hotspot: Pediatric CPR Ratio",
+    "category": "Peds",
+    "pcr_text": "Child in cardiac arrest. What is the compression to ventilation ratio for pediatric CPR?",
+    "correct_error": "Pediatric CPR: 15:2 compression to ventilation ratio for single rescuer per pediatric protocols.",
+    "chaos_events": ["Child unresponsive", "No breathing"],
+    "stress_fto_responses": ["30:2 like adults!", "15:2 for children!"],
+    "options": [
+      {"text": "15 compressions to 2 ventilations", "is_correct": true},
+      {"text": "30 compressions to 2 ventilations", "is_correct": false, "feedback": "INCORRECT! Adult ratio is 30:2, pediatric is 15:2."},
+      {"text": "5 compressions to 1 ventilation", "is_correct": false}
+    ],
+    "hazards": {"type": "Pediatric CPR", "action": "Correct compression ratio"}
+  },
+  {
+    "title": "LVAD Patient - Power Failure",
+    "category": "Medical",
+    "pcr_text": "50-year-old LVAD patient, device battery dying, patient asymptomatic. What should you do?",
+    "correct_error": "LVAD battery failure: connect to external power immediately per special populations protocols.",
+    "chaos_events": ["Battery alarm sounding", "Patient stable"],
+    "stress_fto_responses": ["Start CPR!", "Connect power source!"],
+    "options": [
+      {"text": "Connect to external power source or backup battery", "is_correct": true},
+      {"text": "Transport immediately for device replacement", "is_correct": false, "feedback": "INCORRECT! Connect power first, then transport if needed."},
+      {"text": "Disconnect LVAD to use manual CPR", "is_correct": false}
+    ],
+    "hazards": {"type": "LVAD Power Failure/Special Populations", "action": "Maintain device power"}
+  }
+]
