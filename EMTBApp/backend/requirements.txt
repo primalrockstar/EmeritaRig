@@ -10,3 +10,7 @@ python-dotenv
 pydantic-settings
 slowapi
 PyJWT
+pytest
+pytest-asyncio
+httpx
+pytest-cov

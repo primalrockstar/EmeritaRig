@@ -45,12 +45,11 @@ import ProgressDashboard from './components/ProgressDashboard';
 import { ModernButton } from './components/ui/ModernGlassComponents';
 import EnhancedSearchBar from './components/EnhancedSearchBar';
 import { SearchResult } from './utils/search';
-import UWorldLayout from './components/layout/UWorldLayout';
-import TacticalLayout from './components/layout/TacticalLayout';
-import ClinicalLayout from './components/layout/ClinicalLayout';
+import TacticalLayout from './layouts/TacticalLayout';
+import ClinicalLayout from './layouts/ClinicalLayout';
 import { PrivacyPolicy, TermsOfService, MedicalDisclaimer, SupportCenter, ContactUs } from './components/LegalSupportPages';
 import LectureCompanion from './features/study/LectureCompanion';
-import CompanionDashboard from './components/dashboard/CompanionDashboard';
+import HomeDashboard from './components/HomeDashboard';
 import CompanionLearnTab from './components/dashboard/CompanionLearnTab';
 import CompanionProgressTab from './components/dashboard/CompanionProgressTab';
 import CompanionDrillTab from './components/dashboard/CompanionDrillTab';
@@ -862,41 +861,41 @@ const NotFoundPage: React.FC = () => (
 // Main App Component
 function ProtectedRoutes() {
   return (
-    <UWorldLayout>
-      <Routes>
-  <Route path="/" element={<CompanionDashboard />} />
-  <Route path="/today" element={<CompanionDashboard />} />
-  <Route path="/dashboard" element={<UltraModernDashboard />} />
-        <Route path="/search" element={<SearchResultsPage />} />
-        <Route path="/enhanced-quiz" element={<EnhancedQuizPage />} />
-        <Route path="/voice-transcriber" element={<VoiceTranscriberPage />} />
-        <Route path="/national-protocols" element={<ProtocolsPage />} />
-        <Route path="/flashcards" element={<FlashcardsPage />} />
-        <Route path="/tools" element={<CalculatorsPage />} />
-        <Route path="/medications" element={<MedicationsPage />} />
-        <Route path="/skills-practice" element={<SkillsPracticePage />} />
-        <Route path="/study" element={<StudyMaterialsPage />} />
-        <Route path="/learn" element={<PageContainer title="Learn" subtitle="Your personalized learning companion with context-aware recommendations"><CompanionLearnTab /></PageContainer>} />
-        <Route path="/drill" element={<CompanionDrillTab />} />
-        <Route path="/reference" element={<CompanionReferenceTab />} />
-        <Route path="/study-notes" element={<FieldManual />} />
-        <Route path="/study-notes/:chapterId" element={<ChapterReader />} />
-        <Route path="/scenarios" element={<ScenariosPage />} />
-        <Route path="/pcr-practice" element={<TacticalLayout title="PCR SIMULATOR"><EMTBPcrTrainer /></TacticalLayout>} />
-        <Route path="/nremt-simulator" element={<ClinicalLayout title="NREMT EXAM SIMULATOR"><NREMTSimulator /></ClinicalLayout>} />
+    <Routes>
+      {/* Tactical Layout Routes (Tactical MDT) */}
+      <Route path="/" element={<TacticalLayout><HomeDashboard /></TacticalLayout>} />
+      <Route path="/today" element={<TacticalLayout><HomeDashboard /></TacticalLayout>} />
+      <Route path="/dashboard" element={<TacticalLayout><UltraModernDashboard /></TacticalLayout>} />
+      <Route path="/search" element={<TacticalLayout><SearchResultsPage /></TacticalLayout>} />
+      <Route path="/voice-transcriber" element={<TacticalLayout><VoiceTranscriberPage /></TacticalLayout>} />
+      <Route path="/national-protocols" element={<TacticalLayout><ProtocolsPage /></TacticalLayout>} />
+      <Route path="/flashcards" element={<TacticalLayout><FlashcardsPage /></TacticalLayout>} />
+      <Route path="/tools" element={<TacticalLayout><CalculatorsPage /></TacticalLayout>} />
+      <Route path="/medications" element={<TacticalLayout><MedicationsPage /></TacticalLayout>} />
+      <Route path="/skills-practice" element={<TacticalLayout><SkillsPracticePage /></TacticalLayout>} />
+      <Route path="/study" element={<TacticalLayout><StudyMaterialsPage /></TacticalLayout>} />
+      <Route path="/learn" element={<TacticalLayout><PageContainer title="Learn" subtitle="Your personalized learning companion with context-aware recommendations"><CompanionLearnTab /></PageContainer></TacticalLayout>} />
+      <Route path="/drill" element={<TacticalLayout><CompanionDrillTab /></TacticalLayout>} />
+      <Route path="/reference" element={<TacticalLayout><CompanionReferenceTab /></TacticalLayout>} />
+      <Route path="/study-notes" element={<TacticalLayout><FieldManual /></TacticalLayout>} />
+      <Route path="/study-notes/:chapterId" element={<TacticalLayout><ChapterReader /></TacticalLayout>} />
+      <Route path="/scenarios" element={<TacticalLayout><ScenariosPage /></TacticalLayout>} />
+      <Route path="/pcr-practice" element={<TacticalLayout><EMTBPcrTrainer /></TacticalLayout>} />
+      <Route path="/progress" element={<TacticalLayout><ProgressPage /></TacticalLayout>} />
 
-        <Route path="/progress" element={<ProgressPage />} />
-        
-        {/* Legal & Support Routes */}
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<TermsOfService />} />
-        <Route path="/disclaimer" element={<MedicalDisclaimer />} />
-        <Route path="/support" element={<SupportCenter />} />
-        <Route path="/contact" element={<ContactUs />} />
+      {/* Clinical Layout Routes (Testing Environment) */}
+      <Route path="/enhanced-quiz" element={<ClinicalLayout title="NREMT EMT-Basic Certification Exam"><EnhancedQuizPage /></ClinicalLayout>} />
+      <Route path="/nremt-simulator" element={<ClinicalLayout title="NREMT Computer Adaptive Testing (CAT) Simulator"><NREMTSimulator /></ClinicalLayout>} />
 
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </UWorldLayout>
+      {/* Legal & Support Routes (Tactical Layout) */}
+      <Route path="/privacy" element={<TacticalLayout><PrivacyPolicy /></TacticalLayout>} />
+      <Route path="/terms" element={<TacticalLayout><TermsOfService /></TacticalLayout>} />
+      <Route path="/disclaimer" element={<TacticalLayout><MedicalDisclaimer /></TacticalLayout>} />
+      <Route path="/support" element={<TacticalLayout><SupportCenter /></TacticalLayout>} />
+      <Route path="/contact" element={<TacticalLayout><ContactUs /></TacticalLayout>} />
+
+      <Route path="*" element={<TacticalLayout><NotFoundPage /></TacticalLayout>} />
+    </Routes>
   );
 }
 
