@@ -1,122 +1,248 @@
 [
   {
-    "title": "Wire Down - Don't Touch Rule",
+    "title": "Hero Trap - Unconscious in Silo",
     "category": "Operations",
-    "pcr_text": "Dispatch reports fallen power line across roadway. Vehicle struck power pole, driver trapped. Should you approach the scene or wait for utilities?",
-    "correct_error": "Live downed power line. DO NOT APPROACH - wait for utility company per safety protocols.",
-    "chaos_events": ["Sparking from wire", "Driver panicking"],
-    "stress_fto_responses": ["Approach carefully!", "Wait for power company!"],
+    "pcr_text": "Farmer found unconscious at bottom of grain silo, grain up to his waist. Should you enter the silo to rescue him?",
+    "correct_error": "Grain entrapment hero trap. DO NOT ENTER - grain can collapse and bury rescuer per safety protocols.",
+    "chaos_events": ["Farmer calling for help", "Grain shifting"],
+    "stress_fto_responses": ["Enter to save him!", "Stage and wait for specialists!"],
     "options": [
-      {"text": "Retreat and establish safe zone - wait for utility crew to de-energize", "is_correct": true},
-      {"text": "Approach using rubber gloves for protection", "is_correct": false, "feedback": "CRITICAL ERROR! Live wires require utility intervention. DO NOT TOUCH!"},
-      {"text": "Begin patient assessment from distance", "is_correct": false}
+      {"text": "Stage at entrance and wait for agricultural rescue team", "is_correct": true},
+      {"text": "Enter silo to pull him out immediately", "is_correct": false, "feedback": "HERO TRAP! Grain entrapment requires specialized rescue. DO NOT ENTER!"},
+      {"text": "Throw him a rope to climb out", "is_correct": false}
     ],
-    "hazards": {"type": "Electrical Hazard/Safety", "action": "Do not approach live wires"}
+    "hazards": {"type": "Grain Entrapment/Safety", "action": "Wait for specialized rescue"}
   },
   {
-    "title": "Chemical Spill - HazMat Response",
+    "title": "Chemical Odor - Hero Trap",
     "category": "Operations",
-    "pcr_text": "Industrial facility with strong chemical odor, workers fleeing scene, visible vapor cloud. Should you enter or wait for HazMat team?",
-    "correct_error": "Unknown chemical spill with vapor cloud. Retreat and wait for HazMat specialists per safety protocols.",
-    "chaos_events": ["Workers coughing", "Expanding vapor cloud"],
-    "stress_fto_responses": ["Enter with masks!", "Wait for HazMat!"],
+    "pcr_text": "Strong chemical odor in warehouse, employee collapsed near spill. Should you enter to provide care?",
+    "correct_error": "Unknown chemical spill hero trap. DO NOT ENTER - wait for HazMat team per safety protocols.",
+    "chaos_events": ["Employee vomiting", "Expanding spill"],
+    "stress_fto_responses": ["Enter with gloves!", "Retreat and call HazMat!"],
     "options": [
       {"text": "Retreat to safe distance and wait for HazMat team", "is_correct": true},
-      {"text": "Enter wearing standard PPE to assess victims", "is_correct": false, "feedback": "CRITICAL ERROR! Unknown chemicals require HazMat specialists. DO NOT ENTER!"},
-      {"text": "Approach upwind to avoid vapors", "is_correct": false}
+      {"text": "Enter wearing gloves to assess the employee", "is_correct": false, "feedback": "HERO TRAP! Unknown chemicals require HazMat specialists. DO NOT ENTER!"},
+      {"text": "Approach upwind to get a better look", "is_correct": false}
     ],
     "hazards": {"type": "Chemical Hazard/Safety", "action": "Wait for specialized response"}
   },
   {
-    "title": "Hypothermia Stage I - Mild",
-    "category": "Environmental",
-    "pcr_text": "45-year-old found shivering outdoors in 25°F weather, alert but cold, skin cool and pale. What stage of hypothermia?",
-    "correct_error": "Stage I hypothermia (mild): 90-95°F, shivering present, mental status normal per environmental protocols.",
-    "chaos_events": ["Patient shivering uncontrollably", "Cold environment"],
-    "stress_fto_responses": ["Severe hypothermia!", "Mild stage I!"],
+    "title": "Domestic Dispute - Hero Trap",
+    "category": "Operations",
+    "pcr_text": "Domestic violence call, woman screaming inside house, sounds of struggle. Should you enter to rescue her?",
+    "correct_error": "Active domestic violence hero trap. DO NOT ENTER - wait for law enforcement per safety protocols.",
+    "chaos_events": ["Woman screaming", "Sounds of fighting"],
+    "stress_fto_responses": ["Enter to save her!", "Wait for police!"],
     "options": [
-      {"text": "Stage I (mild) - shivering, alert, core temp 90-95°F", "is_correct": true},
-      {"text": "Stage II (moderate) - shivering stops, confusion begins", "is_correct": false, "feedback": "INCORRECT! Patient is shivering and alert - this is Stage I hypothermia."},
-      {"text": "Stage III (severe) - unconscious, core temp <86°F", "is_correct": false}
+      {"text": "Stage outside and wait for law enforcement to secure scene", "is_correct": true},
+      {"text": "Enter house to rescue the victim immediately", "is_correct": false, "feedback": "HERO TRAP! Active violence requires law enforcement first. DO NOT ENTER!"},
+      {"text": "Call for the victim to come to you", "is_correct": false}
     ],
-    "hazards": {"type": "Hypothermia/Safety", "action": "Handle gently, prevent further heat loss"}
+    "hazards": {"type": "Active Violence/Safety", "action": "Wait for law enforcement"}
+  },
+  {
+    "title": "Hypothermia - Pulse Check Protocol",
+    "category": "Environmental",
+    "pcr_text": "Elderly patient found unconscious in snow, core temp 82°F, no obvious signs of life. How long should you check for pulse?",
+    "correct_error": "Severe hypothermia pulse check: assess for 30-45 seconds before declaring dead per environmental protocols.",
+    "chaos_events": ["Patient appears deceased", "Cold environment"],
+    "stress_fto_responses": ["Quick check!", "Extended assessment!"],
+    "options": [
+      {"text": "Check for pulse for 30-45 seconds before stopping resuscitation", "is_correct": true},
+      {"text": "Check for 10 seconds then stop - patient appears dead", "is_correct": false, "feedback": "INCORRECT! Severe hypothermia requires extended pulse check - 'not dead until warm and dead'."},
+      {"text": "Don't check pulse - obvious death", "is_correct": false}
+    ],
+    "hazards": {"type": "Severe Hypothermia/Safety", "action": "Extended pulse assessment"}
+  },
+  {
+    "title": "Heat Stroke - Rapid Cooling Priority",
+    "category": "Environmental",
+    "pcr_text": "Construction worker, core temp 106°F, unconscious, hot dry skin. What is the immediate treatment priority?",
+    "correct_error": "Heat stroke rapid cooling: immediate cooling takes precedence over transport per environmental protocols.",
+    "chaos_events": ["Patient seizing", "Hot environment"],
+    "stress_fto_responses": ["Transport now!", "Cool first!"],
+    "options": [
+      {"text": "Begin rapid cooling with ice packs and transport immediately after", "is_correct": true},
+      {"text": "Transport immediately without cooling", "is_correct": false, "feedback": "INCORRECT! Rapid cooling is critical for heat stroke survival."},
+      {"text": "Give oral fluids first", "is_correct": false}
+    ],
+    "hazards": {"type": "Heat Stroke/Safety", "action": "Rapid cooling priority"}
+  },
+  {
+    "title": "Drowning - Secondary Assessment",
+    "category": "Environmental",
+    "pcr_text": "Child pulled from pool 10 minutes ago, breathing but lethargic. Should you transport immediately or monitor?",
+    "correct_error": "Drowning secondary assessment: monitor for 24 hours - secondary drowning can occur per environmental protocols.",
+    "chaos_events": ["Child coughing up water", "Parents anxious"],
+    "stress_fto_responses": ["Transport now!", "Monitor closely!"],
+    "options": [
+      {"text": "Transport to ED for 24-hour monitoring - secondary drowning risk", "is_correct": true},
+      {"text": "Monitor at scene for 30 minutes then release", "is_correct": false, "feedback": "INCORRECT! Secondary drowning can occur up to 24 hours later."},
+      {"text": "Send home with instructions to watch for symptoms", "is_correct": false}
+    ],
+    "hazards": {"type": "Secondary Drowning/Safety", "action": "Extended monitoring required"}
+  },
+  {
+    "title": "Lightning Strike - Reverse Triage",
+    "category": "Environmental",
+    "pcr_text": "Lightning storm, multiple victims. One appears dead, others have minor injuries. Who gets treated first?",
+    "correct_error": "Lightning reverse triage: treat apparently dead first - lightning can restart heart per environmental protocols.",
+    "chaos_events": ["Ongoing lightning", "Multiple casualties"],
+    "stress_fto_responses": ["Treat the living!", "Check the dead one!"],
+    "options": [
+      {"text": "Assess apparently dead victim first - lightning can restart heart", "is_correct": true},
+      {"text": "Treat conscious victims with minor injuries first", "is_correct": false, "feedback": "INCORRECT! Lightning reverse triage - dead may restart, living are stable."},
+      {"text": "Wait for storm to pass before assessing anyone", "is_correct": false}
+    ],
+    "hazards": {"type": "Lightning Strike/Safety", "action": "Reverse triage protocol"}
+  },
+  {
+    "title": "HazMat Placard - Distance Identification",
+    "category": "Operations",
+    "pcr_text": "Truck accident, vehicle leaking fluid. From 500 feet away, you see a placard with a skull and crossbones. What does this indicate?",
+    "correct_error": "HazMat placard identification: skull and crossbones = poison/toxic material per DOT regulations.",
+    "chaos_events": ["Fluid spreading", "Driver injured"],
+    "stress_fto_responses": ["Approach to help!", "Identify from distance!"],
+    "options": [
+      {"text": "Poison/toxic material - evacuate area and wait for HazMat", "is_correct": true},
+      {"text": "Flammable material - can approach with caution", "is_correct": false, "feedback": "INCORRECT! Skull and crossbones = poison/toxic. DO NOT APPROACH!"},
+      {"text": "Corrosive material - safe with gloves", "is_correct": false}
+    ],
+    "hazards": {"type": "Toxic Material/Safety", "action": "Identify from safe distance"}
+  },
+  {
+    "title": "MCI Hot Zone Logic",
+    "category": "Operations",
+    "pcr_text": "Multi-vehicle accident with hazardous material spill. Where should EMT-Bs be positioned?",
+    "correct_error": "MCI zone logic: EMT-Bs work in warm zone, not hot zone per HazMat protocols.",
+    "chaos_events": ["Multiple patients", "Spill expanding"],
+    "stress_fto_responses": ["Enter hot zone!", "Stay in warm zone!"],
+    "options": [
+      {"text": "Work in warm zone - provide care to decontaminated patients", "is_correct": true},
+      {"text": "Enter hot zone to rescue victims", "is_correct": false, "feedback": "INCORRECT! EMT-Bs work warm zone only. Hot zone requires HazMat specialists."},
+      {"text": "Set up in cold zone away from incident", "is_correct": false}
+    ],
+    "hazards": {"type": "MCI Zones/Safety", "action": "EMT-B in warm zone only"}
   },
   {
     "title": "PPE for Suspected Tuberculosis",
     "category": "Operations",
-    "pcr_text": "Patient with chronic cough, night sweats, weight loss. Suspected active tuberculosis. What is the most important PPE to use?",
-    "correct_error": "TB PPE requirements: N95 mask mandatory for airborne protection per infection control protocols.",
+    "pcr_text": "Patient with chronic cough, night sweats, weight loss, blood-tinged sputum. Suspected active TB. What is the most critical PPE for respiratory protection?",
+    "correct_error": "TB PPE: N95 mask is most critical for airborne protection per infection control protocols.",
     "chaos_events": ["Patient coughing frequently", "Close quarters"],
-    "stress_fto_responses": ["Full hazmat suit!", "Standard precautions plus N95!"],
+    "stress_fto_responses": ["Full hazmat suit!", "N95 is critical!"],
     "options": [
-      {"text": "N95 respirator mask - required for airborne TB protection", "is_correct": true},
+      {"text": "N95 respirator mask - essential for airborne TB protection", "is_correct": true},
       {"text": "Surgical mask - insufficient for TB protection", "is_correct": false, "feedback": "INSUFFICIENT! TB requires N95 minimum for airborne protection."},
       {"text": "Face shield only - misses respiratory protection", "is_correct": false}
     ],
-    "hazards": {"type": "Airborne Infection/Safety", "action": "N95 mask mandatory"}
+    "hazards": {"type": "Airborne TB/Safety", "action": "N95 mask mandatory"}
   },
   {
-    "title": "Heat Stroke vs Heat Exhaustion",
-    "category": "Environmental",
-    "pcr_text": "60-year-old construction worker, core temp 104°F, hot dry skin, altered mental status, no sweating. Heat stroke or exhaustion?",
-    "correct_error": "Heat stroke: >104°F, altered mental status, hot dry skin, no sweating per environmental protocols.",
-    "chaos_events": ["Patient becoming combative", "Hot environment"],
-    "stress_fto_responses": ["Heat exhaustion!", "Heat stroke - critical!"],
-    "options": [
-      {"text": "Heat stroke - immediate cooling required, altered mental status", "is_correct": true},
-      {"text": "Heat exhaustion - rest and oral fluids sufficient", "is_correct": false, "feedback": "CRITICAL ERROR! Altered mental status and hot dry skin = heat stroke, not exhaustion."},
-      {"text": "Heat cramps - electrolyte imbalance", "is_correct": false}
-    ],
-    "hazards": {"type": "Heat Stroke/Safety", "action": "Rapid cooling prevents organ damage"}
-  },
-  {
-    "title": "Natural Gas Leak - Don't Touch",
+    "title": "Hero Trap - Confined Space",
     "category": "Operations",
-    "pcr_text": "Apartment building with strong gas odor, hissing sound from broken pipe, residents evacuated. Should you enter or wait for gas company?",
-    "correct_error": "Natural gas leak with audible hissing. DO NOT ENTER - wait for utility specialists per safety protocols.",
-    "chaos_events": ["Strong gas odor", "Hissing sound continuing"],
-    "stress_fto_responses": ["Enter quickly!", "Wait for gas company!"],
+    "pcr_text": "Worker trapped in underground utility vault, calling for help, air getting bad. Should you enter to rescue?",
+    "correct_error": "Confined space hero trap. DO NOT ENTER - wait for rescue team with proper equipment per safety protocols.",
+    "chaos_events": ["Worker becoming unresponsive", "Poor air quality"],
+    "stress_fto_responses": ["Enter to save him!", "Wait for specialists!"],
     "options": [
-      {"text": "Retreat and wait for gas company to shut off supply", "is_correct": true},
-      {"text": "Enter wearing SCBA to search for victims", "is_correct": false, "feedback": "CRITICAL ERROR! Gas leaks require utility intervention. DO NOT ENTER!"},
-      {"text": "Ventilate the building from outside", "is_correct": false}
+      {"text": "Stage outside and wait for confined space rescue team", "is_correct": true},
+      {"text": "Enter vault with flashlight to assess", "is_correct": false, "feedback": "HERO TRAP! Confined spaces require specialized training and equipment. DO NOT ENTER!"},
+      {"text": "Lower oxygen tank through opening", "is_correct": false}
     ],
-    "hazards": {"type": "Gas Leak/Safety", "action": "Wait for utility response"}
+    "hazards": {"type": "Confined Space/Safety", "action": "Wait for specialized rescue"}
   },
   {
-    "title": "Hypothermia Stage II - Moderate",
-    "category": "Environmental",
-    "pcr_text": "35-year-old hiker found confused and shivering violently, core temp 88°F, slow speech. What stage of hypothermia?",
-    "correct_error": "Stage II hypothermia (moderate): 86-90°F, confusion, violent shivering, decreased coordination per environmental protocols.",
-    "chaos_events": ["Patient confused and combative", "Cold windy conditions"],
-    "stress_fto_responses": ["Mild hypothermia!", "Moderate stage II!"],
-    "options": [
-      {"text": "Stage II (moderate) - confusion, violent shivering, 86-90°F", "is_correct": true},
-      {"text": "Stage I (mild) - still shivering normally", "is_correct": false, "feedback": "INCORRECT! Confusion and violent shivering indicate Stage II."},
-      {"text": "Stage III (severe) - unconscious", "is_correct": false}
-    ],
-    "hazards": {"type": "Hypothermia/Safety", "action": "Gentle handling, prevent cardiac irritability"}
-  },
-  {
-    "title": "Drowning - Saltwater Near-Drowning",
-    "category": "Environmental",
-    "pcr_text": "25-year-old pulled from ocean, unconscious, frothy sputum, crackles in lungs. Saltwater or freshwater drowning?",
-    "correct_error": "Saltwater drowning: pulmonary edema from hypertonic fluid shift per drowning protocols.",
-    "chaos_events": ["Patient vomiting saltwater", "Respiratory distress"],
-    "stress_fto_responses": ["Freshwater drowning!", "Saltwater pulmonary edema!"],
-    "options": [
-      {"text": "Saltwater drowning - fluid shifts cause pulmonary edema", "is_correct": true},
-      {"text": "Freshwater drowning - fluid enters bloodstream", "is_correct": false, "feedback": "INCORRECT! Ocean water is hypertonic - causes fluid to shift INTO lungs."},
-      {"text": "Dry drowning - laryngospasm prevents water entry", "is_correct": false}
-    ],
-    "hazards": {"type": "Drowning/Safety", "action": "Support ventilation, monitor for secondary drowning"}
-  },
-  {
-    "title": "PPE for Bloodborne Pathogens",
+    "title": "Hero Trap - Active Shooter",
     "category": "Operations",
-    "pcr_text": "Motor vehicle crash with major bleeding, unknown patient history. What is the minimum PPE required for blood exposure?",
-    "correct_error": "Bloodborne pathogen PPE: gloves mandatory, other items based on exposure risk per infection control protocols.",
-    "chaos_events": ["Heavy bleeding", "Blood spatter"],
+    "pcr_text": "Active shooter incident at mall, multiple victims down, shooter still at large. Should you enter to treat victims?",
+    "correct_error": "Active shooter hero trap. DO NOT ENTER - wait for law enforcement to secure scene per safety protocols.",
+    "chaos_events": ["Victims screaming", "Gunshots heard"],
+    "stress_fto_responses": ["Enter to save lives!", "Wait for police!"],
+    "options": [
+      {"text": "Stage at safe distance and wait for law enforcement clearance", "is_correct": true},
+      {"text": "Enter mall to provide immediate care to victims", "is_correct": false, "feedback": "HERO TRAP! Active shooter requires law enforcement first. DO NOT ENTER!"},
+      {"text": "Call for victims to come to you", "is_correct": false}
+    ],
+    "hazards": {"type": "Active Shooter/Safety", "action": "Wait for scene security"}
+  },
+  {
+    "title": "HazMat Placard - Flammable Gas",
+    "category": "Operations",
+    "pcr_text": "Tank truck overturned, placard shows flame symbol. From safe distance, what hazard does this indicate?",
+    "correct_error": "HazMat placard: flame symbol = flammable gas/liquid per DOT regulations.",
+    "chaos_events": ["Fuel leaking", "Fire risk"],
+    "stress_fto_responses": ["Approach carefully!", "Identify hazard first!"],
+    "options": [
+      {"text": "Flammable gas or liquid - no smoking, no sparks, evacuate area", "is_correct": true},
+      {"text": "Toxic material - approach with SCBA", "is_correct": false, "feedback": "INCORRECT! Flame = flammable. DO NOT APPROACH without fire department."},
+      {"text": "Corrosive material - safe with gloves", "is_correct": false}
+    ],
+    "hazards": {"type": "Flammable Material/Safety", "action": "No ignition sources"}
+  },
+  {
+    "title": "PPE for Suspected COVID-19",
+    "category": "Operations",
+    "pcr_text": "Patient with fever, cough, shortness of breath, recent international travel. Suspected COVID-19. What PPE is most critical for respiratory protection?",
+    "correct_error": "COVID-19 PPE: N95 mask essential for airborne protection per infection control protocols.",
+    "chaos_events": ["Patient coughing forcefully", "Close contact needed"],
+    "stress_fto_responses": ["Surgical mask only!", "Full airborne precautions!"],
+    "options": [
+      {"text": "N95 respirator mask - required for airborne COVID-19 protection", "is_correct": true},
+      {"text": "Surgical mask - insufficient for COVID-19 protection", "is_correct": false, "feedback": "INSUFFICIENT! COVID-19 requires N95 for airborne protection."},
+      {"text": "Face shield only - misses respiratory protection", "is_correct": false}
+    ],
+    "hazards": {"type": "Airborne COVID-19/Safety", "action": "N95 mask mandatory"}
+  },
+  {
+    "title": "Environmental - Cold Water Immersion",
+    "category": "Environmental",
+    "pcr_text": "Fisherman fell through ice 15 minutes ago, core temp 91°F, shivering violently. What is the rewarming priority?",
+    "correct_error": "Cold water immersion: prevent afterdrop, warm core first per environmental protocols.",
+    "chaos_events": ["Patient hypothermic", "Ice water exposure"],
+    "stress_fto_responses": ["Warm extremities first!", "Core warming priority!"],
+    "options": [
+      {"text": "Warm core first, prevent afterdrop with warm blankets", "is_correct": true},
+      {"text": "Rub extremities vigorously to restore circulation", "is_correct": false, "feedback": "DANGEROUS! Vigorous rubbing can cause cardiac arrest in hypothermic patients."},
+      {"text": "Apply heating pads to arms and legs", "is_correct": false}
+    ],
+    "hazards": {"type": "Cold Water Immersion/Safety", "action": "Gentle core warming"}
+  },
+  {
+    "title": "Hero Trap - High Voltage Lines",
+    "category": "Operations",
+    "pcr_text": "Car accident, power lines down across vehicle, driver trapped inside. Should you approach to rescue?",
+    "correct_error": "Live power lines hero trap. DO NOT APPROACH - wait for utility company per safety protocols.",
+    "chaos_events": ["Sparking wires", "Driver panicking"],
+    "stress_fto_responses": ["Cut the lines!", "Wait for power company!"],
+    "options": [
+      {"text": "Retreat and establish safety zone - wait for utility crew", "is_correct": true},
+      {"text": "Approach using wooden ladder to move wires", "is_correct": false, "feedback": "HERO TRAP! Live wires require utility intervention. DO NOT TOUCH!"},
+      {"text": "Tell driver to carefully exit the vehicle", "is_correct": false}
+    ],
+    "hazards": {"type": "Electrical Hazard/Safety", "action": "Wait for de-energization"}
+  },
+  {
+    "title": "HazMat Placard - Corrosive Material",
+    "category": "Operations",
+    "pcr_text": "Chemical truck leaking, placard shows test tubes with liquid. From distance, what does this indicate?",
+    "correct_error": "HazMat placard: test tubes with liquid = corrosive material per DOT regulations.",
+    "chaos_events": ["Fumes visible", "Ground contamination"],
+    "stress_fto_responses": ["Approach with care!", "Identify hazard!"],
+    "options": [
+      {"text": "Corrosive material - can burn skin and eyes, evacuate area", "is_correct": true},
+      {"text": "Flammable material - fire hazard", "is_correct": false, "feedback": "INCORRECT! Test tubes = corrosive. Requires HazMat response."},
+      {"text": "Toxic gas - respiratory hazard", "is_correct": false}
+    ],
+    "hazards": {"type": "Corrosive Material/Safety", "action": "Evacuate and wait for HazMat"}
+  },
+  {
+    "title": "PPE for Bloodborne Exposure",
+    "category": "Operations",
+    "pcr_text": "Major trauma with severe bleeding, unknown patient history. What is the minimum PPE required for blood exposure?",
+    "correct_error": "Bloodborne PPE: gloves mandatory, other items based on exposure risk per infection control protocols.",
+    "chaos_events": ["Arterial bleeding", "Blood spatter risk"],
     "stress_fto_responses": ["Gloves only!", "Full protection needed!"],
     "options": [
       {"text": "Non-sterile examination gloves - mandatory for blood contact", "is_correct": true},
@@ -126,163 +252,79 @@
     "hazards": {"type": "Bloodborne Pathogens/Safety", "action": "Standard precautions"}
   },
   {
-    "title": "Carbon Monoxide Poisoning - Scene Size-up",
-    "category": "Operations",
-    "pcr_text": "House fire extinguished, family complaining of headaches, nausea, cherry-red skin. Suspected CO poisoning. Should you enter or wait?",
-    "correct_error": "Carbon monoxide in enclosed space. Use CO monitor, enter with SCBA if needed per safety protocols.",
-    "chaos_events": ["Multiple symptomatic patients", "Smoke residue"],
-    "stress_fto_responses": ["Enter with masks!", "Monitor CO levels!"],
-    "options": [
-      {"text": "Monitor CO levels, enter with SCBA if >35 ppm", "is_correct": true},
-      {"text": "Enter immediately wearing surgical masks", "is_correct": false, "feedback": "INSUFFICIENT! CO requires SCBA for entry into potentially contaminated spaces."},
-      {"text": "Wait for fire department clearance", "is_correct": false}
-    ],
-    "hazards": {"type": "Carbon Monoxide/Safety", "action": "Monitor air quality"}
-  },
-  {
-    "title": "Hypothermia Stage III - Severe",
+    "title": "Environmental - Altitude Sickness",
     "category": "Environmental",
-    "pcr_text": "Elderly patient found unconscious in snow, core temp 78°F, rigid muscles, no shivering, appears dead. What stage?",
-    "correct_error": "Stage III hypothermia (severe): <86°F, unconscious, no shivering, appears dead but 'not dead until warm and dead' per environmental protocols.",
-    "chaos_events": ["Patient appears deceased", "Extreme cold"],
-    "stress_fto_responses": ["Patient is dead!", "Severe hypothermia - warm slowly!"],
+    "pcr_text": "Hiker at 14,000 feet with severe headache, confusion, ataxia. What is the immediate treatment?",
+    "correct_error": "High altitude cerebral edema: immediate descent is critical per environmental protocols.",
+    "chaos_events": ["Patient deteriorating rapidly", "High altitude"],
+    "stress_fto_responses": ["Give pain meds!", "Descend immediately!"],
     "options": [
-      {"text": "Stage III (severe) - unconscious, <86°F, 'not dead until warm and dead'", "is_correct": true},
-      {"text": "Stage II (moderate) - still conscious", "is_correct": false, "feedback": "INCORRECT! Unconscious with rigid muscles = Stage III hypothermia."},
-      {"text": "Patient is deceased - no resuscitation", "is_correct": false, "feedback": "CRITICAL ERROR! Severe hypothermia patients appear dead but can be resuscitated."}
+      {"text": "Immediate descent to lower altitude - descent is treatment", "is_correct": true},
+      {"text": "Administer oxygen and pain medication at altitude", "is_correct": false, "feedback": "INSUFFICIENT! Descent is the primary treatment for HACE."},
+      {"text": "Wait for helicopter evacuation", "is_correct": false}
     ],
-    "hazards": {"type": "Severe Hypothermia/Safety", "action": "Warm slowly, handle gently"}
+    "hazards": {"type": "High Altitude Cerebral Edema/Safety", "action": "Immediate descent"}
   },
   {
-    "title": "Electrical Fire - Don't Touch Rule",
+    "title": "MCI Cold Zone Setup",
     "category": "Operations",
-    "pcr_text": "Electrical panel fire in basement, arcing and sparking, smoke filling house. Should you enter or wait for fire department?",
-    "correct_error": "Live electrical fire with arcing. DO NOT ENTER - wait for fire department to de-energize per safety protocols.",
-    "chaos_events": ["Arcing electricity", "Smoke spreading"],
-    "stress_fto_responses": ["Enter with extinguishers!", "Wait for fire department!"],
+    "pcr_text": "Mass casualty incident at stadium. Where should the media and family reunification area be located?",
+    "correct_error": "MCI zone setup: cold zone contains support functions away from hazards per MCI protocols.",
+    "chaos_events": ["Multiple casualties", "Media gathering"],
+    "stress_fto_responses": ["Media in warm zone!", "Cold zone for support!"],
     "options": [
-      {"text": "Retreat and wait for fire department to secure electrical system", "is_correct": true},
-      {"text": "Enter using CO2 extinguisher on electrical fire", "is_correct": false, "feedback": "CRITICAL ERROR! Live electrical fires require power disconnection first. DO NOT ENTER!"},
-      {"text": "Approach from upwind side", "is_correct": false}
+      {"text": "Cold zone - away from hot zone hazards", "is_correct": true},
+      {"text": "Warm zone - near treatment area", "is_correct": false, "feedback": "INCORRECT! Cold zone is for support, away from incident hazards."},
+      {"text": "Hot zone - near the incident", "is_correct": false}
     ],
-    "hazards": {"type": "Electrical Fire/Safety", "action": "Wait for power disconnection"}
-  },
-  {
-    "title": "Heat Exhaustion vs Heat Stroke",
-    "category": "Environmental",
-    "pcr_text": "45-year-old runner, core temp 101°F, profuse sweating, dizziness, nausea but alert. Heat stroke or exhaustion?",
-    "correct_error": "Heat exhaustion: <104°F, sweating present, mental status normal per environmental protocols.",
-    "chaos_events": ["Patient sweating heavily", "Hot humid conditions"],
-    "stress_fto_responses": ["Heat stroke!", "Heat exhaustion - cool and hydrate!"],
-    "options": [
-      {"text": "Heat exhaustion - cool, hydrate, rest", "is_correct": true},
-      {"text": "Heat stroke - immediate ice water immersion required", "is_correct": false, "feedback": "INCORRECT! Sweating and normal mental status = heat exhaustion, not stroke."},
-      {"text": "Heat cramps - muscle spasms", "is_correct": false}
-    ],
-    "hazards": {"type": "Heat Exhaustion/Safety", "action": "Cool gradually, replace fluids"}
-  },
-  {
-    "title": "PPE for Suspected COVID-19",
-    "category": "Operations",
-    "pcr_text": "Patient with fever, cough, shortness of breath, recent travel history. Suspected COVID-19. What PPE is most critical for respiratory protection?",
-    "correct_error": "COVID-19 PPE: N95 mask essential for airborne protection per infection control protocols.",
-    "chaos_events": ["Patient coughing", "Close contact required"],
-    "stress_fto_responses": ["Surgical mask only!", "Full airborne precautions!"],
-    "options": [
-      {"text": "N95 respirator mask - required for airborne COVID-19 protection", "is_correct": true},
-      {"text": "Surgical mask - insufficient for COVID-19 protection", "is_correct": false, "feedback": "INSUFFICIENT! COVID-19 requires N95 for airborne protection."},
-      {"text": "Face shield only - misses respiratory protection", "is_correct": false}
-    ],
-    "hazards": {"type": "Airborne Virus/Safety", "action": "N95 mask mandatory"}
-  },
-  {
-    "title": "Drowning - Freshwater Submersion",
-    "category": "Environmental",
-    "pcr_text": "Child pulled from swimming pool, unconscious, clear frothy sputum, bradycardia. Freshwater or saltwater drowning?",
-    "correct_error": "Freshwater drowning: hypotonic fluid enters bloodstream causing hemodilution per drowning protocols.",
-    "chaos_events": ["Pool water aspiration", "Cardiac arrhythmias"],
-    "stress_fto_responses": ["Saltwater drowning!", "Freshwater hemodilution!"],
-    "options": [
-      {"text": "Freshwater drowning - fluid enters bloodstream causing hemodilution", "is_correct": true},
-      {"text": "Saltwater drowning - pulmonary edema", "is_correct": false, "feedback": "INCORRECT! Pool water is hypotonic - enters bloodstream causing fluid overload."},
-      {"text": "Secondary drowning - delayed pulmonary edema", "is_correct": false}
-    ],
-    "hazards": {"type": "Drowning/Safety", "action": "Monitor for 24 hours post-rescue"}
-  },
-  {
-    "title": "Propane Tank Leak - Don't Touch",
-    "category": "Operations",
-    "pcr_text": "Barbecue grill propane tank punctured, hissing gas leak, strong odor, ignition source nearby. Should you approach or wait for fire department?",
-    "correct_error": "Propane gas leak with ignition risk. DO NOT APPROACH - evacuate area and wait for fire department per safety protocols.",
-    "chaos_events": ["Gas leaking rapidly", "Nearby grill flame"],
-    "stress_fto_responses": ["Turn off the tank!", "Evacuate and wait!"],
-    "options": [
-      {"text": "Retreat to safe distance and wait for fire department HazMat team", "is_correct": true},
-      {"text": "Approach and attempt to turn off the tank valve", "is_correct": false, "feedback": "CRITICAL ERROR! Propane leaks are explosion hazards. DO NOT TOUCH!"},
-      {"text": "Move ignition sources away", "is_correct": false}
-    ],
-    "hazards": {"type": "Flammable Gas/Safety", "action": "Evacuate and wait for specialists"}
-  },
-  {
-    "title": "Frostbite Assessment",
-    "category": "Environmental",
-    "pcr_text": "55-year-old with white, hard, cold toes after being lost in snow. What degree of frostbite?",
-    "correct_error": "Deep frostbite: full-thickness tissue freezing, white/hard/cold, requires hospital thawing per environmental protocols.",
-    "chaos_events": ["Patient in severe pain", "Frozen extremities"],
-    "stress_fto_responses": ["Superficial frostbite!", "Deep frostbite - hospital!"],
-    "options": [
-      {"text": "Deep frostbite - full thickness, white/hard/cold, hospital required", "is_correct": true},
-      {"text": "Superficial frostbite - red/painful, can rewarm on scene", "is_correct": false, "feedback": "INCORRECT! White, hard, cold = deep frostbite requiring hospital care."},
-      {"text": "Frostnip - mild cold injury, no tissue damage", "is_correct": false}
-    ],
-    "hazards": {"type": "Frostbite/Safety", "action": "Do not rewarm deep frostbite on scene"}
+    "hazards": {"type": "MCI Zones/Safety", "action": "Support functions in cold zone"}
   },
   {
     "title": "PPE for Contact Precautions",
     "category": "Operations",
-    "pcr_text": "Patient with large draining wound infected with MRSA. What is the most important PPE for contact isolation?",
+    "pcr_text": "Patient with draining MRSA wound. What is the most important PPE for contact isolation?",
     "correct_error": "Contact precautions PPE: gloves and gown mandatory for MRSA protection per infection control protocols.",
     "chaos_events": ["Wound drainage", "Close contact care"],
-    "stress_fto_responses": ["Gloves only!", "Full gown and gloves!"],
+    "stress_fto_responses": ["Gloves only!", "Full gown required!"],
     "options": [
       {"text": "Isolation gown - required to prevent clothing contamination", "is_correct": true},
       {"text": "N95 respirator - not required for contact precautions", "is_correct": false, "feedback": "OVERKILL! MRSA is contact precaution, gown is essential."},
       {"text": "Face shield only - misses clothing protection", "is_correct": false}
     ],
-    "hazards": {"type": "Contact Infection/Safety", "action": "Gloves and gown mandatory"}
+    "hazards": {"type": "Contact MRSA/Safety", "action": "Gloves and gown mandatory"}
   },
   {
-    "title": "Scene Size-up - MVC with Fire",
+    "title": "Hero Trap - Water Rescue",
     "category": "Operations",
-    "pcr_text": "Two vehicle collision, one car on fire, patient trapped inside. Should you attempt rescue or wait for fire department?",
-    "correct_error": "Vehicle fire with trapped patient. DO NOT APPROACH - wait for fire department rescue per safety protocols.",
-    "chaos_events": ["Fire spreading", "Patient screaming"],
-    "stress_fto_responses": ["Break windows!", "Wait for fire department!"],
+    "pcr_text": "Swift water rescue, victim caught in current 50 feet from shore. Should you enter water to rescue?",
+    "correct_error": "Swift water hero trap. DO NOT ENTER - wait for water rescue team per safety protocols.",
+    "chaos_events": ["Victim struggling", "Strong current"],
+    "stress_fto_responses": ["Swim out to save!", "Wait for rescue team!"],
     "options": [
-      {"text": "Retreat and wait for fire department to extinguish and extricate", "is_correct": true},
-      {"text": "Approach with fire extinguisher to rescue patient", "is_correct": false, "feedback": "CRITICAL ERROR! Vehicle fires require fire department intervention. DO NOT ENTER!"},
-      {"text": "Pull patient out through window", "is_correct": false}
+      {"text": "Stage on shore and wait for water rescue specialists", "is_correct": true},
+      {"text": "Enter water with life jacket to rescue victim", "is_correct": false, "feedback": "HERO TRAP! Swift water requires specialized training and equipment. DO NOT ENTER!"},
+      {"text": "Throw rope from shore", "is_correct": false}
     ],
-    "hazards": {"type": "Vehicle Fire/Safety", "action": "Wait for fire department"}
+    "hazards": {"type": "Swift Water/Safety", "action": "Wait for specialized rescue"}
   },
   {
-    "title": "Lightning Strike Safety",
-    "category": "Environmental",
-    "pcr_text": "Group hiking during thunderstorm, one member struck by lightning, unconscious with burns. Should you approach or wait?",
-    "correct_error": "Lightning storm continues. Wait for 'all clear' before approaching - lightning can strike twice per safety protocols.",
-    "chaos_events": ["Ongoing thunderstorm", "Lightning flashes"],
-    "stress_fto_responses": ["Approach quickly!", "Wait for storm to pass!"],
+    "title": "HazMat Placard - Radioactive Material",
+    "category": "Operations",
+    "pcr_text": "Overturned truck with trefoil symbol placard. From safe distance, what hazard does this indicate?",
+    "correct_error": "HazMat placard: trefoil/radioactive symbol = radioactive material per DOT regulations.",
+    "chaos_events": ["Package damaged", "Radiation risk"],
+    "stress_fto_responses": ["Approach carefully!", "Identify hazard!"],
     "options": [
-      {"text": "Wait for thunderstorm to completely pass before approaching", "is_correct": true},
-      {"text": "Approach immediately using lightning rods for protection", "is_correct": false, "feedback": "CRITICAL ERROR! Lightning can strike same area twice. Wait for all clear."},
-      {"text": "Approach during pauses between lightning", "is_correct": false}
+      {"text": "Radioactive material - evacuate area and wait for specialists", "is_correct": true},
+      {"text": "Toxic material - can approach with PPE", "is_correct": false, "feedback": "INCORRECT! Trefoil = radioactive. Requires specialized response."},
+      {"text": "Flammable material - fire hazard", "is_correct": false}
     ],
-    "hazards": {"type": "Lightning/Safety", "action": "Wait for storm cessation"}
+    "hazards": {"type": "Radioactive Material/Safety", "action": "Evacuate and wait for specialists"}
   },
   {
     "title": "PPE for Droplet Precautions",
     "category": "Operations",
-    "pcr_text": "Patient with influenza-like symptoms, fever, cough, runny nose. What PPE is most important for droplet precautions?",
+    "pcr_text": "Patient with influenza symptoms, productive cough, fever. What PPE is most important for droplet precautions?",
     "correct_error": "Droplet precautions PPE: surgical mask essential for respiratory droplet protection per infection control protocols.",
     "chaos_events": ["Patient sneezing", "Respiratory secretions"],
     "stress_fto_responses": ["N95 required!", "Surgical mask sufficient!"],
@@ -291,76 +333,48 @@
       {"text": "N95 respirator - overkill for droplet precautions", "is_correct": false, "feedback": "OVERKILL! Surgical mask sufficient for droplet precautions."},
       {"text": "Gown only - misses respiratory protection", "is_correct": false}
     ],
-    "hazards": {"type": "Droplet Infection/Safety", "action": "Surgical mask mandatory"}
+    "hazards": {"type": "Droplet Influenza/Safety", "action": "Surgical mask mandatory"}
   },
   {
-    "title": "Hydrogen Sulfide Exposure - Don't Touch",
-    "category": "Operations",
-    "pcr_text": "Sewer work site with rotten egg odor, workers unconscious nearby. Suspected H2S exposure. Should you enter or wait for HazMat?",
-    "correct_error": "Hydrogen sulfide gas exposure. DO NOT ENTER - wait for HazMat with proper monitoring per safety protocols.",
-    "chaos_events": ["Strong odor", "Unconscious workers"],
-    "stress_fto_responses": ["Enter with SCBAs!", "Wait for HazMat team!"],
-    "options": [
-      {"text": "Retreat and wait for HazMat team with gas monitoring equipment", "is_correct": true},
-      {"text": "Enter wearing SCBA to rescue workers", "is_correct": false, "feedback": "OUT OF SCOPE! H2S requires specialized HazMat response. DO NOT ENTER!"},
-      {"text": "Approach from upwind to assess", "is_correct": false}
-    ],
-    "hazards": {"type": "Toxic Gas/Safety", "action": "Wait for specialized response"}
-  },
-  {
-    "title": "Cold Water Immersion",
+    "title": "Environmental - Frostbite Assessment",
     "category": "Environmental",
-    "pcr_text": "30-year-old fell through ice, 5 minutes in 32°F water, shivering violently, core temp 92°F. What immediate treatment?",
-    "correct_error": "Cold water immersion: remove wet clothes, warm gradually, monitor for secondary hypothermia per environmental protocols.",
-    "chaos_events": ["Patient shivering uncontrollably", "Cold water exposure"],
-    "stress_fto_responses": ["Warm aggressively!", "Remove wet clothes slowly!"],
+    "pcr_text": "Mountaineer with white, hard, insensate toes after avalanche. What degree of frostbite?",
+    "correct_error": "Deep frostbite: full-thickness freezing, white/hard/insensate per environmental protocols.",
+    "chaos_events": ["Severe pain", "Frozen extremities"],
+    "stress_fto_responses": ["Superficial frostbite!", "Deep frostbite - no rewarming!"],
     "options": [
-      {"text": "Remove wet clothes, warm with blankets, monitor temperature", "is_correct": true},
-      {"text": "Apply heating pads directly to skin", "is_correct": false, "feedback": "DANGEROUS! Direct heat can cause burns or cardiac arrest in hypothermic patients."},
-      {"text": "Give hot fluids to drink", "is_correct": false}
+      {"text": "Deep frostbite - do not rewarm on scene, hospital only", "is_correct": true},
+      {"text": "Superficial frostbite - rewarm with warm water", "is_correct": false, "feedback": "INCORRECT! White, hard, insensate = deep frostbite requiring hospital care."},
+      {"text": "Frostnip - mild cold injury, no tissue damage", "is_correct": false}
     ],
-    "hazards": {"type": "Cold Water Immersion/Safety", "action": "Warm gradually, prevent afterdrop"}
+    "hazards": {"type": "Deep Frostbite/Safety", "action": "No field rewarming"}
+  },
+  {
+    "title": "MCI Warm Zone Function",
+    "category": "Operations",
+    "pcr_text": "Hazardous material MCI. What is the EMT-B's role in the warm zone?",
+    "correct_error": "MCI warm zone: EMT-Bs provide care to decontaminated patients per HazMat protocols.",
+    "chaos_events": ["Patients being decontaminated", "Multiple casualties"],
+    "stress_fto_responses": ["Enter hot zone!", "Treat in warm zone!"],
+    "options": [
+      {"text": "Provide medical care to decontaminated patients", "is_correct": true},
+      {"text": "Perform decontamination procedures", "is_correct": false, "feedback": "INCORRECT! Decontamination is HazMat function. EMT-Bs treat post-decon."},
+      {"text": "Enter hot zone for rescues", "is_correct": false}
+    ],
+    "hazards": {"type": "MCI Zones/Safety", "action": "EMT-B in warm zone"}
   },
   {
     "title": "PPE for Standard Precautions",
     "category": "Operations",
-    "pcr_text": "Routine patient assessment, no known infectious conditions. What PPE is required when blood exposure is possible?",
+    "pcr_text": "Routine patient assessment with potential for body fluid exposure. What PPE is required when blood contact is expected?",
     "correct_error": "Standard precautions PPE: gloves mandatory when blood/body fluid contact expected per infection control protocols.",
-    "chaos_events": ["Routine assessment", "No known risks"],
-    "stress_fto_responses": ["Full PPE always!", "Gloves and mask minimum!"],
+    "chaos_events": ["Routine assessment", "Potential exposure"],
+    "stress_fto_responses": ["Full PPE always!", "Gloves minimum!"],
     "options": [
       {"text": "Non-sterile gloves - required for potential blood contact", "is_correct": true},
       {"text": "N95 respirator - not required for standard precautions", "is_correct": false, "feedback": "OVERKILL! Gloves sufficient for routine blood exposure risk."},
       {"text": "Full isolation gown - not required for standard precautions", "is_correct": false}
     ],
-    "hazards": {"type": "Standard Precautions/Safety", "action": "Basic barrier protection"}
-  },
-  {
-    "title": "Confined Space Rescue",
-    "category": "Operations",
-    "pcr_text": "Worker unconscious in underground tank, no respiratory equipment available. Should you attempt rescue or wait for specialists?",
-    "correct_error": "Confined space rescue required. DO NOT ENTER - wait for properly equipped rescue team per safety protocols.",
-    "chaos_events": ["Worker not breathing", "Confined space hazards"],
-    "stress_fto_responses": ["Enter to rescue!", "Wait for specialists!"],
-    "options": [
-      {"text": "Retreat and wait for confined space rescue team", "is_correct": true},
-      {"text": "Enter tank to perform rescue breathing", "is_correct": false, "feedback": "CRITICAL ERROR! Confined spaces require specialized training and equipment. DO NOT ENTER!"},
-      {"text": "Lower rope for self-rescue", "is_correct": false}
-    ],
-    "hazards": {"type": "Confined Space/Safety", "action": "Wait for specialized rescue"}
-  },
-  {
-    "title": "Altitude Sickness",
-    "category": "Environmental",
-    "pcr_text": "Hiker at 12,000 feet with headache, nausea, fatigue, mild confusion. Early altitude sickness or something else?",
-    "correct_error": "Acute mountain sickness: headache, nausea, fatigue at high altitude per environmental protocols.",
-    "chaos_events": ["High altitude", "Symptoms progressing"],
-    "stress_fto_responses": ["High altitude pulmonary edema!", "Acute mountain sickness!"],
-    "options": [
-      {"text": "Acute mountain sickness - descend immediately, oxygen if available", "is_correct": true},
-      {"text": "High altitude cerebral edema - severe confusion", "is_correct": false, "feedback": "INCORRECT! Mild confusion with headache/nausea = AMS, not HACE."},
-      {"text": "Heat exhaustion from exertion", "is_correct": false}
-    ],
-    "hazards": {"type": "Altitude Sickness/Safety", "action": "Descend to lower altitude"}
+    "hazards": {"type": "Standard Precautions/Safety", "action": "Task-specific PPE"}
   }
 ]
