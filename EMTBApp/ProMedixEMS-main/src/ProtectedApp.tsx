@@ -47,6 +47,7 @@ import EnhancedSearchBar from './components/EnhancedSearchBar';
 import { SearchResult } from './utils/search';
 import TacticalLayout from './layouts/TacticalLayout';
 import ClinicalLayout from './layouts/ClinicalLayout';
+import UWorldLayout from './components/layout/UWorldLayout';
 import { PrivacyPolicy, TermsOfService, MedicalDisclaimer, SupportCenter, ContactUs } from './components/LegalSupportPages';
 import LectureCompanion from './features/study/LectureCompanion';
 import HomeDashboard from './components/HomeDashboard';
