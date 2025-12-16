@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { BookOpen, ArrowRight, Layers, Compass, PlayCircle, Target, Lock } from 'lucide-react';
+import { BookOpen, ArrowRight, Layers, Compass, PlayCircle, Target, Lock, ChevronDown, ChevronUp } from 'lucide-react';
 import ProMedixLogo from './ProMedixLogo';
 import { GlassCard, ModernButton } from './ui/ModernGlassComponents';
 import EMTBStudyNotesEnhanced from './emtb/EMTBStudyNotesEnhanced';
@@ -151,6 +151,66 @@ const modules: ModuleDefinition[] = [
   }
 ];
 
+// All 47 chapters for the comprehensive dropdown
+const allChapters = [
+  { id: 'chapter1', title: 'Chapter 1 · EMS System Fundamentals', module: 'Foundations of EMS Practice' },
+  { id: 'chapter2', title: 'Chapter 2 · Responder Safety & Resilience', module: 'Foundations of EMS Practice' },
+  { id: 'chapter3', title: 'Chapter 3 · EMS Law & Ethical Practice', module: 'Foundations of EMS Practice' },
+  { id: 'chapter4', title: 'Chapter 4 · Emergency Communication Protocols', module: 'Foundations of EMS Practice' },
+  { id: 'chapter5', title: 'Chapter 5 · Medical Language for Responders', module: 'Clinical Foundations' },
+  { id: 'chapter6', title: 'Chapter 6 · Anatomy for Emergency Care', module: 'Clinical Foundations' },
+  { id: 'chapter7', title: 'Chapter 7 · Developmental Considerations in EMS', module: 'Clinical Foundations' },
+  { id: 'chapter8', title: 'Chapter 8 · Patient Movement & Handling', module: 'Clinical Foundations' },
+  { id: 'chapter9', title: 'Chapter 9 · Interprofessional EMS Teams', module: 'Clinical Foundations' },
+  { id: 'chapter10', title: 'Chapter 10 · Comprehensive Patient Evaluation', module: 'Patient Assessment Mastery' },
+  { id: 'chapter11', title: 'Chapter 11 · Advanced Airway Interventions', module: 'Airway & Ventilatory Management' },
+  { id: 'chapter12', title: 'Chapter 12 · Medication Administration Standards', module: 'Pharmacology for EMT-B' },
+  { id: 'chapter13', title: 'Chapter 13 · Shock Recognition & Management', module: 'Shock & Circulatory Management' },
+  { id: 'chapter14', title: 'Chapter 14 · BLS Life Support Protocols', module: 'Shock & Circulatory Management' },
+  { id: 'chapter15', title: 'Chapter 15 · Medical Crisis Assessment', module: 'Medical Emergency Response' },
+  { id: 'chapter16', title: 'Chapter 16 · Respiratory Emergency Protocols', module: 'Medical Emergency Response' },
+  { id: 'chapter17', title: 'Chapter 17 · Cardiovascular Emergency Management', module: 'Medical Emergency Response' },
+  { id: 'chapter18', title: 'Chapter 18 · Neurological Crisis Intervention', module: 'Neurologic & Systemic Emergencies' },
+  { id: 'chapter19', title: 'Chapter 19 · Abdominal Emergency Protocols', module: 'Neurologic & Systemic Emergencies' },
+  { id: 'chapter20', title: 'Chapter 20 · Metabolic & Hematologic Emergencies', module: 'Neurologic & Systemic Emergencies' },
+  { id: 'chapter21', title: 'Chapter 21 · Allergic & Anaphylactic Response', module: 'Specialized Emergency Care' },
+  { id: 'chapter22', title: 'Chapter 22 · Toxicological Emergencies', module: 'Specialized Emergency Care' },
+  { id: 'chapter23', title: 'Chapter 23 · Behavioral Crisis Protocols', module: 'Specialized Emergency Care' },
+  { id: 'chapter24', title: 'Chapter 24 · Gynecological Emergency Care', module: 'Specialized Emergency Care' },
+  { id: 'chapter25', title: 'Chapter 25 · Trauma System Fundamentals', module: 'Trauma Response Principles' },
+  { id: 'chapter26', title: 'Chapter 26 · Hemorrhage Control Techniques', module: 'Trauma Response Principles' },
+  { id: 'chapter27', title: 'Chapter 27 · Soft Tissue Trauma Management', module: 'Trauma Response Principles' },
+  { id: 'chapter28', title: 'Chapter 28 · Craniofacial Trauma Response', module: 'Traumatic Injury Management' },
+  { id: 'chapter29', title: 'Chapter 29 · Spinal Trauma Protocols', module: 'Traumatic Injury Management' },
+  { id: 'chapter30', title: 'Chapter 30 · Thoracic Injury Interventions', module: 'Traumatic Injury Management' },
+  { id: 'chapter31', title: 'Chapter 31 · Abdominal & GU Trauma Essentials', module: 'Environmental & Musculoskeletal Emergencies' },
+  { id: 'chapter32', title: 'Chapter 32 · Orthopedic Injury Management', module: 'Environmental & Musculoskeletal Emergencies' },
+  { id: 'chapter33', title: 'Chapter 33 · Environmental Exposure Protocols', module: 'Environmental & Musculoskeletal Emergencies' },
+  { id: 'chapter34', title: 'Chapter 34 · Obstetric & Neonatal Emergencies', module: 'Special Patient Populations' },
+  { id: 'chapter35', title: 'Chapter 35 · Pediatric Emergency Response', module: 'Special Patient Populations' },
+  { id: 'chapter36', title: 'Chapter 36 · Geriatric Emergency Care', module: 'Special Patient Populations' },
+  { id: 'chapter37', title: 'Chapter 37 · Patients with Unique Needs', module: 'Special Patient Populations' },
+  { id: 'chapter38', title: 'Chapter 38 · Medical Transport Operations', module: 'EMS Operations & Disaster Response' },
+  { id: 'chapter39', title: 'Chapter 39 · Technical Rescue Protocols', module: 'EMS Operations & Disaster Response' },
+  { id: 'chapter40', title: 'Chapter 40 · Incident Command Systems', module: 'EMS Operations & Disaster Response' },
+  { id: 'chapter41', title: 'Chapter 41 · Mass Casualty Incident Response', module: 'EMS Operations & Disaster Response' },
+  { id: 'chapter42', title: 'Chapter 42 · Advanced Cardiovascular Anatomy', module: 'Advanced Track' },
+  { id: 'chapter43', title: 'Chapter 43 · Advanced Respiratory Physiology', module: 'Advanced Track' },
+  { id: 'chapter44', title: 'Chapter 44 · Nervous System in Depth', module: 'Advanced Track' },
+  { id: 'chapter45', title: 'Chapter 45 · Endocrine & Metabolic Systems', module: 'Advanced Track' },
+  { id: 'bonus', title: 'BONUS · Cellular Structure & Function', module: 'Body Systems Primer' },
+  { id: 'bodySystem2', title: 'BONUS · Tissues & Organs', module: 'Body Systems Primer' },
+  { id: 'bodySystem3', title: 'BONUS · Skeletal System', module: 'Body Systems Primer' },
+  { id: 'bodySystem4', title: 'BONUS · Muscular System', module: 'Body Systems Primer' },
+  { id: 'bodySystem5', title: 'BONUS · Cardiovascular System', module: 'Body Systems Primer' },
+  { id: 'bodySystem6', title: 'BONUS · Respiratory System', module: 'Body Systems Primer' },
+  { id: 'bodySystem7', title: 'BONUS · Nervous System', module: 'Body Systems Primer' },
+  { id: 'bodySystem8', title: 'BONUS · Endocrine System', module: 'Body Systems Primer' },
+  { id: 'bodySystem9', title: 'BONUS · Digestive System', module: 'Body Systems Primer' },
+  { id: 'bodySystem10', title: 'BONUS · Urinary System', module: 'Body Systems Primer' },
+  { id: 'bonus2', title: 'BONUS · ALS Integration & Team Dynamics', module: 'Body Systems Primer' }
+];
+
 const enhancementModules: ModuleDefinition[] = [
   {
     id: 'moduleBonusClinical',
@@ -190,6 +250,7 @@ const enhancementModules: ModuleDefinition[] = [
 export const StudyNotesOverview: React.FC = () => {
   const { user } = useAuth();
   const [showUnlockModal, setShowUnlockModal] = React.useState(false);
+  const [showAllChaptersDropdown, setShowAllChaptersDropdown] = useState(false);
 
   const getChapterNumber = (chapterId: string) => {
     const match = chapterId.match(/chapter(\d+)/);
@@ -227,6 +288,56 @@ export const StudyNotesOverview: React.FC = () => {
           </p>
         </div>
       </header>
+
+      {/* All Chapters Dropdown */}
+      <section className="bg-slate-800/60 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h2 className="text-xl font-semibold text-white">All Study Notes Chapters</h2>
+            <p className="text-sm text-slate-300 mt-1">Direct access to all 47 chapters of comprehensive study content</p>
+          </div>
+          <button
+            onClick={() => setShowAllChaptersDropdown(!showAllChaptersDropdown)}
+            className="flex items-center gap-2 px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg transition-colors"
+          >
+            {showAllChaptersDropdown ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            {showAllChaptersDropdown ? 'Hide Chapters' : 'Show All Chapters'}
+          </button>
+        </div>
+
+        {showAllChaptersDropdown && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
+            {allChapters.map((chapter) => {
+              const locked = isLocked(chapter.id);
+              return locked ? (
+                <div
+                  key={chapter.id}
+                  onClick={handleLockedClick}
+                  className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-gray-600 bg-gray-700/50 cursor-pointer hover:bg-gray-600/50 transition-colors"
+                >
+                  <div>
+                    <span className="text-sm text-gray-300 block">{chapter.title}</span>
+                    <span className="text-xs text-gray-400">{chapter.module}</span>
+                  </div>
+                  <Lock className="w-4 h-4 text-gray-400" />
+                </div>
+              ) : (
+                <Link
+                  to={`/study-notes/chapter/${chapter.id}`}
+                  key={chapter.id}
+                  className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-gray-600 hover:border-cyan-400 hover:bg-cyan-900/30 transition-colors"
+                >
+                  <div>
+                    <span className="text-sm text-gray-200 block">{chapter.title}</span>
+                    <span className="text-xs text-gray-400">{chapter.module}</span>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-cyan-400" />
+                </Link>
+              );
+            })}
+          </div>
+        )}
+      </section>
 
       <section className="bg-slate-800/60 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
