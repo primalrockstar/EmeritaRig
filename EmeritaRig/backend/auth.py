@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path="../.env")
+# Load environment variables from .env file in the same directory as main.py
+load_dotenv()
 
 import bcrypt
 from datetime import datetime, timedelta
@@ -12,7 +13,9 @@ from sqlalchemy.orm import Session
 from .database import SessionLocal
 from .models import User
 
-SECRET_KEY = os.getenv("SECRET_KEY", "CHANGE_THIS_IN_PROD")
+SECRET_KEY = os.getenv("SECRET_KEY")
+if not SECRET_KEY:
+    raise ValueError("SECRET_KEY environment variable must be set")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 120
 REFRESH_TOKEN_EXPIRE_DAYS = 7

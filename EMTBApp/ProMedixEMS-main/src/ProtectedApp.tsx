@@ -117,7 +117,7 @@ const UltraModernHeader = () => {
         {isMobileMenuOpen && (
           <nav className="px-4 pb-4 space-y-2 text-slate-800 dark:text-slate-100">
             {[
-              { label: 'Study Notes (45 Chapters)', path: '/study-notes', icon: BookOpen },
+              { label: 'Study Notes (45 Chapters)', path: '/study', icon: BookOpen },
               { label: 'Chapter Flashcards', path: '/flashcards', icon: Brain },
               { label: 'EMT-B Medications', path: '/medications', icon: Stethoscope },
               { label: 'Medical Calculators', path: '/tools', icon: Calculator },
@@ -625,7 +625,7 @@ const ProtocolsPage: React.FC = () => (
 );
 
 const FlashcardsPage: React.FC = () => (
-  <TacticalLayout title="FLASHCARD HUD">
+  <TacticalLayout>
     <div className="min-h-screen bg-slate-900">
       <div className="max-w-7xl mx-auto p-6">
         <div className="mb-6">
@@ -641,7 +641,7 @@ const FlashcardsPage: React.FC = () => (
 );
 
 const CalculatorsPage: React.FC = () => (
-  <TacticalLayout title="CALCULATORS HUB">
+  <TacticalLayout>
     <div className="min-h-screen bg-slate-900">
       <div className="max-w-7xl mx-auto p-6">
         <div className="mb-6">
@@ -667,7 +667,7 @@ const SkillsPracticePage: React.FC = () => (
 );
 
 const MedicationsPage: React.FC = () => (
-  <TacticalLayout title="MEDICATIONS DATABASE">
+  <TacticalLayout>
     <div className="min-h-screen bg-slate-900">
       <div className="max-w-7xl mx-auto p-6">
         <div className="mb-6">
@@ -912,9 +912,10 @@ const AuthenticatedApp: React.FC = () => {
           <Route path="/admin" element={<RequireRole role="admin"><InstructorDashboard /></RequireRole>} />
           {/* Temporarily bypass auth for testing */}
           <Route path="/*" element={<UWorldLayout><Routes>
-            <Route path="/" element={<UltraModernDashboard />} />
-            <Route path="/today" element={<UltraModernDashboard />} />
+            <Route path="/" element={<HomeDashboard />} />
+            <Route path="/today" element={<HomeDashboard />} />
             <Route path="/dashboard" element={<UltraModernDashboard />} />
+            <Route path="/study-notes" element={<StudyMaterialsPage />} />
             <Route path="/search" element={<SearchResultsPage />} />
             <Route path="/enhanced-quiz" element={<ClinicalLayout title="NREMT EMT-Basic Certification Exam"><EnhancedQuizPage /></ClinicalLayout>} />
             <Route path="/voice-transcriber" element={<VoiceTranscriberPage />} />

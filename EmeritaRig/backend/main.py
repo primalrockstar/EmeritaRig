@@ -63,9 +63,10 @@ def create_admin_user():
     db = SessionLocal()
     try:
         # Check if admin user exists
-        admin_email = "admin@emeritaclinical.com"
+        admin_email = os.getenv("ADMIN_EMAIL", "admin@emeritaclinical.com")
+        admin_password = os.getenv("ADMIN_PASSWORD", "CHANGE_THIS_IN_PROD")
         existing_admin = db.query(User).filter(User.email == admin_email).first()
-        hashed_password = get_password_hash("Fdd1FU1cH58e3T0_z05xkA")
+        hashed_password = get_password_hash(admin_password)
         if not existing_admin:
             # Create admin user
             admin_user = User(
