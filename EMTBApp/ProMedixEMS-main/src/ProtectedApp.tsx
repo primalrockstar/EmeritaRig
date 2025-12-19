@@ -63,6 +63,7 @@ import FieldManual from './components/study/FieldManual';
 import ChapterReader from './components/study/ChapterReader';
 import TopStatusBar from './components/layout/TopStatusBar';
 import BottomDock from './components/layout/BottomDock';
+import DispatchTicket from './components/dashboard/DispatchTicket';
 
 // Enhanced Ultra-Modern Header with Glass Morphism
 const UltraModernHeader = () => {
@@ -343,14 +344,12 @@ const UltraModernDashboard: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pb-20 space-y-12">
         <section className="text-center space-y-6">
-          <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-blue-300 bg-white text-xs font-semibold tracking-[0.2em] text-blue-700 shadow-sm">
-            THE RIG EMT-B
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-900 leading-tight">
-            A Modern Learning Companion for the<br/>Next Generation of EMTs
+
+          <h1 className="text-3xl md:text-4xl font-bold text-neon-500 font-mono tracking-wider">
+            ACTIVE CALLS
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-            THE RIG EMT-B is a focused, high-performance learning platform built to help Emergency Medical Technician students master the fundamentals with clarity, confidence, and real-world readiness.
+          <p className="text-slate-400 font-mono text-sm">
+            PRIORITY DISPATCH • UNIT RIG-1
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
              <div className="px-4 py-2 bg-blue-50 rounded-lg text-blue-700 text-sm font-medium">45 Chapters of Study Notes</div>
@@ -359,47 +358,35 @@ const UltraModernDashboard: React.FC = () => {
           </div>
         </section>
 
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {highlightSections.map((item) => {
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.title}
-                to={item.to}
-                className="group block h-full"
-              >
-                <div className={`h-full bg-white border border-blue-100 rounded-3xl shadow-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(37,99,235,0.25)] hover:border-blue-300 ${item.accent}`}>
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-2xl bg-blue-50 p-3 shadow-inner">
-                      <Icon className={`w-6 h-6 ${item.iconColor}`} />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-semibold text-blue-900 group-hover:text-blue-600 transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-slate-600">
-                        {item.description}
-                      </p>
-                      <ul className="space-y-1 text-sm text-slate-500">
-                        {item.includes.map((include) => (
-                          <li key={include} className="flex items-center gap-2">
-                            <CheckSquare className="w-4 h-4 text-blue-500" />
-                            <span>{include}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="mt-6 inline-flex items-center text-sm font-semibold text-blue-600">
-                    Explore module
-                    <svg className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
+        <section className="space-y-4">
+          <DispatchTicket
+            id="001"
+            type="Scenario"
+            title="CHEST PAIN - 54M - RESIDENTIAL"
+            status="Pending"
+            priority="High"
+          />
+          <DispatchTicket
+            id="002"
+            type="Quiz"
+            title="NREMT PRACTICE EXAM - MODULE 3"
+            status="Pending"
+            priority="Medium"
+          />
+          <DispatchTicket
+            id="003"
+            type="Scenario"
+            title="RESPIRATORY DISTRESS - 28F - COMMERCIAL"
+            status="Complete"
+            priority="High"
+          />
+          <DispatchTicket
+            id="004"
+            type="Quiz"
+            title="MEDICATION CALCULATIONS - EMT-B"
+            status="Pending"
+            priority="Low"
+          />
         </section>
 
         {/* Mission & Why Choose Section */}
