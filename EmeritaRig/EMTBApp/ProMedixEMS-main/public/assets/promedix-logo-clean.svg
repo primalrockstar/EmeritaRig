@@ -1,0 +1,47 @@
+<!-- ProMedix EMS Logo - Clean transparent version -->
+<svg width="460" height="295" viewBox="0 0 460 295" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Medical cross gradients -->
+    <linearGradient id="lightBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5DADE2"/>
+      <stop offset="100%" style="stop-color:#3498DB"/>
+    </linearGradient>
+    <linearGradient id="darkBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C3E50"/>
+      <stop offset="100%" style="stop-color:#1B2631"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Medical Cross Symbol -->
+  <g transform="translate(75, 147)">
+    <!-- Outer cross - light blue -->
+    <rect x="-8" y="-35" width="16" height="70" fill="url(#lightBlueGrad)" rx="3"/>
+    <rect x="-35" y="-8" width="70" height="16" fill="url(#lightBlueGrad)" rx="3"/>
+    
+    <!-- Inner cross - dark blue -->
+    <rect x="-5" y="-25" width="10" height="50" fill="url(#darkBlueGrad)" rx="2"/>
+    <rect x="-25" y="-5" width="50" height="10" fill="url(#darkBlueGrad)" rx="2"/>
+    
+    <!-- Heartbeat line -->
+    <path d="M-30,-3 L-20,-3 L-15,8 L-10,-15 L-5,8 L0,-3 L30,-3" 
+          stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- ProMedix Text -->
+  <g transform="translate(170, 180)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#2C3E50">
+      ProMedix
+    </text>
+  </g>
+  
+  <!-- EMS Text -->
+  <g transform="translate(380, 180)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="48" font-weight="300" fill="#3498DB">
+      EMS
+    </text>
+    <!-- TM symbol -->
+    <text x="85" y="-25" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#3498DB">
+      ™
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+PyJWT
+bcrypt
+stripe
+python-dotenv
+slowapi
+prometheus-fastapi-instrumentator
+pydantic

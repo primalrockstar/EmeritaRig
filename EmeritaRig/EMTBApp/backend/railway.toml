@@ -1,0 +1,16 @@
+[build]
+builder = "dockerfile"
+
+[deploy]
+startCommand = "./start.sh"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+
+# Environment variables to set in Railway dashboard:
+# DATABASE_URL
+# SECRET_KEY
+# ALGORITHM
+# STRIPE_API_KEY
+# STRIPE_WEBHOOK_SECRET
+# ALLOWED_ORIGINS

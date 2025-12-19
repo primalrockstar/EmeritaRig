@@ -1,0 +1,64 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'backend/**' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'backend/**' ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        cd backend
+        pip install flake8
+    - name: Lint with flake8
+      run: |
+        cd backend
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        cd EMTBApp/backend
+        pip install -r requirements.txt
+    - name: Run tests
+      run: |
+        cd EMTBApp/backend
+        pytest --cov=. --cov-report=xml
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    if: github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build Docker image
+      run: |
+        cd backend
+        docker build -t emtb-backend:${{ github.sha }} .
+    - name: Install Railway CLI
+      run: curl -fsSL https://railway.app/install.sh | sh
+    - name: Deploy to Railway
+      run: |
+        cd backend
+        railway deploy --service emtb-backend
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
