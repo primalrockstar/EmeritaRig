@@ -61,6 +61,8 @@ import DebugScenarios from './components/DebugScenarios';
 import SimpleDebugScenarios from './components/SimpleDebugScenarios';
 import FieldManual from './components/study/FieldManual';
 import ChapterReader from './components/study/ChapterReader';
+import TopStatusBar from './components/layout/TopStatusBar';
+import BottomDock from './components/layout/BottomDock';
 
 // Enhanced Ultra-Modern Header with Glass Morphism
 const UltraModernHeader = () => {
@@ -335,11 +337,9 @@ const resourceLinks = [
 
 const UltraModernDashboard: React.FC = () => {
   return (
-    <main className="pt-24 min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 relative overflow-hidden text-slate-800">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-20 -left-24 h-[32rem] w-[32rem] rounded-full bg-blue-200/40 blur-3xl animate-pulse" />
-        <div className="absolute bottom-[-12rem] right-[-6rem] h-[36rem] w-[36rem] rounded-full bg-blue-100/50 blur-3xl animate-pulse animation-delay-2000" />
-      </div>
+    <>
+      <TopStatusBar />
+      <main className="pt-16 pb-24 min-h-screen bg-slate-950 text-slate-200 scanlines relative overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pb-20 space-y-12">
         <section className="text-center space-y-6">
@@ -562,6 +562,8 @@ const UltraModernDashboard: React.FC = () => {
         </footer>
       </div>
     </main>
+    <BottomDock />
+    </>
   );
 };
 
