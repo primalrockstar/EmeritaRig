@@ -282,7 +282,6 @@ const PatientAssessmentPracticeModule: React.FC = () => {
 };
 
 export default PatientAssessmentPracticeModule;
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Scenario Bank</h2>
           <span className="text-xs text-gray-500">{enhancedAssessmentScenarios.length} total</span>
         </div>
 
