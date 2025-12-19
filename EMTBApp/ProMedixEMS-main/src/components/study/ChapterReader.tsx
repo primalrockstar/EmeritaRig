@@ -259,7 +259,16 @@ const ChapterReader: React.FC = () => {
           <div className="text-center space-y-4">
             <AlertTriangle className="w-16 h-16 text-amber-400 mx-auto" />
             <h1 className="text-2xl font-bold text-slate-200">Chapter Not Found</h1>
-            <p className="text-slate-400">The requested chapter could not be located.</p>
+            <div className="text-slate-400 space-y-2">
+              <p>The requested chapter could not be located.</p>
+              <div className="bg-slate-800 p-4 rounded text-left text-sm">
+                <p><strong>Debug Info:</strong></p>
+                <p>URL Parameter: {chapterId}</p>
+                <p>Parsed Chapter ID: {chapterNum}</p>
+                <p>Curriculum Data Found: {curriculumData ? 'Yes' : 'No'}</p>
+                <p>Study Data Found: {studyData ? 'Yes' : 'No'}</p>
+              </div>
+            </div>
             <Link
               to="/study-notes"
               className="inline-flex items-center px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded transition-colors"
