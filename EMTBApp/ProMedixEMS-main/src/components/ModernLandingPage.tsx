@@ -18,12 +18,9 @@ import {
   TrendingUp
 } from 'lucide-react';
 import ProMedixLogo from './ProMedixLogo';
-import { 
-  GlassCard, 
-  GradientBackground, 
-  ModernButton, 
-  FloatingActionButton,
-  GlassProgressBar
+import {
+  GlassCard,
+  ModernButton
 } from './ui/ModernGlassComponents';
 import ModernFooter from './ModernFooter';
 
@@ -122,93 +119,58 @@ const ModernLandingPage: React.FC<ModernLandingPageProps> = ({ onGetStarted }) =
   ];
 
   return (
-    <div className="min-h-screen overflow-hidden">
+    <div className="min-h-screen overflow-hidden bg-slate-900">
       {/* Clinical Background */}
-      <GradientBackground 
-        variant="blue" 
-        intensity="subtle" 
-        animated 
-        className="min-h-screen"
-      >
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center px-6 py-16">
-          <div className={`relative w-full max-w-5xl mx-auto text-center transform transition-all duration-1000 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <div className="bg-white/90 backdrop-blur-md border border-blue-100 shadow-2xl rounded-3xl px-8 md:px-14 py-14">
-              {/* Logo */}
-              <div className="mb-8">
-                <ProMedixLogo 
-                  variant="landing" 
-                  size="2xl" 
-                  animated 
-                  className="mx-auto"
-                />
-              </div>
+        <header className="hero relative overflow-hidden min-h-[80vh] flex items-center justify-center text-center px-6">
 
-              {/* Hero Text */}
-              <div className="space-y-6 mb-12">
-                <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-                  Premium EMS Education
-                  <span className="block text-3xl md:text-4xl font-semibold text-blue-600 mt-2">
-                    Built for Clinical Excellence
-                  </span>
-                </h1>
-                
-                <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                  A clinically polished learning experience: evidence-based modules, clinical calculators,
-                  and interactive scenarios crafted for EMT-B professionals.
-                </p>
-              </div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-neon-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14">
-                <ModernButton
-                  variant="gradient"
-                  size="lg"
-                  onClick={handleGetStarted}
-                  icon={<Play className="w-5 h-5" />}
-                  className="shadow-lg"
-                >
-                  Start Learning Now
-                </ModernButton>
-                
-                <Link to="/chapters" className="w-full sm:w-auto">
-                  <ModernButton
-                    variant="glass"
-                    size="lg"
-                    icon={<BookOpen className="w-5 h-5" />}
-                    className="w-full"
-                  >
-                    Browse Curriculum
-                  </ModernButton>
-                </Link>
-              </div>
+          <div className="relative z-10 max-w-3xl mx-auto space-y-8">
 
-              {/* Stats */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <GlassCard className="p-6 bg-white/80" intensity="light" hoverable={false}>
-                  <div className="text-3xl font-bold text-blue-600 mb-2">
-                    {stats.students.toLocaleString()}+
-                  </div>
-                  <div className="text-gray-600">Clinicians Trained</div>
-                </GlassCard>
-                <GlassCard className="p-6 bg-white/80" intensity="light" hoverable={false}>
-                  <div className="text-3xl font-bold text-emerald-600 mb-2">
-                    {stats.courses}
-                  </div>
-                  <div className="text-gray-600">Structured Chapters</div>
-                </GlassCard>
-                <GlassCard className="p-6 bg-white/80" intensity="light" hoverable={false}>
-                  <div className="text-3xl font-bold text-purple-600 mb-2">
-                    {stats.success}%
-                  </div>
-                  <div className="text-gray-600">Learner Satisfaction</div>
-                </GlassCard>
-              </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-500/30 bg-neon-500/10 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <span className="w-2 h-2 rounded-full bg-neon-500 animate-pulse"></span>
+              <span className="text-xs font-mono font-bold text-neon-400 tracking-wider uppercase">System Online • v1.0</span>
             </div>
+
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white leading-tight">
+              The Only Simulator <br />
+              That <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-400 to-teal-300">Listens.</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              Stop clicking "C". Start treating patients. <br className="hidden md:block" />
+              With <strong>Voice-Activated PCR</strong> and an <strong>Adaptive Scenario Engine</strong>,
+              you won't just pass the NREMT—you'll hit the street ready.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <a href="https://app.rigemt.com/register" className="w-full sm:w-auto px-8 py-4 bg-neon-500 hover:bg-neon-400 text-slate-950 font-bold rounded-lg transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+                Start Training Free
+              </a>
+              <a href="#features" className="w-full sm:w-auto px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg border border-slate-700 hover:border-neon-500/50 transition-all">
+                See The Tech
+              </a>
+            </div>
+
+            <div className="pt-8 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-mono text-gray-500 uppercase tracking-widest">
+              <span className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-neon-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                254 Scenarios
+              </span>
+              <span className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-neon-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                Voice PCR
+              </span>
+              <span className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-neon-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                NREMT Aligned
+              </span>
+            </div>
+
           </div>
-        </section>
+        </header>
 
         {/* Features Section */}
         <section className="py-20 px-6">
@@ -265,21 +227,27 @@ const ModernLandingPage: React.FC<ModernLandingPageProps> = ({ onGetStarted }) =
                         <span>EMT-B Fundamentals</span>
                         <span>92%</span>
                       </div>
-                      <GlassProgressBar progress={92} color="blue" />
+                      <div className="w-full bg-slate-700 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{width: '92%'}}></div>
+                      </div>
                     </div>
                     <div>
                       <div className="flex justify-between text-sm font-medium mb-2">
                         <span>Patient Assessment</span>
                         <span>78%</span>
                       </div>
-                      <GlassProgressBar progress={78} color="emerald" />
+                      <div className="w-full bg-slate-700 rounded-full h-2">
+                        <div className="bg-emerald-500 h-2 rounded-full" style={{width: '78%'}}></div>
+                      </div>
                     </div>
                     <div>
                       <div className="flex justify-between text-sm font-medium mb-2">
                         <span>Emergency Procedures</span>
                         <span>85%</span>
                       </div>
-                      <GlassProgressBar progress={85} color="purple" />
+                      <div className="w-full bg-slate-700 rounded-full h-2">
+                        <div className="bg-purple-500 h-2 rounded-full" style={{width: '85%'}}></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -346,7 +314,7 @@ const ModernLandingPage: React.FC<ModernLandingPageProps> = ({ onGetStarted }) =
               </p>
               <ModernButton
                 variant="gradient"
-                size="xl"
+                size="lg"
                 onClick={handleGetStarted}
                 icon={<ArrowRight className="w-6 h-6" />}
                 className="animate-pulse-glow"
@@ -356,20 +324,19 @@ const ModernLandingPage: React.FC<ModernLandingPageProps> = ({ onGetStarted }) =
             </GlassCard>
           </div>
         </section>
-      </GradientBackground>
+      </div>
 
       {/* Modern Footer */}
       <ModernFooter />
 
       {/* Floating Action Button */}
-      <FloatingActionButton
-        position="bottom-right"
-        size="lg"
+      <button
         onClick={handleGetStarted}
-        ariaLabel="Get Started"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-neon-500 hover:bg-neon-400 text-slate-950 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center z-50"
+        aria-label="Get Started"
       >
         <ArrowRight className="w-6 h-6" />
-      </FloatingActionButton>
+      </button>
     </div>
   );
 };
