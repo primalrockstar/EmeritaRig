@@ -916,6 +916,7 @@ const AuthenticatedApp: React.FC = () => {
             <Route path="/today" element={<HomeDashboard />} />
             <Route path="/dashboard" element={<UltraModernDashboard />} />
             <Route path="/study-notes" element={<StudyMaterialsPage />} />
+            <Route path="/study-notes/chapter/:chapterId" element={<ChapterReader />} />
             <Route path="/search" element={<SearchResultsPage />} />
             <Route path="/enhanced-quiz" element={<ClinicalLayout title="NREMT EMT-Basic Certification Exam"><EnhancedQuizPage /></ClinicalLayout>} />
             <Route path="/voice-transcriber" element={<VoiceTranscriberPage />} />
