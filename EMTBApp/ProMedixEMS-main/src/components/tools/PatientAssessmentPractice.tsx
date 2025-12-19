@@ -207,12 +207,81 @@ const PatientAssessmentPracticeModule: React.FC = () => {
   }
 
   return (
-    <div
-      className="grid grid-cols-1 lg:grid-cols-5 gap-6"
-      style={isChaosMode ? { boxShadow: 'inset 0 0 50px rgba(220, 38, 38, 0.2)' } : {}}
-    >
-      <div className="lg:col-span-2 space-y-4">
+    <div className="min-h-screen bg-slate-950 text-slate-200 font-mono">
+      {/* Comms Stream Header */}
+      <div className="border-b border-slate-800 p-4">
         <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-neon-500 font-bold text-lg">COMMS STREAM</h1>
+            <p className="text-slate-400 text-sm">UNIT RIG-1 • {scenario?.title}</p>
+          </div>
+          <div className="text-right">
+            <div className="text-xs text-slate-500">STATUS</div>
+            <div className="text-neon-400 font-bold">ACTIVE</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Message History */}
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 max-h-[calc(100vh-300px)]">
+        {/* System Messages */}
+        <div className="flex gap-3">
+          <div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-300">
+            D
+          </div>
+          <div className="flex-1">
+            <div className="text-xs text-slate-500 mb-1">DISPATCH • {new Date().toLocaleTimeString()}</div>
+            <div className="bg-slate-800 rounded-lg p-3 text-slate-200">
+              {scenario?.initialPresentation.dispatch}
+            </div>
+          </div>
+        </div>
+
+        {/* User Actions */}
+        {Array.from(completedSteps).map((stepId, index) => {
+          const step = assessmentStepTemplates.find(s => s.id === stepId);
+          return (
+            <div key={stepId} className="flex gap-3 justify-end">
+              <div className="flex-1 max-w-md">
+                <div className="text-xs text-slate-500 mb-1 text-right">YOU • {new Date().toLocaleTimeString()}</div>
+                <div className="bg-neon-500 rounded-lg p-3 text-slate-900 font-semibold">
+                  ✓ {step?.name} completed
+                </div>
+              </div>
+              <div className="w-8 h-8 rounded-full bg-neon-500 flex items-center justify-center text-xs font-bold text-slate-900">
+                Y
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Action Input Area */}
+      <div className="border-t border-slate-800 p-4">
+        <div className="space-y-3">
+          <div className="text-sm text-slate-400">SELECT NEXT ACTION:</div>
+          <div className="grid grid-cols-1 gap-2">
+            {assessmentStepTemplates
+              .filter(step => !completedSteps.has(step.id))
+              .slice(0, 3)
+              .map((step) => (
+                <button
+                  key={step.id}
+                  onClick={() => handleToggleStep(step)}
+                  className="w-full p-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-neon-500 rounded-lg text-left transition-all duration-200 hover:shadow-lg hover:shadow-neon-500/20"
+                >
+                  <div className="text-neon-400 font-bold text-sm mb-1">{step.name.toUpperCase()}</div>
+                  <div className="text-slate-300 text-sm">{step.description}</div>
+                </button>
+              ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PatientAssessmentPracticeModule;
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Scenario Bank</h2>
           <span className="text-xs text-gray-500">{enhancedAssessmentScenarios.length} total</span>
         </div>
