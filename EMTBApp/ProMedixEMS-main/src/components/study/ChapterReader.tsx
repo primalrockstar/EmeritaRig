@@ -84,7 +84,7 @@ interface ChapterData {
 }
 
 const ChapterReader: React.FC = () => {
-  const { chapterId } = useParams<{ chapterId: string }>();
+  const { moduleId, chapterId } = useParams<{ moduleId: string; chapterId: string }>();
   // Handle both "ch-X" format and numeric format
   const chapterNum = chapterId ?
     (chapterId.startsWith('ch-') ? parseInt(chapterId.substring(3)) : parseInt(chapterId))
@@ -309,7 +309,7 @@ const ChapterReader: React.FC = () => {
           <div className="max-w-6xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               <Link
-                to="/study-notes"
+                to="/study/field-manual"
                 className="flex items-center space-x-2 text-amber-400 hover:text-amber-300 transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
@@ -513,7 +513,7 @@ const ChapterReader: React.FC = () => {
             <footer className="border-t border-slate-700 pt-8 mt-12">
               <div className="flex items-center justify-between">
                 <Link
-                  to="/study-notes"
+                  to="/study/field-manual"
                   className="flex items-center space-x-2 text-slate-400 hover:text-amber-400 transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />

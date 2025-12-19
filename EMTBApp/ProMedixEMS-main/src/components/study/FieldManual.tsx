@@ -64,7 +64,7 @@ const FieldManual: React.FC = () => {
                         {chapters.filter(chapter => chapter.moduleId === module.id).map((chapter) => (
                           <Link
                             key={chapter.id}
-                            to={`/study-notes/${chapter.id}`}
+                            to={`/study/field-manual/${module.id}/${chapter.id}`}
                             className="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700/30 hover:text-amber-400 transition-colors border-l-2 border-transparent hover:border-amber-500"
                           >
                             {chapter.title}
@@ -109,7 +109,7 @@ const FieldManual: React.FC = () => {
                             {chapters.filter(chapter => chapter.moduleId === module.id).map((chapter) => (
                               <Link
                                 key={chapter.id}
-                                to={`/study-notes/${chapter.id}`}
+                                to={`/study/field-manual/${module.id}/${chapter.id}`}
                                 className="block px-4 py-2 text-sm text-amber-200 hover:bg-amber-500/20 hover:text-amber-100 transition-colors border-l-2 border-transparent hover:border-amber-400"
                               >
                                 {chapter.title}
@@ -155,7 +155,7 @@ const FieldManual: React.FC = () => {
                         {chapters.filter(chapter => chapter.moduleId === selectedModule.id).map((chapter, index) => (
                           <Link
                             key={chapter.id}
-                            to={`/study-notes/${chapter.id}`}
+                            to={`/study/field-manual/${module.id}/${chapter.id}`}
                             className="flex items-center justify-between p-3 bg-slate-700/50 hover:bg-slate-700 border border-slate-600 rounded-lg hover:border-amber-500/50 transition-colors group"
                           >
                             <div className="flex items-center space-x-3">
@@ -192,7 +192,7 @@ const FieldManual: React.FC = () => {
 
                   <div className="pt-4 border-t border-slate-700">
                     <Link
-                      to={`/study-notes/${chapters.find(chapter => chapter.moduleId === selectedModule.id)?.id}`}
+                      to={`/study/field-manual/${selectedModule.id}/${chapters.find(chapter => chapter.moduleId === selectedModule.id)?.id}`}
                       className="inline-flex items-center px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-medium rounded-lg transition-colors shadow-lg hover:shadow-xl"
                     >
                       <BookOpen className="w-5 h-5 mr-2" />

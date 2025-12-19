@@ -878,8 +878,9 @@ function ProtectedRoutes() {
       <Route path="/learn" element={<TacticalLayout><PageContainer title="Learn" subtitle="Your personalized learning companion with context-aware recommendations"><CompanionLearnTab /></PageContainer></TacticalLayout>} />
       <Route path="/drill" element={<TacticalLayout><CompanionDrillTab /></TacticalLayout>} />
       <Route path="/reference" element={<TacticalLayout><CompanionReferenceTab /></TacticalLayout>} />
-      <Route path="/study-notes" element={<TacticalLayout><FieldManual /></TacticalLayout>} />
-      <Route path="/study-notes/:chapterId" element={<TacticalLayout><ChapterReader /></TacticalLayout>} />
+      {/* 2. The Field Manual (Container for ALL Study Notes) */}
+      <Route path="/study/field-manual" element={<TacticalLayout><FieldManual /></TacticalLayout>} />
+      <Route path="/study/field-manual/:moduleId/:chapterId" element={<TacticalLayout><ChapterReader /></TacticalLayout>} />
       <Route path="/scenarios" element={<TacticalLayout><ScenariosPage /></TacticalLayout>} />
       <Route path="/pcr-practice" element={<TacticalLayout><EMTBPcrTrainer /></TacticalLayout>} />
       <Route path="/progress" element={<TacticalLayout><ProgressPage /></TacticalLayout>} />
@@ -926,8 +927,8 @@ const AuthenticatedApp: React.FC = () => {
             <Route path="/learn" element={<PageContainer title="Learn" subtitle="Your personalized learning companion with context-aware recommendations"><CompanionLearnTab /></PageContainer>} />
             <Route path="/drill" element={<CompanionDrillTab />} />
             <Route path="/reference" element={<CompanionReferenceTab />} />
-            <Route path="/study-notes" element={<FieldManual />} />
-            <Route path="/study-notes/:chapterId" element={<ChapterReader />} />
+            <Route path="/study/field-manual" element={<FieldManual />} />
+            <Route path="/study/field-manual/:moduleId/:chapterId" element={<ChapterReader />} />
             <Route path="/scenarios" element={<ScenariosPage />} />
             <Route path="/pcr-practice" element={<PageContainer title="PCR Report Sim" subtitle="Practice patient care report documentation with FTO evaluation and real-world scenarios."><EMTBPcrTrainer /></PageContainer>} />
             <Route path="/nremt-simulator" element={<ClinicalLayout title="NREMT Computer Adaptive Testing (CAT) Simulator"><NREMTSimulator /></ClinicalLayout>} />
