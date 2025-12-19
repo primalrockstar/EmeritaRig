@@ -15,7 +15,7 @@ const ExamLayout: React.FC<ExamLayoutProps> = ({ children, title }) => {
             <div className="flex items-center space-x-4">
               <img
                 src="/assets/logo.png"
-                alt="NREMT Exam Simulator"
+                alt="THE RIG NREMT Exam Simulator"
                 className="h-12 w-auto"
               />
               <div className="text-sm text-gray-600">

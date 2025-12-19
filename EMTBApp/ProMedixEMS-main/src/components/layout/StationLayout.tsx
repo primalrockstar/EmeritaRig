@@ -71,7 +71,7 @@ const StationLayout: React.FC<StationLayoutProps> = ({ children, title }) => {
               <Link to="/" className="flex-1 flex justify-center">
                 <img
                   src="/assets/logo.png"
-                  alt="Emerita Clinical: The Rig"
+                  alt="THE RIG"
                   className="h-40 sm:h-48 w-auto drop-shadow-[0_8px_16px_rgba(59,130,246,0.3)]"
                 />
               </Link>
@@ -119,7 +119,7 @@ const StationLayout: React.FC<StationLayoutProps> = ({ children, title }) => {
             <div className="flex justify-center py-6">
               <img
                 src="/assets/logo.png"
-                alt="Emerita Clinical: The Rig"
+                alt="THE RIG"
                 className="h-56 w-auto drop-shadow-[0_20px_40px_rgba(59,130,246,0.35)]"
               />
             </div>

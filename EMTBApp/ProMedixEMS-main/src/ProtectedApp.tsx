@@ -98,9 +98,9 @@ const UltraModernHeader = () => {
             </button>
             
             <Link to="/" className="flex-1 flex justify-center">
-              <img 
-                src="/assets/logo.png" 
-                alt="Emerita Clinical: The Rig" 
+              <img
+                src="/assets/logo.png"
+                alt="THE RIG"
                 className="h-40 sm:h-48 w-auto drop-shadow-[0_8px_16px_rgba(59,130,246,0.3)]"
               />
             </Link>
@@ -145,9 +145,9 @@ const UltraModernHeader = () => {
         {/* Ultra-Modern Logo Section with Glass Effect */}
         <div className="border-b border-blue-200 bg-gradient-to-r from-white via-blue-50 to-blue-100 dark:border-sky-500/20 dark:from-[#031021]/60 dark:via-[#062342]/60 dark:to-[#0A3E6A]/60">
           <div className="flex justify-center py-6">
-            <img 
-              src="/assets/logo.png" 
-              alt="Emerita Clinical: The Rig" 
+            <img
+              src="/assets/logo.png"
+              alt="THE RIG"
               className="h-56 w-auto drop-shadow-[0_20px_40px_rgba(59,130,246,0.35)]"
             />
           </div>
@@ -344,13 +344,13 @@ const UltraModernDashboard: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pb-20 space-y-12">
         <section className="text-center space-y-6">
           <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-blue-300 bg-white text-xs font-semibold tracking-[0.2em] text-blue-700 shadow-sm">
-            EMERITA CLINICAL EMT-B
+            THE RIG EMT-B
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-blue-900 leading-tight">
             A Modern Learning Companion for the<br/>Next Generation of EMTs
           </h1>
           <p className="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-            Emerita Clinical EMT-B is a focused, high-performance learning platform built to help Emergency Medical Technician students master the fundamentals with clarity, confidence, and real-world readiness.
+            THE RIG EMT-B is a focused, high-performance learning platform built to help Emergency Medical Technician students master the fundamentals with clarity, confidence, and real-world readiness.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
              <div className="px-4 py-2 bg-blue-50 rounded-lg text-blue-700 text-sm font-medium">45 Chapters of Study Notes</div>
@@ -405,7 +405,7 @@ const UltraModernDashboard: React.FC = () => {
         {/* Mission & Why Choose Section */}
         <section className="grid md:grid-cols-2 gap-8 bg-white/50 backdrop-blur-sm rounded-3xl p-8 border border-blue-100">
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-blue-900">Why Students Choose Emerita Clinical</h2>
+            <h2 className="text-2xl font-bold text-blue-900">Why Students Choose THE RIG</h2>
             <ul className="space-y-3">
               {[
                 "Built by an EMT, not a generic developer",
@@ -447,7 +447,7 @@ const UltraModernDashboard: React.FC = () => {
           <div className="space-y-2">
             <h3 className="font-semibold text-amber-900">Important Educational Notice</h3>
             <p className="text-sm text-amber-800 leading-relaxed">
-              Emerita Clinical is an independent EMS education tool and is not affiliated with NREMT, AAOS, or any certifying body. This application is designed for educational purposes only to supplement formal EMT training programs. Always follow your medical director's protocols, local scope of practice, and official training materials.
+              THE RIG is an independent EMS education tool and is not affiliated with NREMT, AAOS, or any certifying body. This application is designed for educational purposes only to supplement formal EMT training programs. Always follow your medical director's protocols, local scope of practice, and official training materials.
             </p>
           </div>
         </section>
@@ -515,7 +515,7 @@ const UltraModernDashboard: React.FC = () => {
                   <Activity className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-blue-900 leading-none">Emerita Clinical</h3>
+                  <h3 className="font-bold text-blue-900 leading-none">THE RIG</h3>
                   <p className="text-[10px] text-slate-500 uppercase tracking-wider">EMT-B Education Platform</p>
                 </div>
               </div>
@@ -524,7 +524,7 @@ const UltraModernDashboard: React.FC = () => {
                 Built for the next generation of emergency medical professionals.
               </p>
               <div className="flex gap-4 text-sm font-medium text-blue-600">
-                <a href="https://emeritaclinical.com" target="_blank" rel="noreferrer" className="hover:text-blue-800">EmeritaClinical.com</a>
+                <a href="https://therig.training" target="_blank" rel="noreferrer" className="hover:text-blue-800">therig.training</a>
                 <span>•</span>
                 <a href="#" className="hover:text-blue-800">GitHub</a>
               </div>
@@ -546,13 +546,13 @@ const UltraModernDashboard: React.FC = () => {
                 <li><Link to="/privacy" className="hover:text-blue-600">Privacy Policy</Link></li>
                 <li><Link to="/terms" className="hover:text-blue-600">Terms of Service</Link></li>
                 <li><Link to="/disclaimer" className="hover:text-blue-600">Medical Disclaimer</Link></li>
-                <li><a href="mailto:support@webconnect360.com" className="hover:text-blue-600">Contact Support</a></li>
+                <li><a href="mailto:support@emeritaclinical.com" className="hover:text-blue-600">Contact Support</a></li>
               </ul>
             </div>
           </div>
           
           <div className="border-t border-blue-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-            <p>© 2025 Emerita Clinical. All rights reserved. Emerita Clinical™ is a trademark of Emerita Clinical.</p>
+            <p>© 2025 THE RIG. All rights reserved. THE RIG™ is a trademark of Emerita Clinical.</p>
             <div className="flex gap-6">
               <span className="flex items-center gap-1"><Shield className="w-3 h-3" /> HIPAA Compliant Design</span>
               <span className="flex items-center gap-1"><BookOpen className="w-3 h-3" /> Educational Use Only</span>

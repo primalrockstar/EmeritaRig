@@ -273,7 +273,7 @@ export const StudyNotesOverview: React.FC = () => {
           <div className="flex flex-col items-center gap-4">
             <img
               src="/assets/logo.png"
-              alt="Emerita Clinical: The Rig"
+              alt="THE RIG"
               className="h-32 w-auto drop-shadow-[0_20px_40px_rgba(59,130,246,0.35)]"
             />
             <div className="text-sm uppercase tracking-[0.3em] text-cyan-400 font-semibold">Study Notes</div>

@@ -41,6 +41,11 @@ export default {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
+        neon: {
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#16a34a'
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -50,6 +55,7 @@ export default {
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'monospace'],
       },
       animation: {
         'gradient-slow': 'gradient-slow 8s ease infinite',
