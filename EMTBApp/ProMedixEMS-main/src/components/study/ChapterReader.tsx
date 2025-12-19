@@ -85,9 +85,11 @@ interface ChapterData {
 
 const ChapterReader: React.FC = () => {
   const { moduleId, chapterId } = useParams<{ moduleId: string; chapterId: string }>();
-  // Handle both "ch-X" format and numeric format
+  // Handle "chapterX", "ch-X" format and numeric format
   const chapterNum = chapterId ?
-    (chapterId.startsWith('ch-') ? parseInt(chapterId.substring(3)) : parseInt(chapterId))
+    (chapterId.startsWith('ch-') ? parseInt(chapterId.substring(3)) :
+     chapterId.startsWith('chapter') ? parseInt(chapterId.substring(7)) :
+     parseInt(chapterId))
     : null;
   const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set());
 
@@ -106,10 +108,11 @@ const ChapterReader: React.FC = () => {
     43: ch43Data, 44: ch44Data, 45: ch45Data
   };
 
-  // Also create a map for "ch-X" format for backward compatibility
+  // Also create a map for "ch-X" and "chapterX" formats for backward compatibility
   const chapterDataMapAlt: { [key: string]: any } = {};
   Object.entries(chapterDataMap).forEach(([num, data]) => {
     chapterDataMapAlt[`ch-${num}`] = data;
+    chapterDataMapAlt[`chapter${num}`] = data;
   });
 
   const curriculumData = chapterNum ? getChapterById(chapterNum) : null;
