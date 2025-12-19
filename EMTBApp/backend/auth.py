@@ -1,38 +1,48 @@
-import os
-import bcrypt
+# EMTBApp/backend/auth.py
 from datetime import datetime, timedelta
-import jwt
-from fastapi import Depends, HTTPException, status
+from typing import Optional
+from jose import JWTError, jwt
+from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
+from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from database import get_db
-from models import User
+from models import User, Question, ExamAttempt, Flashcard, Medication
 
-SECRET_KEY = os.getenv("SECRET_KEY", "CHANGE_THIS_IN_PROD")
-ALGORITHM = os.getenv("ALGORITHM", "HS256")
+# CONFIGURATION (Move these to env variables in production)
+SECRET_KEY = "YOUR_SECRET_KEY_HERE" # CHANGE THIS
+ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
+# PASSWORD HASHING CONTEXT
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
-
-def get_password_hash(password):
-    return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-
+# --- CORE HELPER FUNCTIONS ---
 
 def verify_password(plain_password, hashed_password):
-    return bcrypt.checkpw(plain_password.encode('utf-8'), hashed_password.encode('utf-8'))
+    """Checks if a plain password matches the hash."""
+    return pwd_context.verify(plain_password, hashed_password)
 
+def get_password_hash(password):
+    """Generates a secure hash for a password."""
+    return pwd_context.hash(password)
 
-def create_access_token(data: dict):
+def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
+    """Generates a JWT token."""
     to_encode = data.copy()
-    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=15)
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
+# --- DEPENDENCY INJECTION ---
 
-def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
-    
+async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -40,14 +50,13 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
     )
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        email: str = payload.get("sub")
-        if email is None:
+        username: str = payload.get("sub")
+        if username is None:
             raise credentials_exception
-    except jwt.PyJWTError:
+    except JWTError:
         raise credentials_exception
     
-    user = db.query(User).filter(User.email == email).first()
+    user = db.query(models.User).filter(models.User.email == username).first()
     if user is None:
         raise credentials_exception
-    
     return user
