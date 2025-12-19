@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from './auth/AuthContext';
+import MedicalDisclaimer from './components/MedicalDisclaimer';
 
 const LoginPage = lazy(() => import('./auth/LoginPage'));
 const DashboardScreen = lazy(() => import('./screens/DashboardScreen'));
@@ -71,12 +72,22 @@ const PaymentCancel: React.FC = () => {
 
 const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, loading } = useAuth();
-  
+
   if (loading) {
     return <div className="flex items-center justify-center min-h-screen">Loading...</div>;
   }
-  
-  return user ? <>{children}</> : <Navigate to="/" replace />;
+
+  if (!user) {
+    return <Navigate to="/" replace />;
+  }
+
+  return (
+    <>
+      {/* The Disclaimer sits ON TOP of the children */}
+      <MedicalDisclaimer />
+      {children}
+    </>
+  );
 };
 
 const App: React.FC = () => {
