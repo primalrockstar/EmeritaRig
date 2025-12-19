@@ -88,6 +88,9 @@ const ChapterReader: React.FC = () => {
   const chapterNum = chapterId ? parseInt(chapterId) : null;
   const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set());
 
+  // Debug logging
+  console.log('ChapterReader Debug:', { chapterId, chapterNum });
+
   // Map chapter numbers to data
   const chapterDataMap: { [key: number]: any } = {
     1: ch1Data, 2: ch2Data, 3: ch3Data, 4: ch4Data, 5: ch5Data, 6: ch6Data,
@@ -102,6 +105,8 @@ const ChapterReader: React.FC = () => {
 
   const curriculumData = chapterNum ? getChapterById(chapterNum) : null;
   const studyData = chapterNum ? chapterDataMap[chapterNum] : null;
+
+  console.log('Data lookup results:', { curriculumData, studyData, chapterNum });
 
   // Convert enhanced chapter data to display format
   const convertToChapterData = (studyData: any): ChapterData => {
