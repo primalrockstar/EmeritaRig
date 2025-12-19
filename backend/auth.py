@@ -1,8 +1,9 @@
 import bcrypt
 from datetime import datetime, timedelta
 import jwt
+import os
 
-SECRET_KEY = "CHANGE_THIS_IN_PROD"
+SECRET_KEY = os.getenv("SECRET_KEY", "CHANGE_THIS_IN_PROD")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 120
 

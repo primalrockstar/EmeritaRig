@@ -1,7 +1,9 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI, Request, Depends, HTTPException, status
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordBearer
-from dotenv import load_dotenv
 from contextlib import asynccontextmanager
 import os
 import jwt
@@ -37,8 +39,6 @@ def rate_limit_exceeded_handler(request: Request, exc: RateLimitExceeded):
         status_code=429,
         content={"detail": f"Rate limit exceeded: {exc.detail}"},
     )
-
-load_dotenv()
 
 stripe.api_key = os.getenv("STRIPE_API_KEY")
 

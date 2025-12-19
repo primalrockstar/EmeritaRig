@@ -17,7 +17,9 @@ import { additionalQuizModules } from '../data/practice-quizzes-additional';
 import { finalQuizModules } from '../data/practice-quizzes-final';
 import { completeQuizModules } from '../data/practice-quizzes-complete';
 import { enhancedQuizModules, EnhancedQuizQuestion, ENHANCED_QUIZ_STATS } from '../data/enhanced-quiz-system';
-import { allScenarioQuestions, SCENARIO_QUESTION_STATS } from '../data/scenario-questions';
+import { SCENARIO_QUESTION_STATS } from '../data/scenario-questions';
+import { useScenarioSync } from '../hooks/useScenarioSync';
+import { FTOAgent } from './FTO/FTOAgent';
 
 interface QuizAttempt {
   moduleId: number;
@@ -38,6 +40,7 @@ interface QuizComponentProps {
 
 // Enhanced quiz system with 900 questions and scenario focus
 const PracticeQuizSystem: React.FC<QuizComponentProps> = ({ onClose }) => {
+  const { scenarios: allScenarioQuestions, loading: scenariosLoading, error: scenariosError } = useScenarioSync();
   const [selectedModule, setSelectedModule] = useState<QuizModule | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<{ [questionId: string]: number }>({});
@@ -48,6 +51,8 @@ const PracticeQuizSystem: React.FC<QuizComponentProps> = ({ onClose }) => {
   const [showExplanation, setShowExplanation] = useState(false);
   const [quizMode, setQuizMode] = useState<'practice' | 'timed' | 'scenario-focus'>('practice');
   const [selectedQuestions, setSelectedQuestions] = useState<EnhancedQuizQuestion[]>([]);
+  const [lastAnswerCorrect, setLastAnswerCorrect] = useState<boolean | null>(null);
+  const [isFTOEnabled, setIsFTOEnabled] = useState(true);
 
   // Enhanced quiz options
   const [showNationalProtocols, setShowNationalProtocols] = useState(true);
@@ -107,6 +112,8 @@ const PracticeQuizSystem: React.FC<QuizComponentProps> = ({ onClose }) => {
 
     setIsActive(false);
     
+    if (!selectedModule) return;
+
     let correctAnswers = 0;
     selectedModule.questions.forEach(question => {
       if (userAnswers[question.id] === question.correctAnswer) {
@@ -118,13 +125,16 @@ const PracticeQuizSystem: React.FC<QuizComponentProps> = ({ onClose }) => {
     const timeSpent = (selectedModule.timeLimit * 60) - timeRemaining;
 
     const newAttempt: QuizAttempt = {
-      moduleId: selectedModule.module,
+      moduleId: selectedModule!.module,
       score,
-      totalQuestions: selectedModule.questions.length,
+      totalQuestions: selectedModule!.questions.length,
       timeSpent,
       answers: userAnswers,
       completed: true,
-      timestamp: new Date()
+      timestamp: new Date(),
+      scenarioQuestions: 0, // TODO: calculate based on questions
+      knowledgeQuestions: selectedModule!.questions.length,
+      nationalProtocolAlignment: true
     };
 
     const updatedAttempts = [...quizAttempts, newAttempt];
@@ -158,6 +168,10 @@ const PracticeQuizSystem: React.FC<QuizComponentProps> = ({ onClose }) => {
   };
 
   const handleAnswerSelect = (questionId: string, answerIndex: number) => {
+    const currentQuestion = selectedQuestions[currentQuestionIndex];
+    const isCorrect = answerIndex === currentQuestion?.correctAnswer;
+    setLastAnswerCorrect(isCorrect);
+
     setUserAnswers(prev => ({
       ...prev,
       [questionId]: answerIndex
@@ -496,12 +510,23 @@ const PracticeQuizSystem: React.FC<QuizComponentProps> = ({ onClose }) => {
                 Test your knowledge with comprehensive practice quizzes for all 14 EMT-B modules
               </p>
             </div>
-            <button
-              onClick={onClose}
-              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-            >
-              Close
-            </button>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono text-gray-500">FTO MODE</span>
+                <button
+                  onClick={() => setIsFTOEnabled(!isFTOEnabled)}
+                  className={`w-10 h-5 rounded-full transition-colors relative ${isFTOEnabled ? 'bg-green-500' : 'bg-gray-700'}`}
+                >
+                  <div className={`absolute top-1 w-3 h-3 bg-white rounded-full transition-transform ${isFTOEnabled ? 'left-6' : 'left-1'}`} />
+                </button>
+              </div>
+              <button
+                onClick={onClose}
+                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+              >
+                Close
+              </button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -555,6 +580,14 @@ const PracticeQuizSystem: React.FC<QuizComponentProps> = ({ onClose }) => {
           </div>
         </div>
       </div>
+
+      {/* FTO Agent */}
+      {isFTOEnabled && (
+        <FTOAgent
+          currentScenario={selectedQuestions[currentQuestionIndex] || null}
+          lastAnswerCorrect={lastAnswerCorrect}
+        />
+      )}
     </div>
   );
 };

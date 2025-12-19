@@ -35,6 +35,13 @@ logger = logging.getLogger(__name__)
 
 stripe.api_key = os.getenv("STRIPE_API_KEY")
 
+# CORS settings
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "*")
+if ALLOWED_ORIGINS == "*":
+    allow_origins = ["*"]
+else:
+    allow_origins = [origin.strip() for origin in ALLOWED_ORIGINS.split(",")]
+
 app = FastAPI()
 
 # Instrument with Prometheus if available
@@ -73,7 +80,7 @@ create_admin_user()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for development
+    allow_origins=allow_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -185,6 +192,8 @@ async def stripe_webhook(request: Request):
     payload = await request.body()
     sig_header = request.headers.get('stripe-signature')
     endpoint_secret = os.getenv("STRIPE_WEBHOOK_SECRET")
+    if not endpoint_secret:
+        return {"error": "Webhook secret not configured"}
     try:
         event = stripe.Webhook.construct_event(payload, sig_header, endpoint_secret)
     except ValueError as e:
@@ -217,17 +226,21 @@ def get_chapters(current_user: User = Depends(get_current_user)):
 @app.post("/api/create-checkout-session")
 def create_checkout_session(current_user: User = Depends(get_current_user)):
     try:
+        success_url = os.getenv("FRONTEND_SUCCESS_URL", "https://emeritaclinical.com/dashboard?payment=success")
+        cancel_url = os.getenv("FRONTEND_CANCEL_URL", "https://emeritaclinical.com/dashboard?payment=cancelled")
+        price_id = os.getenv("STRIPE_PRICE_ID", "price_H5ggYwtDq...")
+
         session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=[{
-                'price': 'price_H5ggYwtDq...',  # Replace with actual Price ID
+                'price': price_id,
                 'quantity': 1
             }],
             mode='payment',
             client_reference_id=str(current_user.id),
             customer_email=current_user.email,
-            success_url='http://localhost:3000/dashboard?payment=success',
-            cancel_url='http://localhost:3000/dashboard?payment=cancelled'
+            success_url=success_url,
+            cancel_url=cancel_url
         )
         return {"checkout_url": session.url}
     except Exception as e:

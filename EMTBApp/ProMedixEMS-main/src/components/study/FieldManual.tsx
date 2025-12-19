@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CURRICULUM_MODULES, getRegularModules, getBonusModules } from '../../data/curriculum';
+import { studyModules, chapters } from '../../data/curriculum';
+import { mockStudyContent } from '../../data/mockStudyContent';
 import { ChevronRight, ChevronDown, BookOpen, Star, AlertTriangle } from 'lucide-react';
 import TacticalLayout from '../../layouts/TacticalLayout';
 
 const FieldManual: React.FC = () => {
-  const [expandedModules, setExpandedModules] = useState<Set<string>>(new Set());
+  const [expandedModules, setExpandedModules] = useState<Set<number>>(new Set());
   const [selectedModule, setSelectedModule] = useState<any>(null);
 
-  const regularModules = getRegularModules();
-  const bonusModules = getBonusModules();
+  const regularModules = studyModules.filter(module => !module.isBonus);
+  const bonusModules = studyModules.filter(module => module.isBonus);
 
-  const toggleModule = (moduleId: string) => {
+  const toggleModule = (moduleId: number) => {
     const newExpanded = new Set(expandedModules);
     if (newExpanded.has(moduleId)) {
       newExpanded.delete(moduleId);
@@ -26,7 +27,7 @@ const FieldManual: React.FC = () => {
   };
 
   return (
-    <TacticalLayout title="FIELD MANUAL">
+    <TacticalLayout>
       <div className="min-h-screen bg-slate-900">
         <div className="max-w-7xl mx-auto p-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-12rem)]">
@@ -60,7 +61,7 @@ const FieldManual: React.FC = () => {
 
                     {expandedModules.has(module.id) && (
                       <div className="border-t border-slate-700">
-                        {module.chapters.map((chapter) => (
+                        {chapters.filter(chapter => chapter.moduleId === module.id).map((chapter) => (
                           <Link
                             key={chapter.id}
                             to={`/study-notes/${chapter.id}`}
@@ -105,7 +106,7 @@ const FieldManual: React.FC = () => {
 
                         {expandedModules.has(module.id) && (
                           <div className="border-t border-amber-500/20">
-                            {module.chapters.map((chapter) => (
+                            {chapters.filter(chapter => chapter.moduleId === module.id).map((chapter) => (
                               <Link
                                 key={chapter.id}
                                 to={`/study-notes/${chapter.id}`}
@@ -147,32 +148,51 @@ const FieldManual: React.FC = () => {
                     </div>
                   )}
 
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-semibold text-slate-200">Chapters in this Module:</h3>
-                    <div className="grid gap-2">
-                      {selectedModule.chapters.map((chapter: any, index: number) => (
-                        <Link
-                          key={chapter.id}
-                          to={`/study-notes/${chapter.id}`}
-                          className="flex items-center justify-between p-3 bg-slate-700/50 hover:bg-slate-700 border border-slate-600 rounded-lg hover:border-amber-500/50 transition-colors group"
-                        >
-                          <div className="flex items-center space-x-3">
-                            <div className="w-8 h-8 bg-amber-500/20 border border-amber-500/30 rounded flex items-center justify-center text-sm font-medium text-amber-400">
-                              {index + 1}
+                  <div className="space-y-6">
+                    <div className="space-y-3">
+                      <h3 className="text-lg font-semibold text-slate-200">Chapters in this Module:</h3>
+                      <div className="grid gap-2">
+                        {chapters.filter(chapter => chapter.moduleId === selectedModule.id).map((chapter, index) => (
+                          <Link
+                            key={chapter.id}
+                            to={`/study-notes/${chapter.id}`}
+                            className="flex items-center justify-between p-3 bg-slate-700/50 hover:bg-slate-700 border border-slate-600 rounded-lg hover:border-amber-500/50 transition-colors group"
+                          >
+                            <div className="flex items-center space-x-3">
+                              <div className="w-8 h-8 bg-amber-500/20 border border-amber-500/30 rounded flex items-center justify-center text-sm font-medium text-amber-400">
+                                {index + 1}
+                              </div>
+                              <span className="text-slate-200 group-hover:text-amber-400 transition-colors">
+                                {chapter.title}
+                              </span>
                             </div>
-                            <span className="text-slate-200 group-hover:text-amber-400 transition-colors">
-                              {chapter.title}
-                            </span>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-amber-400 transition-colors" />
-                        </Link>
-                      ))}
+                            <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-amber-400 transition-colors" />
+                          </Link>
+                        ))}
+                      </div>
                     </div>
+
+                    {/* Study Content Preview */}
+                    {selectedModule.id === 1 && mockStudyContent.foundationsModule && (
+                      <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                        <h4 className="text-xl font-bold text-amber-400 mb-4">Study Content Preview</h4>
+                        <div className="space-y-4">
+                          <div>
+                            <h5 className="text-lg font-semibold text-slate-200 mb-2">EMS System Fundamentals</h5>
+                            <div className="text-sm text-slate-300 space-y-2">
+                              <p><strong>Objectives:</strong> Describe components and functions of EMS system, explain EMT roles, understand quality improvement</p>
+                              <p><strong>Key Concepts:</strong> Public access systems, communication networks, clinical care continuum, healthcare integration</p>
+                              <p><strong>Clinical Pearl:</strong> The EMS system is only as strong as its weakest link - all components must function effectively</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   <div className="pt-4 border-t border-slate-700">
                     <Link
-                      to={`/study-notes/${selectedModule.chapters[0]?.id}`}
+                      to={`/study-notes/${chapters.find(chapter => chapter.moduleId === selectedModule.id)?.id}`}
                       className="inline-flex items-center px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-medium rounded-lg transition-colors shadow-lg hover:shadow-xl"
                     >
                       <BookOpen className="w-5 h-5 mr-2" />

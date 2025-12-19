@@ -4,6 +4,17 @@ import MedicalDisclaimer from '../MedicalDisclaimer';
 import { medicationsData } from '../../data/medications';
 import { emsProtocols } from '../../data/ems-protocols';
 import { emergencyScenarios } from '../../data/emergency-scenarios';
+import {
+  additionalRespiratoryScenarios,
+  additionalTraumaScenarios,
+  additionalPediatricScenarios,
+  additionalObstetricScenarios,
+  additionalGeriatricScenarios,
+  additionalNeurologicalScenarios,
+  additionalEnvironmentalScenarios,
+  additionalToxicologyScenarios
+} from '../../data/additional-scenarios';
+import { allScenarioQuestions } from '../../data/scenario-questions';
 // import { chapter30StudyNotes as chapter30Data } from '../../data/emtb/chapter30-study-notes';
 // import { chapter31StudyNotes as chapter31Data } from '../../data/emtb/chapter31-study-notes';
 
@@ -424,7 +435,21 @@ const EMTBStudyNotes: React.FC<EMTBStudyNotesProps> = ({ initialChapter }) => {
     setIsFlipped(false);
   }, [activeChapter]);
 
-  // Module 1: Foundations of EMS Practice - Enhanced Chapters  
+  // Combine all scenario data
+  const allScenarios = [
+    ...emergencyScenarios,
+    ...additionalRespiratoryScenarios,
+    ...additionalTraumaScenarios,
+    ...additionalPediatricScenarios,
+    ...additionalObstetricScenarios,
+    ...additionalGeriatricScenarios,
+    ...additionalNeurologicalScenarios,
+    ...additionalEnvironmentalScenarios,
+    ...additionalToxicologyScenarios,
+    ...allScenarioQuestions
+  ];
+
+  // Module 1: Foundations of EMS Practice - Enhanced Chapters
   const chapter1StudyNotes: ChapterData = convertToChapterData(ch1Data, ch1Flash);
   
   const chapter2StudyNotes: ChapterData = convertToChapterData(ch2Data, ch2Flash);
@@ -9179,7 +9204,7 @@ const EMTBStudyNotes: React.FC<EMTBStudyNotesProps> = ({ initialChapter }) => {
     });
 
     // Search emergency scenarios
-    emergencyScenarios.forEach(scenario => {
+    allScenarios.forEach(scenario => {
       // Search scenario title and chief complaint
       if (scenario.title.toLowerCase().includes(searchLower) || 
           scenario.chiefComplaint.toLowerCase().includes(searchLower)) {

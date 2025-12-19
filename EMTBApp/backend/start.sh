@@ -8,7 +8,7 @@ echo "Starting Emerita Clinical backend..."
 PORT=${PORT:-8000}
 
 echo "Running database migrations..."
-python migrate_db.py
+python3 migrate_db.py
 
 echo "Running on port $PORT"
 

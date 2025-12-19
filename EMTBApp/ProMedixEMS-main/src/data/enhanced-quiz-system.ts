@@ -27,6 +27,7 @@ export interface EnhancedQuizQuestion {
   points: number;
   timeEstimate: number;
   images?: string[];
+  fto_guidance?: string;
 }
 
 export interface EnhancedQuizModule {
