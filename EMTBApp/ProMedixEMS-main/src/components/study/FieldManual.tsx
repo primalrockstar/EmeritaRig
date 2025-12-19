@@ -201,16 +201,107 @@ const FieldManual: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center justify-center h-full">
-                  <div className="text-center space-y-4">
+                <div className="space-y-6">
+                  {/* Study Notes Overview */}
+                  <div className="text-center space-y-4 pb-6 border-b border-slate-700">
                     <div className="w-16 h-16 bg-amber-500/20 border border-amber-500/30 rounded-full flex items-center justify-center mx-auto">
                       <BookOpen className="w-8 h-8 text-amber-400" />
                     </div>
                     <div>
-                      <h2 className="text-xl font-bold text-slate-200 mb-2">Select a Module</h2>
-                      <p className="text-slate-400 max-w-md">
-                        Choose a module from the navigation panel to view its contents and begin your tactical study session.
+                      <h2 className="text-2xl font-bold text-amber-400 mb-2">EMT-B Study Notes</h2>
+                      <p className="text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                        Comprehensive study materials organized by module following the National EMS Education Standards.
+                        Select any module from the navigation panel to explore detailed content, clinical pearls, and study guides.
                       </p>
+                    </div>
+                  </div>
+
+                  {/* Quick Stats */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="bg-slate-700/50 p-4 rounded-lg border border-slate-600 text-center">
+                      <div className="text-2xl font-bold text-amber-400">{regularModules.length + bonusModules.length}</div>
+                      <div className="text-sm text-slate-300">Total Modules</div>
+                    </div>
+                    <div className="bg-slate-700/50 p-4 rounded-lg border border-slate-600 text-center">
+                      <div className="text-2xl font-bold text-amber-400">{chapters.length}</div>
+                      <div className="text-sm text-slate-300">Study Chapters</div>
+                    </div>
+                    <div className="bg-slate-700/50 p-4 rounded-lg border border-slate-600 text-center">
+                      <div className="text-2xl font-bold text-amber-400">45+</div>
+                      <div className="text-sm text-slate-300">Hours Content</div>
+                    </div>
+                    <div className="bg-slate-700/50 p-4 rounded-lg border border-slate-600 text-center">
+                      <div className="text-2xl font-bold text-amber-400">NREMT</div>
+                      <div className="text-sm text-slate-300">Aligned</div>
+                    </div>
+                  </div>
+
+                  {/* Module Overview */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold text-slate-200">Available Study Modules</h3>
+                    <div className="grid gap-3">
+                      {regularModules.slice(0, 6).map((module) => (
+                        <div
+                          key={module.id}
+                          onClick={() => selectModule(module)}
+                          className="bg-slate-700/30 hover:bg-slate-700/50 border border-slate-600 hover:border-amber-500/50 rounded-lg p-4 cursor-pointer transition-all duration-200"
+                        >
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center space-x-3">
+                              <div className="w-10 h-10 bg-amber-500/20 border border-amber-500/30 rounded flex items-center justify-center">
+                                <BookOpen className="w-5 h-5 text-amber-400" />
+                              </div>
+                              <div>
+                                <h4 className="font-medium text-slate-200">{module.title}</h4>
+                                <p className="text-sm text-slate-400">{module.chapters.length} chapters • {module.estimatedHours} hours</p>
+                              </div>
+                            </div>
+                            <ChevronRight className="w-5 h-5 text-slate-400" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {bonusModules.length > 0 && (
+                      <div className="mt-6 pt-4 border-t border-slate-700">
+                        <h4 className="text-lg font-semibold text-amber-400 mb-3 flex items-center">
+                          <Star className="w-5 h-5 mr-2" />
+                          Advanced Modules
+                        </h4>
+                        <div className="grid gap-3">
+                          {bonusModules.map((module) => (
+                            <div
+                              key={module.id}
+                              onClick={() => selectModule(module)}
+                              className="bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 hover:border-amber-400 rounded-lg p-4 cursor-pointer transition-all duration-200"
+                            >
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center space-x-3">
+                                  <div className="w-10 h-10 bg-amber-500/20 border border-amber-400 rounded flex items-center justify-center">
+                                    <Star className="w-5 h-5 text-amber-400" />
+                                  </div>
+                                  <div>
+                                    <h4 className="font-medium text-amber-200">{module.title}</h4>
+                                    <p className="text-sm text-amber-400/70">{module.chapters.length} chapters • {module.estimatedHours} hours</p>
+                                  </div>
+                                </div>
+                                <ChevronRight className="w-5 h-5 text-amber-400" />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Getting Started Guide */}
+                  <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-6">
+                    <h3 className="text-lg font-semibold text-blue-300 mb-3">🚀 Getting Started</h3>
+                    <div className="space-y-3 text-sm text-blue-200">
+                      <p><strong>1. Choose a Module:</strong> Click on any module in the navigation panel or from the list above</p>
+                      <p><strong>2. Explore Chapters:</strong> Each module contains detailed study chapters with clinical content</p>
+                      <p><strong>3. Access Resources:</strong> Use the Flashcards and Quiz buttons to test your knowledge</p>
+                      <p><strong>4. Track Progress:</strong> Complete chapters and monitor your learning journey</p>
                     </div>
                   </div>
                 </div>
