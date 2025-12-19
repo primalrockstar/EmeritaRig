@@ -85,7 +85,10 @@ interface ChapterData {
 
 const ChapterReader: React.FC = () => {
   const { chapterId } = useParams<{ chapterId: string }>();
-  const chapterNum = chapterId ? parseInt(chapterId) : null;
+  // Handle both "ch-X" format and numeric format
+  const chapterNum = chapterId ?
+    (chapterId.startsWith('ch-') ? parseInt(chapterId.substring(3)) : parseInt(chapterId))
+    : null;
   const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set());
 
   // Debug logging
@@ -103,8 +106,14 @@ const ChapterReader: React.FC = () => {
     43: ch43Data, 44: ch44Data, 45: ch45Data
   };
 
+  // Also create a map for "ch-X" format for backward compatibility
+  const chapterDataMapAlt: { [key: string]: any } = {};
+  Object.entries(chapterDataMap).forEach(([num, data]) => {
+    chapterDataMapAlt[`ch-${num}`] = data;
+  });
+
   const curriculumData = chapterNum ? getChapterById(chapterNum) : null;
-  const studyData = chapterNum ? chapterDataMap[chapterNum] : null;
+  const studyData = chapterNum ? (chapterDataMap[chapterNum] || chapterDataMapAlt[`ch-${chapterNum}`]) : null;
 
   console.log('Data lookup results:', { curriculumData, studyData, chapterNum });
 
